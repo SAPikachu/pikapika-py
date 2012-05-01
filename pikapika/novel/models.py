@@ -29,7 +29,7 @@ class Chapter(models.Model):
     volume = models.ForeignKey(Volume)
     rating_points = models.IntegerField()
     rating_count = models.IntegerField()
-    updated_date = models.DateTimeField(auto_now=True)
+    updated_date = models.DateTimeField(auto_now_add=True)
     posted_by = models.ForeignKey(User)
 
     class Meta:
