@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "sapikachu", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2012-05-01T12:15:00Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$OSz1x31bBgOd$jvOVuipSQPQg/lJrozhgRJKXcnDZEzzKi/p/AkMyANA=", 
+            "email": "sapikachu@gmail.com", 
+            "date_joined": "2012-05-01T12:15:00Z"
+        }
+    }
+]
