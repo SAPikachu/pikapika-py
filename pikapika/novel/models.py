@@ -9,8 +9,8 @@ class Novel(models.Model):
     author = models.CharField(max_length=50)
     publisher = models.CharField(max_length=50)
     image = models.ImageField(upload_to=IMAGE_DIR, blank=True)
-    rating_points = models.IntegerField()
-    rating_count = models.IntegerField()
+    rating_points = models.IntegerField(default=0)
+    rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now=True)
 
 class Volume(models.Model):
@@ -18,8 +18,8 @@ class Volume(models.Model):
     novel = models.ForeignKey(Novel)
     description = models.TextField()
     image = models.ImageField(upload_to=IMAGE_DIR, blank=True)
-    rating_points = models.IntegerField()
-    rating_count = models.IntegerField()
+    rating_points = models.IntegerField(default=0)
+    rating_count = models.IntegerField(default=0)
     
     class Meta:
         order_with_respect_to = "novel"
@@ -27,8 +27,8 @@ class Volume(models.Model):
 class Chapter(models.Model):
     name = models.CharField(max_length=512)
     volume = models.ForeignKey(Volume)
-    rating_points = models.IntegerField()
-    rating_count = models.IntegerField()
+    rating_points = models.IntegerField(default=0)
+    rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now_add=True)
     posted_by = models.ForeignKey(User)
 
@@ -42,7 +42,7 @@ class ChapterContent(models.Model):
 class HitCountRecord(models.Model):
     chapter = models.ForeignKey(Chapter)
     date = models.DateField(auto_now_add=True)
-    hits = models.IntegerField()
+    hits = models.IntegerField(default=1)
 
 class Tag(models.Model):
     tag = models.CharField(max_length=50)
