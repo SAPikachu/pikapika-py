@@ -6,6 +6,7 @@ IMAGE_DIR = "images/%Y/%m/%d"
 class Novel(models.Model):
     name = models.CharField(max_length=512)
     description = models.TextField()
+    author = models.CharField(max_length=50)
     publisher = models.CharField(max_length=50)
     image = models.ImageField(upload_to=IMAGE_DIR, blank=True)
     rating_points = models.IntegerField()
