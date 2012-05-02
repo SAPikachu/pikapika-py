@@ -13,6 +13,9 @@ class Novel(models.Model):
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now=True)
 
+    def __unicode__(self):
+        return self.name
+
 class Volume(models.Model):
     name = models.CharField(max_length=512)
     novel = models.ForeignKey(Novel)
@@ -21,6 +24,9 @@ class Volume(models.Model):
     rating_points = models.IntegerField(default=0)
     rating_count = models.IntegerField(default=0)
     
+    def __unicode__(self):
+        return self.name
+
     class Meta:
         order_with_respect_to = "novel"
 
@@ -31,6 +37,9 @@ class Chapter(models.Model):
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now_add=True)
     posted_by = models.ForeignKey(User)
+
+    def __unicode__(self):
+        return self.name
 
     class Meta:
         order_with_respect_to = "volume"
@@ -48,4 +57,6 @@ class Tag(models.Model):
     tag = models.CharField(max_length=50)
     novel = models.ForeignKey(Novel)
 
+    def __unicode__(self):
+        return self.tag
 
