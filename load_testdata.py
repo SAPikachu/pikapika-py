@@ -38,6 +38,7 @@ def get_source_sort_key(source):
     return (source["SortIndex"], source["Id"])
 
 def add_novel(values):
+    print("Loading", values["Name"])
     user = User.objects.get(pk=USER_ID)
     novel = Novel()
     fill_model(novel, values)
@@ -61,6 +62,7 @@ def load_testdata():
         all_novels = json.load(f)
 
     add_novel(all_novels[0])
+    add_novel(all_novels[1])
 
 if __name__ == "__main__":
     load_testdata()
