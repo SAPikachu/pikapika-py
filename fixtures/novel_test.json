@@ -1,0 +1,7432 @@
+[
+    {
+        "pk": 1, 
+        "model": "novel.novel", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "publisher": "\u8bb2\u8c08\u793e", 
+            "name": "\u5316\u7269\u8bed\u7cfb\u5217", 
+            "author": "\u897f\u5c3e\u7ef4\u65b0", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u9ad8\u4e2d\u751f\u963f\u826f\u826f\u6728\u5386\u5728\u673a\u7f18\u5de7\u5408\u4e4b\u4e0b\uff0c\u65e0\u610f\u95f4\u53d1\u73b02\u5e74\u4e2d\u4ece\u672a\u4ea4\u6d41\u8fc7\u7684\u540c\u73ed\u540c\u5b66\u2014\u2014\u6218\u573a\u539f\u9ed1\u4eea\u7684\u79d8\u5bc6\u3002\u4e3a\u4e86\u4e0d\u8ba9\u81ea\u5df1\u7684\u79d8\u5bc6\u66b4\u9732\uff0c\u6218\u573a\u539f\u4e0d\u65ad\u5a01\u80c1\u963f\u826f\u826f\u6728\u3002\u4f46\u5b9e\u9645\u4e0a\uff0c\u963f\u826f\u826f\u6728\u672c\u8eab\u4e0e\u6218\u573a\u539f\u4e00\u6837\uff0c\u9690\u85cf\u7740\u4e0d\u4e3a\u4eba\u77e5\u7684\u8be1\u5f02\u79d8\u5bc6\u3002\u800c\u5728\u8fd9\u4e2a\u57ce\u5e02\u5185\uff0c\u5c1a\u6709\u66f4\u591a\u602a\u7269\u51fa\u6ca1\u2026\u2026"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 0, 
+            "novel": 1, 
+            "name": "\u5316\u7269\u8bed\uff08\u4e0a\uff09", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u671d\u7740\u963f\u826f\u826f\u6728\u5386\u4ece\u5929\u800c\u964d\u7684\u5973\u751f\u2014\u2014\u6218\u573a\u539f\u9ed1\u4eea\uff0c\r\n\u5b8c\u5168\u6ca1\u6709\u53ef\u4ee5\u88ab\u79f0\u4e4b\u4e3a\u4f53\u91cd\u7684\u5206\u91cf\u2014\u2014\uff01\uff1f\r\n\u4e0e\u53f0\u6e7e\u524d\u9510\u63d2\u753b\u5bb6\u201c\u5149\u4e4b\u9b54\u672f\u5e08\u201dVOFAN\r\n\u7ec4\u6210\u7684\u65b0\u642d\u6863\uff0c\u90a3\u4e2a\u897f\u5c3e\u7ef4\u65b0\u84c4\u52bf\u800c\u53d1\u4e4b\u4f5c\r\n\u8fd9\u624d\u662f\u73b0\u4ee3\u7684\u5996\u602a\uff01\u5996\u602a\uff01\u5996\u602a\uff01\r\n\u9752\u6625\uff0c\u600e\u4e48\u79bb\u5f97\u5f00\u5149\u602a\u9646\u79bb\u4e4b\u4e8b\uff01 "
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 1, 
+            "novel": 1, 
+            "name": "\u5316\u7269\u8bed\uff08\u4e0b\uff09", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u963f\u826f\u826f\u6728\u5386\u9762\u4e34\r\n\u9b45\u60d1\u4e86\u5b8c\u7f8e\u73ed\u957f\u00b7\u7fbd\u5ddd\u7ffc\u7684\u5996\u602a\u2014\u2014\uff01\uff1f\r\n\u4e0e\u53f0\u6e7e\u524d\u9510\u63d2\u753b\u5bb6\u201c\u5149\u4e4b\u9b54\u672f\u5e08\u201dVOFAN\u7684\u7ec4\u5408\u6e10\u5165\u81fb\u81f3\r\n\u897f\u5c3e\u7ef4\u65b0\u4f7f\u51fa\u6d51\u8eab\u89e3\u6570\u7684\u9b45\u529b\u4e4b\u4f5c\r\n\u8fd9\u624d\u662f\u73b0\u4ee3\u7684\u5996\u602a\uff01\u5996\u602a\uff01\u5996\u602a\uff01\r\n\u9752\u6625\uff0c\u600e\u4e48\u79bb\u5f97\u5f00\u5149\u602a\u9646\u79bb\u4e4b\u4e8b\uff01"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 2, 
+            "novel": 1, 
+            "name": "\u4f24\u7269\u8bed", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u201c\u8fd9\u662f\u4ee5120\uff05\u7684\u70ed\u60c5\u5199\u4e0b\u7684\u5c0f\u8bf4\u3002\u201d\u2014\u2014\u897f\u5c3e\u7dad\u65b0\r\n\r\n\u9ad8\u6821\u751f\u2014\u2014\u963f\u826f\u826f\u6728\u5386\uff0c\r\n\u90a3\u4e00\u5929\uff0c\u4e0e\u62e5\u6709\u80fd\u8ba9\u8840\u6db2\u51bb\u7ed3\u4e4b\u7f8e\u7684\u91d1\u53d1\u5438\u8840\u9b3c\u76f8\u9047\u4e86\u3002\r\n\u6ca1\u6709\u5979\u7684\u8bdd\uff0c\u5c31\u4e0d\u4f1a\u77e5\u9053\u6709\u602a\u7269\u7684\u5b58\u5728\u2014\u2014\u300a\u5316\u7269\u8bed\u300b\u524d\u65e5\u8c2d\uff0c\u7ec8\u4e8e\u6380\u5f00\u4e86\u5176\u795e\u79d8\u9762\u7eb1\uff01\r\n\u4e0e\u4ee5\u300a\u5316\u7269\u8bed\u300b\u5728\u53f0\u6e7e\u5927\u53d7\u597d\u8bc4\u7684\u63d2\u753b\u5bb6\u201c\u5149\u4e4b\u9b54\u672f\u5e08\u201dVOFAN\u4e00\u8d77\uff0c\r\n\u897f\u5c3e\u7dad\u65b0\u5168\u529b\u63cf\u7ed8\uff0c\u73b0\u4ee3\u7684\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\r\n\u9752\u6625\uff0c\u4e0d\u53ef\u80fd\u6ca1\u6709\u4f24\u75d5\u5730\u8fc7\u53bb\r\n\u2014\u2014\u75bc\u75db\uff0c\u6c38\u8fdc\u65e0\u6cd5\u6d88\u5931\u3002"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 3, 
+            "novel": 1, 
+            "name": "\u4f2a\u7269\u8bed\uff08\u4e0a\uff09", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u706b\u7130\u59d0\u59b9\u7684\u5b9e\u6218\u62c5\u5f53\uff0c\u5386\u7684\u59b9\u59b9\uff0c\u963f\u826f\u826f\u6728\u706b\u601c\u3002\r\n\u4e0e\u5979\u5bf9\u5cd9\u7684\uff0c\u975e\u300c\u602a\u7269\u300d\u7684\u300c\u4f2a\u7269\u300d\u7a76\u7adf\u662f\uff01\uff1f\r\n\u4e0e\u53f0\u6e7e\u65b0\u9510\u63d2\u753b\u5bb6VOFAN\u7684\u7ec4\u5408\u4e5f\u5927\u53d7\u597d\u8bc4\uff01\r\n\u300c\u5316\u7269\u8bed\u300d\u7684\u540e\u65e5\u8c08\u5373\u5c06\u5f00\u59cb\u2014\u2014\r\n\u897f\u5c3e\u7ef4\u65b0\u5728\u6b64\u5949\u4e0a\uff01\r\n\u8fd9\u624d\u662f\u73b0\u4ee3\u7684  \u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\r\n\u9752\u6625\uff0c\u5c31\u662f\u4e3a\u4e86\u6210\u4e3a\u771f\u7269\u7684\u6218\u6597"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 4, 
+            "novel": 1, 
+            "name": "\u4f2a\u7269\u8bed\uff08\u4e0b\uff09", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u300c\u706b\u7130\u59d0\u59b9\u300d\u7684\u53c2\u8c0b\u62c5\u5f53\uff0c\u963f\u826f\u826f\u6728\u6708\u706b\u3002\r\n\u4f5c\u4e3a\u963f\u826f\u826f\u6728\u5386\u7684\u59b9\u59b9\uff0c\u4f9d\u9644\u5728\u5979\u7684\u8eab\u4e0a\uff0c\r\n\u51cc\u9a7e\u4e8e\u5438\u8840\u9b3c\u4e4b\u4e0a\u7684\u5723\u57df\u7684\u602a\u5f02\u662f\uff1f\r\n\u7ecf\u7531VOFAN\u7684\u300c\u5149\u4e4b\u9b54\u6cd5\u300d\u534e\u4e3d\u7efd\u653e\uff0c\r\n\u897f\u5c3e\u7ef4\u65b0\u6b63\u5f7b\u5e95\u98a0\u8986\u5c0f\u8bf4\u2014\u2014\r\n\u8fd9\u624d\u662f\u300c\u602a\u5f02\u300d\u300c\u602a\u5f02\u300d\u300c\u602a\u5f02\u300d\u2026\u2026\r\n\u9752\u6625\uff0c\u4e0d\u662f\u53ea\u6709\u4f2a\u7269\u2026\u2026"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 5, 
+            "novel": 1, 
+            "name": "\u732b\u7269\u8bed\uff08\u9ed1\uff09", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u8fd9\u662f\u4e00\u672c\u4ee5\u767e\u5206\u4e4b\u55b5\u7684\u5174\u8da3\u5199\u6210\u7684\u5c0f\u8bf4\u3002\r\n\r\n\u5b8c\u7f8e\u7684\u73ed\u957f\uff0c\u7fbd\u5ddd\u7ffc\u3002\r\n\u8eab\u4e3a\u963f\u826f\u826f\u6728\u5389\u6069\u4eba\u7684\u5979\r\n\u5728\u9ec4\u91d1\u5468\u7684\u7b2c\u4e00\u5929\uff0c\u88ab\u4e00\u53ea\u732b\u6240\u9b45\u60d1\u4e86\u2014\u2014\r\n\u90a3\u662f\uff0c\u88ab\u67d0\u4eba\u7981\u6b62\u7684\u6e38\u620f\u2026\u2026\u4eba\u53d8\u6210\u517d\u7684\u7269\u8bed\u3002\r\n\u88ab\u5c01\u5370\u7684\u90a3\u201c\u6076\u68a6\u7684\u4e5d\u65e5\u201d\uff0c\u5982\u4eca\u7ec8\u4e8e\u8981\u5c55\u9732\u5176\u8eab\u59ff\u4e86\uff01\r\n\r\n\u8fd9\u624d\u662f\u73b0\u4ee3\u7684\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\r\n\u8fd9\u662f\u4e0d\u77e5\u4e0d\u89c9\u95f4\uff0c\u5760\u5165\u5176\u4e2d\u7684\u521d\u604b\u3002"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 6, 
+            "novel": 1, 
+            "name": "\u732b\u7269\u8bed\uff08\u767d\uff09", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u300e\u5e76\u975e\u65e0\u6240\u4e0d\u77e5\uff0c\u53ef\u8fd8\u662f\u4e86\u89e3\u963f\u826f\u826f\u6728\u541b\u7684\u4e8b\u60c5\u3002\u300f\r\n\u5b8c\u7f8e\u65e0\u7f3a\u7684\u73ed\u957f\u3001\u7fbd\u5ddd\u7ffc\r\n\u5728\u7b2c\u4e8c\u5b66\u671f\u7684\u7b2c\u4e00\u5929\uff0c\u5c31\u88ab\u4e00\u5934\u8001\u864e\u76ef\u4e0a\u4e86\u2014\u2014\r\n\u90a3\u662f\u5f92\u7136\u65e0\u529f\u7684\u72ec\u767d\uff0c\u662f\u65e0\u6cd5\u4f20\u8fbe\u7684\u544a\u767d\u2026\u2026\r\n<\u7269\u8bed>\u7cfb\u5217\uff0c\u5f00\u59cb\u5411\u65e0\u6cd5\u9884\u6d4b\u7684\u65b0\u7ae0\u524d\u8fdb\uff01\r\n\u8fd9\u624d\u662f\u73b0\u4ee3\u7684 \u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\u4e3a\u4f60\u800c\u751f\u7684\u602a\u5f02\u3002"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 7, 
+            "novel": 1, 
+            "name": "\u503e\u7269\u8bed", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u300c\u5982\u679c\u4e16\u754c\u4e0a\u6ca1\u6709\u4ec0\u4e48\u662f\u4e0d\u53d8\u7684\u2014\u2014\u6211\u5e0c\u671b\u6539\u53d8\u547d\u8fd0\u300d\u3002\r\n\u8ff7\u8def\u5c0f\u5b66\u751f\u00b7\u516b\u4e5d\u5bfa\u771f\u5bb5\u3002\r\n\u963f\u826f\u826f\u6728\u5386\u4e3a\u4e86\u5979\u3001\r\n\u72af\u4e0b\u65e0\u6cd5\u633d\u6551\u7684\u9519\u2014\u2014\uff01\uff1f\r\n\u300a\u7269\u8bed\u300b\u53f2\u4e0a\u6700\u5f3a\u4e8c\u4eba\u7ec4\r\n\u6311\u6218\u540d\u4e3a\u201c\u547d\u8fd0\u201d\u7684\u6218\u573a\uff01\r\n\u8fd9\u5c31\u662f\u73b0\u4ee3\u7684\r\n\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\u5bfb\u627e\u4f60\u8eab\u5f71\u7684\u5f77\u5fa8\u7684\u56de\u5bb6\u4e4b\u8def\u3002"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 8, 
+            "novel": 1, 
+            "name": "\u82b1\u7269\u8bed", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n\u6000\u62b1\u6076\u52a3\u8da3\u5473\u5199\u51fa\u6765\u7684\u5c0f\u8bf4\u3002\r\n\r\n\u201c\u6210\u4e0d\u4e86\u836f\u5c31\u6210\u4e3a\u6bd2\u3002\u4e0d\u7136\u4f60\u53ea\u662f\u666e\u901a\u7684\u6c34\u201d\r\n\u963f\u826f\u826f\u6728\u5386\u6bd5\u4e1a\u540e\uff0c\u5347\u8bfb\u9ad8\u4e2d\u4e09\u5e74\u7ea7\u7684\u795e\u539f\u9a8f\u6cb3\u3002\u72ec\u81ea\u7559\u5728\u76f4\u6c5f\u6d25\u9ad8\u4e2d\u7684\u5979\u542c\u5230\u4e86\r\n\u201c\u80fd\u5b9e\u73b0\u4f60\u6240\u6709\u613f\u671b\u7684\u2018\u6076\u9b54\u5927\u4eba\u2019\u201d\u7684\u4f20\u95fb\u2026\u2026\r\n\u3010\u7269\u8bed\u3011\u6e10\u6e10\u5760\u5165\u6df1\u6e0a\u2014\u2014\r\n\u8fd9\u662f\u73b0\u4ee3\u7684\r\n\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\u4e3a\u4e86\u4e86\u89e3\u4f60\u3001\u91ca\u653e\u7591\u60d1\u7684\u7269\u8bed\u3002"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 9, 
+            "novel": 1, 
+            "name": "\u56ee\u7269\u8bed", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n100%\u5584\u59cb\u5584\u7ec8\u7684\u5c0f\u8bf4\u3002\r\n\r\n\u201c\u2014\u2014\u9a97\u5b50\uff0c\u8eab\u4e3a\u795e\u5374\u6492\u8c0e\u201d\r\n\u88ab\u86c7\u9644\u4f53\u7684\u5c11\u5973\u00b7\u5343\u77f3\u629a\u5b50\u3002\r\n\u5bf9\u963f\u826f\u826f\u6728\u5386\u503e\u5fc3\u7684\u5979\u773c\u524d\u51fa\u73b0\u7684\uff0c\r\n\u767d\u8272\u201c\u4f7f\u8005\u201d\u7684\u771f\u5b9e\u8eab\u4efd\u662f\u2026\u2026\uff1f\r\n\u300a\u7269\u8bed\u300b\u7a81\u5165\u6700\u7ec8\u7ae0\u3001\u6267\u62d7\u3001\u7ea0\u7f20\u3001\u8fdb\u5316\u2014\u2014\r\n\u8fd9\u5c31\u662f\u73b0\u4ee3\u7684\r\n\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\u7d27\u8ffd\u4e0d\u653e\u3001\u5438\u5f15\u4f60\u7684\u9677\u9631\u3002"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 10, 
+            "novel": 1, 
+            "name": "\u9b3c\u7269\u8bed", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8f7b\u4e4b\u56fd\u5ea6\r\n\r\n100%\u5584\u59cb\u5584\u7ec8\u7684\u5c0f\u8bf4\r\n\r\n\u201c\u5982\u679c\u4e0d\u53bb\u52aa\u529b\u89e3\u5f00\u8bef\u4f1a\uff0c\u90a3\u5c31\u7b49\u540c\u6492\u8c0e\u54df\u3002\u201d\r\n\u8eb2\u5728\u963f\u826f\u826f\u6728\u5386\u5f71\u5b50\u4e2d\u7684\u5438\u8840\u9b3c\u00b7\u5fcd\u91ce\u5fcd\u3002\r\n\u4ece\u5979\u7684\u8bb0\u5fc6\u91cc\u89c9\u9192\u7684\r\n\u201c\u8d85\u8d8a\u602a\u5f02\u7684\u5a01\u80c1\u201d\u5230\u5e95\u662f\u4ec0\u4e48\u2026\u2026\uff01\uff1f\r\n\u5996\u8273\u7684\u5438\u8840\u9b3c\u4e00\u4eba\u7684\u8f7b\u8f7b\u7ec6\u8bed\uff0c\u8d85\u8d8a\u65f6\u7a7a\u541e\u566c\u73b0\u5728\u2014\u2014\uff01\uff01\r\n\u8fd9\u4e2a\u73b0\u4ee3\u7684\r\n\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\r\n\u8fd9\u662f\u4e2a\u5e94\u8be5\u8fde\u4f60\u4e5f\u61c2\u7684\u8c0e\u8a00\u3002"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "novel.volume", 
+        "fields": {
+            "_order": 11, 
+            "novel": 1, 
+            "name": "\u604b\u7269\u8bed", 
+            "image": "", 
+            "rating_count": 0, 
+            "rating_points": 0, 
+            "description": "\u6765\u6e90\uff1a\u8d1f\u72ac\u5c0f\u8bf4\u7ec4\r\n\r\n100%\u6076\u8da3\u5473\u7684\u5c0f\u8bf4\r\n\r\n\u201c\u5982\u679c\u80fd\u5c06\u5355\u76f8\u601d\u6c38\u8fdc\u5730\u6301\u7eed\u4e0b\u53bb\u2014\u2014\r\n\u4f60\u96be\u9053\u4e0d\u89c9\u5f97\u90a3\u6bd4\u4e24\u60c5\u76f8\u60a6\u66f4\u5e78\u798f\u5417\uff1f\u201d\r\n\u4e3a\u4e86\u5b88\u62a4\u963f\u826f\u826f\u6728\u5386\uff0c\r\n\u4e0e\u795e\u660e\u8fdb\u884c\u751f\u547d\u4ea4\u6613\u7684\u5c11\u5973\u00b7\u6218\u573a\u539f\u9ed1\u4eea\u3002\r\n\u5728\u7ea6\u5b9a\u7684\u201c\u547d\u8fd0\u4e4b\u65e5\u201d\u5373\u5c06\u6765\u4e34\u7684\u5bd2\u5047\uff0c\r\n\u5979\u6240\u9009\u62e9\u7684\u662f\uff0c\u6700\u9ed1\u6697\u3001\u6700\u6076\u6bd2\u7684\u624b\u6bb5\u2026\u2026\r\n\u300a\u7269\u8bed\u300b\u5c06\u88ab\u8fd9\u4efd\u91cd\u538b\u78be\u8fc7\u3001\u53d8\u5f62\uff0c\u53d1\u51fa\u60b2\u9e23\u2014\u2014\r\n\u8fd9\u5c31\u662f\u73b0\u4ee3\u306e\r\n\u602a\u5f02\uff01\u602a\u5f02\uff01\u602a\u5f02\uff01\r\n\r\n\u9752\u6625\u662f\u4e3a\u4e86\u548c\u4f60\u76f8\u604b\u800c\u5b58\u5728\u3002"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 289, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 105, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 120, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 162, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 192, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 227, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 254, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 0, 
+            "name": "\u8f6c\u8f7d\u58f0\u660e", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 1, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 01", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 1, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 01", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 290, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 1, 
+            "name": "\u63d2\u753b", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 106, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 121, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 163, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 193, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 1, 
+            "name": "\u63d2\u56fe", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 228, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 1, 
+            "name": "\u63d2\u753b", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 255, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 1, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 256, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 2, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 02", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 2, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 02", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 291, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 2, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 107, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 122, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 164, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 2, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 194, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 2, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 229, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 2, 
+            "name": "001", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 257, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 3, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 03", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 3, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 03", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 292, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 3, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 93, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 108, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 123, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 165, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 3, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 195, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 3, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 230, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 3, 
+            "name": "002", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 258, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 4, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 04", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 4, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 04", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 293, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 4, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 70, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 94, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 109, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 124, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 166, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 4, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 196, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 4, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 231, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 4, 
+            "name": "003", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 259, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 5, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 05", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 5, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 05", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 294, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 5, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 71, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 95, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 110, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 125, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 167, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 5, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 197, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 5, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 232, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 5, 
+            "name": "004", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 260, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 6, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 6, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 06", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 6, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 06", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 295, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 6, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 6, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 6, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 96, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 6, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 111, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 6, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 126, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 6, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 168, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 6, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 198, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 6, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 233, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 6, 
+            "name": "005", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 261, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 7, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 7, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 07", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 7, 
+            "name": "\u629a\u5b50\u89e6\u624b\u86c7 07", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 296, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 7, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 7, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 73, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 7, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 97, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 7, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 112, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 7, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 127, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 7, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 169, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 7, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 199, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 7, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 234, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 7, 
+            "name": "006", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 262, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 8, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 8, 
+            "name": "\u9ed1\u4eea\u5927\u8783\u87f9 08", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 8, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 01", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 297, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 8, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 8, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 74, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 8, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 98, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 8, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 113, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 8, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 128, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 8, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 170, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 8, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 200, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 8, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 235, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 8, 
+            "name": "007", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 263, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 9, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 9, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 01", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 9, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 02", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 298, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 9, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 9, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 75, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 9, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 99, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 9, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 114, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 9, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 129, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 9, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 171, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 9, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 201, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 9, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 236, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 9, 
+            "name": "008", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 264, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 10, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 10, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 02", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 10, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 03", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 299, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 10, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 10, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 76, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 10, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 10, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 115, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 10, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 130, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 10, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 172, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 10, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 202, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 10, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 237, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 10, 
+            "name": "009", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 265, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 11, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 11, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 03", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 11, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 04", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 300, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 11, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 11, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 77, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 11, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 101, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 11, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 116, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 11, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 131, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 11, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 173, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 11, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 203, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 11, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 238, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 11, 
+            "name": "010", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 266, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 12, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 12, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 04", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 12, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 05", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 301, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 12, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 12, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 78, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 12, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 102, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 12, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 117, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 12, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 132, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 12, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 174, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 12, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 204, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 12, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 239, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 12, 
+            "name": "011", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 267, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 13, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 13, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 05", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 13, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 06", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 302, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 13, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 13, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 13, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 103, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 13, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 118, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 13, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 133, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 13, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 175, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 13, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 205, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 13, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 240, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 13, 
+            "name": "012", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 268, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 14, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 14, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 06", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 14, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 07", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 303, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 14, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 14, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 14, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 104, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 14, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 5, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 119, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 14, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 6, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 134, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 14, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 176, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 14, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 206, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 14, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 241, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 14, 
+            "name": "013", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 269, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 15, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 15, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 07", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 15, 
+            "name": "\u7fbd\u7ffc\u9b45\u60d1\u732b 08", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 304, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 15, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 15, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 81, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 15, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 135, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 15, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 177, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 15, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 207, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 15, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 242, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 15, 
+            "name": "014", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 270, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 16, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 16, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 08", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 16, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 2, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 305, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 16, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 16, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 16, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 136, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 16, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 178, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 16, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 208, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 16, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 243, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 16, 
+            "name": "015", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 271, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 17, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 17, 
+            "name": "\u771f\u5bb5\u5c0f\u8717\u725b 09", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 306, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 17, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 17, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 83, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 17, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 137, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 17, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 179, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 17, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 209, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 17, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 244, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 17, 
+            "name": "016", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 272, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 18, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 18, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 01", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 307, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 18, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 18, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 84, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 18, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 138, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 18, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 180, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 18, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 210, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 18, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 245, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 18, 
+            "name": "017", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 273, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 19, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 19, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 02", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 308, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 19, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 19, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 3, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 85, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 19, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 139, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 19, 
+            "name": "021", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 181, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 19, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 211, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 19, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 246, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 19, 
+            "name": "018", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 274, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 20, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 20, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 03", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 309, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 20, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 20, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 140, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 20, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 182, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 20, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 212, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 20, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 247, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 20, 
+            "name": "019", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 275, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 21, 
+            "name": "021", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 21, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 04", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 310, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 21, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 21, 
+            "name": "021", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 141, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 21, 
+            "name": "023", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 183, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 21, 
+            "name": "023", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 213, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 21, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 248, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 21, 
+            "name": "020", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 276, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 22, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 22, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 05", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 311, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 22, 
+            "name": "021", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 22, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 142, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 22, 
+            "name": "024", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 184, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 22, 
+            "name": "024", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 214, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 22, 
+            "name": "021", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 249, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 22, 
+            "name": "021", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 277, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 23, 
+            "name": "023", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 23, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 06", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 312, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 23, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:27Z", 
+            "_order": 23, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 4, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 143, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 23, 
+            "name": "025", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 185, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 23, 
+            "name": "025", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 215, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 23, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 250, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 23, 
+            "name": "022", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 278, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 24, 
+            "name": "024", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 24, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 07", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 313, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 24, 
+            "name": "023", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 144, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 24, 
+            "name": "026", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 186, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 24, 
+            "name": "026", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 216, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 24, 
+            "name": "023", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 251, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 24, 
+            "name": "023", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 279, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 25, 
+            "name": "025", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 25, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 08", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 314, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 25, 
+            "name": "024", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 145, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 25, 
+            "name": "027", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 187, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 25, 
+            "name": "027", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 217, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 25, 
+            "name": "024", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 252, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 25, 
+            "name": "024", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 280, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 26, 
+            "name": "026", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 26, 
+            "name": "\u9a8f\u6cb3\u9ed1\u7334\u5b50 09", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 315, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 26, 
+            "name": "025", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 146, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 26, 
+            "name": "052", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 188, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 26, 
+            "name": "028", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 218, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 26, 
+            "name": "025", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 253, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 26, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 10, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 281, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 27, 
+            "name": "027", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:26Z", 
+            "_order": 27, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 1, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 316, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 27, 
+            "name": "026", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 147, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 27, 
+            "name": "053", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 189, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 27, 
+            "name": "029", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 219, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 27, 
+            "name": "026", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 282, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 28, 
+            "name": "028", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 317, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 28, 
+            "name": "027", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 148, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 28, 
+            "name": "054", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 190, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 28, 
+            "name": "030", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 220, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 28, 
+            "name": "027", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 283, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 29, 
+            "name": "029", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 318, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 29, 
+            "name": "028", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 149, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 29, 
+            "name": "055", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 191, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 29, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 8, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 221, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 29, 
+            "name": "028", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 284, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 30, 
+            "name": "030", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 319, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 30, 
+            "name": "029", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 150, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 30, 
+            "name": "056", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 222, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 30, 
+            "name": "029", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 285, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 31, 
+            "name": "031", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 320, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 31, 
+            "name": "030", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 151, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 31, 
+            "name": "057", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 223, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 31, 
+            "name": "030", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 286, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 32, 
+            "name": "032", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 321, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 32, 
+            "name": "031", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 152, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 32, 
+            "name": "058", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 224, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 32, 
+            "name": "031", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 287, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 33, 
+            "name": "033", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 322, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 33, 
+            "name": "032", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 153, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 33, 
+            "name": "059", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 225, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 33, 
+            "name": "032", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 288, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 34, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 11, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 323, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 34, 
+            "name": "033", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 154, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 34, 
+            "name": "060", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 226, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:30Z", 
+            "_order": 34, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 9, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 324, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 35, 
+            "name": "034", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 155, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 35, 
+            "name": "061", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 325, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:31Z", 
+            "_order": 36, 
+            "name": "035", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 156, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:28Z", 
+            "_order": 36, 
+            "name": "062", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 326, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:32Z", 
+            "_order": 37, 
+            "name": "036", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 157, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 37, 
+            "name": "063", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 327, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:32Z", 
+            "_order": 38, 
+            "name": "037", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 158, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 38, 
+            "name": "064", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 328, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:32Z", 
+            "_order": 39, 
+            "name": "038", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 159, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 39, 
+            "name": "065", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 329, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:32Z", 
+            "_order": 40, 
+            "name": "039", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 160, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 40, 
+            "name": "066", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 330, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:32Z", 
+            "_order": 41, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 12, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 161, 
+        "model": "novel.chapter", 
+        "fields": {
+            "updated_date": "2012-05-02T03:10:29Z", 
+            "_order": 41, 
+            "name": "\u540e\u8bb0", 
+            "posted_by": 1, 
+            "volume": 7, 
+            "rating_count": 0, 
+            "rating_points": 0
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 1, 
+            "date": "2012-05-02", 
+            "hits": 352
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 2, 
+            "date": "2012-05-02", 
+            "hits": 407
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 3, 
+            "date": "2012-05-02", 
+            "hits": 275
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 4, 
+            "date": "2012-05-02", 
+            "hits": 271
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 5, 
+            "date": "2012-05-02", 
+            "hits": 245
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 6, 
+            "date": "2012-05-02", 
+            "hits": 262
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 7, 
+            "date": "2012-05-02", 
+            "hits": 268
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 8, 
+            "date": "2012-05-02", 
+            "hits": 241
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 9, 
+            "date": "2012-05-02", 
+            "hits": 268
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 10, 
+            "date": "2012-05-02", 
+            "hits": 240
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 11, 
+            "date": "2012-05-02", 
+            "hits": 245
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 12, 
+            "date": "2012-05-02", 
+            "hits": 241
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 13, 
+            "date": "2012-05-02", 
+            "hits": 232
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 14, 
+            "date": "2012-05-02", 
+            "hits": 236
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 15, 
+            "date": "2012-05-02", 
+            "hits": 253
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 16, 
+            "date": "2012-05-02", 
+            "hits": 239
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 17, 
+            "date": "2012-05-02", 
+            "hits": 228
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 18, 
+            "date": "2012-05-02", 
+            "hits": 265
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 19, 
+            "date": "2012-05-02", 
+            "hits": 229
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 20, 
+            "date": "2012-05-02", 
+            "hits": 245
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 21, 
+            "date": "2012-05-02", 
+            "hits": 276
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 22, 
+            "date": "2012-05-02", 
+            "hits": 233
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 23, 
+            "date": "2012-05-02", 
+            "hits": 243
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 24, 
+            "date": "2012-05-02", 
+            "hits": 222
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 25, 
+            "date": "2012-05-02", 
+            "hits": 219
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 26, 
+            "date": "2012-05-02", 
+            "hits": 224
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 27, 
+            "date": "2012-05-02", 
+            "hits": 251
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 28, 
+            "date": "2012-05-02", 
+            "hits": 243
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 29, 
+            "date": "2012-05-02", 
+            "hits": 261
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 30, 
+            "date": "2012-05-02", 
+            "hits": 266
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 31, 
+            "date": "2012-05-02", 
+            "hits": 232
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 32, 
+            "date": "2012-05-02", 
+            "hits": 255
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 33, 
+            "date": "2012-05-02", 
+            "hits": 254
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 34, 
+            "date": "2012-05-02", 
+            "hits": 267
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 35, 
+            "date": "2012-05-02", 
+            "hits": 244
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 36, 
+            "date": "2012-05-02", 
+            "hits": 223
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 37, 
+            "date": "2012-05-02", 
+            "hits": 245
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 38, 
+            "date": "2012-05-02", 
+            "hits": 244
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 39, 
+            "date": "2012-05-02", 
+            "hits": 275
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 40, 
+            "date": "2012-05-02", 
+            "hits": 249
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 41, 
+            "date": "2012-05-02", 
+            "hits": 240
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 42, 
+            "date": "2012-05-02", 
+            "hits": 235
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 43, 
+            "date": "2012-05-02", 
+            "hits": 228
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 44, 
+            "date": "2012-05-02", 
+            "hits": 239
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 45, 
+            "date": "2012-05-02", 
+            "hits": 216
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 46, 
+            "date": "2012-05-02", 
+            "hits": 230
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 47, 
+            "date": "2012-05-02", 
+            "hits": 247
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 48, 
+            "date": "2012-05-02", 
+            "hits": 228
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 49, 
+            "date": "2012-05-02", 
+            "hits": 277
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 50, 
+            "date": "2012-05-02", 
+            "hits": 233
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 51, 
+            "date": "2012-05-02", 
+            "hits": 247
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 52, 
+            "date": "2012-05-02", 
+            "hits": 255
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 53, 
+            "date": "2012-05-02", 
+            "hits": 230
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 54, 
+            "date": "2012-05-02", 
+            "hits": 255
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 55, 
+            "date": "2012-05-02", 
+            "hits": 233
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 56, 
+            "date": "2012-05-02", 
+            "hits": 247
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 57, 
+            "date": "2012-05-02", 
+            "hits": 254
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 58, 
+            "date": "2012-05-02", 
+            "hits": 236
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 59, 
+            "date": "2012-05-02", 
+            "hits": 230
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 60, 
+            "date": "2012-05-02", 
+            "hits": 265
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 61, 
+            "date": "2012-05-02", 
+            "hits": 242
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 62, 
+            "date": "2012-05-02", 
+            "hits": 249
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 63, 
+            "date": "2012-05-02", 
+            "hits": 252
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 64, 
+            "date": "2012-05-02", 
+            "hits": 221
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 65, 
+            "date": "2012-05-02", 
+            "hits": 251
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 66, 
+            "date": "2012-05-02", 
+            "hits": 250
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 67, 
+            "date": "2012-05-02", 
+            "hits": 239
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 68, 
+            "date": "2012-05-02", 
+            "hits": 269
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 69, 
+            "date": "2012-05-02", 
+            "hits": 225
+        }
+    }, 
+    {
+        "pk": 70, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 70, 
+            "date": "2012-05-02", 
+            "hits": 233
+        }
+    }, 
+    {
+        "pk": 71, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 71, 
+            "date": "2012-05-02", 
+            "hits": 192
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 72, 
+            "date": "2012-05-02", 
+            "hits": 212
+        }
+    }, 
+    {
+        "pk": 73, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 73, 
+            "date": "2012-05-02", 
+            "hits": 207
+        }
+    }, 
+    {
+        "pk": 74, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 74, 
+            "date": "2012-05-02", 
+            "hits": 219
+        }
+    }, 
+    {
+        "pk": 75, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 75, 
+            "date": "2012-05-02", 
+            "hits": 215
+        }
+    }, 
+    {
+        "pk": 76, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 76, 
+            "date": "2012-05-02", 
+            "hits": 229
+        }
+    }, 
+    {
+        "pk": 77, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 77, 
+            "date": "2012-05-02", 
+            "hits": 249
+        }
+    }, 
+    {
+        "pk": 78, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 78, 
+            "date": "2012-05-02", 
+            "hits": 200
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 79, 
+            "date": "2012-05-02", 
+            "hits": 241
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 80, 
+            "date": "2012-05-02", 
+            "hits": 205
+        }
+    }, 
+    {
+        "pk": 81, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 81, 
+            "date": "2012-05-02", 
+            "hits": 219
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 82, 
+            "date": "2012-05-02", 
+            "hits": 223
+        }
+    }, 
+    {
+        "pk": 83, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 83, 
+            "date": "2012-05-02", 
+            "hits": 218
+        }
+    }, 
+    {
+        "pk": 84, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 84, 
+            "date": "2012-05-02", 
+            "hits": 231
+        }
+    }, 
+    {
+        "pk": 85, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 85, 
+            "date": "2012-05-02", 
+            "hits": 244
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 86, 
+            "date": "2012-05-02", 
+            "hits": 224
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 87, 
+            "date": "2012-05-02", 
+            "hits": 225
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 88, 
+            "date": "2012-05-02", 
+            "hits": 234
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 89, 
+            "date": "2012-05-02", 
+            "hits": 221
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 90, 
+            "date": "2012-05-02", 
+            "hits": 243
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 91, 
+            "date": "2012-05-02", 
+            "hits": 251
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 92, 
+            "date": "2012-05-02", 
+            "hits": 222
+        }
+    }, 
+    {
+        "pk": 93, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 93, 
+            "date": "2012-05-02", 
+            "hits": 247
+        }
+    }, 
+    {
+        "pk": 94, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 94, 
+            "date": "2012-05-02", 
+            "hits": 222
+        }
+    }, 
+    {
+        "pk": 95, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 95, 
+            "date": "2012-05-02", 
+            "hits": 236
+        }
+    }, 
+    {
+        "pk": 96, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 96, 
+            "date": "2012-05-02", 
+            "hits": 289
+        }
+    }, 
+    {
+        "pk": 97, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 97, 
+            "date": "2012-05-02", 
+            "hits": 232
+        }
+    }, 
+    {
+        "pk": 98, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 98, 
+            "date": "2012-05-02", 
+            "hits": 264
+        }
+    }, 
+    {
+        "pk": 99, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 99, 
+            "date": "2012-05-02", 
+            "hits": 234
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 100, 
+            "date": "2012-05-02", 
+            "hits": 253
+        }
+    }, 
+    {
+        "pk": 101, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 101, 
+            "date": "2012-05-02", 
+            "hits": 233
+        }
+    }, 
+    {
+        "pk": 102, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 102, 
+            "date": "2012-05-02", 
+            "hits": 223
+        }
+    }, 
+    {
+        "pk": 103, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 103, 
+            "date": "2012-05-02", 
+            "hits": 236
+        }
+    }, 
+    {
+        "pk": 104, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 104, 
+            "date": "2012-05-02", 
+            "hits": 216
+        }
+    }, 
+    {
+        "pk": 105, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 105, 
+            "date": "2012-05-02", 
+            "hits": 254
+        }
+    }, 
+    {
+        "pk": 106, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 106, 
+            "date": "2012-05-02", 
+            "hits": 237
+        }
+    }, 
+    {
+        "pk": 107, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 107, 
+            "date": "2012-05-02", 
+            "hits": 221
+        }
+    }, 
+    {
+        "pk": 108, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 108, 
+            "date": "2012-05-02", 
+            "hits": 226
+        }
+    }, 
+    {
+        "pk": 109, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 109, 
+            "date": "2012-05-02", 
+            "hits": 239
+        }
+    }, 
+    {
+        "pk": 110, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 110, 
+            "date": "2012-05-02", 
+            "hits": 240
+        }
+    }, 
+    {
+        "pk": 111, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 111, 
+            "date": "2012-05-02", 
+            "hits": 243
+        }
+    }, 
+    {
+        "pk": 112, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 112, 
+            "date": "2012-05-02", 
+            "hits": 272
+        }
+    }, 
+    {
+        "pk": 113, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 113, 
+            "date": "2012-05-02", 
+            "hits": 223
+        }
+    }, 
+    {
+        "pk": 114, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 114, 
+            "date": "2012-05-02", 
+            "hits": 232
+        }
+    }, 
+    {
+        "pk": 115, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 115, 
+            "date": "2012-05-02", 
+            "hits": 224
+        }
+    }, 
+    {
+        "pk": 116, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 116, 
+            "date": "2012-05-02", 
+            "hits": 249
+        }
+    }, 
+    {
+        "pk": 117, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 117, 
+            "date": "2012-05-02", 
+            "hits": 206
+        }
+    }, 
+    {
+        "pk": 118, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 118, 
+            "date": "2012-05-02", 
+            "hits": 213
+        }
+    }, 
+    {
+        "pk": 119, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 119, 
+            "date": "2012-05-02", 
+            "hits": 230
+        }
+    }, 
+    {
+        "pk": 120, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 120, 
+            "date": "2012-05-02", 
+            "hits": 229
+        }
+    }, 
+    {
+        "pk": 121, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 121, 
+            "date": "2012-05-02", 
+            "hits": 228
+        }
+    }, 
+    {
+        "pk": 122, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 122, 
+            "date": "2012-05-02", 
+            "hits": 227
+        }
+    }, 
+    {
+        "pk": 123, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 123, 
+            "date": "2012-05-02", 
+            "hits": 228
+        }
+    }, 
+    {
+        "pk": 124, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 124, 
+            "date": "2012-05-02", 
+            "hits": 219
+        }
+    }, 
+    {
+        "pk": 125, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 125, 
+            "date": "2012-05-02", 
+            "hits": 221
+        }
+    }, 
+    {
+        "pk": 126, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 126, 
+            "date": "2012-05-02", 
+            "hits": 219
+        }
+    }, 
+    {
+        "pk": 127, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 127, 
+            "date": "2012-05-02", 
+            "hits": 235
+        }
+    }, 
+    {
+        "pk": 128, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 128, 
+            "date": "2012-05-02", 
+            "hits": 240
+        }
+    }, 
+    {
+        "pk": 129, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 129, 
+            "date": "2012-05-02", 
+            "hits": 236
+        }
+    }, 
+    {
+        "pk": 130, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 130, 
+            "date": "2012-05-02", 
+            "hits": 204
+        }
+    }, 
+    {
+        "pk": 131, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 131, 
+            "date": "2012-05-02", 
+            "hits": 236
+        }
+    }, 
+    {
+        "pk": 132, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 132, 
+            "date": "2012-05-02", 
+            "hits": 239
+        }
+    }, 
+    {
+        "pk": 133, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 133, 
+            "date": "2012-05-02", 
+            "hits": 205
+        }
+    }, 
+    {
+        "pk": 134, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 134, 
+            "date": "2012-05-02", 
+            "hits": 224
+        }
+    }, 
+    {
+        "pk": 135, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 135, 
+            "date": "2012-05-02", 
+            "hits": 226
+        }
+    }, 
+    {
+        "pk": 136, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 136, 
+            "date": "2012-05-02", 
+            "hits": 216
+        }
+    }, 
+    {
+        "pk": 137, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 137, 
+            "date": "2012-05-02", 
+            "hits": 222
+        }
+    }, 
+    {
+        "pk": 138, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 138, 
+            "date": "2012-05-02", 
+            "hits": 213
+        }
+    }, 
+    {
+        "pk": 139, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 139, 
+            "date": "2012-05-02", 
+            "hits": 226
+        }
+    }, 
+    {
+        "pk": 140, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 140, 
+            "date": "2012-05-02", 
+            "hits": 227
+        }
+    }, 
+    {
+        "pk": 141, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 141, 
+            "date": "2012-05-02", 
+            "hits": 217
+        }
+    }, 
+    {
+        "pk": 142, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 142, 
+            "date": "2012-05-02", 
+            "hits": 220
+        }
+    }, 
+    {
+        "pk": 143, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 143, 
+            "date": "2012-05-02", 
+            "hits": 213
+        }
+    }, 
+    {
+        "pk": 144, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 144, 
+            "date": "2012-05-02", 
+            "hits": 215
+        }
+    }, 
+    {
+        "pk": 145, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 145, 
+            "date": "2012-05-02", 
+            "hits": 223
+        }
+    }, 
+    {
+        "pk": 146, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 146, 
+            "date": "2012-05-02", 
+            "hits": 232
+        }
+    }, 
+    {
+        "pk": 147, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 147, 
+            "date": "2012-05-02", 
+            "hits": 214
+        }
+    }, 
+    {
+        "pk": 148, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 148, 
+            "date": "2012-05-02", 
+            "hits": 246
+        }
+    }, 
+    {
+        "pk": 149, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 149, 
+            "date": "2012-05-02", 
+            "hits": 234
+        }
+    }, 
+    {
+        "pk": 150, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 150, 
+            "date": "2012-05-02", 
+            "hits": 214
+        }
+    }, 
+    {
+        "pk": 151, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 151, 
+            "date": "2012-05-02", 
+            "hits": 218
+        }
+    }, 
+    {
+        "pk": 152, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 152, 
+            "date": "2012-05-02", 
+            "hits": 200
+        }
+    }, 
+    {
+        "pk": 153, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 153, 
+            "date": "2012-05-02", 
+            "hits": 169
+        }
+    }, 
+    {
+        "pk": 154, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 154, 
+            "date": "2012-05-02", 
+            "hits": 192
+        }
+    }, 
+    {
+        "pk": 155, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 155, 
+            "date": "2012-05-02", 
+            "hits": 309
+        }
+    }, 
+    {
+        "pk": 156, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 156, 
+            "date": "2012-05-02", 
+            "hits": 242
+        }
+    }, 
+    {
+        "pk": 157, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 157, 
+            "date": "2012-05-02", 
+            "hits": 218
+        }
+    }, 
+    {
+        "pk": 158, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 158, 
+            "date": "2012-05-02", 
+            "hits": 217
+        }
+    }, 
+    {
+        "pk": 159, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 159, 
+            "date": "2012-05-02", 
+            "hits": 216
+        }
+    }, 
+    {
+        "pk": 160, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 160, 
+            "date": "2012-05-02", 
+            "hits": 185
+        }
+    }, 
+    {
+        "pk": 161, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 161, 
+            "date": "2012-05-02", 
+            "hits": 226
+        }
+    }, 
+    {
+        "pk": 162, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 162, 
+            "date": "2012-05-02", 
+            "hits": 191
+        }
+    }, 
+    {
+        "pk": 163, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 163, 
+            "date": "2012-05-02", 
+            "hits": 196
+        }
+    }, 
+    {
+        "pk": 164, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 164, 
+            "date": "2012-05-02", 
+            "hits": 193
+        }
+    }, 
+    {
+        "pk": 165, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 165, 
+            "date": "2012-05-02", 
+            "hits": 207
+        }
+    }, 
+    {
+        "pk": 166, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 166, 
+            "date": "2012-05-02", 
+            "hits": 198
+        }
+    }, 
+    {
+        "pk": 167, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 167, 
+            "date": "2012-05-02", 
+            "hits": 169
+        }
+    }, 
+    {
+        "pk": 168, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 168, 
+            "date": "2012-05-02", 
+            "hits": 165
+        }
+    }, 
+    {
+        "pk": 169, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 169, 
+            "date": "2012-05-02", 
+            "hits": 186
+        }
+    }, 
+    {
+        "pk": 170, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 170, 
+            "date": "2012-05-02", 
+            "hits": 188
+        }
+    }, 
+    {
+        "pk": 171, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 171, 
+            "date": "2012-05-02", 
+            "hits": 170
+        }
+    }, 
+    {
+        "pk": 172, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 172, 
+            "date": "2012-05-02", 
+            "hits": 199
+        }
+    }, 
+    {
+        "pk": 173, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 173, 
+            "date": "2012-05-02", 
+            "hits": 171
+        }
+    }, 
+    {
+        "pk": 174, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 174, 
+            "date": "2012-05-02", 
+            "hits": 178
+        }
+    }, 
+    {
+        "pk": 175, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 175, 
+            "date": "2012-05-02", 
+            "hits": 173
+        }
+    }, 
+    {
+        "pk": 176, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 176, 
+            "date": "2012-05-02", 
+            "hits": 201
+        }
+    }, 
+    {
+        "pk": 177, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 177, 
+            "date": "2012-05-02", 
+            "hits": 183
+        }
+    }, 
+    {
+        "pk": 178, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 178, 
+            "date": "2012-05-02", 
+            "hits": 172
+        }
+    }, 
+    {
+        "pk": 179, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 179, 
+            "date": "2012-05-02", 
+            "hits": 187
+        }
+    }, 
+    {
+        "pk": 180, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 180, 
+            "date": "2012-05-02", 
+            "hits": 181
+        }
+    }, 
+    {
+        "pk": 181, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 181, 
+            "date": "2012-05-02", 
+            "hits": 189
+        }
+    }, 
+    {
+        "pk": 182, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 182, 
+            "date": "2012-05-02", 
+            "hits": 182
+        }
+    }, 
+    {
+        "pk": 183, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 183, 
+            "date": "2012-05-02", 
+            "hits": 186
+        }
+    }, 
+    {
+        "pk": 184, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 184, 
+            "date": "2012-05-02", 
+            "hits": 193
+        }
+    }, 
+    {
+        "pk": 185, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 185, 
+            "date": "2012-05-02", 
+            "hits": 187
+        }
+    }, 
+    {
+        "pk": 186, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 186, 
+            "date": "2012-05-02", 
+            "hits": 175
+        }
+    }, 
+    {
+        "pk": 187, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 187, 
+            "date": "2012-05-02", 
+            "hits": 175
+        }
+    }, 
+    {
+        "pk": 188, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 188, 
+            "date": "2012-05-02", 
+            "hits": 193
+        }
+    }, 
+    {
+        "pk": 189, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 189, 
+            "date": "2012-05-02", 
+            "hits": 184
+        }
+    }, 
+    {
+        "pk": 190, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 190, 
+            "date": "2012-05-02", 
+            "hits": 190
+        }
+    }, 
+    {
+        "pk": 191, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 191, 
+            "date": "2012-05-02", 
+            "hits": 229
+        }
+    }, 
+    {
+        "pk": 192, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 192, 
+            "date": "2012-05-02", 
+            "hits": 193
+        }
+    }, 
+    {
+        "pk": 193, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 193, 
+            "date": "2012-05-02", 
+            "hits": 193
+        }
+    }, 
+    {
+        "pk": 194, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 194, 
+            "date": "2012-05-02", 
+            "hits": 160
+        }
+    }, 
+    {
+        "pk": 195, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 195, 
+            "date": "2012-05-02", 
+            "hits": 179
+        }
+    }, 
+    {
+        "pk": 196, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 196, 
+            "date": "2012-05-02", 
+            "hits": 175
+        }
+    }, 
+    {
+        "pk": 197, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 197, 
+            "date": "2012-05-02", 
+            "hits": 171
+        }
+    }, 
+    {
+        "pk": 198, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 198, 
+            "date": "2012-05-02", 
+            "hits": 258
+        }
+    }, 
+    {
+        "pk": 199, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 199, 
+            "date": "2012-05-02", 
+            "hits": 182
+        }
+    }, 
+    {
+        "pk": 200, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 200, 
+            "date": "2012-05-02", 
+            "hits": 176
+        }
+    }, 
+    {
+        "pk": 201, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 201, 
+            "date": "2012-05-02", 
+            "hits": 161
+        }
+    }, 
+    {
+        "pk": 202, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 202, 
+            "date": "2012-05-02", 
+            "hits": 171
+        }
+    }, 
+    {
+        "pk": 203, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 203, 
+            "date": "2012-05-02", 
+            "hits": 165
+        }
+    }, 
+    {
+        "pk": 204, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 204, 
+            "date": "2012-05-02", 
+            "hits": 167
+        }
+    }, 
+    {
+        "pk": 205, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 205, 
+            "date": "2012-05-02", 
+            "hits": 166
+        }
+    }, 
+    {
+        "pk": 206, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 206, 
+            "date": "2012-05-02", 
+            "hits": 184
+        }
+    }, 
+    {
+        "pk": 207, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 207, 
+            "date": "2012-05-02", 
+            "hits": 186
+        }
+    }, 
+    {
+        "pk": 208, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 208, 
+            "date": "2012-05-02", 
+            "hits": 241
+        }
+    }, 
+    {
+        "pk": 209, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 209, 
+            "date": "2012-05-02", 
+            "hits": 245
+        }
+    }, 
+    {
+        "pk": 210, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 210, 
+            "date": "2012-05-02", 
+            "hits": 190
+        }
+    }, 
+    {
+        "pk": 211, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 211, 
+            "date": "2012-05-02", 
+            "hits": 149
+        }
+    }, 
+    {
+        "pk": 212, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 212, 
+            "date": "2012-05-02", 
+            "hits": 164
+        }
+    }, 
+    {
+        "pk": 213, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 213, 
+            "date": "2012-05-02", 
+            "hits": 163
+        }
+    }, 
+    {
+        "pk": 214, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 214, 
+            "date": "2012-05-02", 
+            "hits": 193
+        }
+    }, 
+    {
+        "pk": 215, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 215, 
+            "date": "2012-05-02", 
+            "hits": 176
+        }
+    }, 
+    {
+        "pk": 216, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 216, 
+            "date": "2012-05-02", 
+            "hits": 171
+        }
+    }, 
+    {
+        "pk": 217, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 217, 
+            "date": "2012-05-02", 
+            "hits": 156
+        }
+    }, 
+    {
+        "pk": 218, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 218, 
+            "date": "2012-05-02", 
+            "hits": 163
+        }
+    }, 
+    {
+        "pk": 219, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 219, 
+            "date": "2012-05-02", 
+            "hits": 178
+        }
+    }, 
+    {
+        "pk": 220, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 220, 
+            "date": "2012-05-02", 
+            "hits": 180
+        }
+    }, 
+    {
+        "pk": 221, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 221, 
+            "date": "2012-05-02", 
+            "hits": 179
+        }
+    }, 
+    {
+        "pk": 222, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 222, 
+            "date": "2012-05-02", 
+            "hits": 168
+        }
+    }, 
+    {
+        "pk": 223, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 223, 
+            "date": "2012-05-02", 
+            "hits": 175
+        }
+    }, 
+    {
+        "pk": 224, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 224, 
+            "date": "2012-05-02", 
+            "hits": 154
+        }
+    }, 
+    {
+        "pk": 225, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 225, 
+            "date": "2012-05-02", 
+            "hits": 172
+        }
+    }, 
+    {
+        "pk": 226, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 226, 
+            "date": "2012-05-02", 
+            "hits": 215
+        }
+    }, 
+    {
+        "pk": 227, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 227, 
+            "date": "2012-05-02", 
+            "hits": 147
+        }
+    }, 
+    {
+        "pk": 228, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 228, 
+            "date": "2012-05-02", 
+            "hits": 349
+        }
+    }, 
+    {
+        "pk": 229, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 229, 
+            "date": "2012-05-02", 
+            "hits": 153
+        }
+    }, 
+    {
+        "pk": 230, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 230, 
+            "date": "2012-05-02", 
+            "hits": 139
+        }
+    }, 
+    {
+        "pk": 231, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 231, 
+            "date": "2012-05-02", 
+            "hits": 138
+        }
+    }, 
+    {
+        "pk": 232, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 232, 
+            "date": "2012-05-02", 
+            "hits": 157
+        }
+    }, 
+    {
+        "pk": 233, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 233, 
+            "date": "2012-05-02", 
+            "hits": 138
+        }
+    }, 
+    {
+        "pk": 234, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 234, 
+            "date": "2012-05-02", 
+            "hits": 156
+        }
+    }, 
+    {
+        "pk": 235, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 235, 
+            "date": "2012-05-02", 
+            "hits": 143
+        }
+    }, 
+    {
+        "pk": 236, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 236, 
+            "date": "2012-05-02", 
+            "hits": 148
+        }
+    }, 
+    {
+        "pk": 237, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 237, 
+            "date": "2012-05-02", 
+            "hits": 155
+        }
+    }, 
+    {
+        "pk": 238, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 238, 
+            "date": "2012-05-02", 
+            "hits": 141
+        }
+    }, 
+    {
+        "pk": 239, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 239, 
+            "date": "2012-05-02", 
+            "hits": 165
+        }
+    }, 
+    {
+        "pk": 240, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 240, 
+            "date": "2012-05-02", 
+            "hits": 143
+        }
+    }, 
+    {
+        "pk": 241, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 241, 
+            "date": "2012-05-02", 
+            "hits": 145
+        }
+    }, 
+    {
+        "pk": 242, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 242, 
+            "date": "2012-05-02", 
+            "hits": 144
+        }
+    }, 
+    {
+        "pk": 243, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 243, 
+            "date": "2012-05-02", 
+            "hits": 160
+        }
+    }, 
+    {
+        "pk": 244, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 244, 
+            "date": "2012-05-02", 
+            "hits": 153
+        }
+    }, 
+    {
+        "pk": 245, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 245, 
+            "date": "2012-05-02", 
+            "hits": 142
+        }
+    }, 
+    {
+        "pk": 246, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 246, 
+            "date": "2012-05-02", 
+            "hits": 155
+        }
+    }, 
+    {
+        "pk": 247, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 247, 
+            "date": "2012-05-02", 
+            "hits": 148
+        }
+    }, 
+    {
+        "pk": 248, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 248, 
+            "date": "2012-05-02", 
+            "hits": 138
+        }
+    }, 
+    {
+        "pk": 249, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 249, 
+            "date": "2012-05-02", 
+            "hits": 149
+        }
+    }, 
+    {
+        "pk": 250, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 250, 
+            "date": "2012-05-02", 
+            "hits": 148
+        }
+    }, 
+    {
+        "pk": 251, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 251, 
+            "date": "2012-05-02", 
+            "hits": 160
+        }
+    }, 
+    {
+        "pk": 252, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 252, 
+            "date": "2012-05-02", 
+            "hits": 165
+        }
+    }, 
+    {
+        "pk": 253, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 253, 
+            "date": "2012-05-02", 
+            "hits": 230
+        }
+    }, 
+    {
+        "pk": 254, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 254, 
+            "date": "2012-05-02", 
+            "hits": 114
+        }
+    }, 
+    {
+        "pk": 255, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 255, 
+            "date": "2012-05-02", 
+            "hits": 112
+        }
+    }, 
+    {
+        "pk": 256, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 256, 
+            "date": "2012-05-02", 
+            "hits": 119
+        }
+    }, 
+    {
+        "pk": 257, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 257, 
+            "date": "2012-05-02", 
+            "hits": 121
+        }
+    }, 
+    {
+        "pk": 258, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 258, 
+            "date": "2012-05-02", 
+            "hits": 114
+        }
+    }, 
+    {
+        "pk": 259, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 259, 
+            "date": "2012-05-02", 
+            "hits": 117
+        }
+    }, 
+    {
+        "pk": 260, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 260, 
+            "date": "2012-05-02", 
+            "hits": 111
+        }
+    }, 
+    {
+        "pk": 261, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 261, 
+            "date": "2012-05-02", 
+            "hits": 135
+        }
+    }, 
+    {
+        "pk": 262, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 262, 
+            "date": "2012-05-02", 
+            "hits": 111
+        }
+    }, 
+    {
+        "pk": 263, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 263, 
+            "date": "2012-05-02", 
+            "hits": 138
+        }
+    }, 
+    {
+        "pk": 264, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 264, 
+            "date": "2012-05-02", 
+            "hits": 130
+        }
+    }, 
+    {
+        "pk": 265, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 265, 
+            "date": "2012-05-02", 
+            "hits": 131
+        }
+    }, 
+    {
+        "pk": 266, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 266, 
+            "date": "2012-05-02", 
+            "hits": 116
+        }
+    }, 
+    {
+        "pk": 267, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 267, 
+            "date": "2012-05-02", 
+            "hits": 114
+        }
+    }, 
+    {
+        "pk": 268, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 268, 
+            "date": "2012-05-02", 
+            "hits": 124
+        }
+    }, 
+    {
+        "pk": 269, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 269, 
+            "date": "2012-05-02", 
+            "hits": 128
+        }
+    }, 
+    {
+        "pk": 270, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 270, 
+            "date": "2012-05-02", 
+            "hits": 126
+        }
+    }, 
+    {
+        "pk": 271, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 271, 
+            "date": "2012-05-02", 
+            "hits": 117
+        }
+    }, 
+    {
+        "pk": 272, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 272, 
+            "date": "2012-05-02", 
+            "hits": 112
+        }
+    }, 
+    {
+        "pk": 273, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 273, 
+            "date": "2012-05-02", 
+            "hits": 113
+        }
+    }, 
+    {
+        "pk": 274, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 274, 
+            "date": "2012-05-02", 
+            "hits": 127
+        }
+    }, 
+    {
+        "pk": 275, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 275, 
+            "date": "2012-05-02", 
+            "hits": 122
+        }
+    }, 
+    {
+        "pk": 276, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 276, 
+            "date": "2012-05-02", 
+            "hits": 125
+        }
+    }, 
+    {
+        "pk": 277, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 277, 
+            "date": "2012-05-02", 
+            "hits": 119
+        }
+    }, 
+    {
+        "pk": 278, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 278, 
+            "date": "2012-05-02", 
+            "hits": 121
+        }
+    }, 
+    {
+        "pk": 279, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 279, 
+            "date": "2012-05-02", 
+            "hits": 118
+        }
+    }, 
+    {
+        "pk": 280, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 280, 
+            "date": "2012-05-02", 
+            "hits": 151
+        }
+    }, 
+    {
+        "pk": 281, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 281, 
+            "date": "2012-05-02", 
+            "hits": 104
+        }
+    }, 
+    {
+        "pk": 282, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 282, 
+            "date": "2012-05-02", 
+            "hits": 105
+        }
+    }, 
+    {
+        "pk": 283, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 283, 
+            "date": "2012-05-02", 
+            "hits": 130
+        }
+    }, 
+    {
+        "pk": 284, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 284, 
+            "date": "2012-05-02", 
+            "hits": 134
+        }
+    }, 
+    {
+        "pk": 285, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 285, 
+            "date": "2012-05-02", 
+            "hits": 133
+        }
+    }, 
+    {
+        "pk": 286, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 286, 
+            "date": "2012-05-02", 
+            "hits": 133
+        }
+    }, 
+    {
+        "pk": 287, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 287, 
+            "date": "2012-05-02", 
+            "hits": 120
+        }
+    }, 
+    {
+        "pk": 288, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 288, 
+            "date": "2012-05-02", 
+            "hits": 156
+        }
+    }, 
+    {
+        "pk": 289, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 289, 
+            "date": "2012-05-02", 
+            "hits": 82
+        }
+    }, 
+    {
+        "pk": 290, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 290, 
+            "date": "2012-05-02", 
+            "hits": 100
+        }
+    }, 
+    {
+        "pk": 291, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 291, 
+            "date": "2012-05-02", 
+            "hits": 83
+        }
+    }, 
+    {
+        "pk": 292, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 292, 
+            "date": "2012-05-02", 
+            "hits": 89
+        }
+    }, 
+    {
+        "pk": 293, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 293, 
+            "date": "2012-05-02", 
+            "hits": 88
+        }
+    }, 
+    {
+        "pk": 294, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 294, 
+            "date": "2012-05-02", 
+            "hits": 81
+        }
+    }, 
+    {
+        "pk": 295, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 295, 
+            "date": "2012-05-02", 
+            "hits": 88
+        }
+    }, 
+    {
+        "pk": 296, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 296, 
+            "date": "2012-05-02", 
+            "hits": 94
+        }
+    }, 
+    {
+        "pk": 297, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 297, 
+            "date": "2012-05-02", 
+            "hits": 79
+        }
+    }, 
+    {
+        "pk": 298, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 298, 
+            "date": "2012-05-02", 
+            "hits": 75
+        }
+    }, 
+    {
+        "pk": 299, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 299, 
+            "date": "2012-05-02", 
+            "hits": 79
+        }
+    }, 
+    {
+        "pk": 300, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 300, 
+            "date": "2012-05-02", 
+            "hits": 72
+        }
+    }, 
+    {
+        "pk": 301, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 301, 
+            "date": "2012-05-02", 
+            "hits": 72
+        }
+    }, 
+    {
+        "pk": 302, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 302, 
+            "date": "2012-05-02", 
+            "hits": 72
+        }
+    }, 
+    {
+        "pk": 303, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 303, 
+            "date": "2012-05-02", 
+            "hits": 83
+        }
+    }, 
+    {
+        "pk": 304, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 304, 
+            "date": "2012-05-02", 
+            "hits": 72
+        }
+    }, 
+    {
+        "pk": 305, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 305, 
+            "date": "2012-05-02", 
+            "hits": 76
+        }
+    }, 
+    {
+        "pk": 306, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 306, 
+            "date": "2012-05-02", 
+            "hits": 83
+        }
+    }, 
+    {
+        "pk": 307, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 307, 
+            "date": "2012-05-02", 
+            "hits": 78
+        }
+    }, 
+    {
+        "pk": 308, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 308, 
+            "date": "2012-05-02", 
+            "hits": 80
+        }
+    }, 
+    {
+        "pk": 309, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 309, 
+            "date": "2012-05-02", 
+            "hits": 79
+        }
+    }, 
+    {
+        "pk": 310, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 310, 
+            "date": "2012-05-02", 
+            "hits": 78
+        }
+    }, 
+    {
+        "pk": 311, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 311, 
+            "date": "2012-05-02", 
+            "hits": 75
+        }
+    }, 
+    {
+        "pk": 312, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 312, 
+            "date": "2012-05-02", 
+            "hits": 88
+        }
+    }, 
+    {
+        "pk": 313, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 313, 
+            "date": "2012-05-02", 
+            "hits": 80
+        }
+    }, 
+    {
+        "pk": 314, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 314, 
+            "date": "2012-05-02", 
+            "hits": 83
+        }
+    }, 
+    {
+        "pk": 315, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 315, 
+            "date": "2012-05-02", 
+            "hits": 91
+        }
+    }, 
+    {
+        "pk": 316, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 316, 
+            "date": "2012-05-02", 
+            "hits": 82
+        }
+    }, 
+    {
+        "pk": 317, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 317, 
+            "date": "2012-05-02", 
+            "hits": 83
+        }
+    }, 
+    {
+        "pk": 318, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 318, 
+            "date": "2012-05-02", 
+            "hits": 80
+        }
+    }, 
+    {
+        "pk": 319, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 319, 
+            "date": "2012-05-02", 
+            "hits": 94
+        }
+    }, 
+    {
+        "pk": 320, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 320, 
+            "date": "2012-05-02", 
+            "hits": 75
+        }
+    }, 
+    {
+        "pk": 321, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 321, 
+            "date": "2012-05-02", 
+            "hits": 79
+        }
+    }, 
+    {
+        "pk": 322, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 322, 
+            "date": "2012-05-02", 
+            "hits": 83
+        }
+    }, 
+    {
+        "pk": 323, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 323, 
+            "date": "2012-05-02", 
+            "hits": 80
+        }
+    }, 
+    {
+        "pk": 324, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 324, 
+            "date": "2012-05-02", 
+            "hits": 78
+        }
+    }, 
+    {
+        "pk": 325, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 325, 
+            "date": "2012-05-02", 
+            "hits": 77
+        }
+    }, 
+    {
+        "pk": 326, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 326, 
+            "date": "2012-05-02", 
+            "hits": 87
+        }
+    }, 
+    {
+        "pk": 327, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 327, 
+            "date": "2012-05-02", 
+            "hits": 90
+        }
+    }, 
+    {
+        "pk": 328, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 328, 
+            "date": "2012-05-02", 
+            "hits": 94
+        }
+    }, 
+    {
+        "pk": 329, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 329, 
+            "date": "2012-05-02", 
+            "hits": 106
+        }
+    }, 
+    {
+        "pk": 330, 
+        "model": "novel.hitcountrecord", 
+        "fields": {
+            "chapter": 330, 
+            "date": "2012-05-02", 
+            "hits": 162
+        }
+    }
+]

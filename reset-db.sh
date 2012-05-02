@@ -9,5 +9,5 @@ EOF
 
 ./manage.py syncdb --noinput
 
-./manage.py loaddata fixtures/default_user.json
+./manage.py loaddata fixtures/*.json
 
