@@ -1,10 +1,31 @@
+from __future__ import unicode_literals, print_function
+
 from django.db import models
 from django.contrib.auth.models import User
+from cjklib.characterlookup import CharacterLookup
 
 IMAGE_DIR = "images/%Y/%m/%d"
 
+def get_cat_code(s):
+    char = unicode(s)[0]
+
+    cjk = CharacterLookup("C")
+    readings = cjk.getReadingForCharacter(char, "Pinyin")
+    if not readings:
+        # Not Chinese, just use first character as code
+        return char.upper()
+
+    # It's very hard to determine which reading is correct for our case,
+    # so don't bother to check it, just use the first one and let users to fix
+    # it if it is incorrect
+    reading = readings[0]
+    
+    # We use the first letter as code
+    return reading[0].upper()
+
 class Novel(models.Model):
     name = models.CharField(max_length=512)
+    cat_code = models.CharField(max_length=5)
     description = models.TextField()
     author = models.CharField(max_length=50)
     publisher = models.CharField(max_length=50)
@@ -15,6 +36,12 @@ class Novel(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.cat_code:
+            self.cat_code = get_cat_code(self.name)
+
+        super(Novel, self).save(*args, **kwargs)
 
 class Volume(models.Model):
     name = models.CharField(max_length=512)
