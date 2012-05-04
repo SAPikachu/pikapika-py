@@ -1,12 +1,15 @@
 import json
-from functools import update_wrapper
+from functools import wraps
 
 from django.conf.urls import patterns, include, url
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.http import require_POST
 
 from .urls import urlpatterns
 
 def serialize_as_json(func):
+    @wraps(func)
     def _wrap(*args, **kwargs):
         result = func(*args, **kwargs)
         if isinstance(result, HttpResponse):
@@ -17,8 +20,25 @@ def serialize_as_json(func):
             content_type="application/json; charset=utf-8",
         )
     
-    wrapped = update_wrapper(_wrap, func)
     return _wrap
+
+def param_from_post(func):
+    @wraps(func)
+    def _wrap(request):
+        return func(request=request, **request.POST.dict())
+
+    return _wrap
+
+def generic_ajax_func(func):
+    return require_POST(
+        csrf_protect(
+            serialize_as_json(
+                param_from_post(
+                    func
+                )
+            )
+        )
+    )
 
 def _get_prefix_for_module_name(module_name):
     # module_name looks like: pikapika.ajax_services.module
