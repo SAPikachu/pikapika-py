@@ -1,3 +1,5 @@
+import os
+
 from .secret_key import SECRET_KEY
 
 # Django settings for pikapika project.
@@ -49,9 +51,13 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+_PROJECT_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '../')
+)
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/home/sapikachu/devel/pikapika/media/'
+MEDIA_ROOT = os.path.join(_PROJECT_ROOT, 'media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -73,6 +79,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(_PROJECT_ROOT, 'static/'),
 )
 
 # List of finder classes that know how to find static files in
