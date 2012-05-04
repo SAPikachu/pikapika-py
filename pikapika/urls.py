@@ -1,13 +1,13 @@
 from django.conf.urls import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'pikapika.views.home', name='home'),
-    # url(r'^pikapika/', include('pikapika.foo.urls')),
+    url(r'^ajax/', include('pikapika.ajax_services.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
