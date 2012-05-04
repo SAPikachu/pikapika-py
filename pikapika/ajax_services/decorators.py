@@ -20,7 +20,7 @@ def serialize_as_json(func):
     wrapped = update_wrapper(_wrap, func)
     return _wrap
 
-def get_prefix_for_module_name(module_name):
+def _get_prefix_for_module_name(module_name):
     # module_name looks like: pikapika.ajax_services.module
     # __name__ looks like: pikapika.ajax_services.decorators
 
@@ -41,7 +41,7 @@ def register_service(func):
         '', 
         url(
             r"^{}/{}$".format(
-                get_prefix_for_module_name(func.__module__), 
+                _get_prefix_for_module_name(func.__module__), 
                 func.__name__,
             ), 
             func,
