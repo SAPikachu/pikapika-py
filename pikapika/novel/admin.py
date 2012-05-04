@@ -6,7 +6,10 @@ class LinkedInline(admin.options.InlineModelAdmin):
     extra = 0
     exclude = ("image", )
     class Media:
-        js = ("js/jquery-ui-1.8.20.custom.min.js", )
+        js = (
+            "js/jquery-1.7.2.min.js", 
+            "js/jquery-ui-1.8.20.custom.min.js", 
+        )
 
 class VolumeInline(LinkedInline):
     model = Volume

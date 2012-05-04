@@ -129,3 +129,24 @@
     });
 })(django.jQuery);
 </script>
+<script type="text/javascript">
+jQuery(function ($) {
+    $.fn.sortableInline = function() {
+        var container = $(this).find("tbody");
+        var row_selector = "> tr.form-row.has_original";
+        container.sortable({
+            items: row_selector,
+            stop: function() {
+                var rows = container.find(row_selector);
+                rows.removeClass("row1 row2");
+                rows.filter(":even").addClass("row1");
+                rows.filter(":odd").addClass("row2");
+                console.log($.map(rows, function(elem) {
+                    return $(elem).find("input[type=hidden][name$=-id]").val();
+                }).join(","));
+            }
+        });
+    };
+    $("#{{ inline_admin_formset.formset.prefix }}-group").sortableInline();
+});
+</script>
