@@ -9,7 +9,7 @@ class LinkedInline(admin.options.InlineModelAdmin):
         js = (
             "js/jquery-1.7.2.min.js", 
             "js/jquery-ui-1.8.20.custom.min.js", 
-            "js/ajax_call.js", 
+            "js/ajax-call.js", 
         )
 
 class VolumeInline(LinkedInline):
