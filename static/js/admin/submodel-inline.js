@@ -39,43 +39,52 @@
         var container = $(this).find("tbody, .grp-table");
         var row_selector = "> .has_original";
         var error_dialog;
-        container.sortable({
-            items: row_selector,
-            axis: "y",
-            placeholder: "grp-module ui-sortable-placeholder",
-            forceHelperSize: true,
-            forcePlaceholderSize: true,
-            stop: function() {
-                var rows = container.find(row_selector);
-                rows.removeClass("row1 row2");
-                rows.filter(":even").addClass("row1");
-                rows.filter(":odd").addClass("row2");
-                var order = $.map(rows, function(elem) {
-                    return $(elem).find("input[type=hidden][name$=-id]").val();
-                }).join(",");
-                activity_switch(true);
-                $.ajax({
-                    url: "/ajax/admin/set_model_order", 
-                    type: "POST",
-                    data: $.extend({}, inline_params, {order: order}),
-                    dataType: "json",
-                    error: function(xhr, textStatus, errorThrown) {
-                        if (!error_dialog) {
-                            error_dialog = $("<div/>").
-                                appendTo("body").
-                                dialog({
-                                    autoOpen: false,
-                                    resizable: false,
-                                    title: "Error"
-                                });
-                        }
-                        error_dialog.text("Unable to reorder the objects, status: " + textStatus + ", error: " + errorThrown);
-                        error_dialog.dialog("open")
-                    },
-                    complete: function() { activity_switch(false); }
-                });
-            }
-        });
+        if (inline_params.sortable) {
+            container.sortable({
+                items: row_selector,
+                axis: "y",
+                placeholder: "grp-module ui-sortable-placeholder",
+                forceHelperSize: true,
+                forcePlaceholderSize: true,
+                stop: function() {
+                    var rows = container.find(row_selector);
+                    rows.removeClass("row1 row2");
+                    rows.filter(":even").addClass("row1");
+                    rows.filter(":odd").addClass("row2");
+                    var order = $.map(rows, function(elem) {
+                        return $(elem).find("input[type=hidden][name$=-id]").val();
+                    }).join(",");
+                    activity_switch(true);
+                    var post_params = {
+                        app_label: inline_params.app_label,
+                        parent_model_name: inline_params.parent_model_name,
+                        parent_model_pk: inline_params.parent_model_pk,
+                        relation_name: inline_params.relation_name,
+                        order: order
+                    };
+                    $.ajax({
+                        url: "/ajax/admin/set_model_order", 
+                        type: "POST",
+                        data: post_params,
+                        dataType: "json",
+                        error: function(xhr, textStatus, errorThrown) {
+                            if (!error_dialog) {
+                                error_dialog = $("<div/>").
+                                    appendTo("body").
+                                    dialog({
+                                        autoOpen: false,
+                                        resizable: false,
+                                        title: "Error"
+                                    });
+                            };
+                            error_dialog.text("Unable to reorder the objects, status: " + textStatus + ", error: " + errorThrown);
+                            error_dialog.dialog("open")
+                        },
+                        complete: function() { activity_switch(false); }
+                    });
+                }
+            });
+        };
     };
 })(jQuery);
 

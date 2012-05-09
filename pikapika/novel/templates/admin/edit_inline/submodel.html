@@ -7,7 +7,8 @@ jQuery(function ($) {
         app_label: "{{ opts.app_label }}",
         parent_model_name: "{{ opts.module_name }}",
         parent_model_pk: "{{ original.pk }}",
-        relation_name: "{{ inline_admin_formset.opts.opts.module_name }}"
+        relation_name: "{{ inline_admin_formset.opts.opts.module_name }}",
+        sortable: "{{ inline_admin_formset.opts.opts.order_with_respect_to|yesno:"true,false" }}"
     };
     $("#{{ inline_admin_formset.formset.prefix }}-group").
         submodelInline(inline_params);
