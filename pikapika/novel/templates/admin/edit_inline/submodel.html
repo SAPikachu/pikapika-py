@@ -4,12 +4,12 @@
 <script type="text/javascript">
 jQuery(function ($) {
     var inline_params = {
-        app_label :"{{ opts.app_label }}",
+        app_label: "{{ opts.app_label }}",
         parent_model_name: "{{ opts.module_name }}",
         parent_model_pk: "{{ original.pk }}",
         relation_name: "{{ inline_admin_formset.opts.opts.module_name }}"
     };
     $("#{{ inline_admin_formset.formset.prefix }}-group").
-        sortableInline(inline_params);
+        submodelInline(inline_params);
 });
 </script>

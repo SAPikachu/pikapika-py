@@ -5,23 +5,24 @@ from django.conf import settings
 
 GRAPPELLI_INSTALLED = "grappelli" in settings.INSTALLED_APPS
 
-class LinkedInline(admin.options.InlineModelAdmin):
-    template = "admin/edit_inline/linked.html"
+class SubmodelInline(admin.options.InlineModelAdmin):
+    template = "admin/edit_inline/submodel.html"
     extra = 0
     exclude = ("image", )
     class Media:
         # grappelli is shipped with jquery-ui, avoid conflicting here
         js = \
             (
-                "js/jquery-1.7.2.min.js", 
                 "js/jquery-ui-1.8.20.custom.min.js", 
-            ) if not GRAPPELLI_INSTALLED else () 
+            ) if not GRAPPELLI_INSTALLED else (
+                "admin/js/jquery.init.js",
+            ) 
 
         js += \
             (
                 "js/ajax-call.js", 
                 "js/activity-indicator.js", 
-                "js/admin/linked-inline.js", 
+                "js/admin/submodel-inline.js", 
             )
 
         if not GRAPPELLI_INSTALLED:
@@ -31,7 +32,7 @@ class LinkedInline(admin.options.InlineModelAdmin):
                 ),
             }
 
-class VolumeInline(LinkedInline):
+class VolumeInline(SubmodelInline):
     model = Volume
 
 class NovelAdmin(admin.ModelAdmin):

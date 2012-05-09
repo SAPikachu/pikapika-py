@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'pikapika.static_override',
     'grappelli',
     'django.contrib.admin',
     'django.contrib.admindocs',

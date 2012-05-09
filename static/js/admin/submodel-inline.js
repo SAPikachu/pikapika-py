@@ -35,7 +35,7 @@
             height: $(document).height()
         }).toggle(state);
     }
-    $.fn.sortableInline = function(inline_params) {
+    $.fn.submodelInline = function(inline_params) {
         var container = $(this).find("tbody, .grp-table");
         var row_selector = "> .has_original";
         var error_dialog;
