@@ -11,6 +11,7 @@ class LinkedInline(admin.options.InlineModelAdmin):
             "js/jquery-ui-1.8.20.custom.min.js", 
             "js/ajax-call.js", 
             "js/activity-indicator.js", 
+            "js/admin/linked-inline.js", 
         )
         css = {
             "all": (
