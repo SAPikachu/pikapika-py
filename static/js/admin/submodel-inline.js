@@ -38,7 +38,13 @@
     $.fn.submodelInline = function(inline_params) {
         var container = $(this).find("tbody, .grp-table");
         var row_selector = "> .has_original";
+        var id_selector = "input[type=hidden][name$=-id]";
         var error_dialog;
+        container.find(row_selector).dblclick(function(e) {
+            if (e.target.nodeName.toLowerCase() === "div") {
+                location.href = inline_params.url_prefix.replace("-1", $(this).find(id_selector).val());
+            };
+        });
         if (inline_params.sortable) {
             container.sortable({
                 items: row_selector,
@@ -52,7 +58,7 @@
                     rows.filter(":even").addClass("row1");
                     rows.filter(":odd").addClass("row2");
                     var order = $.map(rows, function(elem) {
-                        return $(elem).find("input[type=hidden][name$=-id]").val();
+                        return $(elem).find(id_selector).val();
                     }).join(",");
                     activity_switch(true);
                     var post_params = {
