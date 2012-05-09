@@ -8,7 +8,6 @@ GRAPPELLI_INSTALLED = "grappelli" in settings.INSTALLED_APPS
 class SubmodelInline(admin.options.InlineModelAdmin):
     template = "admin/edit_inline/submodel.html"
     extra = 0
-    exclude = ("image", )
     class Media:
         # grappelli is shipped with jquery-ui, avoid conflicting here
         js = \
@@ -34,11 +33,26 @@ class SubmodelInline(admin.options.InlineModelAdmin):
 
 class VolumeInline(SubmodelInline):
     model = Volume
+    exclude = ("image", )
+
+class ChapterInline(SubmodelInline):
+    exclude = ("posted_by", )
+    model = Chapter
+
+class ChapterContentInline(admin.TabularInline):
+    model = ChapterContent
 
 class NovelAdmin(admin.ModelAdmin):
     inlines = [VolumeInline]
 
+class VolumeAdmin(admin.ModelAdmin):
+    inlines = [ChapterInline]
+
+class ChapterAdmin(admin.ModelAdmin):
+    inlines = [ChapterContentInline]
+
 admin.site.register(Novel, NovelAdmin)
-admin.site.register(Volume)
+admin.site.register(Volume, VolumeAdmin)
+admin.site.register(Chapter, ChapterAdmin)
 
 
