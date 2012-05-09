@@ -36,11 +36,15 @@
         }).toggle(state);
     }
     $.fn.sortableInline = function(inline_params) {
-        var container = $(this).find("tbody");
-        var row_selector = "> tr.form-row.has_original";
+        var container = $(this).find("tbody, .grp-table");
+        var row_selector = "> .has_original";
         var error_dialog;
         container.sortable({
             items: row_selector,
+            axis: "y",
+            placeholder: "grp-module ui-sortable-placeholder",
+            forceHelperSize: true,
+            forcePlaceholderSize: true,
             stop: function() {
                 var rows = container.find(row_selector);
                 rows.removeClass("row1 row2");
