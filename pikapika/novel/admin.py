@@ -47,6 +47,14 @@ class NovelAdmin(admin.ModelAdmin):
 
 class VolumeAdmin(admin.ModelAdmin):
     inlines = [ChapterInline]
+    def save_formset(self, request, form, formset, change):
+        instances = formset.save(commit=False)
+
+        for inst in instances:
+            if isinstance(inst, Chapter) and not inst.posted_by_id:
+                inst.posted_by = request.user
+
+            inst.save()
 
 class ChapterAdmin(admin.ModelAdmin):
     inlines = [ChapterContentInline]
