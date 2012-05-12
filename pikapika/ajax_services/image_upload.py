@@ -48,6 +48,7 @@ def upload_from_local(request):
         file_path = generate_file_path(extension)
         # Re-open the file to ensure position is at the beginning
         file.open()
-        default_storage.save(file_path, file)
+        real_name = default_storage.save(file_path, file)
+        return {"name": real_name}
     except IOError:
         return JsonResponseBadRequest("Invalid image file")
