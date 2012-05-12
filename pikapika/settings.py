@@ -133,7 +133,6 @@ INSTALLED_APPS = (
     'pikapika.static_override',
     'tinymce',
     'grappelli',
-    'filebrowser',
     'django.contrib.admin',
     'django.contrib.admindocs',
 
