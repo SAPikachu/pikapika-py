@@ -167,3 +167,8 @@ LOGGING = {
         },
     }
 }
+
+# --- Project settings ---
+
+IMAGE_UPLOAD_DIR = "images/%Y/%m/%d"
+

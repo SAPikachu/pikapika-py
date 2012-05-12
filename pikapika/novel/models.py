@@ -2,9 +2,10 @@ from __future__ import unicode_literals, print_function
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 from cjklib.characterlookup import CharacterLookup
 
-IMAGE_DIR = "images/%Y/%m/%d"
+IMAGE_UPLOAD_DIR = settings.IMAGE_UPLOAD_DIR
 
 def get_cat_code(s):
     char = unicode(s)[0]
@@ -29,7 +30,7 @@ class Novel(models.Model):
     description = models.TextField()
     author = models.CharField(max_length=50)
     publisher = models.CharField(max_length=50)
-    image = models.ImageField(upload_to=IMAGE_DIR, blank=True)
+    image = models.ImageField(upload_to=IMAGE_UPLOAD_DIR, blank=True)
     rating_points = models.IntegerField(default=0)
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now=True)
@@ -47,7 +48,7 @@ class Volume(models.Model):
     name = models.CharField(max_length=512)
     novel = models.ForeignKey(Novel)
     description = models.TextField()
-    image = models.ImageField(upload_to=IMAGE_DIR, blank=True)
+    image = models.ImageField(upload_to=IMAGE_UPLOAD_DIR, blank=True)
     rating_points = models.IntegerField(default=0)
     rating_count = models.IntegerField(default=0)
     
