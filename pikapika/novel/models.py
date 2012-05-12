@@ -76,7 +76,7 @@ class ChapterContent(models.Model):
     content = models.TextField()
 
 class HitCountRecord(models.Model):
-    chapter = models.ForeignKey(Chapter)
+    chapter = models.ForeignKey(Chapter, unique_for_date="date")
     date = models.DateField(auto_now_add=True)
     hits = models.IntegerField(default=1)
 
