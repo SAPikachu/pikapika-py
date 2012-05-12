@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from django.forms.widgets import HiddenInput
 from django.utils.html import conditional_escape
 from django.utils.encoding import force_unicode
