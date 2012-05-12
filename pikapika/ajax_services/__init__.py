@@ -1,1 +1,1 @@
-from . import admin
+from . import admin, image_upload
