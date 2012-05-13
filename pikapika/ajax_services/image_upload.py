@@ -22,7 +22,7 @@ FORMAT_EXTENSION = {
 
 def generate_file_path(extension):
     random_str = "".join(
-        [random.choice(string.ascii_lowercase) for x in range(RANDOM_LENGTH))]
+        [random.choice(string.ascii_lowercase) for x in range(RANDOM_LENGTH)]
     )
     return datetime.now.strftime(os.path.join(
         settings.IMAGE_UPLOAD_DIR,
