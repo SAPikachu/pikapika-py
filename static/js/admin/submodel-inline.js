@@ -40,7 +40,16 @@
         var row_selector = "> .has_original";
         var id_selector = "input[type=hidden][name$=-id]";
         var error_dialog;
-        container.find(row_selector).dblclick(function(e) {
+
+        var get_order = function(rows) {
+            return $.map(rows, function(elem) {
+                return $(elem).find(id_selector).val();
+            }).join(",");
+        };
+
+        var rows = container.find(row_selector);
+        var current_order = get_order(rows);
+        rows.dblclick(function(e) {
             if (e.target.nodeName.toLowerCase() === "div") {
                 location.href = inline_params.url_prefix.replace("-1", $(this).find(id_selector).val());
             };
@@ -57,9 +66,10 @@
                     rows.removeClass("row1 row2");
                     rows.filter(":even").addClass("row1");
                     rows.filter(":odd").addClass("row2");
-                    var order = $.map(rows, function(elem) {
-                        return $(elem).find(id_selector).val();
-                    }).join(",");
+                    var order = get_order(rows);
+                    if (order === current_order) {
+                        return;
+                    };
                     activity_switch(true);
                     var post_params = {
                         app_label: inline_params.app_label,
@@ -85,6 +95,9 @@
                             };
                             error_dialog.text("Unable to reorder the objects, status: " + textStatus + ", error: " + errorThrown);
                             error_dialog.dialog("open")
+                        },
+                        success: function() {
+                            current_order = order;
                         },
                         complete: function() { activity_switch(false); }
                     });
