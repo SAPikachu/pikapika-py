@@ -4,12 +4,17 @@ import os
 import random
 import string
 from datetime import datetime
+try:
+    from cStringIO import StringIO
+except ImportError:
+    from StringIO import StringIO
 
 from django.conf import settings
+from django.core.files import File
 from django.core.files.storage import default_storage
 import Image
 
-from pikapika.http import JsonResponseBadRequest
+from pikapika.http import JsonResponseBadRequest, utils as http_utils
 from .decorators import register_service, generic_ajax_func, require_staff
 
 FILE_NAME_FORMAT = "%Y%m%d-%H%M%S-{random}.{extension}"
@@ -24,7 +29,7 @@ def generate_file_path(extension):
     random_str = "".join(
         [random.choice(string.ascii_lowercase) for x in range(RANDOM_LENGTH)]
     )
-    return datetime.now.strftime(os.path.join(
+    return datetime.now().strftime(os.path.join(
         settings.IMAGE_UPLOAD_DIR,
         FILE_NAME_FORMAT.format(random=random_str, extension=extension, )
     ))
@@ -39,8 +44,14 @@ def upload_from_url(request, url, cookies):
 @require_staff
 @generic_ajax_func
 def upload_from_local(request):
-    file = request.FILES["file"]
-    if not file:
+    if http_utils.is_form_request(request):
+        file = request.FILES["file"]
+    else:
+        file = File(StringIO(request.body), name="")
+        # StringIO doesn't provide size for us
+        file.size = int(request.META["CONTENT_LENGTH"])
+
+    if file is None:
         return JsonResponseBadRequest("There is no file in the request")
 
     try:
@@ -56,7 +67,7 @@ def upload_from_local(request):
         file.open()
         real_name = default_storage.save(file_path, file)
         return {
-            "success": true,    
+            "success": True,    
             "name": real_name,
         }
     except IOError:
