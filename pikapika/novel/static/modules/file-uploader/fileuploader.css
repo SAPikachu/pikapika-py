@@ -45,7 +45,7 @@
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     background-image: -moz-linear-gradient(#4FB2D3, #309BBF);
-    background-image: -webkit-linear-gradient(#4FB2D3, #309BBF);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#39bae5), to(#309bbf));
     background-image: -o-linear-gradient(#4FB2D3, #309BBF);
     background-image: -ms-linear-gradient(#4FB2D3, #309BBF);
     background-image: -khtml-linear-gradient(#4FB2D3, #309BBF);
@@ -68,7 +68,7 @@
 .qq-upload-button.grp-form-button:hover
 {
     background-image: -moz-linear-gradient(#4D4D4D, #333333);
-    background-image: -webkit-linear-gradient(#4D4D4D, #333333);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#d6d6d6));
     background-image: -o-linear-gradient(#4D4D4D, #333333);
     background-image: -ms-linear-gradient(#4D4D4D, #333333);
     background-image: -khtml-linear-gradient(#4D4D4D, #333333);
