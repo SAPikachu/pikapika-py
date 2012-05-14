@@ -34,10 +34,23 @@
 /* Mostly copied from grappelli's CSS */
 .qq-upload-button.grp-form-button
 {
+    -moz-border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    -o-border-radius: 5px !important;
+    -ms-border-radius: 5px !important;
+    -khtml-border-radius: 5px !important;
+    border-radius: 5px !important;
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
     background-image: -moz-linear-gradient(#4FB2D3, #309BBF);
+    background-image: -webkit-linear-gradient(#4FB2D3, #309BBF);
+    background-image: -o-linear-gradient(#4FB2D3, #309BBF);
+    background-image: -ms-linear-gradient(#4FB2D3, #309BBF);
+    background-image: -khtml-linear-gradient(#4FB2D3, #309BBF);
+    background-image: linear-gradient(#4FB2D3, #309BBF);
     border: 1px solid #2B8AAB;
-    border-radius: 5px 5px 5px 5px !important;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
@@ -55,6 +68,11 @@
 .qq-upload-button.grp-form-button:hover
 {
     background-image: -moz-linear-gradient(#4D4D4D, #333333);
+    background-image: -webkit-linear-gradient(#4D4D4D, #333333);
+    background-image: -o-linear-gradient(#4D4D4D, #333333);
+    background-image: -ms-linear-gradient(#4D4D4D, #333333);
+    background-image: -khtml-linear-gradient(#4D4D4D, #333333);
+    background-image: linear-gradient(#4D4D4D, #333333);
     border: 1px solid #262626;
     color: #FFFFFF;
 }
