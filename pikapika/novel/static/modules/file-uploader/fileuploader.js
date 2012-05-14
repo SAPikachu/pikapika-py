@@ -340,6 +340,9 @@ qq.FileUploaderBasic.prototype = {
             maxConnections: this._options.maxConnections,   
             inputName: this._options.inputName,
             extraDropzones: this._options.extraDropzones,
+            csrfKeyXhr: this._options.csrfKeyXhr,
+            csrfKeyForm: this._options.csrfKeyForm,
+            csrfToken: this._options.csrfKeyToken,
             onProgress: function(id, fileName, loaded, total){                
                 self._onProgress(id, fileName, loaded, total);
                 self._options.onProgress(id, fileName, loaded, total);                    
@@ -520,6 +523,10 @@ qq.FileUploader = function(o){
                 '<a class="qq-upload-cancel" href="#">Cancel</a>' +
                 '<span class="qq-upload-failed-text">Failed</span>' +
             '</li>',        
+
+        csrfKeyXhr: "X-CSRFToken",
+        csrfKeyForm: "csrfmiddlewaretoken",
+        csrfToken: null,
         
         classes: {
             // used to get elements from templates
@@ -1070,6 +1077,14 @@ qq.extend(qq.UploadHandlerForm.prototype, {
         var form = this._createForm(iframe, params);
         form.appendChild(input);
 
+        if (this._options.csrfToken){
+            var elem = document.createElement("input");
+            elem.type = "hidden";
+            elem.name = this._options.csrfKeyForm;
+            elem.value = this._options.csrfToken;
+            form.appendChild(elem);
+        }
+
         var self = this;
         this._attachLoadEvent(iframe, function(){                                 
             self.log('iframe loaded');
@@ -1271,6 +1286,9 @@ qq.extend(qq.UploadHandlerXhr.prototype, {
         xhr.setRequestHeader("Content-Type", "application/octet-stream");
         //NOTE: return mime type in xhr works on chrome 16.0.9 firefox 11.0a2
         xhr.setRequestHeader("X-Mime-Type",file.type );
+        if (this._options.csrfToken){
+            xhr.setRequestHeader(this._options.csrfKeyXhr, this._options.csrfToken);
+        }
         xhr.send(file);
     },
     _onComplete: function(id, xhr){
