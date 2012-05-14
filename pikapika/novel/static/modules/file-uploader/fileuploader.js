@@ -271,6 +271,10 @@ qq.FileUploaderBasic = function(o){
         acceptFiles: null,               
         sizeLimit: 0,   
         minSizeLimit: 0,                             
+        // csrf
+        csrfKeyXhr: "X-CSRFToken",
+        csrfKeyForm: "csrfmiddlewaretoken",
+        csrfToken: null,
         // events
         // return false to cancel submit
         onSubmit: function(id, fileName){},
@@ -342,7 +346,7 @@ qq.FileUploaderBasic.prototype = {
             extraDropzones: this._options.extraDropzones,
             csrfKeyXhr: this._options.csrfKeyXhr,
             csrfKeyForm: this._options.csrfKeyForm,
-            csrfToken: this._options.csrfKeyToken,
+            csrfToken: this._options.csrfToken,
             onProgress: function(id, fileName, loaded, total){                
                 self._onProgress(id, fileName, loaded, total);
                 self._options.onProgress(id, fileName, loaded, total);                    
@@ -524,10 +528,6 @@ qq.FileUploader = function(o){
                 '<span class="qq-upload-failed-text">Failed</span>' +
             '</li>',        
 
-        csrfKeyXhr: "X-CSRFToken",
-        csrfKeyForm: "csrfmiddlewaretoken",
-        csrfToken: null,
-        
         classes: {
             // used to get elements from templates
             button: 'qq-upload-button',
