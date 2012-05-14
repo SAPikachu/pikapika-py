@@ -40,7 +40,6 @@
     $.fn.imageUploader = function(target_elem, url_upload, url_from_external) {
         return this.each(function() {
             var o = $(this);
-            var csrf_token = $.cookie("csrftoken");
 
             // Don't let buttons submit the page
             o.find("input[type=submit]").click(function(e) { 
@@ -51,9 +50,7 @@
                 action: url_upload,
                 sizeLimit: 5 * 1024 * 1024,
                 template: null,
-                params: {
-                    "csrfmiddlewaretoken": csrf_token
-                },
+                csrfToken: $.cookie("csrftoken"),
                 onComplete: function(id, fileName, responseJSON) {
                     target_elem.val(responseJSON.name).change();
                 }
