@@ -7,7 +7,7 @@ from django.conf import settings
 from django.db import models
 
 from pikapika.novel.models import *
-from pikapika.novel.widgets import ForeignLinkWidget
+from pikapika.novel.widgets import ForeignLinkWidget, UploadImageWidget
 
 GRAPPELLI_INSTALLED = "grappelli" in settings.INSTALLED_APPS
 
@@ -48,9 +48,12 @@ class ChapterInline(SubmodelInline):
 class ChapterContentInline(admin.TabularInline):
     model = ChapterContent
 
-class SubmodelAdmin(admin.ModelAdmin):
+class AdminBase(admin.ModelAdmin):
+    formfield_overrides = {
+        models.ImageField: {"widget": UploadImageWidget},
+    }
     def formfield_for_dbfield(self, db_field, **kwargs):
-        result = super(SubmodelAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        result = super(AdminBase, self).formfield_for_dbfield(db_field, **kwargs)
 
         # We want foreign keys to models that are created by us be immutable
         # after creation, so we replace it with a link
@@ -64,13 +67,13 @@ class SubmodelAdmin(admin.ModelAdmin):
     def change_view(self, request, *args, **kwargs):
         # For use in formfield_for_dbfield
         request.is_change_view = True
-        return super(SubmodelAdmin, self).change_view(request, *args, **kwargs)
+        return super(AdminBase, self).change_view(request, *args, **kwargs)
 
 
 class NovelAdmin(admin.ModelAdmin):
     inlines = [VolumeInline]
 
-class VolumeAdmin(SubmodelAdmin):
+class VolumeAdmin(AdminBase):
     inlines = [ChapterInline]
 
     def save_formset(self, request, form, formset, change):
@@ -82,7 +85,7 @@ class VolumeAdmin(SubmodelAdmin):
 
             inst.save()
 
-class ChapterAdmin(SubmodelAdmin):
+class ChapterAdmin(AdminBase):
     inlines = [ChapterContentInline]
 
 admin.site.register(Novel, NovelAdmin)

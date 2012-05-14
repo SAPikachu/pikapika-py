@@ -1,4 +1,5 @@
 pikapika/secret_key.py
 *.pyc
 .ropeproject
-testdata/pikapika.json
+testdata
+media

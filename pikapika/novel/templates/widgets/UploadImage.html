@@ -1,0 +1,70 @@
+{{ super }}
+
+<fieldset class="image-uploader qq-uploader" id="image-uploader-{{ attrs.id }}">
+    <div class="grp-row grp-cells-2">
+        <div class="column span-2">
+            <label>From URL:</label>
+        </div>
+        <div class="column grp-span-fluid">
+            <input type="text" maxlength="2048"/>
+        </div>
+    </div>
+    <div class="grp-row grp-cells-2">
+        <div class="column span-2">
+            <label>Cookies:</label>
+        </div>
+        <div class="column grp-span-fluid">
+            <textarea class="span-5"></textarea>
+        </div>
+    </div>
+    <div class="grp-row grp-cells-2">
+        <div class="column">
+            <input type="submit" class="grp-form-button" value="Download"/>
+        </div>
+        <div class="column">
+            <div class="qq-upload-button grp-form-button">Upload from local</div>
+        </div>
+        <div class="qq-upload-drop-area column">
+            <span>Drop file here to upload</span>
+        </div>
+    </div>
+    <div class="grp-row grp-cells-1">
+        <div class="column">
+            <ul class="qq-upload-list"></ul>
+        </div>
+    </div>
+</fieldset>
+
+<script type="text/javascript">
+(function($) {
+    $.fn.imageUploader = function(target_elem, url_upload, url_from_external) {
+        return this.each(function() {
+            var o = $(this);
+            var csrf_token = $.cookie("csrftoken");
+
+            // Don't let buttons submit the page
+            o.find("input[type=submit]").click(function(e) { 
+                e.preventDefault(); 
+            });
+            var uploader = new qq.FileUploader({
+                element: this,
+                action: url_upload,
+                sizeLimit: 5 * 1024 * 1024,
+                template: null,
+                params: {
+                    "csrfmiddlewaretoken": csrf_token
+                },
+                onComplete: function(id, fileName, responseJSON) {
+                    target_elem.val(responseJSON.name).change();
+                }
+            });
+        });
+    };
+
+    $("#image-uploader-{{ attrs.id }}").imageUploader(
+        $("#{{ attrs.id }}"),
+        "/ajax/image_upload/upload_from_local",
+        "/ajax/image_upload/upload_from_url"
+    );
+})(jQuery);
+</script>

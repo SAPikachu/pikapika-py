@@ -32,6 +32,12 @@ def generate_file_path(extension):
 @register_service
 @require_staff
 @generic_ajax_func
+def upload_from_url(request, url, cookies):
+    raise NotImplemented
+
+@register_service
+@require_staff
+@generic_ajax_func
 def upload_from_local(request):
     file = request.FILES["file"]
     if not file:
