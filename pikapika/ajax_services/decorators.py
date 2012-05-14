@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
-from pikapika.http import JsonResponse
+from pikapika.http import JsonResponse, utils as http_utils
 from .urls import urlpatterns
 
 def require_staff(func):
@@ -33,7 +33,11 @@ def serialize_as_json(func):
 def param_from_post(func):
     @wraps(func)
     def _wrap(request):
-        return func(request=request, **request.POST.dict())
+        kwargs = {}
+        if http_utils.is_form_request(request):
+            kwargs.update(request.POST.dict())
+
+        return func(request=request, **kwargs)
 
     return _wrap
 
