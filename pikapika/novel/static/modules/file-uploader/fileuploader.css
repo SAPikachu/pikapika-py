@@ -31,3 +31,31 @@
 .qq-upload-failed-text {display:none;}
 .qq-upload-fail .qq-upload-failed-text {display:inline;}
 
+/* Mostly copied from grappelli's CSS */
+.qq-upload-button.grp-form-button
+{
+    -moz-box-sizing: border-box;
+    background-image: -moz-linear-gradient(#4FB2D3, #309BBF);
+    border: 1px solid #2B8AAB;
+    border-radius: 5px 5px 5px 5px !important;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    height: 28px;
+    margin: 0;
+    overflow: hidden;
+    padding: 2px 5px;
+    position: relative;
+    vertical-align: top;
+    width: auto;
+    line-height: 22px;
+}
+
+.qq-upload-button.grp-form-button:hover
+{
+    background-image: -moz-linear-gradient(#4D4D4D, #333333);
+    border: 1px solid #262626;
+    color: #FFFFFF;
+}
+
