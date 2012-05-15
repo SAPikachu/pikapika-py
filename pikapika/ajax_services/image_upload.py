@@ -1,13 +1,10 @@
-from __future__ import unicode_literals, print_function
+﻿from __future__ import unicode_literals, print_function
 
 import os
 import random
 import string
 from datetime import datetime
-try:
-    from cStringIO import StringIO
-except ImportError:
-    from StringIO import StringIO
+from io import BytesIO
 
 from django.conf import settings
 from django.core.files import File
@@ -47,8 +44,8 @@ def upload_from_local(request):
     if http_utils.is_form_request(request):
         file = request.FILES["file"]
     else:
-        file = File(StringIO(request.body), name="")
-        # StringIO doesn't provide size for us
+        file = File(BytesIO(request.body), name="")
+        # BytesIO doesn't provide size for us
         file.size = int(request.META["CONTENT_LENGTH"])
 
     if file is None:
