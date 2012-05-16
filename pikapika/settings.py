@@ -168,6 +168,8 @@ LOGGING = {
     }
 }
 
+DEFAULT_FILE_STORAGE = "pikapika.novel.files.storage.CustomFileSystemStorage"
+
 # --- Project settings ---
 
 IMAGE_UPLOAD_DIR = "images/%Y/%m/%d"
