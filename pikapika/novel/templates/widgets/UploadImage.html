@@ -6,7 +6,7 @@
             <label>From URL:</label>
         </div>
         <div class="column grp-span-fluid">
-            <input type="text" maxlength="2048"/>
+            <input type="text" maxlength="2048" class="external-url"/>
         </div>
     </div>
     <div class="grp-row grp-cells-2">
@@ -14,12 +14,12 @@
             <label>Cookies:</label>
         </div>
         <div class="column g-d-fluid">
-            <textarea class="g-d-5"></textarea>
+            <textarea class="g-d-5 external-cookies"></textarea>
         </div>
     </div>
     <div class="grp-row grp-cells-2">
         <div class="column g-d-2">
-            <input type="submit" class="grp-form-button" value="Download"/>
+            <input type="submit" class="grp-form-button download-button" value="Download"/>
         </div>
         <div class="column">
             <div class="qq-upload-button grp-form-button">Upload from local</div>
@@ -54,6 +54,20 @@
                 onComplete: function(id, fileName, responseJSON) {
                     target_elem.val(responseJSON.name).change();
                 }
+            });
+            o.find(".download-button").click(function() {
+                $.ajax({
+                    type: "POST",
+                    url: url_from_external,
+                    data: {
+                        url: o.find(".external-url").val(),
+                        cookies: o.find(".external-cookies").val()
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        target_elem.val(data.name).change();
+                    }
+                });
             });
         });
     };

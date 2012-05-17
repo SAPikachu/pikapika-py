@@ -5,13 +5,19 @@ import random
 import string
 from datetime import datetime
 from io import BytesIO
+from wsgiref.util import is_hop_by_hop
 
 from django.conf import settings
 from django.core.files import File
 from django.core.files.storage import default_storage
 import Image
+import requests
 
-from pikapika.http import JsonResponseBadRequest, utils as http_utils
+from pikapika.http import (
+    JsonResponseBadRequest, 
+    JsonResponseServerError,
+    utils as http_utils
+)
 from .decorators import register_service, generic_ajax_func, require_staff
 
 FILE_NAME_FORMAT = "%Y%m%d-%H%M%S-{random}.{extension}"
@@ -35,7 +41,35 @@ def generate_file_path(extension):
 @require_staff
 @generic_ajax_func
 def upload_from_url(request, url, cookies):
-    raise NotImplemented
+    headers = {
+        key[5:].replace("_", "-"): value
+        for key, value in request.META.items()
+        if key.startswith("HTTP_") and not key.startswith("HTTP_X_")
+    }
+
+    excluded_headers = [
+        "ACCEPT", "ACCEPT-ENCODING", "COOKIE", "REFERER",
+    ]
+    for key in list(headers.keys()):
+        if is_hop_by_hop(key) or key in excluded_headers:
+            del headers[key]
+
+    headers["Cookie"] = cookies
+
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
+
+    size = int(resp.headers["content-length"])
+    if size > 3 * 1024 * 1024:
+        return JsonResponseBadRequest("The remote file is too big")
+
+    content = resp.content
+    if len(content) != size:
+        return JsonResponseServerError("Connection terminated while downloading the file")
+
+    file = File(BytesIO(content), name="")
+    file.size = size
+    return handle_image(file)
 
 @register_service
 @require_staff
@@ -51,6 +85,9 @@ def upload_from_local(request):
     if file is None:
         return JsonResponseBadRequest("There is no file in the request")
 
+    return handle_image(file)
+
+def handle_image(file):
     try:
         im = Image.open(file)
         im.verify()
