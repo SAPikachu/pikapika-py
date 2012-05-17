@@ -41,7 +41,11 @@ class UploadImageWidget(TextInput):
                 value_from_datadict(*args, **kwargs)
 
         if value:
-            return default_storage.open(value)
+            try:
+                return default_storage.open(value)
+            except IOError:
+                # FileField will report error about this
+                return value
 
-        return None
-
+        # Magical value to tell FileField clear the field
+        return False
