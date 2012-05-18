@@ -48,7 +48,7 @@ def upload_from_url(request, url, cookies):
     }
 
     excluded_headers = [
-        "ACCEPT", "ACCEPT-ENCODING", "COOKIE", "REFERER",
+        "ACCEPT", "ACCEPT-ENCODING", "COOKIE", "REFERER", "HOST"
     ]
     for key in list(headers.keys()):
         if is_hop_by_hop(key) or key in excluded_headers:
