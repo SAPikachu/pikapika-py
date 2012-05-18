@@ -56,7 +56,11 @@ def upload_from_url(request, url, cookies):
 
     headers["Cookie"] = cookies
 
-    resp = requests.get(url, headers=headers)
+    resp = requests.get(
+        url, 
+        headers=headers, 
+        timeout=10,
+    )
     resp.raise_for_status()
 
     size = int(resp.headers["content-length"])
