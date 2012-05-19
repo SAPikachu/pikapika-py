@@ -19,6 +19,7 @@ class UploadImageWidget(TextInput):
         }
         js = (
             "js/jquery.cookie.js",
+            "js/jstorage.js",
             MEDIA_PREFIX + "fileuploader.js", 
             "js/image-uploader.js",
         )

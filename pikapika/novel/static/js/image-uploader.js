@@ -3,6 +3,7 @@
         return this.each(function() {
             var o = $(this);
             var preview_div = o.find(".preview");
+            var cookie_box = o.find(".external-cookies");
 
             // Don't let buttons submit the page
             o.find("input[type=submit]").click(function(e) { 
@@ -21,6 +22,11 @@
                 preview_div.find("img").hide().
                     attr("src", image_root + $(this).val());
             }).change();
+            cookie_box.val($.jStorage.get("downloader-cookies", ""));
+            cookie_box.change(function() {
+                $.jStorage.set("downloader-cookies", $(this).val());
+            });
+
             var uploader = new qq.FileUploader({
                 element: this,
                 action: url_upload,
@@ -47,7 +53,7 @@
                     url: url_from_external,
                     data: {
                         url: url,
-                        cookies: o.find(".external-cookies").val()
+                        cookies: cookie_box.val()
                     },
                     dataType: "json",
                     success: function(data) {
