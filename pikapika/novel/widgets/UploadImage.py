@@ -20,6 +20,7 @@ class UploadImageWidget(TextInput):
         js = (
             "js/jquery.cookie.js",
             MEDIA_PREFIX + "fileuploader.js", 
+            "js/image-uploader.js",
         )
 
     def __init__(self, attrs=None):
