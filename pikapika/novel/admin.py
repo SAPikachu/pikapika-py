@@ -49,6 +49,13 @@ class ChapterContentInline(admin.TabularInline):
     model = ChapterContent
 
 class AdminBase(admin.ModelAdmin):
+    class Media:
+        css = {
+            "all": (
+                "css/admin.css",
+            ),
+        }
+
     formfield_overrides = {
         models.ImageField: {"widget": UploadImageWidget},
     }
