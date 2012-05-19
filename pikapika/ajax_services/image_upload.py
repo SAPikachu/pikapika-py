@@ -6,6 +6,7 @@ import string
 from datetime import datetime
 from io import BytesIO
 from wsgiref.util import is_hop_by_hop
+from urlparse import urlparse
 
 from django.conf import settings
 from django.core.files import File
@@ -41,6 +42,19 @@ def generate_file_path(extension):
 @require_staff
 @generic_ajax_func
 def upload_from_url(request, url, cookies):
+    scheme, netloc, _, _, _, _ = urlparse(url.lower())
+    if not scheme or not netloc:
+        return JsonResponseBadRequest("Invalid URL")
+
+    if scheme not in ("http", "https"):
+        return JsonResponseBadRequest("Unsupported URL scheme")
+
+    if netloc == request.get_host().lower():
+        return JsonResponseBadRequest("Loopback is not allowed")
+
+    if len(cookies) > 10240:
+        return JsonResponseBadRequest("Cookie is too big")
+
     headers = {
         key[5:].replace("_", "-"): value
         for key, value in request.META.items()
