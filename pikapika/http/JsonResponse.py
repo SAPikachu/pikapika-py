@@ -18,7 +18,7 @@ class JsonResponseError(JsonResponse):
         result.update(kwargs)
 
         super(JsonResponseError, self).__init__(
-            json.dumps(result),
+            result,
             status=status,
         )
 
