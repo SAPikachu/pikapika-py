@@ -77,7 +77,7 @@ class AdminBase(admin.ModelAdmin):
         return super(AdminBase, self).change_view(request, *args, **kwargs)
 
 
-class NovelAdmin(admin.ModelAdmin):
+class NovelAdmin(AdminBase):
     inlines = [VolumeInline]
 
 class VolumeAdmin(AdminBase):
