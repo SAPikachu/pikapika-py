@@ -5,13 +5,17 @@ from django.template.loader import render_to_string
 from django.template import RequestContext
 from django.utils.safestring import mark_safe
 from django.core.files.storage import default_storage
+from django.conf import settings
 
 MEDIA_PREFIX = "modules/file-uploader/"
 
 class UploadImageWidget(TextInput):
     class Media:
         css = {
-            "all": (MEDIA_PREFIX + "fileuploader.css", )
+            "all": (
+                MEDIA_PREFIX + "fileuploader.css", 
+                "css/image-uploader.css",
+            )
         }
         js = (
             "js/jquery.cookie.js",
@@ -34,6 +38,7 @@ class UploadImageWidget(TextInput):
             "name": name,
             "value": value,
             "attrs": final_attrs,
+            "image_root": settings.MEDIA_URL,
         }))
 
     def value_from_datadict(self, *args, **kwargs):

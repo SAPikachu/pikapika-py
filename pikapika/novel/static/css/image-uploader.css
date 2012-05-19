@@ -1,0 +1,33 @@
+.image-uploader
+{
+    position: relative;
+    margin-top: 5px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.image-uploader .preview
+{
+    position: absolute;
+    top: 5px;
+    left: 300px;
+    height: 95px;
+    z-index: 10;
+}
+
+.image-uploader .preview img
+{
+    height: 100%;
+    border: 1px solid #888888;
+    -webkit-box-shadow: 6px #999999;
+    box-shadow: 0 0 6px #999999;
+    display: none;
+    cursor: pointer;
+}
+
+.image-uploader .preview .qq-upload-spinner
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
