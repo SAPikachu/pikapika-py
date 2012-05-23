@@ -18,5 +18,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^novel_importer/', include('pikapika.novel_importer.urls')),
+    url(r'^novel-importer/', include('pikapika.novel_importer.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
