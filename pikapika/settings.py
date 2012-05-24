@@ -136,7 +136,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
+    'pikapika.common',
     'pikapika.novel',
+    'pikapika.novel_importer',
 )
 
 # A sample logging configuration. The only tangible logging
