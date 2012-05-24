@@ -31,3 +31,8 @@
     top: 0;
     left: 0;
 }
+
+.image-uploader .qq-upload-drop-area
+{
+    display: none;
+}
