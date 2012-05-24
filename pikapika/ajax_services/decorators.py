@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
-from pikapika.http import JsonResponse, utils as http_utils
+from pikapika.common.http import JsonResponse, utils as http_utils
 from .urls import urlpatterns
 
 def require_staff(func):

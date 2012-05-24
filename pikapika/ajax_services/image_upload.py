@@ -14,7 +14,7 @@ from django.core.files.storage import default_storage
 import Image
 import requests
 
-from pikapika.http import (
+from pikapika.common.http import (
     JsonResponseBadRequest, 
     JsonResponseServerError,
     utils as http_utils
