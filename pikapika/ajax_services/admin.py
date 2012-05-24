@@ -2,7 +2,8 @@ from __future__ import unicode_literals, print_function
 
 from django.contrib.contenttypes.models import ContentType
 
-from .decorators import register_service, generic_ajax_func, require_staff
+from .decorators import register_service, generic_ajax_func
+from pikapika.common.decorators import staff_required
 
 @register_service
 @generic_ajax_func
@@ -10,7 +11,7 @@ def hello_world(request, p):
     return "Hello world! " + p
 
 @register_service
-@require_staff
+@staff_required
 @generic_ajax_func
 def set_model_order(request, 
                     app_label, 

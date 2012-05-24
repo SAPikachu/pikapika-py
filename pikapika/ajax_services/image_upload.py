@@ -19,7 +19,8 @@ from pikapika.common.http import (
     JsonResponseServerError,
     utils as http_utils
 )
-from .decorators import register_service, generic_ajax_func, require_staff
+from .decorators import register_service, generic_ajax_func
+from pikapika.common.decorators import staff_required
 
 FILE_NAME_FORMAT = "%Y%m%d-%H%M%S-{random}.{extension}"
 RANDOM_LENGTH = 8
@@ -39,7 +40,7 @@ def generate_file_path(extension):
     ))
 
 @register_service
-@require_staff
+@staff_required
 @generic_ajax_func
 def upload_from_url(request, url, cookies):
     scheme, netloc, _, _, _, _ = urlparse(url.lower())
@@ -90,7 +91,7 @@ def upload_from_url(request, url, cookies):
     return handle_image(file)
 
 @register_service
-@require_staff
+@staff_required
 @generic_ajax_func
 def upload_from_local(request):
     if http_utils.is_form_request(request):

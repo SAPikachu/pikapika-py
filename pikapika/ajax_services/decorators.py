@@ -1,45 +1,10 @@
-import json
-from functools import wraps
 
 from django.conf.urls import patterns, include, url
-from django.http import HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_POST
 
-from pikapika.common.http import JsonResponse, utils as http_utils
 from .urls import urlpatterns
-
-def require_staff(func):
-    @wraps(func)
-    def _wrap(request):
-        if request.user.is_active and request.user.is_staff:
-            return func(request)
-        else:
-            return HttpResponseForbidden()
-
-    return _wrap
-
-def serialize_as_json(func):
-    @wraps(func)
-    def _wrap(*args, **kwargs):
-        result = func(*args, **kwargs)
-        if isinstance(result, HttpResponse):
-            return result
-
-        return JsonResponse(result)
-
-    return _wrap
-
-def param_from_post(func):
-    @wraps(func)
-    def _wrap(request):
-        kwargs = {}
-        if http_utils.is_form_request(request):
-            kwargs.update(request.POST.dict())
-
-        return func(request=request, **kwargs)
-
-    return _wrap
+from pikapika.common.decorators import serialize_as_json, param_from_post
 
 def generic_ajax_func(func):
     return require_POST(
