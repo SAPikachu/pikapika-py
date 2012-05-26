@@ -237,7 +237,21 @@
                 // it in another one
                 return [build_content(elem)];
             });
-            console.log(contents);
+            var form = $("<form/>");
+            form.attr({
+                "accept-charset": "utf-8",
+                action: window.__importer_url__,
+                method: "post"
+            });
+            $("<input/>").attr({
+                type: "hidden",
+                name: "content_json"
+            }).val(JSON.stringify(contents)).appendTo(form);
+            $("<input/>").attr({
+                type: "hidden",
+                name: "site_cookies"
+            }).val(document.cookie).appendTo(form);
+            form.appendTo("body").submit();
         }
 
         do_extract();
