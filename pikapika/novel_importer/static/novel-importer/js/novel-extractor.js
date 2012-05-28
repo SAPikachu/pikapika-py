@@ -249,8 +249,8 @@
             }).val(JSON.stringify(contents)).appendTo(form);
             $("<input/>").attr({
                 type: "hidden",
-                name: "site_cookies"
-            }).val(document.cookie).appendTo(form);
+                name: "site_cookies_json"
+            }).val(JSON.stringify(document.cookie)).appendTo(form);
             form.appendTo("body").submit();
         }
 
