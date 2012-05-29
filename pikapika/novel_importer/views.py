@@ -19,3 +19,10 @@ def import_from_external(request, content_json, site_cookies_json):
             "site_cookies_json": site_cookies_json,
         },
     )
+
+@staff_required
+def editor(request):
+    return render(
+        request, 
+        "novel_importer/editor.html",
+    )

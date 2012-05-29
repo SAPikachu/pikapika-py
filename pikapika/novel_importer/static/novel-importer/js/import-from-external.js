@@ -28,6 +28,6 @@
         });
         this.settings.site_cookies = site_cookies;
         this.save();
-        console.log(novel_importer);
+        location.href = "editor";
     };
 })(jQuery);

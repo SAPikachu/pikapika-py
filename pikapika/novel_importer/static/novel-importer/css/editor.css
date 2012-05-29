@@ -1,0 +1,94 @@
+#chapter-content
+{
+    width: 50%;
+}
+
+#chapter-content p
+{
+    line-height: 1.5em;
+    padding: 1%;
+}
+
+#chapter-content img
+{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+#chapter-content .splitter
+{
+    background-color: #DDDDDD;
+    border: 2px solid #AAAAAA;
+    margin: 1em 0;
+    height: 0.1em;
+    overflow: hidden;
+}
+
+#chapter-content .paragraph:hover
+{
+    background-color: #EEEEEE;
+}
+
+#chapter-content .deleted
+{
+    display: none;
+    height: 0;
+    overflow: hidden;
+}
+
+#chapter-content .dirty
+{
+    background-color: #FFF9C9;
+}
+
+#chapter-content .new
+{
+    background-color: #CCFFCF;
+}
+
+#chapter-content .ui-selecting,
+#chapter-content .ui-selecting:hover
+{
+    background: none repeat scroll 0 0 #E1F0F5;
+}
+
+#chapter-content .ui-selected 
+{
+    background: none repeat scroll 0 0 #309BBF;
+    color: white;
+}
+
+#chapter-content .ui-selected:hover 
+{
+    background: none repeat scroll 0 0 #45A6C6;
+}
+
+#control-panel-container
+{
+    position: fixed;
+    top: 0;
+    left: 55%;
+    width: 40%;
+    height: 100%;
+    padding-top: 80px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#control-panel
+{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#line-edit-box
+{
+    width: 95%;
+    height: 150px;
+}
+#line-edit-box.dirty
+{
+    background-color: #CCFFCF;
+}
