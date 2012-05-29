@@ -36,6 +36,54 @@ jQuery(function($) {
             insertBefore(selected.get(0));
 
         container.selectable("refresh");
+        update_chapter_list();
+    }
+    function get_chapter_name(starting_elem) {
+        var name = "";
+        var elem = starting_elem;
+        while (elem.size() > 0 && !elem.is(".splitter")) {
+            // We treat 1 or 2 consecutive lines as title, so after we find a
+            // title line, look at the next line too and merge it into the title
+            if (elem.is(".paragraph") && elem.find("img").size() === 0) {
+                var should_break = !!name;
+                var line = $.trim(elem.text().replace(/\s+/, " "));
+                if (line) {
+                    if (name) {
+                        name += " ";
+                    }
+                    name += line;
+                    elem.addClass("chapter-name");
+                }
+                if (should_break) {
+                    break;
+                }
+            }
+            elem = elem.next();
+        }
+        return name;
+    }
+    function iterate_chapters(callback) {
+        var elem = container.children().eq(0);
+        while (elem.size() > 0) {
+            var chapter_name = get_chapter_name(elem);
+            var next_splitter = elem.nextAll(".splitter").eq(0);
+            if (chapter_name) {
+                callback(chapter_name, function() {
+                    return elem.nextUntil(next_splitter).
+                        andSelf().
+                        filter(".paragraph:not(.chapter-name)");
+                });
+            }
+            elem = next_splitter.next();
+        }
+        container.find("chapter-name").removeClass("chapter-name");
+    }
+    function update_chapter_list() {
+        var chapter_list = $("#chapter-list");
+        chapter_list.children().remove();
+        iterate_chapters(function(chapter_name, content_getter) {
+            $("<li/>").text(chapter_name).appendTo(chapter_list);
+        });
     }
     edit_box.val("").keydown(function() {
         $(this).addClass("dirty");
@@ -50,6 +98,7 @@ jQuery(function($) {
             o.html(new_text || "&nbsp;");
         });
         edit_box.removeClass("dirty");
+        update_chapter_list();
     });
     $("#remove-selected").click(function() {
         container.find(".ui-selected:not(.has-original)").remove();
@@ -60,6 +109,7 @@ jQuery(function($) {
 
         container.selectable("refresh");
         on_selection_changed();
+        update_chapter_list();
     });
     $("#new-splitter").click(function() {
         insert_new_line({type: "splitter"});
@@ -95,4 +145,5 @@ jQuery(function($) {
     }).error(function() {
         container.selectable("refresh");
     });
+    update_chapter_list();
 });
