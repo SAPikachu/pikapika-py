@@ -68,7 +68,7 @@ jQuery(function($) {
             var chapter_name = get_chapter_name(elem);
             var next_splitter = elem.nextAll(".splitter").eq(0);
             if (chapter_name) {
-                callback(chapter_name, function() {
+                callback(chapter_name, elem, function() {
                     return elem.nextUntil(next_splitter).
                         andSelf().
                         filter(".paragraph:not(.chapter-name)");
@@ -81,8 +81,14 @@ jQuery(function($) {
     function update_chapter_list() {
         var chapter_list = $("#chapter-list");
         chapter_list.children().remove();
-        iterate_chapters(function(chapter_name, content_getter) {
-            $("<li/>").text(chapter_name).appendTo(chapter_list);
+        iterate_chapters(function(chapter_name, starting_elem, content_getter) {
+            $("<li/>").text(chapter_name).
+                click(function() {
+                    var base_top = $("#chapter-content").offset().top;
+                    window.scrollTo(
+                        0, starting_elem.offset().top - base_top
+                    );
+                }).appendTo(chapter_list);
         });
     }
     edit_box.val("").keydown(function() {

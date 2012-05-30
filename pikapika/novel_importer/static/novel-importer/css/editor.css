@@ -92,3 +92,14 @@
 {
     background-color: #CCFFCF;
 }
+
+#chapter-list li
+{
+    padding: 1%;
+    cursor: pointer;
+}
+
+#chapter-list li:hover
+{
+    background-color: #EEEEEE;
+}
