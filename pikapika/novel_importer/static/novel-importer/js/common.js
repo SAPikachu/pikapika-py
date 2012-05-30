@@ -6,7 +6,7 @@
         id_prefix: "chap-",
         load: function() {
             this.lines = $.jStorage.get("novel-importer-lines", []);
-            this.settings = $.jStorage.set("novel-importer-settings", {});
+            this.settings = $.jStorage.get("novel-importer-settings", {});
         },
         save: function() {
             $.jStorage.set("novel-importer-lines", this.lines);
