@@ -1,7 +1,10 @@
 (function($) {
     novel_importer.handle_content = function(content, site_cookies) {
         // TODO: Handle existing content
-        this.clear();
+        if (this.lines.length > 0) {
+            novel_importer.merge_content(content);
+            return;
+        }
         /* Format of content: 
         * [
         *   [

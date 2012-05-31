@@ -39,8 +39,17 @@
             }
             this.lines.splice(line_obj_or_pos, 1);
         },
-        iterate: function(callback) {
-            $.each(this.lines, callback);
+        iterate: function(callback, num_chapters_to_skip) {
+            num_chapters_to_skip = num_chapters_to_skip || 0;
+            $.each(this.lines, function(i, line_obj) {
+                if (num_chapters_to_skip > 0) {
+                    if (line_obj.type == "splitter") {
+                        num_chapters_to_skip--;
+                    }
+                    return;
+                }
+                return callback.apply(this, arguments);
+            });
         },
         generate_paragraph_id: function() {
             this._id_counter++;
