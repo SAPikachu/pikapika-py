@@ -32,6 +32,8 @@ def param_from_post(func):
         if http_utils.is_form_request(request):
             kwargs.update(request.POST.dict())
 
+        # Remove CSRF token if present
+        kwargs.pop("csrfmiddlewaretoken", "")
         return func(request=request, **kwargs)
 
     return _wrap
