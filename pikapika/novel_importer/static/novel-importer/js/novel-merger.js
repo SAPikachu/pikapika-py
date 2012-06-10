@@ -1,56 +1,320 @@
 (function($) {
-    var SER_LINE_START = "@!@!@!";
-    var SER_FIELD_SPLITTER = "@-@-@-";
-
     var dmp = new diff_match_patch();
-    dmp.Diff_Timeout = 50.0;
-    dmp.Diff_EditCost = 0;
+    dmp.Diff_Timeout = 0.0;
 
-    var serialize_line = function(i, line_obj) {
-        return ["{", i, "}", line_obj.data || ""].join("");
-        return [
-            SER_LINE_START, line_obj.type,
-            SER_FIELD_SPLITTER, line_obj.id || "",
-            SER_FIELD_SPLITTER, line_obj.data || ""
-        ].join("");
-    };
+    var SPLITTER_MARK = "$$$SPLITTER$$$";
 
-    var get_text_for_diff = function(num_chapters_to_skip) {
-        var converted_lines = [];
-        novel_importer.iterate(function(i, line_obj) {
-            converted_lines.push(serialize_line(i, line_obj));
-        }, num_chapters_to_skip);
-        return converted_lines.join("\n");
-    };
+    var array_view = function(array, start_index, converter) {
+        if (!converter) {
+            converter = function(value) { return value; };
+        }
+        return {
+            array: array,
+            start_index: start_index,
+            get: function(index) {
+                return converter(this.array[index + this.start_index]);
+            },
+            size: function() {
+                return this.array.length - this.start_index;
+            }
+        }
+    }
 
-    var sanitize_content = function(content) {
+    var line_obj_converter = function(line_obj) {
+        if (line_obj.type === "splitter") {
+            return SPLITTER_MARK;
+        }
+        return line_obj.data;
+    }
+
+    var prepare_paragraphs = function(content) {
         if ($.isArray(content)) {
-            // Content is from extractor script, flatten it
-            var flattened = [];
-            $.each(content, function(_, chapter) {
-                $.each(chapter, function(_, paragraph) {
-                    flattened.push(paragraph);
-                });
-                flattened.push("");
+            // Content is from extractor script, just flatten it
+            return $.map(content, function(chapter) { 
+                return $.merge($.merge([], chapter), [SPLITTER_MARK]); 
             });
-            content = flattened.join("\n");
         }
         // Trim all lines
         content = content.replace(/^(?:&nbsp;|\s)*(.*)(?:&nbsp;|\s)*$/gm, "$1");
-        // Collapse multiple empty lines
-        content = content.replace(/\n\n+/g, "\n\n");
-        return content;
+        return content.split(/\n+/g);
     };
 
-    var compute_diff = function(old_text, new_text) {
-        // TODO
+    var is_same_line = function(line1, line2) {
+        var whitespace_re = /(\s|&nbsp;)/g;
+        return line1.replace(whitespace_re, "") === 
+            line2.replace(whitespace_re, "");
+    }
+
+    var is_image_line = function(line_text) {
+        return /^<img [^>]+>$/i.test(line_text);
+    }
+
+    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/fromCharCode
+    var fixedFromCharCode = function(codePt) {  
+        if (codePt > 0xFFFF) {  
+            codePt -= 0x10000;  
+            return String.fromCharCode(0xD800 + (codePt >> 10), 0xDC00 +  
+    (codePt & 0x3FF));  
+        }  
+        else {  
+            return String.fromCharCode(codePt);  
+        }  
+    }
+
+    var merge_line = function(old_line, new_line) {
+        var tag_mappings = {};
+        // 0xF0000 - 0xFFFFF = Private Use Area, reserve first 0x400 code
+        // points for special tags
+        var code_point = 0x0F0400;
+        var code_separator = fixedFromCharCode(0x0F0000);
+
+        var replace_tag = function(tag) {
+            var code = null;
+            $.each(tag_mappings, function(key, value) {
+                if (value === tag) {
+                    code = key;
+                    return false;
+                }
+            });
+            if (!code) {
+                code = fixedFromCharCode(code_point);
+                code_point++;
+                tag_mappings[code] = tag;
+            }
+            return code_separator + code;
+        }
+        var tag_re = /<[^>]+>/g;
+        // Note: Since code point starts from U+F0400, lead surrogate starts
+        // from 0xDB81
+        var code_re = /[\uDB81-\uDBFF][\uDC00-\uDFFF]/g;
+
+        var stripped_old_line = old_line.replace(tag_re, replace_tag);
+        // Ensure lead surrogates are different
+        code_point += 0x400;
+        var stripped_new_line = new_line.replace(tag_re, replace_tag);
+
+        var diff = dmp.diff_main(stripped_old_line, stripped_new_line);
+        var result = "";
+        for (var i = 0; i < diff.length; i++) {
+            var code = diff[i][0];
+            var text = diff[i][1].replace(code_separator, "");
+            if (code === DIFF_EQUAL || code === DIFF_INSERT) {
+                result += text;
+            } else {
+                // Keep HTML tags from original text
+                var match;
+                while ((match = code_re.exec(text)) !== null) {
+                    text += match[0];
+                }
+            }
+        }
+        result = result.replace(code_re, function(code) {
+            return tag_mappings[code];
+        });
+        // Clean up possibly unclosed tags
+        result = $("<div/>").html(result).html();
+        return result;
+    }
+
+    // haystack and needle should be array_view
+    // Returns starting index of match in haystack, or -1 if no match
+    // Note: The index is relative to start_index of the view.
+    var match_multiple = function(params) {
+
+        haystack = params.haystack;
+        needle = params.needle;
+        max_distance = params.max_distance;
+        match_count = params.match_count;
+
+        var current_match_count = 0;
+        for (var i = 0; i < max_distance; i++) {
+            if (i >= haystack.size()) {
+                return -1;
+            }
+            if (haystack.get(i) === SPLITTER_MARK) {
+                return -1;
+            }
+            if (is_same_line(haystack.get(i), 
+                             needle.get(current_match_count)
+            )) {
+                current_match_count++;
+                if (current_match_count >= match_count || 
+                    current_match_count === needle.size() ||
+                    needle.get(current_match_count) === SPLITTER_MARK) {
+
+                    return i - current_match_count + 1;
+                }
+            } else {
+                // Rollback to the original element, so after i++ we will be on
+                // the next element
+                i -= current_match_count;
+                current_match_count = 0;
+            }
+        }
+        return -1;
+    }
+
+    // Returns:
+    // null => No changes to this line needed
+    // An array of line objects => Lines ready to be spliced into original
+    //                             content
+    var compute_diff_line = function(line_index, new_paragraphs) {
+        var line_obj = novel_importer.lines[line_index];
+        if (line_obj.type !== "paragraph") {
+            return null;
+        }
+        // Strip leading chapter splitters
+        for (var i = 0; i < new_paragraphs.length; i++) {
+            if (new_paragraphs[i] === SPLITTER_MARK) {
+                new_paragraphs.splice(0, i + 1);
+                i = 0;
+                continue;
+            } else if (new_paragraphs[i]) {
+                break;
+            }
+        }
+        if (is_same_line(line_obj.data, new_paragraphs[0])) {
+            // No change needed
+            new_paragraphs.shift();
+            return null;
+        }
+        // Notes:
+        // 1. "current line" => novel_importer.lines[line_index]
+        // 2. Do not cross chapter boundary on searching
+        // Steps:
+
+        // If first line in new_paragraphs is an image, search nearby 
+        // (+/- 20 lines) to see if there is a match, if not, insert it 
+        // before current line and continue, otherwise remove it and
+        // restart matching.
+        if (is_image_line(new_paragraphs[0])) {
+            var already_in_existing_lines = false;
+
+            var check_line = function(line_index) {
+                var searching_line = novel_importer.lines[i];
+                if (searching_line.type === "splitter") {
+                    
+                    return true;
+                }
+                if (searching_line.data === new_paragraphs[0]) {
+                    already_in_existing_lines = true;
+                    return true;
+                }
+            };
+            for (var i = line_index - 1; 
+                 i >= Math.max(0, line_index - 20); 
+                 i--) {
+
+                if (check_line(i)) {
+                    
+                    break;
+                }
+            }
+            if (!already_in_existing_lines) {
+                for (var i = line_index + 1; 
+                     i <= Math.min(novel_importer.lines.length - 1, 
+                                   line_index + 20); 
+                     i++) {
+
+                    if (check_line(i)) {
+                        
+                        break;
+                    }
+                }
+            }
+            // Match current line with next line in new_paragraphs, repeat the
+            // whole process if necessary, and merge the result.
+            var img_line = new_paragraphs.shift();
+            var real_result = compute_diff_line.apply(this, arguments);
+            if (!already_in_existing_lines) {
+                if (real_result === null) {
+                    real_result = [line_obj];
+                }
+                real_result.unshift(novel_importer.make_paragraph(img_line));
+            }
+            return real_result;
+        }
+
+        // Try to find match for first few existing lines, if 
+        // found, align current line to that line, and insert skipped lines 
+        // as addition.
+        var importer_view = array_view(
+            novel_importer.lines, line_index, line_obj_converter
+        );
+        var new_paragraph_view = array_view(new_paragraphs, 0);
+        var MAX_DISTANCE = 100;
+        var MATCH_COUNT = 5;
+        var match_in_new_paragraphs = match_multiple({
+            haystack: new_paragraph_view,
+            needle: importer_view,
+            max_distance: MAX_DISTANCE,
+            match_count: MATCH_COUNT
+        });
+        if (match_in_new_paragraphs !== -1) {
+            var result = $.map(
+                new_paragraphs.splice(0, match_in_new_paragraphs + 1), 
+                function(line_text) {
+                    return novel_importer.make_paragraph(line_text);
+                }
+            );
+            // Replace the matching line with the original line object, but use
+            // new text
+            var matched_line = result.pop();
+            line_obj.data = matched_line.data;
+            result.push(line_obj);
+
+            return result;
+        }
+
+        // Skip current line if it is an image
+        if (is_image_line(line_obj.data)) {
+            return null;
+        }
+
+        // Match first few lines from new paragraphs, if found, delete lines
+        // before the match
+        var match_in_existing_paragraphs = match_multiple({
+            haystack: importer_view,
+            needle: new_paragraph_view,
+            max_distance: MAX_DISTANCE,
+            match_count: MATCH_COUNT
+        });
+        if (match_in_existing_paragraphs !== -1) {
+            // Mark current line as deleted, following lines will be marked in
+            // future calls, don't optimize until we get performance problems
+            return [];
+        }
+
+        // If we can't find matching line, merge current line with the
+        // first line in new_paragraphs
+        return [$.extend(
+            {}, 
+            line_obj, 
+            { data: merge_line(line_obj.data, new_paragraphs.shift()) }
+        )];
+    }
+
+    // Note: new_paragraphs will be erased during compution
+    var compute_diff = function(new_paragraphs) {
+        var diff_result = {};
+        // Result item : {  
+        //      index: <index in current lines>, 
+        //      new_lines: [<0 or more line object>] 
+        // }
+        // So that new_lines can be spliced into novel_importer.lines
+        for (var i = 0; i < novel_importer.lines.length; i++) {
+            var diff = compute_diff_line(i, new_paragraphs);
+            if (diff) {
+                diff_result[i] = diff;
+            }
+        }
+        return diff_result;
     };
 
     novel_importer.merge_content = function(new_content) {
-        var old_content = get_text_for_diff();
-        var sanitized_new_content = sanitize_content(new_content);
+        var sanitized_new_content = prepare_paragraphs(new_content);
 
-        var diff = compute_diff(old_content, sanitized_new_content);
-        // TODO
+        var diff = compute_diff(sanitized_new_content);
+        console.log(diff);
     };
 })(jQuery);

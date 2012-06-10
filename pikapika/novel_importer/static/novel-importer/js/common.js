@@ -15,12 +15,15 @@
         clear: function() {
             this.lines = [];
         },
-        add_paragraph: function(content, id, pos) {
-            this.add_line({
+        make_paragraph: function(content, id) {
+            return {
                 type: "paragraph",
                 id: id || this.generate_paragraph_id(),
                 data: content
-            }, pos);
+            };
+        },
+        add_paragraph: function(content, id, pos) {
+            this.add_line(make_paragraph(content, id), pos);
         },
         add_chapter_splitter: function(pos) {
             this.add_line({
