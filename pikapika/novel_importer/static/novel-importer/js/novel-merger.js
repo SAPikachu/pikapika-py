@@ -35,8 +35,12 @@
             });
         }
         // Trim all lines
-        content = content.replace(/^(?:&nbsp;|\s)*(.*)(?:&nbsp;|\s)*$/gm, "$1");
-        return content.split(/\n+/g);
+        content = content.replace(
+            /^(?:&nbsp;|\s)*(.*?)(?:&nbsp;|\s)*$/gm, "$1"
+        );
+        // Collapse multiple empty lines to 2 maximum
+        content = content.replace(/\n\n+/g, "\n\n");
+        return content.split(/\n/g);
     };
 
     var is_same_line = function(line1, line2) {
