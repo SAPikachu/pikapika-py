@@ -224,13 +224,19 @@
             }
             // Match current line with next line in new_paragraphs, repeat the
             // whole process if necessary, and merge the result.
-            var img_line = new_paragraphs.shift();
+
+            // Build line object here, to make chapter ID look better, since
+            // this line will be placed before lines from future calls (if it
+            // is a new line)
+            var img_line = novel_importer.make_paragraph(
+                new_paragraphs.shift()
+            );
             var real_result = compute_diff_line.apply(this, arguments);
             if (!already_in_existing_lines) {
                 if (real_result === null) {
                     real_result = [line_obj];
                 }
-                real_result.unshift(novel_importer.make_paragraph(img_line));
+                real_result.unshift(img_line);
             }
             return real_result;
         }
