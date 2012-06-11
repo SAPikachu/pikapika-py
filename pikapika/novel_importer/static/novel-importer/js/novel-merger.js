@@ -316,40 +316,85 @@
         )];
     };
 
-    // Note: new_paragraphs will be erased during compution
     var compute_diff = function(new_paragraphs) {
         var diff_result = {};
+        var unsync_score = 0;
+        var pending_paragraphs = $.merge([], new_paragraphs);
+        var paragraphs_from_sync_point = $.merge([], pending_paragraphs);
+        new_paragraphs = null; // To prevent coding error
+        var pending_diff = {};
+        var skip_to_next_chapter = false;
+
+        var SYNC_THRESHOLD = 10;
+        var UNSYNC_TOLERENCE = 100;
+
+        var merge_pending_diff = function() {
+            $.extend(diff_result, pending_diff);
+            pending_diff = {};
+            paragraphs_from_sync_point = 
+                $.merge([], pending_paragraphs);
+        };
+        var drop_pending_diff = function() {
+            pending_diff = {};
+            unsync_score = Math.min(unsync_score, UNSYNC_TOLERENCE / 2);
+            pending_paragraphs = 
+                $.merge([], paragraphs_from_sync_point);
+        };
+
         // Result item : {  
         //      index: <index in current lines>, 
         //      new_lines: [<0 or more line object>] 
         // }
         // So that new_lines can be spliced into novel_importer.lines
         for (var i = 0; i < novel_importer.lines.length; i++) {
-            var diff = compute_diff_line(i, new_paragraphs);
+            var current_line = novel_importer.lines[i];
+            if (current_line.type === "splitter") {
+                if (skip_to_next_chapter) {
+                    skip_to_next_chapter = false;
+                } else if (unsync_score < SYNC_THRESHOLD) {
+                    merge_pending_diff();
+                }
+                continue;
+            }
+            if (skip_to_next_chapter) {
+                continue;
+            }
+            var diff = compute_diff_line(i, pending_paragraphs);
             if (diff !== null) {
-                diff_result[i] = diff;
+                pending_diff[i] = diff;
+                unsync_score += Math.max(1, diff.length);
+                if (unsync_score > UNSYNC_TOLERENCE) {
+                    drop_pending_diff();
+                    skip_to_next_chapter = true;
+                }
+            } else {
+                unsync_score = Math.floor(unsync_score / 2);
             }
         }
+        if (unsync_score < SYNC_THRESHOLD) {
+            merge_pending_diff();
+        } else {
+            drop_pending_diff();
+        }
         // Remove empty lines at the end
-        while (new_paragraphs.length > 0) {
-            var last_item = new_paragraphs[new_paragraphs.length - 1];
+        while (pending_paragraphs.length > 0) {
+            var last_item = pending_paragraphs[pending_paragraphs.length - 1];
             if (is_empty_line(last_item) || last_item === SPLITTER_MARK) {
-                new_paragraphs.pop();
+                pending_paragraphs.pop();
             } else {
                 break;
             }
         }
-        if (new_paragraphs.length > 0) {
+        if (pending_paragraphs.length > 0) {
             // Append remaining lines to the end
             diff_result[novel_importer.lines.length] = 
-                $.map(new_paragraphs, function(line_text) {
+                $.map(pending_paragraphs, function(line_text) {
                     if (line_text === SPLITTER_MARK) {
                         return novel_importer.make_splitter();
                     } else {
                         return novel_importer.make_paragraph(line_text);
                     }
                 });
-            new_paragraphs.splice(0, new_paragraphs.length);
         }
         return diff_result;
     };
