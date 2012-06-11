@@ -18,14 +18,22 @@
                 return this.array.length - this.start_index;
             }
         }
-    }
+    };
 
     var line_obj_converter = function(line_obj) {
         if (line_obj.type === "splitter") {
             return SPLITTER_MARK;
         }
         return line_obj.data;
-    }
+    };
+
+    var trim_line = function(line_text) {
+        // Note: This is single-line version, the one in prepare_paragraphs is
+        // for multi-line text
+        return line_text.replace(
+            /^(?:&nbsp;|\s)*(.*?)(?:&nbsp;|\s)*$/g, "$1"
+        );
+    };
 
     var prepare_paragraphs = function(content) {
         if ($.isArray(content)) {
@@ -47,11 +55,15 @@
         var whitespace_re = /(\s|&nbsp;)/g;
         return line1.replace(whitespace_re, "") === 
             line2.replace(whitespace_re, "");
-    }
+    };
 
     var is_image_line = function(line_text) {
         return /^<img [^>]+>$/i.test(line_text);
-    }
+    };
+
+    var is_empty_line = function(line_text) {
+        return trim_line(line_text) === "";
+    };
 
     // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/fromCharCode
     var fixedFromCharCode = function(codePt) {  
@@ -63,7 +75,7 @@
         else {  
             return String.fromCharCode(codePt);  
         }  
-    }
+    };
 
     var merge_line = function(old_line, new_line) {
         var tag_mappings = {};
@@ -118,7 +130,7 @@
         // Clean up possibly unclosed tags
         result = $("<div/>").html(result).html();
         return result;
-    }
+    };
 
     // haystack and needle should be array_view
     // Returns starting index of match in haystack, or -1 if no match
@@ -156,7 +168,7 @@
             }
         }
         return -1;
-    }
+    };
 
     // Returns:
     // null => No changes to this line needed
@@ -302,7 +314,7 @@
             line_obj, 
             { data: merge_line(line_obj.data, new_paragraphs.shift()) }
         )];
-    }
+    };
 
     // Note: new_paragraphs will be erased during compution
     var compute_diff = function(new_paragraphs) {
@@ -314,9 +326,30 @@
         // So that new_lines can be spliced into novel_importer.lines
         for (var i = 0; i < novel_importer.lines.length; i++) {
             var diff = compute_diff_line(i, new_paragraphs);
-            if (diff) {
+            if (diff !== null) {
                 diff_result[i] = diff;
             }
+        }
+        // Remove empty lines at the end
+        while (new_paragraphs.length > 0) {
+            var last_item = new_paragraphs[new_paragraphs.length - 1];
+            if (is_empty_line(last_item) || last_item === SPLITTER_MARK) {
+                new_paragraphs.pop();
+            } else {
+                break;
+            }
+        }
+        if (new_paragraphs.length > 0) {
+            // Append remaining lines to the end
+            diff_result[novel_importer.lines.length] = 
+                $.map(new_paragraphs, function(line_text) {
+                    if (line_text === SPLITTER_MARK) {
+                        return novel_importer.make_splitter();
+                    } else {
+                        return novel_importer.make_paragraph(line_text);
+                    }
+                });
+            new_paragraphs.splice(0, new_paragraphs.length);
         }
         return diff_result;
     };
