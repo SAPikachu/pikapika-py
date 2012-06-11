@@ -1,7 +1,7 @@
 jQuery(function($) {
     var container = $("#chapter-content");
     var edit_box = $("#line-edit-box");
-    $("#control-panel .button").button();
+    
     function get_line_obj_for_editing(o) {
         var line_obj = o.data("line_obj");
         if (!o.data("original_line_obj") && o.is(".has-original")) {
@@ -91,6 +91,7 @@ jQuery(function($) {
                 }).appendTo(chapter_list);
         });
     }
+    $("#control-panel .button").button();
     edit_box.val("").keydown(function() {
         $(this).addClass("dirty");
     }).change(function() {
