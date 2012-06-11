@@ -9,7 +9,18 @@
             this.settings = $.jStorage.get("novel-importer-settings", {});
         },
         save: function() {
-            $.jStorage.set("novel-importer-lines", this.lines);
+            var keys_to_persist = ["id", "type", "data"];
+            var lines_to_be_saved = $.map(this.lines, function(line) {
+                var result = {};
+                $.each(keys_to_persist, function(i, key) {
+                    if (line[key] !== undefined) {
+                        result[key] = line[key];
+                    }
+                });
+                return result;
+            });
+            $.jStorage.set("novel-importer-lines", lines_to_be_saved);
+
             $.jStorage.set("novel-importer-settings", this.settings);
         },
         clear: function() {
