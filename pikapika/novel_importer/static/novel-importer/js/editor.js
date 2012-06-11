@@ -118,10 +118,10 @@ jQuery(function($) {
         update_chapter_list();
     });
     $("#new-splitter").click(function() {
-        insert_new_line({type: "splitter"});
+        insert_new_line(novel_importer.make_splitter());
     });
     $("#new-paragraph").click(function() {
-        insert_new_line({type: "paragraph", data: ""});
+        insert_new_line(novel_importer.make_paragraph(""));
     });
     $("#save").click(function() {
         container.find(".deleted").remove();
