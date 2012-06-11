@@ -22,13 +22,14 @@
                 data: content
             };
         },
+        make_splitter: function() {
+            return { type: "splitter" };
+        },
         add_paragraph: function(content, id, pos) {
-            this.add_line(make_paragraph(content, id), pos);
+            this.add_line(this.make_paragraph(content, id), pos);
         },
         add_chapter_splitter: function(pos) {
-            this.add_line({
-                type: "splitter"
-            }, pos);
+            this.add_line(this.make_splitter(), pos);
         },
         add_line: function(line_obj, pos) {
             if (typeof pos === "undefined") {
