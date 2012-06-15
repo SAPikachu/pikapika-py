@@ -325,8 +325,12 @@
         var pending_diff = {};
         var skip_to_next_chapter = false;
 
+        var lines_in_this_chapter = 0;
+        var unsynced_lines_in_this_chapter = 0;
+
         var SYNC_THRESHOLD = 10;
         var UNSYNC_TOLERENCE = 100;
+        var MAX_UNSYNC_RATE_PER_CHAPTER = 0.6;
 
         var merge_pending_diff = function() {
             $.extend(diff_result, pending_diff);
@@ -351,18 +355,27 @@
             if (current_line.type === "splitter") {
                 if (skip_to_next_chapter) {
                     skip_to_next_chapter = false;
+                } else if (lines_in_this_chapter > 0 &&
+                    unsynced_lines_in_this_chapter / lines_in_this_chapter >
+                        MAX_UNSYNC_RATE_PER_CHAPTER) {
+
+                    drop_pending_diff();
                 } else if (unsync_score < SYNC_THRESHOLD) {
                     merge_pending_diff();
                 }
+                lines_in_this_chapter = 0;
+                unsynced_lines_in_this_chapter = 0;
                 continue;
             }
             if (skip_to_next_chapter) {
                 continue;
             }
+            lines_in_this_chapter++;
             var diff = compute_diff_line(i, pending_paragraphs);
             if (diff !== null) {
                 pending_diff[i] = diff;
                 unsync_score += Math.max(1, diff.length);
+                unsynced_lines_in_this_chapter++;
                 if (unsync_score > UNSYNC_TOLERENCE) {
                     drop_pending_diff();
                     skip_to_next_chapter = true;
