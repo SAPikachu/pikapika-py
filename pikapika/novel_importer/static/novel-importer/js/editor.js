@@ -19,19 +19,25 @@ jQuery(function($) {
         });
         edit_box.val(lines.join("\n")).removeClass("dirty");
     }
-    function create_line_elem(line_obj) {
-        return $("<p/>").
+    function get_or_create_line_elem(line_obj) {
+        if (line_obj._elem) {
+            return line_obj._elem;
+        }
+        var elem = $("<p/>").
             attr("id", line_obj.id || "").
             addClass(line_obj.type).
             data("line_obj", line_obj).
             html(line_obj.data || "&nbsp;");
+
+        line_obj._elem = elem;
+        return elem;
     }
     function insert_new_line(line_obj) {
         var selected = container.find(".ui-selected");
         if (selected.size() === 0) {
             return;
         }
-        create_line_elem(line_obj).
+        get_or_create_line_elem(line_obj).
             addClass("dirty new").
             insertBefore(selected.get(0));
 
@@ -140,7 +146,9 @@ jQuery(function($) {
         novel_importer.save();
     });
     novel_importer.iterate(function(i, line_obj) {
-        create_line_elem(line_obj).addClass("has-original").appendTo(container);
+        get_or_create_line_elem(line_obj).
+            addClass("has-original").
+            appendTo(container);
     });
     container.selectable({
         filter: "> p:not(.deleted)",
