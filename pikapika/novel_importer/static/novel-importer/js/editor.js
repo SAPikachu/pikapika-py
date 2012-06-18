@@ -53,10 +53,12 @@ jQuery(function($) {
     function get_chapter_name(starting_elem) {
         var name = "";
         var elem = starting_elem;
-        while (elem.size() > 0 && !elem.is(".splitter, .deleted")) {
+        while (elem.size() > 0 && !elem.is(".splitter")) {
             // We treat 1 or 2 consecutive lines as title, so after we find a
             // title line, look at the next line too and merge it into the title
-            if (elem.is(".paragraph") && elem.find("img").size() === 0) {
+            if (elem.is(".paragraph") && 
+                !elem.is(".deleted") &&
+                elem.find("img").size() === 0) {
                 var should_break = !!name;
                 var line = $.trim(elem.text().replace(/\s+/, " "));
                 if (line) {
