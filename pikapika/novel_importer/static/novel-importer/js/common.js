@@ -3,21 +3,15 @@
 
     window.novel_importer = {
         _id_counter: 0,
+        _line_object_keys: ["id", "type", "data"],
         id_prefix: "chap-",
         load: function() {
             this.lines = $.jStorage.get("novel-importer-lines", []);
             this.settings = $.jStorage.get("novel-importer-settings", {});
         },
         save: function() {
-            var keys_to_persist = ["id", "type", "data"];
             var lines_to_be_saved = $.map(this.lines, function(line) {
-                var result = {};
-                $.each(keys_to_persist, function(i, key) {
-                    if (line[key] !== undefined) {
-                        result[key] = line[key];
-                    }
-                });
-                return result;
+                return this.clone_line(line, false);
             });
             $.jStorage.set("novel-importer-lines", lines_to_be_saved);
 
@@ -25,6 +19,18 @@
         },
         clear: function() {
             this.lines = [];
+        },
+        clone_line: function(line_obj, with_extra_properties) {
+            if (with_extra_properties) {
+                return $.extend({}, line_obj_or_pos);
+            }
+            var result = {};
+            $.each(this._line_object_keys, function(i, key) {
+                if (line_obj[key] !== undefined) {
+                    result[key] = line_obj[key];
+                }
+            });
+            return result;
         },
         make_paragraph: function(content, id) {
             return {

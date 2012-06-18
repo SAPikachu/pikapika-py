@@ -175,7 +175,9 @@
     // An array of line objects => Lines ready to be spliced into original
     //                             content
     var compute_diff_line = function(line_index, new_paragraphs) {
-        var line_obj = novel_importer.lines[line_index];
+        var line_obj = novel_importer.clone_line(
+            novel_importer.lines[line_index], false
+        );
         if (line_obj.type !== "paragraph") {
             return null;
         }

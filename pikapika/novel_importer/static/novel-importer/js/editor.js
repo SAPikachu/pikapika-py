@@ -114,7 +114,7 @@ jQuery(function($) {
                 var existing_line = novel_importer.lines[line_index];
                 var elem = existing_line._elem;
                 elem.addClass("dirty deleted");
-                elem.after(line_elems);
+                line_elems.insertAfter(elem);
             } else {
                 line_elems.appendTo(container);
             }
@@ -202,6 +202,22 @@ jQuery(function($) {
     $("#hide-unchanged-lines, #hide-deleted-lines").change(function() {
         container.toggleClass(this.id, $(this).is(":checked"));
         container.selectable("refresh");
+    });
+    $("#do-amend").click(function() {
+        var error_elem = $("#amend-error");
+        error_elem.hide();
+        if (container.find(".dirty").size() > 0) {
+            error_elem.text("Please save or revert changed lines before amending").show();
+            return;
+        }
+        var new_content = $.trim($("#amend-box").val());
+        if (!new_content) {
+            error_elem.text("Amendment is empty").show();
+            return;
+        }
+        var diff = novel_importer.build_diff(new_content);
+        merge_diff(diff);
+        $("#amend-box").val("");
     });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).

@@ -14,6 +14,10 @@
 </script>
 <script src="{% static "novel-importer/js/editor.js" %}" type="text/javascript">
 </script>
+<script src="{% static "novel-importer/js/diff_match_patch.js" %}" type="text/javascript">
+</script>
+<script src="{% static "novel-importer/js/novel-merger.js" %}" type="text/javascript">
+</script>
 
 {% endblock %}
 
@@ -55,6 +59,18 @@
             <h3>Chapters</h3>
             <div class="grp-row">
                 <ul id="chapter-list"></ul>
+            </div>
+        </fieldset>
+        <fieldset>
+            <h3>Amend by text version</h3>
+            <div class="grp-row">
+                <textarea id="amend-box"></textarea>
+            </div>
+            <div class="grp-row">
+                <span id="amend-error"></span>
+            </div>
+            <div class="grp-row">
+                <div class="button" id="do-amend">Amend</div>
             </div>
         </fieldset>
     </div>

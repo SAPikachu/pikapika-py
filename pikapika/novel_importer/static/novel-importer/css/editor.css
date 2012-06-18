@@ -108,7 +108,7 @@
     margin-bottom: 10px;
 }
 
-#line-edit-box
+#control-panel textarea
 {
     width: 95%;
     height: 150px;
@@ -127,4 +127,10 @@
 #chapter-list li:hover
 {
     background-color: #EEEEEE;
+}
+
+#amend-error
+{
+    display: none;
+    color: red;
 }
