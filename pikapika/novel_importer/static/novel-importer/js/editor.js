@@ -197,7 +197,7 @@ jQuery(function($) {
         });
         on_selection_changed();
         update_chapter_list();
-        container.selectable
+        container.selectable("refresh");
     });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).
