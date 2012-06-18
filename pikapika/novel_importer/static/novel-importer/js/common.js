@@ -10,8 +10,9 @@
             this.settings = $.jStorage.get("novel-importer-settings", {});
         },
         save: function() {
+            var self = this;
             var lines_to_be_saved = $.map(this.lines, function(line) {
-                return this.clone_line(line, false);
+                return self.clone_line(line, false);
             });
             $.jStorage.set("novel-importer-lines", lines_to_be_saved);
 
