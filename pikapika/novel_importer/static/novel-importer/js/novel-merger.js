@@ -113,7 +113,7 @@
         var result = "";
         for (var i = 0; i < diff.length; i++) {
             var code = diff[i][0];
-            var text = diff[i][1].replace(code_separator, "");
+            var text = diff[i][1].replace(new RegExp(code_separator, "g"), "");
             if (code === DIFF_EQUAL || code === DIFF_INSERT) {
                 result += text;
             } else {
