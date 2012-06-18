@@ -313,6 +313,11 @@
             return [];
         }
 
+        // Mismatched empty line should not affect real matching
+        if (is_empty_line(line_obj.data)) {
+            return [];
+        }
+
         // If we can't find matching line, merge current line with the
         // first line in new_paragraphs
         return [$.extend(
