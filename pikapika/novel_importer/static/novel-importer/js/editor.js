@@ -186,6 +186,8 @@ jQuery(function($) {
             o.data("original_line_obj", null);
         });
         novel_importer.save();
+        container.selectable("refresh");
+        update_chapter_list();
     });
     $("#revert-selected").click(function() {
         container.find(".ui-selected:not(.has-original)").remove();
