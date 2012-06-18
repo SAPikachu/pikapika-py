@@ -120,7 +120,7 @@
                 // Keep HTML tags from original text
                 var match;
                 while ((match = code_re.exec(text)) !== null) {
-                    text += match[0];
+                    result += match[0];
                 }
             }
         }
