@@ -6,7 +6,28 @@
 #chapter-content p
 {
     line-height: 1.5em;
-    padding: 1%;
+    padding: 0.5em;
+    border: 0 solid white;
+    border-width: 0 0.5em;
+}
+
+#chapter-content .ui-selecting,
+#chapter-content .ui-selecting:hover
+{
+    background: none repeat scroll 0 0 #E1F0F5;
+}
+
+#chapter-content .ui-selected 
+{
+    background: none repeat scroll 0 0 #309BBF;
+    border-color: #309BBF;
+    color: white;
+}
+
+#chapter-content .ui-selected:hover 
+{
+    background: none repeat scroll 0 0 #45A6C6;
+    border-color: #45A6C6;
 }
 
 #chapter-content img
@@ -27,40 +48,24 @@
 #chapter-content .paragraph:hover
 {
     background-color: #EEEEEE;
-}
-
-#chapter-content .deleted
-{
-    display: none;
-    height: 0;
-    overflow: hidden;
+    color: black;
 }
 
 #chapter-content .dirty
 {
     background-color: #FFF9C9;
+    color: black;
+}
+
+#chapter-content .deleted
+{
+    background-color: #FFC9C9;
+    color: black;
 }
 
 #chapter-content .new
 {
     background-color: #CCFFCF;
-}
-
-#chapter-content .ui-selecting,
-#chapter-content .ui-selecting:hover
-{
-    background: none repeat scroll 0 0 #E1F0F5;
-}
-
-#chapter-content .ui-selected 
-{
-    background: none repeat scroll 0 0 #309BBF;
-    color: white;
-}
-
-#chapter-content .ui-selected:hover 
-{
-    background: none repeat scroll 0 0 #45A6C6;
 }
 
 #control-panel-container

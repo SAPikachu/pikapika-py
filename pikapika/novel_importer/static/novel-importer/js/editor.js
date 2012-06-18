@@ -19,6 +19,9 @@ jQuery(function($) {
         });
         edit_box.val(lines.join("\n")).removeClass("dirty");
     }
+    function reset_elem_content(line_elem) {
+        line_elem.html(line_elem.data("line_obj").data || "&nbsp;");
+    }
     function get_or_create_line_elem(line_obj) {
         if (line_obj._elem) {
             return line_obj._elem;
@@ -26,10 +29,11 @@ jQuery(function($) {
         var elem = $("<p/>").
             attr("id", line_obj.id || "").
             addClass(line_obj.type).
-            data("line_obj", line_obj).
-            html(line_obj.data || "&nbsp;");
+            data("line_obj", line_obj);
 
         line_obj._elem = elem;
+        reset_elem_content(elem);
+
         return elem;
     }
     function insert_new_line(line_obj) {
@@ -117,10 +121,8 @@ jQuery(function($) {
         container.find(".ui-selected:not(.has-original)").remove();
         container.find(".ui-selected").
             addClass("dirty deleted").
-            removeClass("ui-selected").
-            selectable("refresh");
+            removeClass("ui-selected");
 
-        container.selectable("refresh");
         on_selection_changed();
         update_chapter_list();
     });
@@ -145,13 +147,26 @@ jQuery(function($) {
         });
         novel_importer.save();
     });
+    $("#revert-selected").click(function() {
+        container.find(".ui-selected:not(.has-original)").remove();
+        container.find(".ui-selected").each(function() {
+            var o = $(this);
+            var line_obj = o.data("original_line_obj") || o.data("line_obj");
+            o.data("line_obj", line_obj);
+            o.data("original_line_obj", null);
+            reset_elem_content(o);
+            o.removeClass("dirty deleted ui-selected");
+        });
+        on_selection_changed();
+        update_chapter_list();
+    });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).
             addClass("has-original").
             appendTo(container);
     });
     container.selectable({
-        filter: "> p:not(.deleted)",
+        filter: "> p",
         autoRefresh: false,
         stop: on_selection_changed
     });
