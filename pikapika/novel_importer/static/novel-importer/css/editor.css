@@ -15,6 +15,7 @@
 #chapter-content .ui-selecting:hover
 {
     background: none repeat scroll 0 0 #E1F0F5;
+    border-color: #E1F0F5;
 }
 
 #chapter-content .ui-selected 
