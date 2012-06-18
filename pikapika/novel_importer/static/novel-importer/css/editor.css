@@ -3,7 +3,7 @@
     width: 50%;
 }
 
-#chapter-content p
+#chapter-content > p
 {
     line-height: 1.5em;
     padding: 0.5em;
@@ -68,6 +68,21 @@
     background-color: #CCFFCF;
 }
 
+.hide-unchanged-lines > p
+{
+    display: none;
+}
+
+.hide-unchanged-lines > .dirty
+{
+    display: block;
+}
+
+.hide-deleted-lines > .deleted
+{
+    display: none;
+}
+
 #control-panel-container
 {
     position: fixed;
@@ -86,6 +101,11 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
+}
+
+#control-panel fieldset
+{
+    margin-bottom: 10px;
 }
 
 #line-edit-box

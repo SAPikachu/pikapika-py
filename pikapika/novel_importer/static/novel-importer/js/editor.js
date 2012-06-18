@@ -199,6 +199,10 @@ jQuery(function($) {
         update_chapter_list();
         container.selectable("refresh");
     });
+    $("#hide-unchanged-lines, #hide-deleted-lines").change(function() {
+        container.toggleClass(this.id, $(this).is(":checked"));
+        container.selectable("refresh");
+    });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).
             addClass("has-original").
@@ -209,7 +213,7 @@ jQuery(function($) {
         novel_importer.settings.pending_diff = null;
     }
     container.selectable({
-        filter: "> p",
+        filter: "> p:visible",
         autoRefresh: false,
         stop: on_selection_changed
     });
