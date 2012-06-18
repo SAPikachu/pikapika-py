@@ -113,12 +113,31 @@ jQuery(function($) {
             if (line_index < novel_importer.lines.length) {
                 var existing_line = novel_importer.lines[line_index];
                 var elem = existing_line._elem;
-                elem.addClass("deleted");
+                elem.addClass("dirty deleted");
                 elem.after(line_elems);
             } else {
                 line_elems.appendTo(container);
             }
         });
+        // Clean up diff to make it easier to read
+        container.find(":not(.dirty.paragraph) + .dirty.paragraph").
+            each(function() {
+                var o = $(this);
+                var first_insert = null;
+                while (o.is(".dirty.paragraph")) {
+                    var cur = o;
+                    o = o.next();
+                    if (cur.hasClass("new")) {
+                        if (!first_insert) {
+                            first_insert = cur;
+                        }
+                    } else {
+                        if (first_insert) {
+                            cur.detach().insertBefore(first_insert);
+                        }
+                    }
+                }
+            });
     }
     $("#control-panel .button").button();
     edit_box.val("").keydown(function() {
