@@ -265,12 +265,16 @@
         );
         var new_paragraph_view = array_view(new_paragraphs, 0);
         var MAX_DISTANCE = 100;
-        var MATCH_COUNT = 5;
+        var DEFAULT_MATCH_COUNT = 5;
+
+        var match_count = 
+            is_image_line(line_obj.data) ? 1 : DEFAULT_MATCH_COUNT;
+
         var match_in_new_paragraphs = match_multiple({
             haystack: new_paragraph_view,
             needle: importer_view,
             max_distance: MAX_DISTANCE,
-            match_count: MATCH_COUNT
+            match_count: match_count
         });
         if (match_in_new_paragraphs !== -1) {
             var result = $.map(
@@ -299,7 +303,7 @@
             haystack: importer_view,
             needle: new_paragraph_view,
             max_distance: MAX_DISTANCE,
-            match_count: MATCH_COUNT
+            match_count: match_count
         });
         if (match_in_existing_paragraphs !== -1) {
             // Mark current line as deleted, following lines will be marked in
