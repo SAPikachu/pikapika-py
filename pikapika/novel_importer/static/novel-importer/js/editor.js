@@ -42,10 +42,12 @@ jQuery(function($) {
             return;
         }
         get_or_create_line_elem(line_obj).
-            addClass("dirty new").
+            addClass("dirty new ui-selected").
             insertBefore(selected.get(0));
 
         container.selectable("refresh");
+        selected.removeClass("ui-selected");
+        on_selection_changed();
         update_chapter_list();
     }
     function get_chapter_name(starting_elem) {
@@ -159,6 +161,7 @@ jQuery(function($) {
         });
         on_selection_changed();
         update_chapter_list();
+        container.selectable
     });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).
