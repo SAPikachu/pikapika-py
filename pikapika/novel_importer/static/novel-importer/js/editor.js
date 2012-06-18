@@ -194,9 +194,7 @@ jQuery(function($) {
         autoRefresh: false,
         stop: on_selection_changed
     });
-    container.find("img").load(function() {
-        container.selectable("refresh");
-    }).error(function() {
+    container.find("img").one("load error", function() {
         container.selectable("refresh");
     });
     update_chapter_list();
