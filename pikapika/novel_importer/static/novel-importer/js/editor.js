@@ -53,7 +53,7 @@ jQuery(function($) {
     function get_chapter_name(starting_elem) {
         var name = "";
         var elem = starting_elem;
-        while (elem.size() > 0 && !elem.is(".splitter")) {
+        while (elem.size() > 0 && !elem.is(".splitter, .deleted")) {
             // We treat 1 or 2 consecutive lines as title, so after we find a
             // title line, look at the next line too and merge it into the title
             if (elem.is(".paragraph") && elem.find("img").size() === 0) {
@@ -218,6 +218,8 @@ jQuery(function($) {
         var diff = novel_importer.build_diff(new_content);
         merge_diff(diff);
         $("#amend-box").val("");
+        update_chapter_list();
+        container.selectable("refresh");
     });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).
