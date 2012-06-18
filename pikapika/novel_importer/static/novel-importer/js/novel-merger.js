@@ -412,10 +412,10 @@
         return diff_result;
     };
 
-    novel_importer.merge_content = function(new_content) {
+    novel_importer.build_diff = function(new_content) {
         var sanitized_new_content = prepare_paragraphs(new_content);
 
         var diff = compute_diff(sanitized_new_content);
-        console.log(diff);
+        return diff;
     };
 })(jQuery);
