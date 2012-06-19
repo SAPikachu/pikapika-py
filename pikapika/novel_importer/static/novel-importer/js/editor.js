@@ -7,9 +7,8 @@ jQuery(function($) {
         var line_obj = o.data("line_obj");
         if (!o.data("original_line_obj") && o.is(".has-original")) {
             o.data("original_line_obj", line_obj);
-            line_obj = $.extend(true, {}, line_obj);
+            line_obj = novel_importer.clone_line(line_obj, true);
             o.data("line_obj", line_obj);
-            o.addClass("dirty");
         }
         return line_obj;
     }
@@ -142,21 +141,30 @@ jQuery(function($) {
                 }
             });
     }
-    $("#control-panel .button").button();
-    edit_box.val("").keydown(function() {
-        $(this).addClass("dirty");
-    }).change(function() {
+    function commit_edit() {
+        if (!edit_box.hasClass("dirty")) {
+            return;
+        }
         var selected = container.find(".paragraph.ui-selected");
         var lines = edit_box.val().split("\n");
         selected.each(function(i) {
             var o = $(this);
             var new_text = $.trim(i < lines.length ? lines[i] : "");
             var line_obj = get_line_obj_for_editing(o);
-            line_obj.data = new_text;
-            o.html(new_text || "&nbsp;");
+            if ($.trim(line_obj.data) !== new_text) {
+                line_obj.data = new_text;
+                o.html(new_text || "&nbsp;");
+                o.addClass("dirty");
+            }
         });
         edit_box.removeClass("dirty");
         update_chapter_list();
+    }
+    $("#control-panel .button").button();
+    edit_box.val("").keydown(function() {
+        $(this).addClass("dirty");
+    }).change(function() {
+        commit_edit();
     });
     $("#remove-selected").click(function() {
         container.find(".ui-selected:not(.has-original)").remove();
@@ -244,6 +252,7 @@ jQuery(function($) {
         filter: "> p:visible",
         autoRefresh: false,
         start: function() {
+            commit_edit();
             scroller.start();
         },
         stop: function() { 
