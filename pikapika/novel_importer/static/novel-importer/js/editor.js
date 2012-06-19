@@ -1,6 +1,7 @@
 jQuery(function($) {
     var container = $("#chapter-content");
     var edit_box = $("#line-edit-box");
+    var scroller = new AutoScroll();
     
     function get_line_obj_for_editing(o) {
         var line_obj = o.data("line_obj");
@@ -225,6 +226,11 @@ jQuery(function($) {
         update_chapter_list();
         container.selectable("refresh");
     });
+    $(document).mousemove(function(e) {
+        if (scroller.is_started()) {
+            scroller.set_delta_from_mouse_event(e);
+        }
+    });
     novel_importer.iterate(function(i, line_obj) {
         get_or_create_line_elem(line_obj).
             addClass("has-original").
@@ -237,7 +243,13 @@ jQuery(function($) {
     container.selectable({
         filter: "> p:visible",
         autoRefresh: false,
-        stop: on_selection_changed
+        start: function() {
+            scroller.start();
+        },
+        stop: function() { 
+            scroller.stop();
+            on_selection_changed();
+        }
     });
     container.find("img").one("load error", function() {
         container.selectable("refresh");
