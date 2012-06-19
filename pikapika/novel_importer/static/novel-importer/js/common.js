@@ -23,7 +23,7 @@
         },
         clone_line: function(line_obj, with_extra_properties) {
             if (with_extra_properties) {
-                return $.extend({}, line_obj_or_pos);
+                return $.extend({}, line_obj);
             }
             var result = {};
             $.each(this._line_object_keys, function(i, key) {
