@@ -16,11 +16,6 @@
     }
     function show_error(message) {
         show_message(message);
-        dialog.dialog("option", "buttons", {
-            "OK": function() {
-                location.reload();
-            }
-        });
     }
     function upload_images() {
         var pending_images = [];
@@ -76,8 +71,22 @@
                     upload_next();
                 },
                 error: function(jqxhr, text_status, error_thrown) {
-                    show_error("Error while uploading {0} ({1}, {2})".format(
-                        url, text_status, error_thrown
+                    var message = null;
+                    var status_code = jqxhr.status;
+                    try
+                    {
+                        var resp = $.parseJSON(jqxhr.responseText);
+                        message = resp.message;
+                        if (resp.code) {
+                            status_code = resp.code;
+                        }
+                    } catch (e) {
+                    }
+                    message = message ||
+                        "{0}, {1}".format(text_status, error_thrown);
+
+                    show_error("Error while uploading {0} ({1})".format(
+                        url, message
                     ));
                 }
             });
