@@ -3,6 +3,8 @@ from __future__ import print_function, unicode_literals
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.shortcuts import render
+from django.conf import settings
+from django.http import HttpResponsePermanentRedirect
 
 from pikapika.common.decorators import staff_required, param_from_post
 
@@ -26,3 +28,6 @@ def editor(request):
         request, 
         "novel_importer/editor.html",
     )
+
+def redirect_media(request, path):
+    return HttpResponsePermanentRedirect(settings.MEDIA_URL + path)
