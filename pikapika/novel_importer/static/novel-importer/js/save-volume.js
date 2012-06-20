@@ -50,46 +50,69 @@
             var current_item = pending_images.shift();
             var url = current_item.img_elem.attr("src");
             var index = total_images - pending_images.length;
-            show_message(
-                "Uploading {0} ({1}/{2})".format(url, index, total_images)
-            );
-            $.ajax({
-                type: "POST",
-                url: IMAGE_UPLOAD_URL,
-                data: {
-                    url: url,
-                    cookies: novel_importer.settings.site_cookies
-                },
-                dataType: "json",
-                success: function(resp) {
-                    current_item.img_elem.attr("data-original-src", url);
-                    current_item.img_elem.attr(
-                        "src", URL_PREFIX + resp.name
-                    );
-                    current_item.line_obj.data = current_item.line_elem.html();
-                    novel_importer.save();
-                    upload_next();
-                },
-                error: function(jqxhr, text_status, error_thrown) {
-                    var message = null;
-                    var status_code = jqxhr.status;
-                    try
-                    {
-                        var resp = $.parseJSON(jqxhr.responseText);
-                        message = resp.message;
-                        if (resp.code) {
-                            status_code = resp.code;
-                        }
-                    } catch (e) {
-                    }
-                    message = message ||
-                        "{0}, {1}".format(text_status, error_thrown);
 
-                    show_error("Error while uploading {0} ({1})".format(
-                        url, message
-                    ));
+            var attempt_num = 0;
+            function do_upload() {
+                var upload_text = 
+                    "Uploading {0} ({1}/{2}), attempt #{3}".format(
+                        url, index, total_images, attempt_num
+                    );
+
+                show_message(upload_text);
+                var target_url = url;
+                if (attempt_num % 2 === 1) {
+                    // Try Google image proxy
+                    target_url = "https://images2-focus-opensocial.googleusercontent.com/gadgets/proxy?url={0}&container=focus&gadget=a&no_expand=1&resize_h=0&rewriteMime=image%2F*".format(encodeURIComponent(url));
                 }
-            });
+                $.ajax({
+                    type: "POST",
+                    url: IMAGE_UPLOAD_URL,
+                    data: {
+                        url: target_url,
+                        cookies: novel_importer.settings.site_cookies
+                    },
+                    dataType: "json",
+                    success: function(resp) {
+                        current_item.img_elem.attr("data-original-src", url);
+                        current_item.img_elem.attr(
+                            "src", URL_PREFIX + resp.name
+                        );
+                        current_item.line_obj.data = current_item.line_elem.html();
+                        novel_importer.save();
+                        upload_next();
+                    },
+                    error: function(jqxhr, text_status, error_thrown) {
+                        var message = null;
+                        var status_code = jqxhr.status;
+                        try
+                        {
+                            var resp = $.parseJSON(jqxhr.responseText);
+                            message = resp.message;
+                            if (resp.code) {
+                                status_code = resp.code;
+                            }
+                        } catch (e) {
+                        }
+                        message = message ||
+                            "{0}, {1}".format(text_status, error_thrown);
+
+                        if (status_code >= 502 && status_code <= 504) {
+                            attempt_num++;
+                            upload_text += " (Failed, waiting for retry...)";
+                            show_message(upload_text);
+                            setTimeout(
+                                do_upload, 
+                                Math.pow(2, attempt_num) * 1000
+                            );
+                        } else {
+                            show_error("Error while uploading {0} ({1})".format(
+                                url, message
+                            ));
+                        }
+                    }
+                });
+            }
+            do_upload();
         };
         upload_next();
     }
