@@ -7,6 +7,7 @@ from datetime import datetime
 from io import BytesIO
 from wsgiref.util import is_hop_by_hop
 from urlparse import urlparse
+import socket
 
 from django.conf import settings
 from django.core.files import File
@@ -15,6 +16,7 @@ import Image
 import requests
 
 from pikapika.common.http import (
+    JsonResponseError, 
     JsonResponseBadRequest, 
     JsonResponseServerError,
     utils as http_utils
@@ -71,20 +73,34 @@ def upload_from_url(request, url, cookies):
 
     headers["Cookie"] = cookies
 
-    resp = requests.get(
-        url, 
-        headers=headers, 
-        timeout=10,
-    )
-    resp.raise_for_status()
+    try:
+        resp = requests.get(
+            url, 
+            headers=headers, 
+            timeout=10,
+        )
+        resp.raise_for_status()
 
-    size = int(resp.headers["content-length"])
-    if size > 3 * 1024 * 1024:
-        return JsonResponseBadRequest("The remote file is too big")
+        size = int(resp.headers["content-length"])
+        if size > 3 * 1024 * 1024:
+            return JsonResponseBadRequest("The remote file is too big")
 
-    content = resp.content
+        content = resp.content
+    except (socket.timeout, requests.Timeout) as e:
+        # 504 Gateway Timeout
+        return JsonResponseError(str(e), status=504)
+    except requests.HTTPError as e:
+        return JsonResponseError(
+            str(e), 
+            code=e.response.status_code, 
+            status=502,
+        )
+    except (socket.error, requests.RequestException) as e:
+        # 502 Bad Gateway
+        return JsonResponseError(str(e), status=502)
+
     if len(content) != size:
-        return JsonResponseServerError("Connection terminated while downloading the file")
+        return JsonResponseError("Connection terminated while downloading the file", status=502)
 
     file = File(BytesIO(content), name="")
     file.size = size

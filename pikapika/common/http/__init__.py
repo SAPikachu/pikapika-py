@@ -1,5 +1,6 @@
 from .JsonResponse import (
     JsonResponse, 
+    JsonResponseError, 
     JsonResponseBadRequest, 
     JsonResponseServerError
 )
