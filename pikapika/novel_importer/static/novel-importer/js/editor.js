@@ -192,6 +192,10 @@ jQuery(function($) {
         on_selection_changed();
         update_chapter_list();
     });
+    $("#remove-all").click(function() {
+        container.children().addClass("ui-selected");
+        $("#remove-selected").click();
+    });
     $("#new-splitter").click(function() {
         insert_new_line(novel_importer.make_splitter());
     });
