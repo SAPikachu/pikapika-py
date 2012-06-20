@@ -160,6 +160,23 @@ jQuery(function($) {
         edit_box.removeClass("dirty");
         update_chapter_list();
     }
+    function save_locally() {
+        container.find(".deleted").remove();
+        novel_importer.clear();
+        container.children("p").each(function() {
+            var o = $(this);
+            var line_obj = o.data("line_obj");
+            if (line_obj.type === "paragraph" && !line_obj.id) {
+                line_obj.id = novel_importer.generate_paragraph_id();
+            }
+            novel_importer.add_line(line_obj);
+            o.addClass("has-original").removeClass("new dirty");
+            o.data("original_line_obj", null);
+        });
+        novel_importer.save();
+        container.selectable("refresh");
+        update_chapter_list();
+    }
     $("#control-panel .button").button();
     edit_box.val("").keydown(function() {
         $(this).addClass("dirty");
@@ -182,21 +199,7 @@ jQuery(function($) {
         insert_new_line(novel_importer.make_paragraph(""));
     });
     $("#save").click(function() {
-        container.find(".deleted").remove();
-        novel_importer.clear();
-        container.children("p").each(function() {
-            var o = $(this);
-            var line_obj = o.data("line_obj");
-            if (line_obj.type === "paragraph" && !line_obj.id) {
-                line_obj.id = novel_importer.generate_paragraph_id();
-            }
-            novel_importer.add_line(line_obj);
-            o.addClass("has-original").removeClass("new dirty");
-            o.data("original_line_obj", null);
-        });
-        novel_importer.save();
-        container.selectable("refresh");
-        update_chapter_list();
+        save_locally();
     });
     $("#revert-selected").click(function() {
         container.find(".ui-selected:not(.has-original)").remove();
@@ -233,6 +236,10 @@ jQuery(function($) {
         $("#amend-box").val("");
         update_chapter_list();
         container.selectable("refresh");
+    });
+    $("#save-volume").click(function() {
+        save_locally();
+        novel_importer.save_to_server();
     });
     $(document).mousemove(function(e) {
         if (scroller.is_started()) {
