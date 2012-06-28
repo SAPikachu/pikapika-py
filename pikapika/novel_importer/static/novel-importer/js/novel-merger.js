@@ -51,7 +51,18 @@
         return content.split(/\n/g);
     };
 
+    var is_same_image_line = function(line1, line2) {
+        var get_img_url = function(line) {
+            var o = $(line);
+            return o.data("original-src") || o.attr("src");
+        };
+        return get_img_url(line1) === get_img_url(line2);
+    };
+
     var is_same_line = function(line1, line2) {
+        if (is_image_line(line1) && is_image_line(line2)) {
+            return is_same_image_line(line1, line2);
+        }
         var whitespace_re = /(\s|&nbsp;)/g;
         return line1.replace(whitespace_re, "") === 
             line2.replace(whitespace_re, "");
