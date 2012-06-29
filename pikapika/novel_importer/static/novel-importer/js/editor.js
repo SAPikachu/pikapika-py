@@ -1,5 +1,6 @@
 jQuery(function($) {
     var container = $("#chapter-content");
+    var last_container_height = -1;
     var edit_box = $("#line-edit-box");
     var scroller = new AutoScroll();
     
@@ -11,6 +12,13 @@ jQuery(function($) {
             o.data("line_obj", line_obj);
         }
         return line_obj;
+    }
+    function refresh_selectable() {
+        var new_height = container.height();
+        if (new_height !== last_container_height) {
+            last_container_height = new_height;
+            container.selectable("refresh");
+        }
     }
     function on_selection_changed() {
         var lines = [];
@@ -45,7 +53,7 @@ jQuery(function($) {
             addClass("dirty new ui-selected").
             insertBefore(selected.get(0));
 
-        container.selectable("refresh");
+        refresh_selectable();
         selected.removeClass("ui-selected");
         on_selection_changed();
         update_chapter_list();
@@ -174,7 +182,7 @@ jQuery(function($) {
             o.data("original_line_obj", null);
         });
         novel_importer.save();
-        container.selectable("refresh");
+        refresh_selectable();
         update_chapter_list();
     }
     $("#control-panel .button").button();
@@ -217,11 +225,11 @@ jQuery(function($) {
         });
         on_selection_changed();
         update_chapter_list();
-        container.selectable("refresh");
+        refresh_selectable();
     });
     $("#hide-unchanged-lines, #hide-deleted-lines").change(function() {
         container.toggleClass(this.id, $(this).is(":checked"));
-        container.selectable("refresh");
+        refresh_selectable();
     });
     $("#do-amend").click(function() {
         var error_elem = $("#amend-error");
@@ -239,7 +247,7 @@ jQuery(function($) {
         merge_diff(diff);
         $("#amend-box").val("");
         update_chapter_list();
-        container.selectable("refresh");
+        refresh_selectable();
     });
     $("#save-volume").click(function() {
         save_locally();
@@ -272,7 +280,7 @@ jQuery(function($) {
         }
     });
     container.find("img").one("load error", function() {
-        container.selectable("refresh");
+        refresh_selectable();
     });
     update_chapter_list();
 });
