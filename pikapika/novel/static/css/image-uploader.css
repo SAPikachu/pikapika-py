@@ -9,7 +9,7 @@
 {
     position: absolute;
     top: 5px;
-    left: 300px;
+    left: 600px;
     height: 95px;
     z-index: 10;
 }
@@ -35,4 +35,9 @@
 .image-uploader .qq-upload-drop-area
 {
     display: none;
+}
+
+.image-uploader .external-cookies
+{
+    width: 500px;
 }
