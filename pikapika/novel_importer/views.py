@@ -5,6 +5,7 @@ from django.views.decorators.http import require_POST
 from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponsePermanentRedirect
+from django.contrib import admin
 
 from pikapika.common.decorators import staff_required, param_from_post
 
@@ -22,7 +23,7 @@ def import_from_external(request, content_json, site_cookies_json):
         },
     )
 
-@staff_required
+@admin.site.admin_view
 def editor(request):
     return render(
         request, 
