@@ -58,6 +58,10 @@ jQuery(function($) {
         on_selection_changed();
         update_chapter_list();
     }
+    function scroll_into_view(elem) {
+        var base_top = container.offset().top;
+        window.scrollTo(0, elem.offset().top - base_top);
+    }
     function get_chapter_name(starting_elem) {
         var name = "";
         var elem = starting_elem;
@@ -106,10 +110,7 @@ jQuery(function($) {
         iterate_chapters(function(chapter_name, starting_elem, content_getter) {
             $("<li/>").text(chapter_name).
                 click(function() {
-                    var base_top = $("#chapter-content").offset().top;
-                    window.scrollTo(
-                        0, starting_elem.offset().top - base_top
-                    );
+                    scroll_into_view(starting_elem);
                 }).appendTo(chapter_list);
         });
     }
@@ -185,7 +186,9 @@ jQuery(function($) {
         refresh_selectable();
         update_chapter_list();
     }
-    $("#control-panel .button").button();
+    $("#control-panel .button").each(function() {
+        $(this).button({ disabled: !!$(this).data("disabled") });
+    });
     edit_box.val("").keydown(function() {
         $(this).addClass("dirty");
     }).change(function() {
@@ -253,6 +256,12 @@ jQuery(function($) {
         save_locally();
         novel_importer.save_to_server();
     });
+    $("#jump-to-first-invalid-image").click(function() {
+        var invalid_image = container.find("img.error");
+        if (invalid_image.size() > 0) {
+            scroll_into_view(invalid_image);
+        }
+    });
     $(document).mousemove(function(e) {
         if (scroller.is_started()) {
             scroller.set_delta_from_mouse_event(e);
@@ -279,8 +288,13 @@ jQuery(function($) {
             on_selection_changed();
         }
     });
-    container.find("img").one("load error", function() {
+    container.find("img").load(function() {
+        $(this).removeClass("error");
         refresh_selectable();
+    }).error(function() {
+        $(this).addClass("error");
+        refresh_selectable();
+        $("#jump-to-first-invalid-image").button("option", "disabled", false);
     });
     update_chapter_list();
 });

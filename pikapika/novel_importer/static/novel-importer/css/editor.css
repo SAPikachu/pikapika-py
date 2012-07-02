@@ -37,6 +37,14 @@
     vertical-align: middle;
 }
 
+#chapter-content img.error
+{
+    width: 100%;
+    border: 1em solid red;
+    border-width: 1em 0;
+    display: block;
+}
+
 #chapter-content .splitter
 {
     background-color: #DDDDDD;
