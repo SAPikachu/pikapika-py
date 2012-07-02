@@ -122,6 +122,12 @@
     width: 95%;
     height: 150px;
 }
+
+#line-edit-box
+{
+    margin-bottom: 0.5em;
+}
+
 #line-edit-box.dirty
 {
     background-color: #CCFFCF;
