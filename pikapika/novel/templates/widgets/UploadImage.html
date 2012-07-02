@@ -1,4 +1,5 @@
 {{ super }}
+{% load url from future %}
 
 <fieldset class="image-uploader qq-uploader" id="image-uploader-{{ attrs.id }}">
     <div class="preview">
@@ -43,8 +44,8 @@
 jQuery(function($) {
     $("#image-uploader-{{ attrs.id }}").imageUploader(
         $("#{{ attrs.id }}"),
-        "/ajax/image_upload/upload_from_local",
-        "/ajax/image_upload/upload_from_url",
+        "{% url "pikapika.ajax_services.image_upload.upload_from_local" %}",
+        "{% url "pikapika.ajax_services.image_upload.upload_from_url" %}",
         "{{ image_root }}"
     );
 });
