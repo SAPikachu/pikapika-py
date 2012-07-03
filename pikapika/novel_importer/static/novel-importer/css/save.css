@@ -1,0 +1,9 @@
+#messages li
+{
+    line-height: 1.5em;
+}
+
+#messages li.error
+{
+    color: red;
+}
