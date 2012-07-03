@@ -9,12 +9,17 @@
 {{ block.super }}
 <script type="text/javascript">
 IMAGE_UPLOAD_URL = "{% url "pikapika.ajax_services.image_upload.upload_from_url" %}";
+IMAGE_UPLOAD_FROM_LOCAL_URL = "{% url "pikapika.ajax_services.image_upload.upload_from_local" %}";
 </script>
 <script src="{% static "admin/js/jquery.init.js" %}" type="text/javascript">
 </script>
 <script src="{% static "js/ajax-call.js" %}" type="text/javascript">
 </script>
 <script src="{% static "js/jstorage.js" %}" type="text/javascript">
+</script>
+<script src="{% static "js/jquery.cookie.js" %}" type="text/javascript">
+</script>
+<script src="{% static "modules/file-uploader/fileuploader.js" %}" type="text/javascript">
 </script>
 <script src="{% static "novel-importer/js/common.js" %}" type="text/javascript">
 </script>
@@ -34,6 +39,7 @@ IMAGE_UPLOAD_URL = "{% url "pikapika.ajax_services.image_upload.upload_from_url"
 {% block extrastyle %}
 
 {{ block.super }}
+<link href="{% static "modules/file-uploader/fileuploader.css" %}" rel="stylesheet" type="text/css" />
 <link href="{% static "novel-importer/css/editor.css" %}" rel="stylesheet" type="text/css" />
 
 {% endblock %}
@@ -68,6 +74,12 @@ IMAGE_UPLOAD_URL = "{% url "pikapika.ajax_services.image_upload.upload_from_url"
                     <input type="checkbox" id="hide-deleted-lines"/>
                     <label for="hide-deleted-lines">Hide deleted lines</label>
                 </div>
+            </div>
+        </fieldset>
+        <fieldset id="fix-image-fieldset">
+            <h3>Fix image</h3>
+            <div class="grp-row">
+                <div class="qq-uploader"></div>
             </div>
         </fieldset>
         <fieldset>

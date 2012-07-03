@@ -133,6 +133,11 @@
     background-color: #CCFFCF;
 }
 
+#fix-image-fieldset
+{
+    display: none;
+}
+
 #chapter-list li
 {
     padding: 1%;

@@ -22,10 +22,14 @@ jQuery(function($) {
     }
     function on_selection_changed() {
         var lines = [];
-        container.find(".paragraph.ui-selected").each(function() {
+        var selected = container.find(".paragraph.ui-selected");
+        selected.each(function() {
             lines.push($(this).data("line_obj").data);
         });
         edit_box.val(lines.join("\n")).removeClass("dirty");
+        $("#fix-image-fieldset").toggle(
+            selected.size() == 1 && selected.find("img.error").size() == 1
+        );
     }
     function reset_elem_content(line_elem) {
         line_elem.html(line_elem.data("line_obj").data || "&nbsp;");
@@ -260,6 +264,22 @@ jQuery(function($) {
         var invalid_image = container.find("img.error");
         if (invalid_image.size() > 0) {
             scroll_into_view(invalid_image);
+        }
+    });
+    var uploader = new qq.FileUploader({
+        element: $(".qq-uploader")[0],
+        action: IMAGE_UPLOAD_FROM_LOCAL_URL,
+        sizeLimit: 5 * 1024 * 1024,
+        csrfToken: $.cookie("csrftoken"),
+        onComplete: function(id, fileName, responseJSON) {
+            var selected = container.find(".ui-selected");
+            var line_obj = selected.data("line_obj");
+            line_obj = novel_importer._(line_obj);
+            line_obj.set_image_uploaded_url(
+                line_obj.get_non_uploaded_images().first(), responseJSON.name
+            );
+            selected.html(line_obj.data).addClass("dirty");
+            on_selection_changed();
         }
     });
     $(document).mousemove(function(e) {
