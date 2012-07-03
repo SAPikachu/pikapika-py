@@ -258,7 +258,7 @@ jQuery(function($) {
     });
     $("#save-volume").click(function() {
         save_locally();
-        novel_importer.save_to_server();
+        location.href = "save";
     });
     $("#jump-to-first-invalid-image").click(function() {
         var invalid_image = container.find("img.error");

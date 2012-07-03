@@ -9,13 +9,11 @@
         });
     };
 
-    var URL_PREFIX = "_MEDIA_URL_";
-    var dialog;
     function show_message(message) {
-        dialog.find(".message").text(message);
+        return $("<li/>").text(message).appendTo("#messages");
     }
     function show_error(message) {
-        show_message(message);
+        return show_message(message).addClass("error");
     }
     function upload_images() {
         var pending_images = [];
@@ -107,21 +105,9 @@
         upload_next();
     }
     novel_importer.save_to_server = function() {
-        dialog = $("<div/>").
-            attr("title", "Processing...").
-            append($("<div class='message'></div>")).
-            dialog({
-                closeOnEscape: false,
-                draggable: false,
-                modal: true,
-                resizable: false,
-                width: 600,
-
-                beforeClose: function() { return false; }
-            });
-
         upload_images(function() {
             show_message("Success");
         });
     };
+    novel_importer.save_to_server();
 })(jQuery);
