@@ -4,8 +4,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.shortcuts import render
 from django.conf import settings
-from django.http import HttpResponsePermanentRedirect
+from django.http import HttpResponsePermanentRedirect, HttpResponseNotFound
 from django.contrib import admin
+from django.template import TemplateDoesNotExist
 
 from pikapika.common.decorators import staff_required, param_from_post
 
@@ -24,11 +25,14 @@ def import_from_external(request, content_json, site_cookies_json):
     )
 
 @admin.site.admin_view
-def editor(request):
-    return render(
-        request, 
-        "novel_importer/editor.html",
-    )
+def static_view(request, page_name):
+    try:
+        return render(
+            request, 
+            "novel_importer/{}.html".format(page_name),
+        )
+    except TemplateDoesNotExist:
+        return HttpResponseNotFound()
 
 def redirect_media(request, path):
     return HttpResponsePermanentRedirect(settings.MEDIA_URL + path)
