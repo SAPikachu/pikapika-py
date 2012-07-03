@@ -29,7 +29,7 @@ def static_view(request, page_name):
     try:
         return render(
             request, 
-            "novel_importer/{}.html".format(page_name),
+            "novel_importer/static/{}.html".format(page_name),
         )
     except TemplateDoesNotExist:
         return HttpResponseNotFound()
