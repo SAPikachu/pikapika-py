@@ -24,6 +24,12 @@ def import_from_external(request, content_json, site_cookies_json):
         },
     )
 
+@require_POST
+@staff_required
+@param_from_post
+def save_volume_ajax(request, volume_id, chapters_json):
+    raise NotImplemented
+
 @admin.site.admin_view
 def static_view(request, page_name):
     try:
