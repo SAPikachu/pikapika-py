@@ -10,12 +10,12 @@
     };
 
     function show_message(message) {
-        return $("<li/>").text(message).appendTo("#messages");
+        return $("<li/>").text(message).appendTo($("#messages"));
     }
     function show_error(message) {
         return show_message(message).addClass("error");
     }
-    function upload_images() {
+    function upload_images(success_callback) {
         var pending_images = [];
         novel_importer.iterate(function(i, line_obj) {
             if (line_obj.type !== "paragraph") {
@@ -32,7 +32,7 @@
         });
         var total_images = pending_images.length;
 
-        var upload_next = function(success_callback) {
+        var upload_next = function() {
             if (pending_images.length === 0) {
                 success_callback();
                 return;
@@ -109,5 +109,7 @@
             show_message("Success");
         });
     };
-    novel_importer.save_to_server();
+    $(function() {
+        novel_importer.save_to_server();
+    });
 })(jQuery);
