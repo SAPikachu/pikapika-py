@@ -1,6 +1,6 @@
 // Requires jQuery, jStorage
 (function($) {
-    var line_object_keys = ["id", "type", "data"];
+    var line_object_keys = ["id", "type", "data", "tags"];
     var MEDIA_URL_PREFIX = "_MEDIA_URL_";
     function Line(raw_line) {
         $.extend(this, raw_line);
@@ -40,6 +40,9 @@
             }
             img_elem.attr("src", MEDIA_URL_PREFIX + returned_url);
             this._sync_from_elem();
+        },
+        toJSON: function() {
+            return this.clone(false);
         },
         clone: function(with_extra_properties) {
             var line_obj = this;
