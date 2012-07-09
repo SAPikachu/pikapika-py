@@ -69,6 +69,12 @@ class Chapter(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_content(self):
+        try:
+            return self.content_record.content
+        except ChapterContent.DoesNotExist:
+            return ""
+
     class Meta:
         order_with_respect_to = "volume"
 
