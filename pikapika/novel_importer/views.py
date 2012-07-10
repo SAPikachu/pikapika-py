@@ -6,12 +6,18 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.shortcuts import render, get_object_or_404
 from django.conf import settings
-from django.http import HttpResponsePermanentRedirect, HttpResponseNotFound
+from django.http import (
+    HttpResponsePermanentRedirect, 
+    HttpResponseNotFound,
+    HttpResponseBadRequest,
+)
 from django.contrib import admin
 from django.template import TemplateDoesNotExist
+from django.core.urlresolvers import reverse
 
 from pikapika.common.decorators import staff_required, param_from_post
-from pikapika.novel.models import Volume
+from pikapika.common.http import JsonResponseServerError, JsonResponse
+from pikapika.novel.models import Volume, Chapter
 
 @csrf_exempt
 @require_POST
@@ -31,7 +37,35 @@ def import_from_external(request, content_json, site_cookies_json):
 @staff_required
 @param_from_post
 def save_volume_ajax(request, volume_id, chapters_json):
-    raise NotImplementedError()
+    try:
+        volume_id = int(volume_id)
+    except ValueError:
+        return HttpResponseBadRequest()
+
+    volume = get_object_or_404(Volume, pk=volume_id)
+    existing_chapters = list(volume.chapter_set.all())
+    for client_chapter in json.loads(chapters_json):
+        if existing_chapters:
+            chapter_obj = existing_chapters.pop(0)
+        else:
+            chapter_obj = Chapter(volume=volume)
+
+        chapter_obj.name = client_chapter["name"]
+        chapter_obj.content = json.dumps(client_chapter["lines"], indent=1)
+        chapter_obj.save()
+
+    if existing_chapters:
+        [x.delete() for x in existing_chapters]
+
+    volume.save()
+    return JsonResponse({
+        "return_url": reverse(
+            "admin:novel_volume_change", 
+            args={
+                volume_id,
+            },
+        ),
+    })
 
 @admin.site.admin_view
 def begin_edit(request, volume_id):

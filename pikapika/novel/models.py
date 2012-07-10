@@ -75,6 +75,23 @@ class Chapter(models.Model):
         except ChapterContent.DoesNotExist:
             return ""
 
+    def set_content(self, content):
+        content_record = None
+        try:
+            content_record = self.content_record
+        except ChapterContent.DoesNotExist:
+            pass
+
+        if not content_record:
+            content_record = ChapterContent()
+            self.content_record = content_record
+            self.save()
+
+        content_record.content = content
+        content_record.save()
+
+    content = property(get_content, set_content)
+
     class Meta:
         order_with_respect_to = "volume"
 

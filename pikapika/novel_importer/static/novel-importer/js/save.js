@@ -171,7 +171,7 @@
             url: "save-ajax",
             data: {
                 volume_id: volume_id,
-                chapters_json: JSON.stringify(chapters, null, " ")
+                chapters_json: JSON.stringify(chapters)
             },
             dataType: "json",
             success: function(data) {
