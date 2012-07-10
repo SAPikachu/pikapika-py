@@ -104,9 +104,84 @@
         };
         upload_next();
     }
+    function upload_volume() {
+        var volume_id = novel_importer.settings.volume_id;
+        if (!volume_id) {
+            show_error("You have not selected a volume");
+            return;
+        }
+        function new_chapter() {
+            return {
+                name: "",
+                lines: []
+            };
+        }
+        var current_chapter = new_chapter();
+        var got_name = false;
+        var in_prologue = true;
+        var chapters = [current_chapter];
+        novel_importer.iterate(function(i, line_obj) {
+            if (line_obj.type === "splitter") {
+                got_name = false;
+                in_prologue = true;
+                current_chapter = new_chapter();
+                chapters.push(current_chapter);
+                return;
+            }
+            line_obj.tags = [];
+            var cleaned_line = line_obj.data || "";
+            cleaned_line = cleaned_line.replace(/(&nbsp;|\s)+/gi, " ");
+            cleaned_line = $.trim(cleaned_line);
+            if (!got_name) {
+                var have_first_line = !!current_chapter.name;
+                if (novel_importer._(line_obj).get_images().size() === 0) {
+                    line_obj.tags.push("hidden");
+                    if (cleaned_line) {
+                        if (current_chapter.name) {
+                            current_chapter.name += " ";
+                        }
+                        current_chapter.name += cleaned_line;
+                    }
+                }
+                got_name = have_first_line;
+            } else if (in_prologue) {
+                if (!cleaned_line) {
+                    line_obj.tags.push("hidden");
+                } else {
+                    in_prologue = false;
+                }
+            }
+            current_chapter.lines.push(line_obj);
+        });
+        // Filter out empty chapters
+        chapters = $.map(chapters, function(chapter) {
+            if (!chapter.name) {
+                return null;
+            }
+            for (var i = 0; i < chapter.lines.length; i++) {
+                var tags = chapter.lines[i].tags || [];
+                if (tags.indexOf("hidden") === -1) {
+                    return chapter;
+                }
+            }
+            return null;
+        });
+        $.ajax({
+            type: "POST",
+            url: "save-ajax",
+            data: {
+                volume_id: volume_id,
+                chapters_json: JSON.stringify(chapters, null, " ")
+            },
+            success: function() {
+                // TODO
+                show_message("Success!");
+            }
+        });
+    }
     novel_importer.save_to_server = function() {
         upload_images(function() {
-            show_message("Success");
+            upload_volume();
         });
     };
     $(function() {
