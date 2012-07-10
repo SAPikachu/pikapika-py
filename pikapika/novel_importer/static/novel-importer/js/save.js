@@ -173,9 +173,23 @@
                 volume_id: volume_id,
                 chapters_json: JSON.stringify(chapters, null, " ")
             },
-            success: function() {
-                // TODO
+            dataType: "json",
+            success: function(data) {
                 show_message("Success!");
+                novel_importer.reset();
+                location.href = data.return_url;
+            },
+            error: function(jqxhr, status, errorThrown) {
+                var message;
+                try 
+                {
+                    message = $.parseJSON(jqxhr.responseText).message;
+                } catch (e) {
+                    message = "Unexpected error ({0}, {1})".format(
+                        status, errorThrown
+                    );
+                }
+                show_error("Unable to upload volume: " + message);
             }
         });
     }

@@ -78,6 +78,11 @@
         clear: function() {
             this.lines = [];
         },
+        reset: function() {
+            this.clear();
+            this.settings = {};
+            this.save();
+        },
         _: function(line_obj) {
             if (line_obj instanceof Line || line_obj._has_line_prototype) {
                 return line_obj;
