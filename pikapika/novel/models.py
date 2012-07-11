@@ -66,6 +66,10 @@ class Chapter(models.Model):
     updated_date = models.DateTimeField(auto_now_add=True)
     posted_by = models.ForeignKey(User)
 
+    def __init__(self, *args, **kwargs):
+        super(Chapter, self).__init__(*args, **kwargs)
+        self._content_dirty = False
+
     def __unicode__(self):
         return self.name
 
@@ -83,14 +87,24 @@ class Chapter(models.Model):
             pass
 
         if not content_record:
-            content_record = ChapterContent()
+            content_record = ChapterContent(chapter=self)
             self.content_record = content_record
-            self.save()
 
         content_record.content = content
-        content_record.save()
+        self._content_dirty = True
 
     content = property(get_content, set_content)
+
+    def save(self, *args, **kwargs):
+        super(Chapter, self).save(*args, **kwargs)
+
+        if self._content_dirty:
+            # Ensure content_record.chapter_id is set
+            self.content_record.chapter = self
+
+            self.content_record.save()
+            self._content_dirty = False
+              
 
     class Meta:
         order_with_respect_to = "volume"
