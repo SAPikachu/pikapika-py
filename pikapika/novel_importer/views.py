@@ -52,7 +52,11 @@ def save_volume_ajax(request, volume_id, chapters_json):
             chapter_obj.posted_by = request.user
 
         chapter_obj.name = client_chapter["name"]
-        chapter_obj.content = json.dumps(client_chapter["lines"], indent=1)
+        chapter_obj.content = json.dumps(
+            client_chapter["lines"], 
+            indent=1,
+            ensure_ascii=False,
+        )
         chapter_obj.save()
 
     if existing_chapters:
