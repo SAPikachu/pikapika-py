@@ -23,4 +23,8 @@ urlpatterns = patterns('',
                 app_name="novel_importer",
                 namespace="novel_importer",),
        ),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^', include('pikapika.novel.urls')),
+)
+
+urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + \
+              urlpatterns

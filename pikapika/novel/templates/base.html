@@ -1,0 +1,48 @@
+{% load html_helpers %}{% load url from future %}<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <title>{% block title-full %}{% block title %}{% endblock %} - PikaPika Alpha 2{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    {% block css-common %}
+    {% css "site.css" %}
+    {% endblock %}
+    {% comment %}
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19525559-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    {% endcomment %}
+    {% block head-extra %}{% endblock %}
+    {% endblock head %}
+</head>
+
+<body class="{% block body-class %}{% endblock %}">
+
+<header>
+    <a class="title" href="{% url "index" %}"><h1>PikaPika</h1></a>
+    <nav>
+        <ul>
+            <li><a href="{% url "index" %}">首页</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container-fluid">
+</div>
+
+<footer></footer>
+
+</body>
+
+</html>

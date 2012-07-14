@@ -1,0 +1,79 @@
+@import "../modules/bootstrap/less/bootstrap.less";
+
+@image-base: "../images/";
+
+@content-margin: (@fluidGridColumnWidth);
+
+header
+{
+    position: relative;
+    padding-top: 25px;
+    margin-bottom: 0px;
+    color: #000;
+    background-image: url("@{image-base}header-background.png");
+    background-repeat: repeat-x;
+    background-position: left top;
+
+    &, .title, nav, ul 
+    {
+        zoom: 1; /* workaround for ie7 bug */
+        overflow: hidden;
+    }
+
+    .title
+    {
+        margin: 0 @content-margin 10px;
+        height: 64px;
+        width: 303px;
+        background-image: url("@{image-base}logo-header.png");
+        background-repeat: no-repeat;
+        background-position: left top;
+        outline: none;
+        display: block;
+
+        h1
+        {
+            text-indent: -1000em;
+        }
+    }
+
+    nav 
+    {
+        clear: both;
+        margin: 0;
+        padding: 0 @content-margin;
+        border-color: #D2CBB7;
+        border-style: solid;
+        border-width: 1px 0;
+        background-image: url("@{image-base}menu-background.png");
+        background-repeat: repeat-x;
+        background-position: left top;
+        height: 37px;
+
+        ul
+        {
+            padding: 0 25px;
+            position: relative;
+            margin: 0;
+            text-align: left;
+            clear: both;
+            cursor: default;
+            height: 37px;
+            line-height: 37px;
+
+            li
+            {
+                display: inline;
+                list-style: none;
+
+                a
+                {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+
+
