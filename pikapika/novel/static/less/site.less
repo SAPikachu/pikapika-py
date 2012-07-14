@@ -1,8 +1,45 @@
 @import "../modules/bootstrap/less/bootstrap.less";
 
-@image-base: "../images/";
+@image-base:            "../images/";
+@content-margin:        (@fluidGridColumnWidth);
+@footer-height:         91px;
 
-@content-margin: (@fluidGridColumnWidth);
+// --- Sticky footer ---
+html, body
+{
+    height: 100%;
+}
+
+#sticky-footer-wrap
+{
+    min-height: 100%;
+}
+
+#page
+{
+    overflow: auto; // FIXME: It is commented out in the original site, why?
+    padding-bottom: @footer-height;
+}
+
+footer
+{
+    position: relative;
+    border-top: 1px solid #ccc;
+    margin-top: -@footer-height;
+    height: (@footer-height - 1px);
+    clear: both;
+}
+
+// Opera fix
+body:before
+{
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+}
+// --- Sticky footer end ---
 
 header
 {
@@ -75,5 +112,13 @@ header
     }
 }
 
-
+footer
+{
+    color: #999;
+    text-align: center;
+    line-height: normal;
+    font-size: .9em;
+    overflow: hidden;
+    background: url("@{image-base}footer-background.gif") repeat-x scroll left top transparent;
+}
 

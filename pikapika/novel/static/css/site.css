@@ -4198,6 +4198,31 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+html,
+body {
+  height: 100%;
+}
+#sticky-footer-wrap {
+  min-height: 100%;
+}
+#page {
+  overflow: auto;
+  padding-bottom: 91px;
+}
+footer {
+  position: relative;
+  border-top: 1px solid #ccc;
+  margin-top: -91px;
+  height: 90px;
+  clear: both;
+}
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+}
 header {
   position: relative;
   padding-top: 25px;
@@ -4257,4 +4282,12 @@ header nav ul li {
 }
 header nav ul li a {
   outline: none;
+}
+footer {
+  color: #999;
+  text-align: center;
+  line-height: normal;
+  font-size: .9em;
+  overflow: hidden;
+  background: url("../images/footer-background.gif") repeat-x scroll left top transparent;
 }

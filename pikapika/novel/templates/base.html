@@ -29,19 +29,32 @@
 
 <body class="{% block body-class %}{% endblock %}">
 
-<header>
-    <a class="title" href="{% url "index" %}"><h1>PikaPika</h1></a>
-    <nav>
-        <ul>
-            <li><a href="{% url "index" %}">首页</a></li>
-        </ul>
-    </nav>
-</header>
+<div id="sticky-footer-wrap">
+    <header>
+        {% block header %}
+        <a class="title" href="{% url "index" %}"><h1>PikaPika</h1></a>
+        <nav>
+            <ul>
+                <li><a href="{% url "index" %}">首页</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+    </header>
+    <div id="page">
+    </div>
 
-<div class="container-fluid">
 </div>
 
-<footer></footer>
+<footer>
+    {% block footer %}
+    <div id="footer-info">
+        PikaPika Alpha 2
+    </div>
+    <div id="copyright">
+        Copyright 2010-2012 PikaPika Project
+    </div>
+    {% endblock %}
+</footer>
 
 </body>
 
