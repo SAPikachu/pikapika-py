@@ -4207,7 +4207,6 @@ body {
 }
 #page {
   overflow: auto;
-  padding-bottom: 91px;
 }
 footer {
   position: relative;
@@ -4250,9 +4249,11 @@ header .title {
   background-position: left top;
   outline: none;
   display: block;
-}
-header .title h1 {
-  text-indent: -1000em;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
 header nav {
   clear: both;
@@ -4282,6 +4283,22 @@ header nav ul li {
 }
 header nav ul li a {
   outline: none;
+}
+#page {
+  padding: 10px 6.382978723% 101px;
+  min-width: 700px;
+}
+#page aside {
+  background-color: #F8F5F0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.no-sidebar #page .page-content {
+  width: 100%;
+}
+.no-sidebar #page aside {
+  display: none;
 }
 footer {
   color: #999;

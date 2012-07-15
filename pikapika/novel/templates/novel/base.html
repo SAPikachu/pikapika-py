@@ -34,13 +34,30 @@
         {% block header %}
         <a class="title" href="{% url "index" %}"><h1>PikaPika</h1></a>
         <nav>
+            {% block nav %}
             <ul>
                 <li><a href="{% url "index" %}">首页</a></li>
+                {% for item in nav_menu_items %}
+                    <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+                {% empty %}
+                {% endfor %}
+                {% block nav-menu-extra %}{% endblock %}
             </ul>
+            {% endblock %}
         </nav>
         {% endblock %}
     </header>
-    <div id="page">
+    <div id="page" class="container-fluid">
+        <div class="row-fluid">
+            {% block page-main %}
+            <div class="page-content span9">
+                {% block content %}{% endblock %}
+            </div>
+            <aside class="span3">
+                {% block sidebar %}{% endblock %}
+            </aside>
+            {% endblock %}
+        </div>
     </div>
 
 </div>

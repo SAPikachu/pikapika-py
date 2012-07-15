@@ -18,7 +18,8 @@ html, body
 #page
 {
     overflow: auto; // FIXME: It is commented out in the original site, why?
-    padding-bottom: @footer-height;
+    // padding-bottom is set below
+    // padding-bottom: @footer-height;
 }
 
 footer
@@ -67,11 +68,7 @@ header
         background-position: left top;
         outline: none;
         display: block;
-
-        h1
-        {
-            text-indent: -1000em;
-        }
+        .hide-text;
     }
 
     nav 
@@ -109,6 +106,35 @@ header
                 }
             }
         }
+    }
+}
+
+#page
+{
+    padding: 10px @content-margin (@footer-height + 10px);
+    min-width: 700px;
+
+    .page-content
+    {
+    }
+
+    aside
+    {
+        background-color: #F8F5F0;
+        .border-radius(5px);
+    }
+}
+
+.no-sidebar #page
+{
+    .page-content
+    {
+        width: 100%;
+    }
+
+    aside
+    {
+        display: none;
     }
 }
 
