@@ -4288,6 +4288,24 @@ header nav ul li a {
   padding: 10px 6.382978723% 101px;
   min-width: 700px;
 }
+#page section h2 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #f0c884;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  zoom: 1;
+  /* workaround for ie7 bug */
+
+  clear: both;
+}
+#page .page-content section h2 {
+  padding-left: 25px;
+  padding-right: 25px;
+}
 #page aside {
   background-color: #F8F5F0;
   -webkit-border-radius: 5px;

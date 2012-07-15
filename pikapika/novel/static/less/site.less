@@ -2,6 +2,7 @@
 
 @image-base:            "../images/";
 @content-margin:        (@fluidGridColumnWidth);
+@content-padding:       25px;
 @footer-height:         91px;
 
 // --- Sticky footer ---
@@ -86,7 +87,7 @@ header
 
         ul
         {
-            padding: 0 25px;
+            padding: 0 @content-padding;
             position: relative;
             margin: 0;
             text-align: left;
@@ -114,8 +115,31 @@ header
     padding: 10px @content-margin (@footer-height + 10px);
     min-width: 700px;
 
+    section
+    {
+        h2
+        {
+            .border-radius(5px);
+            background-color: #f0c884;
+            font-size: 1em;
+            line-height: 1.5em;
+            margin: 0 0 10px;
+            padding: 5px 10px;
+            zoom: 1; /* workaround for ie7 bug */
+            clear: both;
+        }
+    }
+
     .page-content
     {
+        section
+        {
+            h2
+            {
+                padding-left: @content-padding;
+                padding-right: @content-padding;
+            }
+        }
     }
 
     aside

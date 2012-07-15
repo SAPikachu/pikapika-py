@@ -3,6 +3,6 @@ from django.conf import settings
 from django.views.generic import TemplateView
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name="novel/base.html"), 
+    url(r'^$', TemplateView.as_view(template_name="novel/index.html"), 
         name="index"),
 )
