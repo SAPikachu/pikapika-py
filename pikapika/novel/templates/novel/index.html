@@ -1,8 +1,30 @@
 {% extends "novel/base.html" %}
+{% load url from future %}
 
 {% block content %}
-<section>
+<section id="latest-novels">
     <h2>最近更新</h2>
+    <ul>
+        {% for item in latest_novels %}
+        <li>
+            <a href="{% url "details" pk=item.novel.pk %}" class="novel-link">
+                <div class="image">
+                    {% if item.novel.image %}
+                    <img src="{{ item.novel.image.url }}"/>
+                    {% else %}
+                    <span class="placeholder"></span>
+                    {% endif %}
+                </div>
+                <div class="novel-name">
+                    {{ item.novel.name }}
+                </div>
+            </a>
+            <a href="{% url "details" pk=item.novel.pk %}#volume-{{ item.chapter.volume.pk }}" class="latest-chapter-link">
+                {{ item.chapter.volume.name }} - {{ item.chapter.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </section>
 <section>
     <h2>大家在吐槽...</h2>
