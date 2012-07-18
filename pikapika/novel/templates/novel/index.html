@@ -10,7 +10,7 @@
             <a href="{% url "details" pk=item.novel.pk %}" class="novel-link">
                 <div class="image">
                     {% if item.novel.image %}
-                    <img src="{{ item.novel.image.url }}"/>
+                    <img src="{% url "thumbnail" path=item.novel.image.name max_width=80 max_height=110 %}"/>
                     {% else %}
                     <span class="placeholder"></span>
                     {% endif %}

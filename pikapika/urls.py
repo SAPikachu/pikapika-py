@@ -7,9 +7,10 @@ from filebrowser.sites import site
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'pikapika.views.home', name='home'),
     url(r'^ajax/', include('pikapika.ajax_services.urls')),
+    url(r'^thumb/(?P<max_width>\d+)x(?P<max_height>\d+)/+(?P<path>.+)$', 
+        'pikapika.common.thumbnail.generate',
+        name="thumbnail"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
