@@ -169,6 +169,31 @@ header
     }
 }
 
+aside
+{
+    ul 
+    {
+        margin: 1em 1em 2em;
+
+        li
+        {
+            list-style: none;
+            border-bottom: 2px dotted #CCCCCC;
+            color: #676767;
+            line-height: 1.1em;
+            font-size: 0.91em;
+            padding: 0 10px 8px;
+            margin-top: 8px;
+
+            a
+            {
+                font-size: 1.1em;
+                line-height: 1.4em;
+            }
+        }
+    }
+}
+
 footer
 {
     color: #999;
@@ -180,7 +205,7 @@ footer
 }
 
 // --- Index page ---
-#latest-novels ul
+#latest-novels
 {
     margin: 0;
     padding: 0;
@@ -211,14 +236,20 @@ footer
 
             .image
             {
-                @height: 80px;
+                @height: 110px;
                 @padding: 2px;
-                .size(110px, @height);
+                .size(@height, 80px);
                 padding: @padding;
-                line-height: @height - @padding * 2;
+                line-height: @height;
                 text-align: center;
                 margin: 0 auto 4px;
                 border: 1px solid @image-border-color;
+
+                // Removes gap on the top of image
+                // See http://stackoverflow.com/questions/1368253/why-when-i-center-an-image-in-a-div-with-line-height-does-a-3px-gap-appear-at
+                // Seems setting font family to arial fixes that, but for 
+                // safety also set font size to as small as possible
+                font: 0/0 "Arial", sans-serif; 
 
                 img
                 {
@@ -263,3 +294,66 @@ footer
         }
     }
 }
+
+#google-search 
+{
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+    td
+    {
+        border: 0 none;
+    }
+
+    form
+    {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+#google-search-result 
+{
+    display: none;
+    margin-bottom: 20px;
+    font-size: 1em;
+
+    .gsc-branding 
+    {
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        font-size: 13px;
+        margin-left: 25px;
+
+        img
+        {
+            vertical-align: middle;
+        }
+    }
+
+    div
+    {
+        font-size: 1em;
+        line-height: normal;
+    }
+
+    .gs-result 
+    {
+        margin: 25px;
+        font-size: 1em;
+    }
+
+    .gs-title 
+    {
+        font-size: 1.05em;
+    }
+}
+
+#cse, .gs-visibleUrl
+{
+    display: none;
+}
+
