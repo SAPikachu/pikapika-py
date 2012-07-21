@@ -3,9 +3,11 @@ from django.conf import settings
 from django.views.generic import TemplateView
 
 urlpatterns = patterns('pikapika.novel.views',
-    url(r'^$', 'index', name='index'),
+    url(r'^$', 
+        'index', 
+        name='index'),
     url(r'^novel/(?P<pk>\d+)(?:/.*)?$', 
-        TemplateView.as_view(template_name="PLACEHOLDER"), 
+        "details",
         name="details"),
     url(r'^read/(?P<pk>\d+)(?:/.*)?$', 
         TemplateView.as_view(template_name="PLACEHOLDER"), 

@@ -1,7 +1,7 @@
 from __future__ import print_function, unicode_literals
 
-from django.shortcuts import render
-from django.db.models import Max
+from django.shortcuts import render, get_object_or_404
+from django.db.models import Max, Sum
 
 from . import models
 
@@ -38,5 +38,20 @@ def index(request):
         "novel/index.html",
         {
             "latest_novels": latest_novels,
+        },
+    )
+
+def details(request, pk):
+    query = (
+        models.Novel.objects.
+        filter(pk=int(pk)).
+        annotate(hit_count=Sum("volume__chapter__hit_records__hits"))
+    )
+    novel = get_object_or_404(query)
+    return render(
+        request,
+        "novel/details.html",
+        {
+            "novel": novel,
         },
     )
