@@ -148,28 +148,28 @@ header
             }
         }
     }
-
-    aside
-    {
-        background-color: #F8F5F0;
-        .border-radius(5px);
-    }
 }
 
-.no-sidebar #page
+#sidebar
 {
-    .page-content
+    background-color: #F8F5F0;
+    .border-radius(5px);
+}
+
+.no-sidebar
+{
+    #page .page-content
     {
         width: 100%;
     }
 
-    aside
+    #sidebar
     {
         display: none;
     }
 }
 
-aside
+#sidebar
 {
     ul 
     {

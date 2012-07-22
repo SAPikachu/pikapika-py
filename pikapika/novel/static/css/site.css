@@ -4309,7 +4309,7 @@ header nav ul li a {
   padding-left: 25px;
   padding-right: 25px;
 }
-#page aside {
+#sidebar {
   background-color: #F8F5F0;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -4318,13 +4318,13 @@ header nav ul li a {
 .no-sidebar #page .page-content {
   width: 100%;
 }
-.no-sidebar #page aside {
+.no-sidebar #sidebar {
   display: none;
 }
-aside ul {
+#sidebar ul {
   margin: 1em 1em 2em;
 }
-aside ul li {
+#sidebar ul li {
   list-style: none;
   border-bottom: 2px dotted #CCCCCC;
   color: #676767;
@@ -4333,7 +4333,7 @@ aside ul li {
   padding: 0 10px 8px;
   margin-top: 8px;
 }
-aside ul li a {
+#sidebar ul li a {
   font-size: 1.1em;
   line-height: 1.4em;
 }
