@@ -86,7 +86,7 @@ def add_novel(values):
             chapter = Chapter(volume=volume, posted_by=user)
             fill_model(chapter, chapter_values)
             chapter.save()
-            set_updated_date(chapter, values["UpdatedDate"])
+            set_updated_date(chapter, chapter_values["UpdatedDate"])
 
             r = HitCountRecord(chapter=chapter, hits=chapter_values["HitCount"])
             r.save()
