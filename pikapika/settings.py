@@ -120,7 +120,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
 
-    "pikapika.context_processors.misc",
+    "pikapika.common.context_processors.misc",
 )
 
 ROOT_URLCONF = 'pikapika.urls'
