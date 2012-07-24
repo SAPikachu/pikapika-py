@@ -7,6 +7,8 @@ from .secret_key import SECRET_KEY
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+INTERNAL_IPS = ["192.168.1." + str(x) for x in range(256)]
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
     ('SAPikachu', 'sapikachu@gmail.com'),

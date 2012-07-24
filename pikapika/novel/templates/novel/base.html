@@ -11,7 +11,7 @@
     {% if load_live_js %}
     {% js "live.js" %}
     {% endif %}
-    {% comment %}
+    {% if not debug %}
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -25,7 +25,7 @@
       })();
 
     </script>
-    {% endcomment %}
+    {% endif %}
     {% block head-extra %}{% endblock %}
     {% endblock head %}
 </head>
