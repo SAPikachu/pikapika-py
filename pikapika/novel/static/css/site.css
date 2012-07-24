@@ -133,7 +133,7 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Segoe UI", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
   font-size: 13px;
   line-height: 18px;
   color: #333333;
@@ -627,7 +627,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Segoe UI", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
 }
 label {
   display: block;
@@ -3083,7 +3083,7 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-search .search-query {
   padding: 4px 9px;
-  font-family: "Segoe UI", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -4345,12 +4345,12 @@ footer {
   overflow: hidden;
   background: url("../images/footer-background.gif") repeat-x scroll left top transparent;
 }
-#latest-novels {
+.page-index #latest-novels {
   margin: 0;
   padding: 0;
   zoom: 1;
 }
-#latest-novels li {
+.page-index #latest-novels li {
   width: 18%;
   min-width: 100px;
   float: left;
@@ -4358,15 +4358,26 @@ footer {
   padding: 0 0.95%;
   text-align: center;
   overflow: hidden;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
 }
-#latest-novels li,
-#latest-novels li a {
+.page-index #latest-novels li:hover {
+  background-color: #F9F7F0;
+}
+.page-index #latest-novels li,
+.page-index #latest-novels li a {
   display: block;
 }
-#latest-novels li .novel-link {
+.page-index #latest-novels li .novel-link {
   padding-top: 8px;
 }
-#latest-novels li .novel-link .image {
+.page-index #latest-novels li .novel-link .image {
   width: 80px;
   height: 110px;
   padding: 2px;
@@ -4376,7 +4387,7 @@ footer {
   border: 1px solid #d8c9c3;
   font: 0/0 "Arial", sans-serif;
 }
-#latest-novels li .novel-link .image img {
+.page-index #latest-novels li .novel-link .image img {
   width: auto;
   height: auto;
   max-width: 100%;
@@ -4384,7 +4395,7 @@ footer {
   vertical-align: middle;
   border: none;
 }
-#latest-novels li .novel-link .image .placeholder {
+.page-index #latest-novels li .novel-link .image .placeholder {
   background-image: url("../images/placeholder.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -4392,60 +4403,93 @@ footer {
   width: 100%;
   height: 100%;
 }
-#latest-novels li .latest-chapter-link {
+.page-index #latest-novels li .latest-chapter-link {
   font-size: 0.85em;
   padding-bottom: 8px;
 }
-#latest-novels li .latest-chapter-link,
-#latest-novels li .novel-name {
+.page-index #latest-novels li .latest-chapter-link,
+.page-index #latest-novels li .novel-name {
   height: 1.5em;
   line-height: 1.5em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-#latest-novels li:hover {
-  background-color: #F9F7F0;
-}
-#google-search {
+.page-index #google-search {
   width: 100%;
   margin-bottom: 10px;
   overflow: hidden;
 }
-#google-search td {
+.page-index #google-search td {
   border: 0 none;
 }
-#google-search form {
+.page-index #google-search form {
   margin: 0;
   padding: 0;
 }
-#google-search-result {
+.page-index #google-search-result {
   display: none;
   margin-bottom: 20px;
   font-size: 1em;
 }
-#google-search-result .gsc-branding {
+.page-index #google-search-result .gsc-branding {
   display: block;
   margin: 0 auto;
   width: auto;
   font-size: 13px;
   margin-left: 25px;
 }
-#google-search-result .gsc-branding img {
+.page-index #google-search-result .gsc-branding img {
   vertical-align: middle;
 }
-#google-search-result div {
+.page-index #google-search-result div {
   font-size: 1em;
   line-height: normal;
 }
-#google-search-result .gs-result {
+.page-index #google-search-result .gs-result {
   margin: 25px;
   font-size: 1em;
 }
-#google-search-result .gs-title {
+.page-index #google-search-result .gs-title {
   font-size: 1.05em;
 }
-#cse,
-.gs-visibleUrl {
+.page-index #cse,
+.page-index .gs-visibleUrl {
   display: none;
+}
+.page-details figure {
+  float: left;
+  margin-left: 20px;
+  width: 220px;
+  margin-left: 0;
+}
+.page-details figure img {
+  border: 1px solid #cebbb3;
+  -webkit-box-shadow: 1px 1px 6px #9c7566;
+  -moz-box-shadow: 1px 1px 6px #9c7566;
+  box-shadow: 1px 1px 6px #9c7566;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.page-details figure img:hover {
+  -webkit-box-shadow: 2px 2px 6px #403029;
+  -moz-box-shadow: 2px 2px 6px #403029;
+  box-shadow: 2px 2px 6px #403029;
+}
+.page-details .novel-info {
+  margin-left: 260px;
+}
+.page-details .novel-info dl dt,
+.page-details .novel-info dl dd {
+  line-height: 1.6;
+}
+.page-details .novel-info dl dt {
+  width: 4em;
+  float: left;
+  font-weight: normal;
+  color: #999999;
+  margin-right: 1em;
 }

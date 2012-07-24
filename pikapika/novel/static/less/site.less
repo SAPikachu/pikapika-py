@@ -6,6 +6,11 @@
 @footer-height:         91px;
 @image-border-color:    lighten(@linkColor, 40%);
 
+.generic-transition(@duration: .15s) 
+{
+    .transition(all @duration linear);
+}
+
 a:hover
 {
     text-decoration: none;
@@ -204,156 +209,205 @@ footer
     background: url("@{image-base}footer-background.gif") repeat-x scroll left top transparent;
 }
 
-// --- Index page ---
-#latest-novels
+.page-index
 {
-    margin: 0;
-    padding: 0;
-    zoom: 1;
-
-    li
-    {
-        @padding-vert: 8px;
-
-        // 5 items per row, can't use 20% due to rounding bug on IE7
-        width: 18%;
-        min-width: 100px;
-        float: left;
-        margin: 0 0 1em;
-        padding: 0 0.95%;
-        text-align: center;
-        overflow: hidden;
-
-
-        &, a
-        {
-            display: block;
-        }
-
-        .novel-link
-        {
-            padding-top: @padding-vert;
-
-            .image
-            {
-                @height: 110px;
-                @padding: 2px;
-                .size(@height, 80px);
-                padding: @padding;
-                line-height: @height;
-                text-align: center;
-                margin: 0 auto 4px;
-                border: 1px solid @image-border-color;
-
-                // Removes gap on the top of image
-                // See http://stackoverflow.com/questions/1368253/why-when-i-center-an-image-in-a-div-with-line-height-does-a-3px-gap-appear-at
-                // Seems setting font family to arial fixes that, but for 
-                // safety also set font size to as small as possible
-                font: 0/0 "Arial", sans-serif; 
-
-                img
-                {
-                    .size(auto, auto);
-                    max-width: 100%;
-                    max-height: 100%;
-                    vertical-align: middle;
-                    border: none;
-                }
-
-                .placeholder
-                {
-                    background-image: url("@{image-base}placeholder.png");
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-        }
-
-        .latest-chapter-link
-        {
-            font-size: 0.85em;
-            padding-bottom: @padding-vert;
-        }
-
-        .latest-chapter-link, .novel-name
-        {
-            height: 1.5em;
-            line-height: 1.5em;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-        &:hover
-        {
-            background-color: #F9F7F0;
-        }
-    }
-}
-
-#google-search 
-{
-    width: 100%;
-    margin-bottom: 10px;
-    overflow: hidden;
-
-    td
-    {
-        border: 0 none;
-    }
-
-    form
+    #latest-novels
     {
         margin: 0;
         padding: 0;
-    }
-}
+        zoom: 1;
 
-
-#google-search-result 
-{
-    display: none;
-    margin-bottom: 20px;
-    font-size: 1em;
-
-    .gsc-branding 
-    {
-        display: block;
-        margin: 0 auto;
-        width: auto;
-        font-size: 13px;
-        margin-left: 25px;
-
-        img
+        li
         {
-            vertical-align: middle;
+            @padding-vert: 8px;
+
+            // 5 items per row, can't use 20% due to rounding bug on IE7
+            width: 18%;
+            min-width: 100px;
+            float: left;
+            margin: 0 0 1em;
+            padding: 0 0.95%;
+            text-align: center;
+            overflow: hidden;
+            .border-radius(@padding-vert);
+            .generic-transition;
+
+            &:hover
+            {
+                background-color: #F9F7F0;
+            }
+
+            &, a
+            {
+                display: block;
+            }
+
+            .novel-link
+            {
+                padding-top: @padding-vert;
+
+                .image
+                {
+                    @height: 110px;
+                    @padding: 2px;
+                    .size(@height, 80px);
+                    padding: @padding;
+                    line-height: @height;
+                    text-align: center;
+                    margin: 0 auto 4px;
+                    border: 1px solid @image-border-color;
+
+                    // Removes gap on the top of image
+                    // See http://stackoverflow.com/questions/1368253/why-when-i-center-an-image-in-a-div-with-line-height-does-a-3px-gap-appear-at
+                    // Seems setting font family to arial fixes that, but for 
+                    // safety also set font size to as small as possible
+                    font: 0/0 "Arial", sans-serif; 
+
+                    img
+                    {
+                        .size(auto, auto);
+                        max-width: 100%;
+                        max-height: 100%;
+                        vertical-align: middle;
+                        border: none;
+                    }
+
+                    .placeholder
+                    {
+                        background-image: url("@{image-base}placeholder.png");
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+            }
+
+            .latest-chapter-link
+            {
+                font-size: 0.85em;
+                padding-bottom: @padding-vert;
+            }
+
+            .latest-chapter-link, .novel-name
+            {
+                height: 1.5em;
+                line-height: 1.5em;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
         }
     }
 
-    div
+    #google-search 
     {
-        font-size: 1em;
-        line-height: normal;
+        width: 100%;
+        margin-bottom: 10px;
+        overflow: hidden;
+
+        td
+        {
+            border: 0 none;
+        }
+
+        form
+        {
+            margin: 0;
+            padding: 0;
+        }
     }
 
-    .gs-result 
+
+    #google-search-result 
     {
-        margin: 25px;
+        display: none;
+        margin-bottom: 20px;
         font-size: 1em;
+
+        .gsc-branding 
+        {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            font-size: 13px;
+            margin-left: 25px;
+
+            img
+            {
+                vertical-align: middle;
+            }
+        }
+
+        div
+        {
+            font-size: 1em;
+            line-height: normal;
+        }
+
+        .gs-result 
+        {
+            margin: 25px;
+            font-size: 1em;
+        }
+
+        .gs-title 
+        {
+            font-size: 1.05em;
+        }
     }
 
-    .gs-title 
+    #cse, .gs-visibleUrl
     {
-        font-size: 1.05em;
+        display: none;
     }
 }
 
-#cse, .gs-visibleUrl
+.page-details
 {
-    display: none;
-}
+    figure
+    {
+        .makeColumn(3);
+        margin-left: 0;
 
+        img
+        {
+            border: 1px solid lighten(@linkColor, 35%);
+            .box-shadow(1px 1px 6px lighten(@linkColor, 10%));
+            .generic-transition;
+
+            &:hover
+            {
+                .box-shadow(2px 2px 6px darken(@linkColor, 20%));
+            }
+        }
+    }
+
+    .novel-info
+    {
+        #grid .core .offset(3);
+
+        dl
+        {
+            @dt-width: 4em;
+            @gap: 1em;
+
+            dt, dd
+            {
+                line-height: 1.6;
+            }
+
+            dt
+            {
+                width: @dt-width;
+                float: left;
+                font-weight: normal;
+                color: @grayLight;
+                margin-right: @gap;
+            }
+        }
+    }
+}

@@ -1,2 +1,44 @@
 {% extends "novel/base.html" %}
+{% load url from future %}
 
+{% block title %}{{ novel.name }}{% endblock %}
+
+{% block body-class %}no-sidebar page-details{% endblock %}
+
+{% block content %}
+<figure>
+    {% if novel.image %}
+    <a href="{{ novel.image.url }}">
+        <img src="{% url "thumbnail" path=novel.image.name max_width=220 max_height=10000 %}"/>
+    </a>
+    {% else %}
+    <span class="placeholder"></span>
+    {% endif %}
+</figure>
+<h2>{{ novel.name }}</h2>
+<section class="novel-info">
+    <dl>
+        <dt>更新</dt>
+        <dd><time datetime="{{ novel.updated_date|date:"c" }}">{{ novel.updated_date|date:"Y-m-d H:i" }}</time></dd>
+        <dt>作者</dt>
+        <dd>{{ novel.author }}</dd>
+        <dt>出版</dt>
+        <dd>{{ novel.publisher }}</dd>
+        <dt>点击</dt>
+        <dd>{{ novel.hit_count }}</dd>
+        <dt>吐槽</dt>
+        <dd>{# TODO #}&nbsp;</dd>
+        {% if novel.latest_chapter %}
+        <dt>最新章节</dt>
+        <dd>
+            <a href="{% url "read" pk=novel.latest_chapter.pk %}">
+                {{ novel.latest_chapter.volume.name }} - {{ novel.latest_chapter.name }}
+            </a>
+        </dd>
+        {% endif %}
+    </dl>
+    <div class="description">
+        {{ novel.description|linebreaksbr }}
+    </div>
+</section>
+{% endblock %}

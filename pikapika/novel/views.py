@@ -1,5 +1,7 @@
 from __future__ import print_function, unicode_literals
 
+from itertools import chain
+
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Max, Sum
 
@@ -45,9 +47,17 @@ def details(request, pk):
     query = (
         models.Novel.objects.
         filter(pk=int(pk)).
-        annotate(hit_count=Sum("volume__chapter__hit_records__hits"))
+        annotate(hit_count=Sum("volume__chapter__hit_records__hits")).
+        prefetch_related("volume_set__chapter_set")
     )
     novel = get_object_or_404(query)
+    novel.latest_chapter = max(
+        chain.from_iterable((
+            vol.chapter_set.all()
+            for vol in novel.volume_set.all()
+        )),
+        key=lambda chap: chap.updated_date,
+    )
     return render(
         request,
         "novel/details.html",
