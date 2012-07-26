@@ -1,16 +1,25 @@
 from __future__ import print_function, unicode_literals
 
+import hashlib
+
 from django.utils.http import http_date
 from django.conf import settings
 from django.core.exceptions import MiddlewareNotUsed
 from django.contrib.staticfiles.handlers import StaticFilesHandler
 
+def has_live_js_header(request):
+    return request.META.get("HTTP_X_LIVE_JS", False)
+
 def process(request, response):
-    if (request.META.get("HTTP_X_LIVE_JS", 0) or 
+    if (has_live_js_header(request) or 
         "live=1" in request.META.get("HTTP_REFERER", "")):
         response["Pragma"] = "no-cache"
         response["Cache-Control"] = "no-cache"
         response["Expires"] = http_date()
+        if "ETag" not in response:
+            response["ETag"] = '"{}"'.format(
+                hashlib.md5(response.content).hexdigest()
+            )
 
     return response
 
