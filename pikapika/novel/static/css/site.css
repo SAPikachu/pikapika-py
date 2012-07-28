@@ -4457,13 +4457,12 @@ footer {
 .page-index .gs-visibleUrl {
   display: none;
 }
-.page-details figure {
+.page-details .novel-image {
   float: left;
   margin-left: 20px;
   width: 220px;
-  margin-left: 0;
 }
-.page-details figure img {
+.page-details .novel-image img {
   border: 1px solid #cebbb3;
   -webkit-box-shadow: 1px 1px 6px #9c7566;
   -moz-box-shadow: 1px 1px 6px #9c7566;
@@ -4474,11 +4473,17 @@ footer {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
-.page-details figure img:hover {
-  -webkit-box-shadow: 2px 2px 6px #403029;
-  -moz-box-shadow: 2px 2px 6px #403029;
-  box-shadow: 2px 2px 6px #403029;
+.page-details .novel-image img:hover {
+  -webkit-box-shadow: 2px 2px 6px #5f473d;
+  -moz-box-shadow: 2px 2px 6px #5f473d;
+  box-shadow: 2px 2px 6px #5f473d;
 }
+.page-details h2,
+.page-details figure {
+  line-height: 1;
+  margin: 20px 0;
+}
+.page-details h2,
 .page-details .novel-info {
   margin-left: 260px;
 }
@@ -4492,4 +4497,75 @@ footer {
   font-weight: normal;
   color: #999999;
   margin-right: 1em;
+}
+.page-details .volume-list {
+  padding-top: 1px;
+}
+.page-details .volume-list,
+.page-details .volume-list .volume {
+  clear: both;
+}
+.page-details .volume-list ul,
+.page-details .volume-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page-details .volume-list .volume {
+  display: block;
+  margin: 0 20px;
+}
+.page-details .volume-list .volume h3 {
+  margin: 20px 0;
+}
+.page-details .volume-list .volume h3 a,
+.page-details .volume-list .volume h3 a:link,
+.page-details .volume-list .volume h3 a:visited,
+.page-details .volume-list .volume h3 a:hover,
+.page-details .volume-list .volume h3 a:active {
+  color: black;
+}
+.page-details .volume-list .volume .volume-info {
+  width: 31.914893614%;
+  *width: 31.8617021246383%;
+  float: right;
+  margin-bottom: 40px;
+  color: #999999;
+  font-size: 90%;
+}
+.page-details .volume-list .volume .volume-info figure {
+  float: right;
+  padding: 0;
+  margin: 0 0 20px 20px;
+}
+.page-details .volume-list .volume .volume-info figure img {
+  border: 1px solid #cebbb3;
+  -webkit-box-shadow: 1px 1px 6px #9c7566;
+  -moz-box-shadow: 1px 1px 6px #9c7566;
+  box-shadow: 1px 1px 6px #9c7566;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.page-details .volume-list .volume .volume-info figure img:hover {
+  -webkit-box-shadow: 2px 2px 6px #5f473d;
+  -moz-box-shadow: 2px 2px 6px #5f473d;
+  box-shadow: 2px 2px 6px #5f473d;
+}
+.page-details .volume-list .volume .chapter-list {
+  width: 65.95744680199999%;
+  *width: 65.90425531263828%;
+}
+.page-details .volume-list .volume .chapter-list li {
+  width: 23.404255317%;
+  *width: 23.3510638276383%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2.127659574%;
+  margin-bottom: 1.5em;
+}
+.page-details .volume-list .volume .chapter-list li:nth-child(4n) {
+  margin-right: 0;
 }

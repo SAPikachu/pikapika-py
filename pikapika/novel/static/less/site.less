@@ -368,27 +368,41 @@ footer
 
 .page-details
 {
-    figure
+    .image-effect()
+    {
+        border: 1px solid lighten(@linkColor, 35%);
+        .box-shadow(1px 1px 6px lighten(@linkColor, 10%));
+        .generic-transition;
+
+        &:hover
+        {
+            .box-shadow(2px 2px 6px darken(@linkColor, 10%));
+        }
+    }
+
+    .novel-image
     {
         .makeColumn(3);
-        margin-left: 0;
 
         img
         {
-            border: 1px solid lighten(@linkColor, 35%);
-            .box-shadow(1px 1px 6px lighten(@linkColor, 10%));
-            .generic-transition;
-
-            &:hover
-            {
-                .box-shadow(2px 2px 6px darken(@linkColor, 20%));
-            }
+            .image-effect;
         }
+    }
+
+    h2, figure
+    {
+        line-height: 1;
+        margin: @gridGutterWidth 0;
+    }
+
+    h2, .novel-info
+    {
+        #grid .core .offset(3);
     }
 
     .novel-info
     {
-        #grid .core .offset(3);
 
         dl
         {
@@ -407,6 +421,79 @@ footer
                 font-weight: normal;
                 color: @grayLight;
                 margin-right: @gap;
+            }
+        }
+    }
+
+    .volume-list
+    {
+        padding-top: 1px;
+
+        &, .volume
+        {
+            clear: both;
+        }
+
+        ul, li
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .volume
+        {
+            display: block;
+            margin: 0 @gridGutterWidth;
+
+            h3
+            {
+                margin: @gridGutterWidth 0;
+
+                a, a:link, a:visited, a:hover, a:active
+                {
+                    color: black;
+                }
+            }
+
+            .volume-info
+            {
+                #grid .fluid .span(4);
+                float: right;
+                margin-bottom: @gridGutterWidth * 2;
+                color: @grayLight;
+                font-size: 90%;
+
+                figure
+                {
+                    float: right;
+                    padding: 0;
+                    margin: 0 0 @gridGutterWidth @gridGutterWidth;
+
+                    img
+                    {
+                        .image-effect;
+                    }
+                }
+            }
+
+            .chapter-list
+            {
+                #grid .fluid .span(8);
+
+                li
+                {
+                    #grid .fluid .span(3);
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-right: @fluidGridGutterWidth;
+                    margin-bottom: 1.5em;
+
+                    &:nth-child(4n)
+                    {
+                        margin-right: 0;
+                    }
+                }
             }
         }
     }

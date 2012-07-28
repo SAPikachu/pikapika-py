@@ -6,7 +6,7 @@
 {% block body-class %}no-sidebar page-details{% endblock %}
 
 {% block content %}
-<figure>
+<figure class="novel-image">
     {% if novel.image %}
     <a href="{{ novel.image.url }}">
         <img src="{% url "thumbnail" path=novel.image.name max_width=220 max_height=10000 %}"/>
@@ -41,4 +41,38 @@
         {{ novel.description|linebreaksbr }}
     </div>
 </section>
+
+<section class="volume-list">
+    <ul>
+        {% for volume in novel.volume_set.all %}
+        <li class="volume">
+            <h3><a name="volume-{{ volume.pk }}">{{ volume.name }}</a></h3>
+            <div class="volume-info">
+                <figure>
+                    {% if volume.image %}
+                    <a href="{{ volume.image.url }}">
+                        <img src="{% url "thumbnail" path=volume.image.name max_width=140 max_height=10000 %}"/>
+                    </a>
+                    {% else %}
+                    <span class="placeholder"></span>
+                    {% endif %}
+                </figure>
+                <div class="description">
+                    {{ volume.description|linebreaksbr }}
+                </div>
+            </div>
+            {% spaceless %}
+            <ul class="chapter-list">
+                {% for chapter in volume.chapter_set.all %}
+                <li>
+                    <a href="{% url "read" pk=chapter.pk %}">{{ chapter.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endspaceless %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
 {% endblock %}
