@@ -16,6 +16,7 @@
 * Novel listing
 * Front page ranking
 * Searching
+* RSS output
 
 # Deadline
 
