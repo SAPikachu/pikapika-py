@@ -17,6 +17,7 @@
 * Front page ranking
 * Searching
 * RSS output
+* Responsive styling
 
 # Deadline
 
