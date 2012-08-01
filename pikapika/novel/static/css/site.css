@@ -4198,6 +4198,12 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+.side-block {
+  background-color: #f8f5f0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
 a:hover {
   text-decoration: none;
 }
@@ -4224,6 +4230,9 @@ body:before {
   float: left;
   width: 0;
   margin-top: -32767px;
+}
+body {
+  background-color: #FAF7F3;
 }
 header {
   position: relative;
@@ -4271,7 +4280,7 @@ header nav {
   height: 37px;
 }
 header nav ul {
-  padding: 0 25px;
+  padding: 0 40px;
   position: relative;
   margin: 0;
   text-align: left;
@@ -4288,29 +4297,29 @@ header nav ul li a {
   outline: none;
 }
 #page {
-  padding: 10px 6.382978723% 101px;
+  padding: 0 6.382978723% 91px;
   min-width: 780px;
 }
 #page section h2 {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  background-color: #f0c884;
-  font-size: 1em;
-  line-height: 1.5em;
+  border-left: #B38D55 solid 8px;
+  background-color: #EEC78D;
+  color: #594528;
+  font-size: 1.5em;
+  line-height: 1.5;
   margin: 0 0 10px;
   padding: 5px 10px;
   zoom: 1;
   /* workaround for ie7 bug */
 
-  clear: both;
 }
-#page .page-content section h2 {
-  padding-left: 25px;
-  padding-right: 25px;
+#page .page-sheet {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 8px 8px #d8c9c3;
+  -moz-box-shadow: 0px 0px 8px 8px #d8c9c3;
+  box-shadow: 0px 0px 8px 8px #d8c9c3;
 }
 #sidebar {
-  background-color: #F8F5F0;
+  background-color: #f8f5f0;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -4345,12 +4354,17 @@ footer {
   overflow: hidden;
   background: url("../images/footer-background.gif") repeat-x scroll left top transparent;
 }
-.page-index #latest-novels {
+.page-index #page .page-content h2 {
+  padding-left: 32px;
+  padding-right: 40px;
+  clear: both;
+}
+.page-index #page #latest-novels {
   margin: 0;
   padding: 0;
   zoom: 1;
 }
-.page-index #latest-novels li {
+.page-index #page #latest-novels li {
   width: 18%;
   min-width: 100px;
   float: left;
@@ -4367,17 +4381,17 @@ footer {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
-.page-index #latest-novels li:hover {
+.page-index #page #latest-novels li:hover {
   background-color: #F9F7F0;
 }
-.page-index #latest-novels li,
-.page-index #latest-novels li a {
+.page-index #page #latest-novels li,
+.page-index #page #latest-novels li a {
   display: block;
 }
-.page-index #latest-novels li .novel-link {
+.page-index #page #latest-novels li .novel-link {
   padding-top: 8px;
 }
-.page-index #latest-novels li .novel-link .image {
+.page-index #page #latest-novels li .novel-link .image {
   width: 80px;
   height: 110px;
   padding: 2px;
@@ -4387,7 +4401,7 @@ footer {
   border: 1px solid #d8c9c3;
   font: 0/0 "Arial", sans-serif;
 }
-.page-index #latest-novels li .novel-link .image img {
+.page-index #page #latest-novels li .novel-link .image img {
   width: auto;
   height: auto;
   max-width: 100%;
@@ -4395,7 +4409,7 @@ footer {
   vertical-align: middle;
   border: none;
 }
-.page-index #latest-novels li .novel-link .image .placeholder {
+.page-index #page #latest-novels li .novel-link .image .placeholder {
   background-image: url("../images/placeholder.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -4403,64 +4417,65 @@ footer {
   width: 100%;
   height: 100%;
 }
-.page-index #latest-novels li .latest-chapter-link {
+.page-index #page #latest-novels li .latest-chapter-link {
   font-size: 0.85em;
   padding-bottom: 8px;
 }
-.page-index #latest-novels li .latest-chapter-link,
-.page-index #latest-novels li .novel-name {
+.page-index #page #latest-novels li .latest-chapter-link,
+.page-index #page #latest-novels li .novel-name {
   height: 1.5em;
   line-height: 1.5em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.page-index #google-search {
+.page-index #page #google-search {
   width: 100%;
   margin-bottom: 10px;
   overflow: hidden;
 }
-.page-index #google-search td {
+.page-index #page #google-search td {
   border: 0 none;
 }
-.page-index #google-search form {
+.page-index #page #google-search form {
   margin: 0;
   padding: 0;
 }
-.page-index #google-search-result {
+.page-index #page #google-search-result {
   display: none;
   margin-bottom: 20px;
   font-size: 1em;
 }
-.page-index #google-search-result .gsc-branding {
+.page-index #page #google-search-result .gsc-branding {
   display: block;
   margin: 0 auto;
   width: auto;
   font-size: 13px;
   margin-left: 25px;
 }
-.page-index #google-search-result .gsc-branding img {
+.page-index #page #google-search-result .gsc-branding img {
   vertical-align: middle;
 }
-.page-index #google-search-result div {
+.page-index #page #google-search-result div {
   font-size: 1em;
   line-height: normal;
 }
-.page-index #google-search-result .gs-result {
+.page-index #page #google-search-result .gs-result {
   margin: 25px;
   font-size: 1em;
 }
-.page-index #google-search-result .gs-title {
+.page-index #page #google-search-result .gs-title {
   font-size: 1.05em;
 }
-.page-index #cse,
-.page-index .gs-visibleUrl {
+.page-index #page #cse,
+.page-index #page .gs-visibleUrl {
   display: none;
 }
 .page-details .novel-image {
   float: left;
   margin-left: 20px;
   width: 220px;
+  margin-left: 40px;
 }
 .page-details .novel-image img {
   border: 1px solid #cebbb3;
@@ -4483,9 +4498,9 @@ footer {
   line-height: 1;
   margin: 20px 0;
 }
-.page-details h2,
 .page-details .novel-info {
-  margin-left: 260px;
+  margin-left: 280px;
+  margin-top: 20px;
 }
 .page-details .novel-info dl dt,
 .page-details .novel-info dl dd {
@@ -4512,8 +4527,21 @@ footer {
   list-style: none;
 }
 .page-details .volume-list .volume {
+  *zoom: 1;
   display: block;
-  margin: 0 20px;
+  margin: 0 40px;
+  border-bottom: 2px dotted #ece5e2;
+}
+.page-details .volume-list .volume:before,
+.page-details .volume-list .volume:after {
+  display: table;
+  content: "";
+}
+.page-details .volume-list .volume:after {
+  clear: both;
+}
+.page-details .volume-list .volume:last-child {
+  border-bottom: 0 none;
 }
 .page-details .volume-list .volume h3 {
   margin: 20px 0;
@@ -4523,11 +4551,13 @@ footer {
 .page-details .volume-list .volume h3 a:visited,
 .page-details .volume-list .volume h3 a:hover,
 .page-details .volume-list .volume h3 a:active {
-  color: black;
+  color: #403029;
 }
 .page-details .volume-list .volume .volume-info {
   width: 31.914893614%;
   *width: 31.8617021246383%;
+  border-left: 1px dashed #ece5e2;
+  padding-left: 1.063829787%;
   float: right;
   margin-bottom: 40px;
   color: #999999;

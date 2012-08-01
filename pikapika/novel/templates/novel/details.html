@@ -15,8 +15,8 @@
     <span class="placeholder"></span>
     {% endif %}
 </figure>
-<h2>{{ novel.name }}</h2>
 <section class="novel-info">
+    <h2>{{ novel.name }}</h2>
     <dl>
         <dt>更新</dt>
         <dd><time datetime="{{ novel.updated_date|date:"c" }}">{{ novel.updated_date|date:"Y-m-d H:i" }}</time></dd>

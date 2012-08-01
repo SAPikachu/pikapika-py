@@ -2,13 +2,21 @@
 
 @image-base:            "../images/";
 @content-margin:        (@fluidGridColumnWidth);
-@content-padding:       25px;
+@content-padding:       @gridGutterWidth * 2;
 @footer-height:         91px;
 @image-border-color:    lighten(@linkColor, 40%);
+@splitter-color:        lighten(@linkColor, 50%);
 
 .generic-transition(@duration: .15s) 
 {
     .transition(all @duration linear);
+}
+
+.side-block
+{
+    @back: #F8F5F0;
+    background-color: @back;
+    .border-radius(5px);
 }
 
 a:hover
@@ -54,6 +62,11 @@ body:before
 }
 
 // --- Base ---
+
+body
+{
+    background-color: #FAF7F3;
+}
 
 header
 {
@@ -124,41 +137,35 @@ header
 
 #page
 {
-    padding: 10px @content-margin (@footer-height + 10px);
+    padding: 0 @content-margin (@footer-height);
     min-width: 780px;
 
     section
     {
         h2
         {
-            .border-radius(5px);
-            background-color: #f0c884;
-            font-size: 1em;
-            line-height: 1.5em;
+            border-left: #B38D55 solid 8px;
+            background-color: #EEC78D;
+            color: #594528;
+            font-size: 1.5em;
+            line-height: 1.5;
             margin: 0 0 10px;
             padding: 5px 10px;
             zoom: 1; /* workaround for ie7 bug */
-            clear: both;
         }
     }
 
-    .page-content
+    .page-sheet
     {
-        section
-        {
-            h2
-            {
-                padding-left: @content-padding;
-                padding-right: @content-padding;
-            }
-        }
+        background-color: white;
+        .box-shadow(0px 0px 8px 8px lighten(@linkColor, 40%));
     }
+
 }
 
 #sidebar
 {
-    background-color: #F8F5F0;
-    .border-radius(5px);
+    .side-block;
 }
 
 .no-sidebar
@@ -209,8 +216,14 @@ footer
     background: url("@{image-base}footer-background.gif") repeat-x scroll left top transparent;
 }
 
-.page-index
+.page-index #page
 {
+    .page-content h2
+    {
+        padding-left: @content-padding - 8px;
+        padding-right: @content-padding;
+        clear: both;
+    }
     #latest-novels
     {
         margin: 0;
@@ -383,6 +396,7 @@ footer
     .novel-image
     {
         .makeColumn(3);
+        margin-left: @content-padding;
 
         img
         {
@@ -396,13 +410,10 @@ footer
         margin: @gridGutterWidth 0;
     }
 
-    h2, .novel-info
-    {
-        #grid .core .offset(3);
-    }
-
     .novel-info
     {
+        margin-left: @gridColumnWidth * 3 + @gridGutterWidth * 3 + @content-padding;
+        margin-top: @gridGutterWidth;
 
         dl
         {
@@ -443,8 +454,15 @@ footer
 
         .volume
         {
+            .clearfix;
             display: block;
-            margin: 0 @gridGutterWidth;
+            margin: 0 @content-padding;
+            border-bottom: 2px dotted @splitter-color;
+
+            &:last-child
+            {
+                border-bottom: 0 none;
+            }
 
             h3
             {
@@ -452,13 +470,15 @@ footer
 
                 a, a:link, a:visited, a:hover, a:active
                 {
-                    color: black;
+                    color: darken(@linkColor, 20%);
                 }
             }
 
             .volume-info
             {
                 #grid .fluid .span(4);
+                border-left: 1px dashed @splitter-color;
+                padding-left: @fluidGridGutterWidth / 2;
                 float: right;
                 margin-bottom: @gridGutterWidth * 2;
                 color: @grayLight;
