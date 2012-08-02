@@ -457,6 +457,7 @@ footer
             .clearfix;
             display: block;
             margin: 0 @content-padding;
+            padding-bottom: @gridGutterWidth;
             border-bottom: 2px dotted @splitter-color;
 
             &:last-child
@@ -480,7 +481,7 @@ footer
                 border-left: 1px dashed @splitter-color;
                 padding-left: @fluidGridGutterWidth / 2;
                 float: right;
-                margin-bottom: @gridGutterWidth * 2;
+                margin-bottom: @gridGutterWidth;
                 color: @grayLight;
                 font-size: 90%;
 
@@ -497,7 +498,7 @@ footer
                 }
             }
 
-            .chapter-list
+            .chapter-list // ul
             {
                 #grid .fluid .span(8);
 
@@ -512,6 +513,11 @@ footer
                     &:nth-child(4n)
                     {
                         margin-right: 0;
+                    }
+
+                    a
+                    {
+                        display: block;
                     }
                 }
             }

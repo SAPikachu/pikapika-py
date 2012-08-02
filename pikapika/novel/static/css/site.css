@@ -4530,6 +4530,7 @@ footer {
   *zoom: 1;
   display: block;
   margin: 0 40px;
+  padding-bottom: 20px;
   border-bottom: 2px dotted #ece5e2;
 }
 .page-details .volume-list .volume:before,
@@ -4559,7 +4560,7 @@ footer {
   border-left: 1px dashed #ece5e2;
   padding-left: 1.063829787%;
   float: right;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #999999;
   font-size: 90%;
 }
@@ -4598,4 +4599,7 @@ footer {
 }
 .page-details .volume-list .volume .chapter-list li:nth-child(4n) {
   margin-right: 0;
+}
+.page-details .volume-list .volume .chapter-list li a {
+  display: block;
 }
