@@ -11,10 +11,12 @@ from django.core.files.base import ContentFile
 from django.db import transaction
 
 from pikapika.novel.models import *
+from pikapika.novel import chapter_utils
 
 DATA_FILE = "testdata/pikapika.json"
 USER_ID = 1
 IMAGE_BASE = "/mnt/exchange"
+CHAPTER_PATH_FORMAT = "/mnt/exchange/Upload/Chapters/{novel_id}/{volume_id}/{chapter_id}"
 
 FIELD_MAPPINGS = {
     "Novel": {
@@ -68,7 +70,7 @@ def add_novel(values):
     print("Loading", values["Name"])
     user = User.objects.get(pk=USER_ID)
     novel = Novel()
-    novel.pk = values["Id"] + 100
+    novel.pk = values["Id"]
     fill_model(novel, values)
     set_image(novel, values["ImageUrl"])
     novel.save()
@@ -90,6 +92,16 @@ def add_novel(values):
 
             r = HitCountRecord(chapter=chapter, hits=chapter_values["HitCount"])
             r.save()
+
+            with open(CHAPTER_PATH_FORMAT.format(
+                novel_id=novel.pk, volume_id=volume.pk, chapter_id=chapter.pk,
+            ), "r") as f:
+                chapter_content = f.read().decode("utf-8")
+
+            lines = chapter_utils.parse_html(chapter_content)
+            chapter_utils.insert_hidden_title(lines, chapter.name)
+            chapter.content = json.dumps(lines, indent=1, ensure_ascii=False)
+            chapter.save()
 
 @transaction.commit_on_success
 def load_testdata():
