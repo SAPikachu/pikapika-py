@@ -51,12 +51,12 @@ class Volume(models.Model):
     image = models.ImageField(upload_to=IMAGE_UPLOAD_DIR, blank=True)
     rating_points = models.IntegerField(default=0)
     rating_count = models.IntegerField(default=0)
-    
-    def __unicode__(self):
-        return self.name
 
     class Meta:
         order_with_respect_to = "novel"
+    
+    def __unicode__(self):
+        return self.name
 
 class Chapter(models.Model):
     name = models.CharField(max_length=512)
@@ -65,13 +65,6 @@ class Chapter(models.Model):
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now_add=True)
     posted_by = models.ForeignKey(User)
-
-    def __init__(self, *args, **kwargs):
-        super(Chapter, self).__init__(*args, **kwargs)
-        self._content_dirty = False
-
-    def __unicode__(self):
-        return self.name
 
     def get_content(self):
         try:
@@ -95,6 +88,12 @@ class Chapter(models.Model):
 
     content = property(get_content, set_content)
 
+    class Meta:
+        order_with_respect_to = "volume"
+
+    def __unicode__(self):
+        return self.name
+
     def save(self, *args, **kwargs):
         super(Chapter, self).save(*args, **kwargs)
 
@@ -105,9 +104,9 @@ class Chapter(models.Model):
             self.content_record.save()
             self._content_dirty = False
               
-
-    class Meta:
-        order_with_respect_to = "volume"
+    def __init__(self, *args, **kwargs):
+        super(Chapter, self).__init__(*args, **kwargs)
+        self._content_dirty = False
 
 class ChapterContent(models.Model):
     chapter = models.OneToOneField(Chapter, related_name="content_record")
