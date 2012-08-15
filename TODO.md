@@ -34,3 +34,6 @@
     + Manage comments and annotations
     + Favorites (novel, chapter and paragraph)
 
+* JSON API
+* Paged reading mode
+
