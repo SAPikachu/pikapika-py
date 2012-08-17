@@ -33,7 +33,7 @@
 <body class="{% block body-class %}{% endblock %}">
 
 <div id="sticky-footer-wrap">
-    <header>
+    <header id="page-header">
         {% block header %}
         <a class="title" href="{% url "index" %}"><h1>PikaPika</h1></a>
         <nav>
@@ -65,7 +65,7 @@
 
 </div>
 
-<footer>
+<footer id="page-footer">
     {% block footer %}
     <div id="footer-info">
         PikaPika Alpha 2

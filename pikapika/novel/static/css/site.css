@@ -4217,7 +4217,7 @@ body {
 #page {
   overflow: auto;
 }
-footer {
+#page-footer {
   position: relative;
   border-top: 1px solid #ccc;
   margin-top: -91px;
@@ -4234,7 +4234,7 @@ body:before {
 body {
   background-color: #FAF7F3;
 }
-header {
+#page-header {
   position: relative;
   padding-top: 25px;
   margin-bottom: 0px;
@@ -4243,16 +4243,16 @@ header {
   background-repeat: repeat-x;
   background-position: left top;
 }
-header,
-header .title,
-header nav,
-header ul {
+#page-header,
+#page-header .title,
+#page-header nav,
+#page-header ul {
   zoom: 1;
   /* workaround for ie7 bug */
 
   overflow: hidden;
 }
-header .title {
+#page-header .title {
   margin: 0 6.382978723% 10px;
   height: 64px;
   width: 303px;
@@ -4267,7 +4267,7 @@ header .title {
   background-color: transparent;
   border: 0;
 }
-header nav {
+#page-header nav {
   clear: both;
   margin: 0;
   padding: 0 6.382978723%;
@@ -4279,7 +4279,7 @@ header nav {
   background-position: left top;
   height: 37px;
 }
-header nav ul {
+#page-header nav ul {
   padding: 0 40px;
   position: relative;
   margin: 0;
@@ -4289,11 +4289,11 @@ header nav ul {
   height: 37px;
   line-height: 37px;
 }
-header nav ul li {
+#page-header nav ul li {
   display: inline;
   list-style: none;
 }
-header nav ul li a {
+#page-header nav ul li a {
   outline: none;
 }
 #page {
@@ -4346,7 +4346,7 @@ header nav ul li a {
   font-size: 1.1em;
   line-height: 1.4em;
 }
-footer {
+#page-footer {
   color: #999;
   text-align: center;
   line-height: normal;
@@ -4603,12 +4603,48 @@ footer {
 .page-details .volume-list .volume .chapter-list li a {
   display: block;
 }
-.page-read #content-wrap {
+.page-read article header,
+.page-read article footer {
   margin: 20px 40px;
+  text-align: center;
 }
-.page-read #content-wrap .chapter-info,
-.page-read #content-wrap .reader-style {
+.page-read article header h2 {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.page-read article header .chapter-info,
+.page-read article header .reader-style,
+.page-read article header .autoscroll-hint {
   display: inline-block;
-  line-height: 1.5;
+  line-height: 1.75;
   color: #bdb0ab;
+  text-align: center;
+  margin: 0 3em;
+}
+.page-read article header .chapter-info dt,
+.page-read article header .chapter-info dd {
+  display: inline-block;
+}
+.page-read article header .chapter-info dt {
+  margin-left: 1em;
+}
+.page-read article header .chapter-info dd {
+  margin-right: 1em;
+}
+.page-read article header .reader-style > span {
+  margin: 0 1em;
+}
+.page-read article .chapter-content {
+  font-size: 150%;
+  line-height: 1.5;
+  margin: 30px 0;
+  padding: 0 40px;
+}
+.page-read article .chapter-content p {
+  text-indent: 2em;
+  margin: 1em 0;
+}
+.page-read article footer nav a {
+  display: inline-block;
+  margin: 0 0.75em;
 }

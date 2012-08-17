@@ -42,7 +42,7 @@ html, body
     // padding-bottom: @footer-height;
 }
 
-footer
+#page-footer
 {
     position: relative;
     border-top: 1px solid #ccc;
@@ -68,7 +68,7 @@ body
     background-color: #FAF7F3;
 }
 
-header
+#page-header
 {
     position: relative;
     padding-top: 25px;
@@ -206,7 +206,7 @@ header
     }
 }
 
-footer
+#page-footer
 {
     color: #999;
     text-align: center;
@@ -527,15 +527,76 @@ footer
 
 .page-read
 {
-    #content-wrap
+    article
     {
-        margin: @gridGutterWidth @content-padding;
-
-        .chapter-info, .reader-style
+        header, footer
         {
-            display: inline-block;
+            margin: @gridGutterWidth @content-padding;
+            text-align: center;
+        }
+
+        header
+        {
+            h2
+            {
+                margin-bottom: @gridGutterWidth;
+                line-height: 1;
+            }
+
+            .chapter-info, .reader-style, .autoscroll-hint
+            {
+                display: inline-block;
+                line-height: 1.75;
+                color: lighten(desaturate(@linkColor, 10%), 30%);
+                text-align: center;
+                margin: 0 3em;
+            }
+
+            .chapter-info
+            {
+                dt, dd
+                {
+                    display: inline-block;
+                }
+
+                dt
+                {
+                    margin-left: 1em;
+                }
+
+                dd
+                {
+                    margin-right: 1em;
+                }
+            }
+
+            .reader-style > span
+            {
+                margin: 0 1em;
+            }
+        }
+
+        .chapter-content
+        {
+            font-size: 150%;
             line-height: 1.5;
-            color: lighten(desaturate(@linkColor, 10%), 30%);
+            margin: (@gridGutterWidth * 1.5) 0;
+            padding: 0 @content-padding;
+
+            p
+            {
+                text-indent: 2em;
+                margin: 1em 0;
+            }
+        }
+
+        footer
+        {
+            nav a
+            {
+                display: inline-block;
+                margin: 0 0.75em;
+            }
         }
     }
 }
