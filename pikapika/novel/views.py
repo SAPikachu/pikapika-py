@@ -1,11 +1,13 @@
 from __future__ import print_function, unicode_literals
 
 from itertools import chain
+import json
 
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Max, Sum
 
-from . import models
+from . import models, chapter_utils
+from .utils import first
 
 INDEX_LATEST_NOVELS_COUNT = 15
 
@@ -44,9 +46,11 @@ def index(request):
     )
 
 def details(request, pk):
+    pk = int(pk)
+
     query = (
         models.Novel.objects.
-        filter(pk=int(pk)).
+        filter(pk=pk).
         annotate(hit_count=Sum("volume__chapter__hit_records__hits")).
         prefetch_related("volume_set__chapter_set")
     )
@@ -63,5 +67,43 @@ def details(request, pk):
         "novel/details.html",
         {
             "novel": novel,
+        },
+    )
+
+def read(request, pk):
+    pk = int(pk)
+    chapter = get_object_or_404(
+        models.Chapter.objects.
+            annotate(hit_count=Sum("hit_records__hits")).
+            filter(pk=pk)
+    )
+    prev_chapter = chapter.get_previous_in_order()
+    if not prev_chapter:
+        prev_volume = chapter.volume.get_previous_in_order()
+        prev_chapter = (
+            first(prev_volume.chapter_set.reverse()[:1], default=None)
+            if prev_volume 
+            else None
+        )
+
+    next_chapter = chapter.get_next_in_order()
+    if not next_chapter:
+        next_volume = chapter.volume.get_next_in_order()
+        next_chapter = (
+            first(next_volume.chapter_set[:1], default=None)
+            if next_volume
+            else None
+        )
+
+    rendered_chapter = chapter_utils.render(json.loads(chapter.content))
+
+    return render(
+        request,
+        "novel/read.html",
+        {
+            "chapter": chapter,
+            "rendered_chapter": rendered_chapter,
+            "prev_chapter": prev_chapter,
+            "next_chapter": next_chapter,
         },
     )

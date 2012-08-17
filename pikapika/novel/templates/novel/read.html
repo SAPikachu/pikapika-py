@@ -1,0 +1,74 @@
+{% extends "novel/includes/base.html" %}
+{% load url from future %}
+
+{% block title %}{{ chapter.name }} / {{ chapter.volume.novel.name }} - {{ chapter.volume.name }}{% endblock %}
+
+{% block body-class %}no-sidebar page-read{% endblock %}
+
+{% block content %}
+<div id="content-wrap">
+    <h2 class="chapter-name">
+        {{ chapter.name }}
+    </h2>
+
+    <dl class="chapter-info">
+        <dt>更新</dt>
+        <dd>{{ chapter.updated_date|date:"Y-m-d H:i" }}</dd>
+
+        <dt>点击</dt>
+        <dd>{{ chapter.hit_count }}</dd>
+    </dl>
+
+    <div class="reader-style">
+        {# TODO: Move it to a expandable panel #}
+        <span class="font-size-select">
+            字体大小：
+            <span class="font-size-0-75">小</span>
+            <span class="font-size-1">中</span>
+            <span class="font-size-1-25">大</span>
+            <span class="font-size-1-5">特大</span>
+        </span>
+        <span class="back-color-select">
+            阅读底色：
+            <span class="#F5F5F5">&nbsp;</span>
+            <span class="#FFFFFF">&nbsp;</span>
+            <span class="#E9FAFF">&nbsp;</span>
+            <span class="#FFFFED">&nbsp;</span>
+            <span class="#FCEFFF">&nbsp;</span>
+        </span>
+    </div>
+
+    <div class="autoscroll-hint">
+        双击正文启动自动滚动，滚动时按键盘方向键上下可调节滚动速度
+    </div>
+
+    <div class="chapter-content">
+        {{ rendered_chapter|safe }}
+    </div>
+
+    <div class="chapter-navigation">
+        {% if prev_chapter %}
+        <span>
+            <a href="{% url "read" pk=prev_chapter.pk %}" title="快捷键：←">
+                &lt;&lt; 上一章
+            </a>
+        </span>
+        {% endif %}
+
+        <span>
+            <a href="{% url "details" pk=chapter.volume.novel_id %}">
+                返回书页
+            </a>
+        </span>
+
+        {% if next_chapter %}
+        <span>
+            <a href="{% url "read" pk=next_chapter.pk %}" title="快捷键：→">
+                下一章 &gt;&gt;
+            </a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

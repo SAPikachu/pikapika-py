@@ -4603,3 +4603,12 @@ footer {
 .page-details .volume-list .volume .chapter-list li a {
   display: block;
 }
+.page-read #content-wrap {
+  margin: 20px 40px;
+}
+.page-read #content-wrap .chapter-info,
+.page-read #content-wrap .reader-style {
+  display: inline-block;
+  line-height: 1.5;
+  color: #bdb0ab;
+}

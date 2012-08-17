@@ -10,6 +10,6 @@ urlpatterns = patterns('pikapika.novel.views',
         "details",
         name="details"),
     url(r'^read/(?P<pk>\d+)(?:/.*)?$', 
-        TemplateView.as_view(template_name="PLACEHOLDER"), 
+        "read", 
         name="read"),
 )

@@ -1,8 +1,13 @@
 from __future__ import print_function, unicode_literals
 
 from time import time
+import re
+
+from django.conf import settings
+from django.core.urlresolvers import reverse
 
 MEDIA_URL_PREFIX = "_MEDIA_URL_"
+ALLOWED_TOP_CONTAINERS = ("p", "table", )
 
 def timestamp():
     return int(time() * 1000)
@@ -39,14 +44,13 @@ def parse_html(html, id_generator=None):
     from bs4 import BeautifulSoup
     soup = BeautifulSoup("<html><body>{}</body></html>".format(html))
     lines = []
-    ALLOWED_ELEMENTS = ("p", "table")
     _generate_id = id_generator or ChapterIdGenerator()
     for elem in soup.select("body")[0].find_all(True, recursive=False):
-        if elem.name not in ALLOWED_ELEMENTS:
+        if elem.name not in ALLOWED_TOP_CONTAINERS:
             import pdb
             pdb.set_trace()
 
-        assert elem.name in ALLOWED_ELEMENTS
+        assert elem.name in ALLOWED_TOP_CONTAINERS
         id = elem.get("id") or _generate_id()
         if elem.name != "p":
             # This element should be output as-is, wrap it into a div so that
@@ -82,7 +86,53 @@ def insert_hidden_title(lines, title):
     # Need another empty line to separate the title from actual content
     lines.insert(1, make_line("", tags=["hidden"]))
 
+def render_img(match):
+    url = match.group("src").replace(MEDIA_URL_PREFIX, settings.MEDIA_URL)
+    path = match.group("src").replace(MEDIA_URL_PREFIX, "")
+
+    # TODO: Maybe determine width/height by client screen size?
+    thumb_src = reverse("thumbnail", kwargs={
+        "path": path,
+        "max_width": 640,
+        "max_height": 960,
+    },)
+    original_img = match.group(0)
+    new_img = "".join([
+        original_img[:match.start("src")],
+        thumb_src,
+        original_img[match.end("src"):],
+    ])
+    return '<a href="{}">{}</a>'.format(url, new_img)
+
+def render_line(line):
+    assert line["id"]
+    assert line["type"] == "paragraph"
+
+    if "hidden" in line["tags"]:
+        return ""
+
+    data = line["data"]
+    data = re.sub(
+        r"""<img\s[^>]*?src=["'](?P<src>.*?)["'][^>]*?>""",
+        render_img,
+        data,
+        flags=re.I,
+    )
+
+    container_match = re.match(r"^\s*<(?P<tag>\w+)[\s/>]", data, re.S)
+    if (container_match and 
+        container_match.group("tag").lower() in ALLOWED_TOP_CONTAINERS):
+
+        # This line is already wrapped in a container, so don't wrap it in <p>
+        return data
+    else:
+        return '<p id="{id}"{tags_class}>{data}</p>'.format(
+            id=line["id"], 
+            tags_class=' class="{}"'.format(" ".join(line["tags"])) 
+                       if line["tags"] else "",
+            data=data,
+        )
 
 def render(chapter_lines):
-    raise NotImplementedError()
+    return "".join([render_line(x) for x in chapter_lines])
 
