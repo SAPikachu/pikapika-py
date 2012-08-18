@@ -96,13 +96,13 @@ def render_img(match):
         "max_width": 640,
         "max_height": 960,
     },)
-    original_img = match.group(0)
-    new_img = "".join([
-        original_img[:match.start("src")],
+    new_img_tag = "".join([
+        match.string[match.start():match.start("src")],
         thumb_src,
-        original_img[match.end("src"):],
+        match.string[match.end("src"):match.end()],
     ])
-    return '<a href="{}">{}</a>'.format(url, new_img)
+
+    return '<a href="{}" class="image-link">{}</a>'.format(url, new_img_tag)
 
 def render_line(line):
     assert line["id"]
