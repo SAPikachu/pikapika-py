@@ -1,4 +1,5 @@
-from __future__ import print_function, unicode_literals
+# Don't import unicode_literals here, otherwise set_cookie / delete_cookie will fail (as of django 1.4)
+from __future__ import print_function
 
 import hashlib
 
@@ -7,12 +8,14 @@ from django.conf import settings
 from django.core.exceptions import MiddlewareNotUsed
 from django.contrib.staticfiles.handlers import StaticFilesHandler
 
-def has_live_js_header(request):
-    return request.META.get("HTTP_X_LIVE_JS", False)
-
 def process(request, response):
-    if (has_live_js_header(request) or 
-        "live=1" in request.META.get("HTTP_REFERER", "")):
+    if request.GET.get("live", None) == "0":
+        response.delete_cookie("live")
+    elif (request.COOKIES.get("live", False) or
+        request.GET.get("live", False)):
+
+        response.set_cookie("live", "1", max_age=24*60*60)
+
         response["Pragma"] = "no-cache"
         response["Cache-Control"] = "no-cache"
         response["Expires"] = http_date()
