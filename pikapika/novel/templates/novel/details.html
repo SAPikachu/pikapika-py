@@ -46,7 +46,7 @@
     <ul>
         {% for volume in novel.volume_set.all %}
         <li class="volume">
-            <h3><a name="volume-{{ volume.pk }}">{{ volume.name }}</a></h3>
+            <h3 id="volume-{{ volume.pk }}">{{ volume.name }}</h3>
             <div class="volume-info">
                 <figure>
                     {% if volume.image %}
