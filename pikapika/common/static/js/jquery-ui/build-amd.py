@@ -4,7 +4,7 @@ import os
 import re
 import json
 
-BASE_DIR = os.path.expanduser("~/devel/jquery-ui/ui")
+BASE_DIR = "../../../../../submodules/jquery-ui/ui"
 
 def convert_file_name(name):
     return (
