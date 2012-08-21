@@ -48,7 +48,7 @@ var real_factory = function() {
 
 if (require) {
     var imports = `imports';
-    var export = "`export'";
+    var export_name = "`export'";
     var context = {};
     for (var key in imports) {
         if (imports.hasOwnProperty(key)) {
@@ -56,8 +56,8 @@ if (require) {
         }
     }
     real_factory.call(context);
-    if (export !== "") {
-        return context[export] || window[export];
+    if (export_name !== "") {
+        return context[export_name] || window[export_name];
     }
 } else {
     real_factory();
