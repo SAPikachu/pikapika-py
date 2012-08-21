@@ -67,7 +67,15 @@
  *
  **/
 
-(function($){
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function($){
     if(!$ || !($.toJSON || Object.toJSON || window.JSON)){
         throw new Error("jQuery, MooTools or Prototype needs to be loaded before jStorage!");
     }
@@ -515,4 +523,4 @@
     // Initialize jStorage
     _init();
 
-})(window.$ || window.jQuery);
+}));

@@ -11,7 +11,15 @@
 /**
  * Plugin that renders a customisable activity indicator (spinner) using SVG or VML.
  */
-(function($) {
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function($) {
 
 	$.fn.activity = function(opts) {
 		this.each(function() {
@@ -222,4 +230,4 @@
 		$(s).remove();
 	}
 
-})(jQuery);
+}));
