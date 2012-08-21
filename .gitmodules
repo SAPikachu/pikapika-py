@@ -1,3 +1,12 @@
 [submodule "pikapika/novel/static/modules/bootstrap"]
 	path = pikapika/novel/static/modules/bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "submodules/jquery-ui"]
+	path = submodules/jquery-ui
+	url = git://github.com/jquery/jquery-ui.git
+[submodule "submodules/backbone"]
+	path = submodules/backbone
+	url = git://github.com/documentcloud/backbone.git
+[submodule "submodules/underscore"]
+	path = submodules/underscore
+	url = git://github.com/documentcloud/underscore.git
