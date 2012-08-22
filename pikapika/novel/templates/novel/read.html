@@ -1,5 +1,6 @@
 {% extends "novel/includes/base.html" %}
 {% load url from future %}
+{% load html_helpers %}
 
 {% block title %}{{ chapter.name }} / {{ chapter.volume.novel.name }} - {{ chapter.volume.name }}{% endblock %}
 
@@ -69,4 +70,8 @@
     </footer>
 </article>
 
+{% endblock %}
+
+{% block head-extra %}
+{% requirejs "pages/read" %}
 {% endblock %}

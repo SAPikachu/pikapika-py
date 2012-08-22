@@ -29,3 +29,14 @@ def js(name, outside=False):
     return '<script type="text/javascript" src="{}"></script>'.format(
         get_asset_url(name, "js", outside),
     )
+
+@register.simple_tag
+def requirejs(name):
+    return """
+<script type="text/javascript">var require = {{ baseUrl: "{base}" }};</script>
+<script type="text/javascript" src="{base}/require.js" data-main="{name}"></script>
+""".format(
+        base=settings.STATIC_URL + "js",
+        name=name,
+    )
+
