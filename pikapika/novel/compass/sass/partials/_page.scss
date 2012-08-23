@@ -35,11 +35,26 @@ $splitter-color:        lighten($main-color, 50%);
 body
 {
     @include blueprint-typography(true);
-}
 
-a:hover
-{
-    text-decoration: none;
+    #{headers(all)}
+    {
+        font-weight: bold;
+    }
+
+    a
+    {
+        text-decoration: none;
+        &, &:link, &:visited
+        {
+            color: $main-color;
+        }
+        
+        &:hover
+        {
+            color: red;
+        }
+    }
+
 }
 
 // --- Sticky footer ---
@@ -92,7 +107,7 @@ body
     padding-top: 25px;
     margin-bottom: 0px;
     color: #000;
-    background-image: url("${image-base}header-background.png");
+    background-image: url("#{$image-base}header-background.png");
     background-repeat: repeat-x;
     background-position: left top;
 
@@ -104,7 +119,7 @@ body
 
     .title
     {
-        @include replace-text(url("${image-base}logo-header.png"), left, top);
+        @include replace-text(url("#{$image-base}logo-header.png"), left, top);
         margin: 0 $content-margin 10px;
         height: 64px;
         width: 303px;
@@ -120,7 +135,7 @@ body
         border-color: #D2CBB7;
         border-style: solid;
         border-width: 1px 0;
-        background-image: url("${image-base}menu-background.png");
+        background-image: url("#{$image-base}menu-background.png");
         background-repeat: repeat-x;
         background-position: left top;
         height: 37px;
@@ -174,52 +189,57 @@ body
     {
         background-color: white;
         @include box-shadow(0px 0px 8px 8px lighten($main-color, 40%));
-    }
+        @include container;
 
-}
-
-#sidebar
-{
-    @include side-block;
-}
-
-.no-sidebar
-{
-    #page .page-content
-    {
-        width: 100%;
-    }
-
-    #sidebar
-    {
-        display: none;
-    }
-}
-
-#sidebar
-{
-    ul 
-    {
-        margin: 1em 1em 2em;
-
-        li
+        #sidebar
         {
-            list-style: none;
-            border-bottom: 2px dotted #CCCCCC;
-            color: #676767;
-            line-height: 1.1em;
-            font-size: 0.91em;
-            padding: 0 10px 8px;
-            margin-top: 8px;
+            @include side-block;
+            @include column(3, $last: true);
+            overflow: visible;
+            @include pie-clearfix;
 
-            a
+            .no-sidebar &
             {
-                font-size: 1.1em;
-                line-height: 1.4em;
+                display: none;
+            }
+
+            ul 
+            {
+                margin: 1em 1em 2em;
+                padding: 0;
+                list-style: none;
+
+                li
+                {
+                    list-style: none;
+                    border-bottom: 2px dotted #CCCCCC;
+                    color: #676767;
+                    line-height: 1.1em;
+                    font-size: 0.91em;
+                    padding: 0 10px 8px;
+                    margin-top: 8px;
+
+                    a
+                    {
+                        font-size: 1.1em;
+                        line-height: 1.4em;
+                    }
+                }
+            }
+        }
+
+        .page-content
+        {
+            @include column(9);
+
+            .no-sidebar &
+            {
+                width: 100%;
             }
         }
     }
 }
+
 
 #page-footer
 {
@@ -228,7 +248,7 @@ body
     line-height: normal;
     font-size: .9em;
     overflow: hidden;
-    background: url("${image-base}footer-background.gif") repeat-x scroll left top transparent;
+    background: url("#{$image-base}footer-background.gif") repeat-x scroll left top transparent;
 }
 
 .page-index #page
@@ -268,6 +288,7 @@ body
             &, a
             {
                 display: block;
+                outline: none;
             }
 
             .novel-link
@@ -304,7 +325,7 @@ body
 
                     .placeholder
                     {
-                        background-image: url("${image-base}placeholder.png");
+                        background-image: url("#{$image-base}placeholder.png");
                         background-position: center center;
                         background-repeat: no-repeat;
                         display: block;
@@ -471,7 +492,7 @@ body
 
         .volume
         {
-            @include clearfix;
+            @include pie-clearfix;
             display: block;
             margin: 0 $content-padding;
             padding-bottom: $blueprint-grid-margin;
@@ -485,6 +506,7 @@ body
             h3
             {
                 margin: $blueprint-grid-margin 0;
+                font-size: 1.3em;
 
                 a, a:link, a:visited, a:hover, a:active
                 {
