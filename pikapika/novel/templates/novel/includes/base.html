@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     {% block css-common %}
-    {% css "site.css" %}
+    {% css "screen.css" %}
     {% endblock %}
     {% if load_live_js %}
     {% js "live.js" %}
@@ -50,13 +50,13 @@
         </nav>
         {% endblock %}
     </header>
-    <div id="page" class="container-fluid">
-        <div class="row-fluid page-sheet">
+    <div id="page">
+        <div class="page-sheet">
             {% block page-main %}
-            <div class="page-content span9">
+            <div class="page-content">
                 {% block content %}{% endblock %}
             </div>
-            <aside class="span3" id="sidebar">
+            <aside id="sidebar">
                 {% block sidebar %}{% endblock %}
             </aside>
             {% endblock %}
