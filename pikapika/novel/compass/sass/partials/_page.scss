@@ -618,18 +618,6 @@ body
                     cursor: pointer;
                 }
                 
-                @mixin define-font-size($size)
-                {
-                    .rs-font-size--#{$size} &
-                    {
-                        color: black;
-                    }
-                }
-
-                @include define-font-size(small);
-                @include define-font-size(medium);
-                @include define-font-size(large);
-                @include define-font-size(x-large);
 
             }
         }
@@ -647,6 +635,28 @@ body
                 margin: 1.5em 0;
             }
         }
+
+        @mixin define-font-size($size)
+        {
+            .rs-font-size--#{$size} &
+            {
+                #reader-style-settings .#{$size}
+                {
+                    color: black;
+                }
+
+                .chapter-content
+                {
+                    font-size: $size;
+                }
+            }
+        }
+
+        @include define-font-size(small);
+        @include define-font-size(medium);
+        @include define-font-size(large);
+        @include define-font-size(x-large);
+        @include define-font-size(xx-large);
 
         footer
         {
