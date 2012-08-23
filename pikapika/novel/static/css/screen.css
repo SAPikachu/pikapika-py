@@ -753,7 +753,7 @@ body {
 
 /* line 572, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
 .page-read article header, .page-read article footer {
-  margin: 20px 40px;
+  padding: 20px 40px;
   text-align: center;
 }
 /* line 580, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
@@ -842,6 +842,96 @@ body {
   font-size: xx-large;
 }
 /* line 672, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.page-read article #reader-style-settings .F5F5F5 {
+  background-color: #F5F5F5;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  border: 1px solid #bdb0ab;
+}
+/* line 685, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--F5F5F5 .page-read article #reader-style-settings .F5F5F5 {
+  border-color: black;
+}
+/* line 690, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--F5F5F5 .page-read article {
+  background-color: #F5F5F5;
+}
+/* line 672, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.page-read article #reader-style-settings .FFFFFF {
+  background-color: #FFFFFF;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  border: 1px solid #bdb0ab;
+}
+/* line 685, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--FFFFFF .page-read article #reader-style-settings .FFFFFF {
+  border-color: black;
+}
+/* line 690, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--FFFFFF .page-read article {
+  background-color: #FFFFFF;
+}
+/* line 672, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.page-read article #reader-style-settings .E9FAFF {
+  background-color: #E9FAFF;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  border: 1px solid #bdb0ab;
+}
+/* line 685, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--E9FAFF .page-read article #reader-style-settings .E9FAFF {
+  border-color: black;
+}
+/* line 690, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--E9FAFF .page-read article {
+  background-color: #E9FAFF;
+}
+/* line 672, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.page-read article #reader-style-settings .FFFFED {
+  background-color: #FFFFED;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  border: 1px solid #bdb0ab;
+}
+/* line 685, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--FFFFED .page-read article #reader-style-settings .FFFFED {
+  border-color: black;
+}
+/* line 690, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--FFFFED .page-read article {
+  background-color: #FFFFED;
+}
+/* line 672, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.page-read article #reader-style-settings .FCEFFF {
+  background-color: #FCEFFF;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  border: 1px solid #bdb0ab;
+}
+/* line 685, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--FCEFFF .page-read article #reader-style-settings .FCEFFF {
+  border-color: black;
+}
+/* line 690, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
+.rs-back-color--FCEFFF .page-read article {
+  background-color: #FCEFFF;
+}
+/* line 705, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_page.scss */
 .page-read article footer nav a {
   display: inline-block;
   margin: 0 0.75em;

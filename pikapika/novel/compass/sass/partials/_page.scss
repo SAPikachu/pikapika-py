@@ -570,7 +570,7 @@ body
     {
         header, footer
         {
-            margin: $blueprint-grid-margin $content-padding;
+            padding: $blueprint-grid-margin $content-padding;
             text-align: center;
         }
 
@@ -586,7 +586,7 @@ body
             {
                 display: inline-block;
                 line-height: 1.75;
-                color: lighten(desaturate($main-color, 10%), 30%);
+                color: $main-color-light;
                 text-align: center;
                 margin: 0 3em;
             }
@@ -665,6 +665,39 @@ body
         @include define-font-size(large);
         @include define-font-size(x-large);
         @include define-font-size(xx-large);
+
+        @mixin define-back-color($color)
+        {
+            #reader-style-settings .#{$color}
+            {
+                background-color: #{"#" + $color};
+                width: 1em;
+                height: 1em;
+                display: inline-block;
+                vertical-align: middle;
+                overflow: hidden;
+                border: 1px solid $main-color-light;
+            }
+
+            @include define-reader-style(back-color, $color)
+            {
+                #reader-style-settings .#{$color}
+                {
+                    border-color: black;
+                }
+
+                &
+                {
+                    background-color: #{"#" + $color};
+                }
+            }
+        }
+
+        @include define-back-color(F5F5F5);
+        @include define-back-color(FFFFFF);
+        @include define-back-color(E9FAFF);
+        @include define-back-color(FFFFED);
+        @include define-back-color(FCEFFF);
 
         footer
         {

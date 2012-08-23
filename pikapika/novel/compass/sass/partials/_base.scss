@@ -16,6 +16,7 @@ $blueprint-fixed-font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 $blueprint-font-size: 14px;
 
 $main-color:            #7E5E51;
+$main-color-light:      lighten(desaturate($main-color, 10%), 30%);
 
 $black:                 #000;
 $grayDarker:            #222;
