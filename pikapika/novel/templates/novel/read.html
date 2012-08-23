@@ -21,22 +21,22 @@
             <dd>{{ chapter.hit_count }}</dd>
         </dl>
 
-        <div class="reader-style">
+        <div id="reader-style-settings">
             {# TODO: Move it to a expandable panel #}
-            <span class="font-size-select">
+            <span class="style-group" data-key="font-size">
                 字体大小：
-                <span class="font-size-0-75">小</span>
-                <span class="font-size-1">中</span>
-                <span class="font-size-1-25">大</span>
-                <span class="font-size-1-5">特大</span>
+                <span class="small">小</span>
+                <span class="medium">中</span>
+                <span class="large">大</span>
+                <span class="x-large">特大</span>
             </span>
-            <span class="back-color-select">
+            <span class="style-group" data-key="back-color">
                 阅读底色：
-                <span class="#F5F5F5">&nbsp;</span>
-                <span class="#FFFFFF">&nbsp;</span>
-                <span class="#E9FAFF">&nbsp;</span>
-                <span class="#FFFFED">&nbsp;</span>
-                <span class="#FCEFFF">&nbsp;</span>
+                <span class="F5F5F5">&nbsp;</span>
+                <span class="FFFFFF">&nbsp;</span>
+                <span class="E9FAFF">&nbsp;</span>
+                <span class="FFFFED">&nbsp;</span>
+                <span class="FCEFFF">&nbsp;</span>
             </span>
         </div>
 
