@@ -636,9 +636,17 @@ body
             }
         }
 
+        @mixin define-reader-style($key, $value)
+        {
+            .rs-#{$key}--#{$value} &
+            {
+                @content;
+            }
+        }
+
         @mixin define-font-size($size)
         {
-            .rs-font-size--#{$size} &
+            @include define-reader-style(font-size, $size)
             {
                 #reader-style-settings .#{$size}
                 {
