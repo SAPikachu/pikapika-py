@@ -7,5 +7,9 @@ Currently, the following packages are required:
 * requests 0.12
 * django-extensions (On development machine)
 
+Tools:
+
+* compass 0.12.2
+
 (More may be added later...)
 
