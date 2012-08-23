@@ -35,6 +35,7 @@ $splitter-color:        lighten($main-color, 50%);
 body
 {
     @include blueprint-typography(true);
+    background-color: #FAF7F3;
 
     #{headers(all)}
     {
@@ -96,9 +97,11 @@ body:before
 
 // --- Base ---
 
-body
+#sticky-footer-wrap, #page-header, #page-footer
 {
-    background-color: #FAF7F3;
+    $margin-number: ($content-margin / 100%);
+    // We need to include margin in outer containers
+    min-width: ($blueprint-liquid-container-min-width / (1 - $margin-number * 2));
 }
 
 #page-header
@@ -168,7 +171,7 @@ body
 #page
 {
     padding: 0 $content-margin ($footer-height);
-    min-width: 780px;
+    min-width: $blueprint-liquid-container-min-width;
 
     section
     {
