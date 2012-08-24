@@ -77,23 +77,29 @@ def read(request, pk):
             annotate(hit_count=Sum("hit_records__hits")).
             filter(pk=pk)
     )
-    prev_chapter = chapter.get_previous_in_order()
-    if not prev_chapter:
-        prev_volume = chapter.volume.get_previous_in_order()
-        prev_chapter = (
-            first(prev_volume.chapter_set.reverse()[:1], default=None)
-            if prev_volume 
-            else None
-        )
+    prev_chapter = None
+    try:
+        prev_chapter = chapter.get_previous_in_order()
+    except models.Chapter.DoesNotExist:
+        try:
+            prev_volume = chapter.volume.get_previous_in_order()
+            prev_chapter = (
+                first(prev_volume.chapter_set.reverse()[:1], default=None)
+            )
+        except models.Volume.DoesNotExist:
+            pass
 
-    next_chapter = chapter.get_next_in_order()
-    if not next_chapter:
-        next_volume = chapter.volume.get_next_in_order()
-        next_chapter = (
-            first(next_volume.chapter_set[:1], default=None)
-            if next_volume
-            else None
-        )
+    next_chapter = None
+    try:
+        next_chapter = chapter.get_next_in_order()
+    except models.Chapter.DoesNotExist:
+        try:
+            next_volume = chapter.volume.get_next_in_order()
+            next_chapter = (
+                first(next_volume.chapter_set[:1], default=None)
+            )
+        except models.Volume.DoesNotExist:
+            pass
 
     rendered_chapter = chapter_utils.render(json.loads(chapter.content))
 
