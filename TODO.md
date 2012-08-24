@@ -3,17 +3,15 @@
 * Finish admin area, at least make it able to add/edit novel using rich-text editor
 * Change category key from "publisher" to starting letter of novels, nobody cares about publishers
 * Detail page
+* Read page
 
 # In progress
 
-* Migrate front-end
-
-    + Read page
+* Categories
+* Novel listing
     
 # Things that should be fixed before going live
 
-* Categories
-* Novel listing
 * Front page ranking
 * Searching
 * RSS output
