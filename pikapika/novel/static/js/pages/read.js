@@ -37,14 +37,14 @@ $("#reader-style-settings .style-group > span").click(function() {
 
 $(function() {
     // ----- auto-scrolling
-    var autoScrollEnabled = false;
-    var autoScrollInterval = 100;
-    function doAutoScroll() {
-        if (!autoScrollEnabled) {
+    var auto_scroll_enabled = false;
+    var auto_scroll_interval = 100;
+    function do_auto_scroll() {
+        if (!auto_scroll_enabled) {
             return;
         }
         window.scrollBy(0, 5);
-        setTimeout(doAutoScroll, autoScrollInterval);
+        setTimeout(do_auto_scroll, auto_scroll_interval);
     }
 
     $("#page article").dblclick(function (e) {
@@ -54,21 +54,21 @@ $(function() {
         else if (document.selection) { // should come last; Opera!
             document.selection.empty();
         }
-        autoScrollEnabled = true;
-        doAutoScroll();
+        auto_scroll_enabled = true;
+        do_auto_scroll();
         e.preventDefault();
         return false;
     });
 
     $(document).mousedown(function () {
-        autoScrollEnabled = false;
+        auto_scroll_enabled = false;
     });
 
     $(document).keydown(function (e) {
-        if (autoScrollEnabled) {
+        if (auto_scroll_enabled) {
             if (e.which == 38 || e.which == 40) { // UP and DOWN
-                autoScrollInterval += (e.which - 39) * 10;
-                autoScrollInterval = Math.max(Math.min(autoScrollInterval, 300), 10);
+                auto_scroll_interval += (e.which - 39) * 10;
+                auto_scroll_interval = Math.max(Math.min(autoScrollInterval, 300), 10);
                 e.preventDefault();
                 return false;
             }
