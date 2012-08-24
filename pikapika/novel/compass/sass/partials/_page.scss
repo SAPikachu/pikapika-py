@@ -608,13 +608,19 @@ body:before
 
                 dd
                 {
-                    margin-right: 1em;
+                    margin: 0 1em 0 0.75em;
                 }
             }
 
             #reader-style-settings .style-group
             {
                 margin: 0 1em;
+
+                label
+                {
+                    font-weight: bold;
+                    margin-right: 0.75em;
+                }
 
                 > span
                 {
