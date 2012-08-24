@@ -35,5 +35,19 @@ $("#reader-style-settings .style-group > span").click(function() {
     reader_styles.set($(this).parent().data("key"), this.className);
 });
 
+$(function() {
+    $(document).keydown(function (e) {
+        var link;
+        if (e.which == 37) { // LEFT
+            link = $("#link-prev-page").attr("href");
+        } else if (e.which == 39) { // RIGHT
+            link = $("#link-next-page").attr("href");
+        }
+        if (link) {
+            location.href = link;
+        }
+    });
+});
+
 });
 

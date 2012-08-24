@@ -53,7 +53,7 @@
     <footer>
         <nav>
             {% if prev_chapter %}
-            <a href="{% url "read" pk=prev_chapter.pk %}" title="快捷键：←">
+            <a href="{% url "read" pk=prev_chapter.pk %}" id="link-prev-page" title="快捷键：←">
                 &lt;&lt; 上一章
             </a>
             {% endif %}
@@ -63,7 +63,7 @@
             </a>
 
             {% if next_chapter %}
-            <a href="{% url "read" pk=next_chapter.pk %}" title="快捷键：→">
+            <a href="{% url "read" pk=next_chapter.pk %}" id="link-next-page" title="快捷键：→">
                 下一章 &gt;&gt;
             </a>
             {% endif %}
