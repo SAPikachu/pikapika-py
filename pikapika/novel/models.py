@@ -35,6 +35,10 @@ class Novel(models.Model):
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        get_latest_by = "updated_date"
+        ordering = ["-updated_date", "-pk"]
+
     def __unicode__(self):
         return self.name
 
