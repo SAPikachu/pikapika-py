@@ -21,24 +21,24 @@
 <section>
     <h2>最近更新</h2>
     <ul id="latest-novels">
-        {% for item in latest_novels %}
+        {% for novel in latest_novels %}
         <li>
-            <a href="{% url "details" pk=item.novel.pk %}" class="novel-link">
+            <a href="{% url "details" pk=novel.pk %}" class="novel-link">
                 {% spaceless %}
                 <div class="image">
-                    {% if item.novel.image %}
-                    <img src="{% url "thumbnail" path=item.novel.image.name max_width=80 max_height=110 %}"/>
+                    {% if novel.image %}
+                    <img src="{% url "thumbnail" path=novel.image.name max_width=80 max_height=110 %}"/>
                     {% else %}
                     <span class="placeholder"></span>
                     {% endif %}
                 </div>
                 {% endspaceless %}
                 <div class="novel-name">
-                    {{ item.novel.name }}
+                    {{ novel.name }}
                 </div>
             </a>
-            <a href="{% url "details" pk=item.novel.pk %}#volume-{{ item.chapter.volume.pk }}" class="latest-chapter-link">
-                {{ item.chapter.volume.name }} - {{ item.chapter.name }}
+            <a href="{% url "details" pk=novel.pk %}#volume-{{ novel.latest_chapter.volume.pk }}" class="latest-chapter-link">
+                {{ novel.latest_chapter.volume.name }} - {{ novel.latest_chapter.name }}
             </a>
         </li>
         {% endfor %}

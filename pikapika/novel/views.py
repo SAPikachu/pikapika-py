@@ -15,30 +15,13 @@ INDEX_LATEST_NOVELS_COUNT = 15
 NOVELS_PER_LIST_PAGE = 6
 
 def index(request):
-    latest_novels_prep = {
-        x.latest_chapter_id: x for x in
-        models.Novel.objects.
-        order_by("-updated_date").
-        annotate(latest_chapter_id=Max("volume__chapter__id")).
-        filter(latest_chapter_id__gt=0)
+    latest_novels = (
+        models.Novel.objects.all()
         [:INDEX_LATEST_NOVELS_COUNT]
-    }
-
-    chapters = (
-        models.Chapter.objects.
-        filter(pk__in=latest_novels_prep.keys()).
-        select_related("volume")
+        .execute_with_latest_chapter()
     )
 
-    latest_novels = [
-        {
-            "novel": latest_novels_prep[x.pk],
-            "chapter": x,
-        }
-        for x in chapters
-    ]
-
-    latest_novels.sort(key=lambda x: x["novel"].updated_date, reverse=True)
+    latest_novels.sort(key=lambda x: x.updated_date, reverse=True)
 
     return render(
         request,
@@ -54,7 +37,7 @@ def details(request, pk):
     query = (
         models.Novel.objects.
         filter(pk=pk).
-        annotate(hit_count=Sum("volume__chapter__hit_records__hits")).
+        with_hit_count().
         prefetch_related("volume_set__chapter_set")
     )
     novel = get_object_or_404(query)

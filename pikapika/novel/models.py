@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from cjklib.characterlookup import CharacterLookup
 
+from .managers import NovelManager
+
 IMAGE_UPLOAD_DIR = settings.IMAGE_UPLOAD_DIR
 
 def get_cat_code(s):
@@ -34,6 +36,8 @@ class Novel(models.Model):
     rating_points = models.IntegerField(default=0)
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now=True)
+
+    objects = NovelManager()
 
     class Meta:
         get_latest_by = "updated_date"
