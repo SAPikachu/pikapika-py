@@ -1,0 +1,39 @@
+{% extends "novel/includes/base.html" %}
+{% load url from future %}
+{% load html_helpers %}
+
+{% block title %}{% if cat_start %}{{ cat_start }}{% if cat_end %} ~ {{ cat_end }}{% endif %}{% else %}全部小说{% endif %}{% endblock %}
+
+{% block body-class %}no-sidebar page-list{% endblock %}
+
+{% block content %}
+<ul class="novel-list">
+    {% for novel in novels %}
+    <li>
+        <a class="image" href="{% url "details" pk=novel.pk %}">
+            {% if novel.image %}
+            <img src="{% url "thumbnail" path=novel.image.name max_width=80 max_height=110 %}"/>
+            {% else %}
+            <span class="placeholder"></span>
+            {% endif %}
+        </a>
+        <div class="info">
+            <h2 class="name"><a href="{% url "details" pk=novel.pk %}">{{ novel.name }}</a></h2>
+            <dl class="basic-info">
+                <dt>更新</dt>
+                <dd><time datetime="{{ novel.updated_date|date:"c" }}">{{ novel.updated_date|date:"Y-m-d H:i" }}</time></dd>
+                <dt>作者</dt>
+                <dd>{{ novel.author }}</dd>
+                <dt>点击</dt>
+                <dd>{{ novel.hit_count }}</dd>
+                {# TODO: Annotation count #}
+            </dl>
+            <h3 class="latest-chapter"><a href="{% url "details" pk=novel.pk %}#volume-{{ novel.latest_chapter.volume.pk }}">{{ novel.latest_chapter.volume.name }} - {{ novel.latest_chapter.name }}</a></h3>
+            <div class="description" title="{{ novel.description|normalize_whitespace }}">
+                {{ novel.description }}
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

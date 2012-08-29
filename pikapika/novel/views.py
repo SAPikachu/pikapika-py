@@ -60,8 +60,8 @@ def read(request, pk):
     pk = int(pk)
     chapter = get_object_or_404(
         models.Chapter.objects.
-            annotate(hit_count=Sum("hit_records__hits")).
-            filter(pk=pk)
+        annotate(hit_count=Sum("hit_records__hits")).
+        filter(pk=pk)
     )
     prev_chapter = None
     try:
@@ -120,16 +120,16 @@ def list_cat(request, cat_start=None, cat_end=None, page=None):
     total_pages = int(ceil(float(total_novels) / NOVELS_PER_LIST_PAGE))
 
     if total_novels:
-        query = (
-            query.
-            annotate(hit_count=Sum("volume__chapter__hit_records__hits"))
+        novels = (
+            query
+            .with_hit_count()
+            [index * NOVELS_PER_LIST_PAGE:(index + 1) * NOVELS_PER_LIST_PAGE]
+            .execute_with_latest_chapter()
         )
-        query = query[index * NOVELS_PER_LIST_PAGE:
-                      (index + 1) * NOVELS_PER_LIST_PAGE]
 
-        novels = list(query)
         if not novels:
             raise Http404()        
+
     else:
         novels = []
 

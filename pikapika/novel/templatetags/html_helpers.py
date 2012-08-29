@@ -1,5 +1,7 @@
 from __future__ import print_function, unicode_literals
 
+import re
+
 from django import template
 from django.conf import settings
 
@@ -40,3 +42,6 @@ def requirejs(name):
         name=name,
     )
 
+@register.filter
+def normalize_whitespace(value):
+    return re.sub(r"\s+", " ", value, flags=re.S)
