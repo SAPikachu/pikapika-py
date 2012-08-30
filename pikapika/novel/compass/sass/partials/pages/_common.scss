@@ -1,6 +1,16 @@
 @import "compass";
 @import "blueprint/liquid";
 
+$main-color:            #7E5E51;
+$main-color-light:      lighten(desaturate($main-color, 10%), 30%);
+
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #555;
+$grayLight:             #999;
+$grayLighter:           #eee;
+$white:                 #fff;
 
 $image-base:            "../images/";
 $content-margin:        ($blueprint-liquid-grid-width);
