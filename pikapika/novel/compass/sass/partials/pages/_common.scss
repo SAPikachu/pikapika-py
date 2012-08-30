@@ -42,6 +42,17 @@ $splitter-color:        lighten($main-color, 50%);
     width: ($blueprint-grid-width * $columns) + ($blueprint-grid-margin * ($columns - 1));
 }
 
+@mixin image-shadow()
+{
+    @include box-shadow(1px 1px 6px lighten($main-color, 10%));
+    @include generic-transition;
+
+    &:hover
+    {
+        @include box-shadow(2px 2px 6px darken($main-color, 10%));
+    }
+}
+
 body
 {
     @include blueprint-typography(true);

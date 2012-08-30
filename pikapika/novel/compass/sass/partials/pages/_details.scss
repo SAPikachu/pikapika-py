@@ -2,14 +2,8 @@
 {
     @mixin image-effect()
     {
-        border: 1px solid lighten($main-color, 35%);
-        @include box-shadow(1px 1px 6px lighten($main-color, 10%));
-        @include generic-transition;
-
-        &:hover
-        {
-            @include box-shadow(2px 2px 6px darken($main-color, 10%));
-        }
+        border: 1px solid $main-color-light;
+        @include image-shadow;
     }
 
     .novel-image
