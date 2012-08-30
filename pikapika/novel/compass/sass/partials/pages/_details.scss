@@ -1,0 +1,147 @@
+.page-details
+{
+    @mixin image-effect()
+    {
+        border: 1px solid lighten($main-color, 35%);
+        @include box-shadow(1px 1px 6px lighten($main-color, 10%));
+        @include generic-transition;
+
+        &:hover
+        {
+            @include box-shadow(2px 2px 6px darken($main-color, 10%));
+        }
+    }
+
+    .novel-image
+    {
+        @include make-column(3);
+        margin-left: $content-padding;
+
+        img
+        {
+            @include image-effect;
+        }
+    }
+
+    h2, figure
+    {
+        line-height: 1;
+        margin: $blueprint-grid-margin 0;
+    }
+
+    .novel-info
+    {
+        margin-left: $blueprint-grid-width * 3 + $blueprint-grid-margin * 3 + $content-padding;
+        margin-top: $blueprint-grid-margin;
+
+        dl
+        {
+            $dt-width: 4em;
+            $gap: 1em;
+
+            dt, dd
+            {
+                line-height: 1.6;
+            }
+
+            dt
+            {
+                width: $dt-width;
+                float: left;
+                font-weight: normal;
+                color: $grayLight;
+                margin-right: $gap;
+            }
+        }
+    }
+
+    .volume-list
+    {
+        padding-top: 1px;
+
+        &, .volume
+        {
+            clear: both;
+        }
+
+        ul, li
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .volume
+        {
+            @include pie-clearfix;
+            display: block;
+            margin: 0 $content-padding;
+            padding-bottom: $blueprint-grid-margin;
+            border-bottom: 2px dotted $splitter-color;
+
+            &:last-child
+            {
+                border-bottom: 0 none;
+            }
+
+            h3
+            {
+                margin: $blueprint-grid-margin 0;
+                font-size: 1.3em;
+
+                a, a:link, a:visited, a:hover, a:active
+                {
+                    color: darken($main-color, 20%);
+                }
+            }
+
+            .volume-info
+            {
+                width: span-fluid(4);
+                border-left: 1px dashed $splitter-color;
+                padding-left: $blueprint-liquid-grid-margin / 2;
+                float: right;
+                margin-bottom: $blueprint-grid-margin;
+                color: $grayLight;
+                font-size: 90%;
+
+                figure
+                {
+                    float: right;
+                    padding: 0;
+                    margin: 0 0 $blueprint-grid-margin $blueprint-grid-margin;
+
+                    img
+                    {
+                        @include image-effect;
+                    }
+                }
+            }
+
+            .chapter-list // ul
+            {
+                width: span-fluid(8);
+
+                li
+                {
+                    width: span-fluid(3);
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-right: $blueprint-liquid-grid-margin;
+                    margin-bottom: 1.5em;
+
+                    &:nth-child(4n)
+                    {
+                        margin-right: 0;
+                    }
+
+                    a
+                    {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+

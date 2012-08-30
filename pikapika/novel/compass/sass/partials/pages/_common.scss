@@ -1,0 +1,256 @@
+@import "compass";
+@import "blueprint/liquid";
+
+
+$image-base:            "../images/";
+$content-margin:        ($blueprint-liquid-grid-width);
+$content-padding:       $blueprint-grid-margin * 2;
+$footer-height:         91px;
+$image-border-color:    lighten($main-color, 40%);
+$splitter-color:        lighten($main-color, 50%);
+
+@mixin generic-transition($duration: .15s) 
+{
+    @include single-transition(all, $duration, linear);
+}
+
+@mixin side-block
+{
+    $back: #F8F5F0;
+    background-color: $back;
+    @include border-radius(5px);
+}
+
+@mixin make-row
+{
+    margin-left: $blueprint-grid-margin * -1;
+    @include clearfix;
+}
+@mixin make-column($columns: 1, $offset: 0) {
+    float: left;
+    margin-left: ($blueprint-grid-width * $offset) + ($blueprint-grid-margin * ($offset - 1)) + ($blueprint-grid-margin * 2);
+    width: ($blueprint-grid-width * $columns) + ($blueprint-grid-margin * ($columns - 1));
+}
+
+body
+{
+    @include blueprint-typography(true);
+    background-color: #FAF7F3;
+
+    #{headers(all)}
+    {
+        font-weight: bold;
+    }
+
+    a
+    {
+        text-decoration: none;
+        &, &:link, &:visited
+        {
+            color: $main-color;
+        }
+        
+        &:hover
+        {
+            color: red;
+        }
+    }
+
+}
+
+// --- Sticky footer ---
+html, body
+{
+    height: 100%;
+}
+
+#sticky-footer-wrap
+{
+    min-height: 100%;
+}
+
+#page
+{
+    overflow: auto; // FIXME: It is commented out in the original site, why?
+    // padding-bottom is set below
+    // padding-bottom: $footer-height;
+}
+
+#page-footer
+{
+    position: relative;
+    border-top: 1px solid #ccc;
+    margin-top: -$footer-height;
+    height: ($footer-height - 1px);
+    clear: both;
+}
+
+// Opera fix
+body:before
+{
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+}
+
+// --- Base ---
+
+#sticky-footer-wrap, #page-header, #page-footer
+{
+    $margin-number: ($content-margin / 100%);
+    // We need to include margin in outer containers
+    min-width: ($blueprint-liquid-container-min-width / (1 - $margin-number * 2));
+}
+
+#page-header
+{
+    position: relative;
+    padding-top: 25px;
+    margin-bottom: 0px;
+    color: #000;
+    background-image: url("#{$image-base}header-background.png");
+    background-repeat: repeat-x;
+    background-position: left top;
+
+    &, .title, nav, ul 
+    {
+        zoom: 1; /* workaround for ie7 bug */
+        overflow: hidden;
+    }
+
+    .title
+    {
+        @include replace-text(url("#{$image-base}logo-header.png"), left, top);
+        margin: 0 $content-margin 10px;
+        height: 64px;
+        width: 303px;
+        outline: none;
+        display: block;
+    }
+
+    nav 
+    {
+        clear: both;
+        margin: 0;
+        padding: 0 $content-margin;
+        border-color: #D2CBB7;
+        border-style: solid;
+        border-width: 1px 0;
+        background-image: url("#{$image-base}menu-background.png");
+        background-repeat: repeat-x;
+        background-position: left top;
+        height: 37px;
+
+        ul
+        {
+            padding: 0 $content-padding;
+            position: relative;
+            margin: 0;
+            text-align: left;
+            clear: both;
+            cursor: default;
+            height: 37px;
+            line-height: 37px;
+
+            li
+            {
+                display: inline;
+                list-style: none;
+
+                a
+                {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+#page
+{
+    padding: 0 $content-margin ($footer-height);
+    min-width: $blueprint-liquid-container-min-width;
+
+    section
+    {
+        h2
+        {
+            border-left: #B38D55 solid 8px;
+            background-color: #EEC78D;
+            color: #594528;
+            font-size: 1.5em;
+            line-height: 1.5;
+            margin: 0 0 10px;
+            padding: 5px 10px;
+            zoom: 1; /* workaround for ie7 bug */
+        }
+    }
+
+    .page-sheet
+    {
+        background-color: white;
+        @include box-shadow(0px 0px 8px 8px lighten($main-color, 40%));
+        @include container;
+
+        #sidebar
+        {
+            @include side-block;
+            @include column(3, $last: true);
+            overflow: visible;
+            @include pie-clearfix;
+
+            .no-sidebar &
+            {
+                display: none;
+            }
+
+            ul 
+            {
+                margin: 1em 1em 2em;
+                padding: 0;
+                list-style: none;
+
+                li
+                {
+                    list-style: none;
+                    border-bottom: 2px dotted #CCCCCC;
+                    color: #676767;
+                    line-height: 1.1em;
+                    font-size: 0.91em;
+                    padding: 0 10px 8px;
+                    margin-top: 8px;
+
+                    a
+                    {
+                        font-size: 1.1em;
+                        line-height: 1.4em;
+                    }
+                }
+            }
+        }
+
+        .page-content
+        {
+            @include column(9);
+
+            .no-sidebar &
+            {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+#page-footer
+{
+    color: #999;
+    text-align: center;
+    line-height: normal;
+    font-size: .9em;
+    overflow: hidden;
+    background: url("#{$image-base}footer-background.gif") repeat-x scroll left top transparent;
+}
+

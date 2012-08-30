@@ -1,0 +1,166 @@
+.page-index #page
+{
+    .page-content h2
+    {
+        padding-left: $content-padding - 8px;
+        padding-right: $content-padding;
+        clear: both;
+    }
+    #latest-novels
+    {
+        margin: 0;
+        padding: 0;
+        zoom: 1;
+
+        li
+        {
+            $padding-vert: 8px;
+
+            // 5 items per row, can't use 20% due to rounding bug on IE7
+            width: 18%;
+            min-width: 100px;
+            float: left;
+            margin: 0 0 1em;
+            padding: 0 0.95%;
+            text-align: center;
+            overflow: hidden;
+            @include border-radius($padding-vert);
+            @include generic-transition;
+
+            &:hover
+            {
+                background-color: #F9F7F0;
+            }
+
+            &, a
+            {
+                display: block;
+                outline: none;
+            }
+
+            .novel-link
+            {
+                padding-top: $padding-vert;
+
+                .image
+                {
+                    $height: 110px;
+                    $padding: 2px;
+                    height: $height;
+                    width: 80px;
+                    padding: $padding;
+                    line-height: $height;
+                    text-align: center;
+                    margin: 0 auto 4px;
+                    border: 1px solid $image-border-color;
+
+                    // Removes gap on the top of image
+                    // See http://stackoverflow.com/questions/1368253/why-when-i-center-an-image-in-a-div-with-line-height-does-a-3px-gap-appear-at
+                    // Seems setting font family to arial fixes that, but for 
+                    // safety also set font size to as small as possible
+                    font: 0/0 "Arial", sans-serif; 
+
+                    img
+                    {
+                        height: auto;
+                        width: auto;
+                        max-width: 100%;
+                        max-height: 100%;
+                        vertical-align: middle;
+                        border: none;
+                    }
+
+                    .placeholder
+                    {
+                        background-image: url("#{$image-base}placeholder.png");
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+            }
+
+            .latest-chapter-link
+            {
+                font-size: 0.85em;
+                padding-bottom: $padding-vert;
+            }
+
+            .latest-chapter-link, .novel-name
+            {
+                height: 1.5em;
+                line-height: 1.5em;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+        }
+    }
+
+    #google-search 
+    {
+        width: 100%;
+        margin-bottom: 10px;
+        overflow: hidden;
+
+        td
+        {
+            border: 0 none;
+        }
+
+        form
+        {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+
+    #google-search-result 
+    {
+        display: none;
+        margin-bottom: 20px;
+        font-size: 1em;
+
+        .gsc-branding 
+        {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            font-size: 13px;
+            margin-left: 25px;
+
+            img
+            {
+                vertical-align: middle;
+            }
+        }
+
+        div
+        {
+            font-size: 1em;
+            line-height: normal;
+        }
+
+        .gs-result 
+        {
+            margin: 25px;
+            font-size: 1em;
+        }
+
+        .gs-title 
+        {
+            font-size: 1.05em;
+        }
+    }
+
+    #cse, .gs-visibleUrl
+    {
+        display: none;
+    }
+}
+

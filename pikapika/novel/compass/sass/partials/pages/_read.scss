@@ -1,0 +1,154 @@
+.page-read
+{
+    article
+    {
+        header, footer
+        {
+            padding: $blueprint-grid-margin $content-padding;
+            text-align: center;
+        }
+
+        header
+        {
+            h2
+            {
+                margin-bottom: $blueprint-grid-margin;
+                line-height: 1;
+            }
+
+            .chapter-info, #reader-style-settings, .autoscroll-hint
+            {
+                display: inline-block;
+                line-height: 1.75;
+                color: $main-color-light;
+                text-align: center;
+                margin: 0 3em;
+            }
+
+            .chapter-info
+            {
+                dt, dd
+                {
+                    display: inline-block;
+                }
+
+                dt
+                {
+                    margin-left: 1em;
+                }
+
+                dd
+                {
+                    margin: 0 1em 0 0.75em;
+                }
+            }
+
+            #reader-style-settings .style-group
+            {
+                margin: 0 1em;
+
+                label
+                {
+                    font-weight: bold;
+                    margin-right: 0.75em;
+                }
+
+                > span
+                {
+                    cursor: pointer;
+                }
+                
+
+            }
+        }
+
+        .chapter-content
+        {
+            font-size: 150%;
+            line-height: 1.75;
+            margin: ($blueprint-grid-margin * 1.5) 0;
+            padding: 0 $content-padding;
+
+            p
+            {
+                text-indent: 2em;
+                margin: 1.5em 0;
+            }
+        }
+
+        @mixin define-reader-style($key, $value)
+        {
+            .rs-#{$key}--#{$value} &
+            {
+                @content;
+            }
+        }
+
+        @mixin define-font-size($size)
+        {
+            @include define-reader-style(font-size, $size)
+            {
+                #reader-style-settings .#{$size}
+                {
+                    color: black;
+                }
+
+                .chapter-content
+                {
+                    font-size: $size;
+                }
+            }
+        }
+
+        @include define-font-size(small);
+        @include define-font-size(medium);
+        @include define-font-size(large);
+        @include define-font-size(x-large);
+        @include define-font-size(xx-large);
+
+        @mixin define-back-color($color)
+        {
+            #reader-style-settings .#{$color}
+            {
+                background-color: #{"#" + $color};
+                width: 1em;
+                height: 1em;
+                display: inline-block;
+                vertical-align: middle;
+                overflow: hidden;
+                border: 1px solid $main-color-light;
+            }
+
+            @include define-reader-style(back-color, $color)
+            {
+                #reader-style-settings .#{$color}
+                {
+                    border-color: black;
+                }
+
+                &
+                {
+                    background-color: #{"#" + $color};
+                }
+            }
+        }
+
+        @include define-back-color(F5F5F5);
+        @include define-back-color(FFFFFF);
+        @include define-back-color(E9FAFF);
+        @include define-back-color(FFFFED);
+        @include define-back-color(FCEFFF);
+
+        footer
+        {
+            nav a
+            {
+                display: inline-block;
+                margin: 0 0.75em;
+            }
+        }
+    }
+}
+
+
+
