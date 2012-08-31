@@ -7,3 +7,6 @@
 [submodule "submodules/underscore"]
 	path = submodules/underscore
 	url = git://github.com/documentcloud/underscore.git
+[submodule "submodules/selectivizr"]
+	path = submodules/selectivizr
+	url = git://github.com/keithclark/selectivizr.git

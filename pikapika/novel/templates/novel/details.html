@@ -1,5 +1,6 @@
 {% extends "novel/includes/base.html" %}
 {% load url from future %}
+{% load html_helpers %}
 
 {% block title %}{{ novel.name }}{% endblock %}
 
@@ -78,4 +79,8 @@
     </ul>
 </section>
 
+{% endblock %}
+
+{% block head-extra %}
+{% requirejs "pages/details" %}
 {% endblock %}

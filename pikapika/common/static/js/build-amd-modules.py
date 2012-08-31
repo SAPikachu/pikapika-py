@@ -26,6 +26,13 @@ MODULES = [
         "dependency": [
         ],
     },
+    {
+        "name": "selectivizr",
+        "raw_file": "selectivizr/selectivizr.js",
+        "dependency": [
+            "jquery",
+        ],
+    },
 ]
 
 TEMPLATE = ("""
@@ -78,7 +85,8 @@ def build():
         dependency_names = "".join(
             [', "{}"'.format(x) for x in module["dependency"]]
         )
-        export = MODULE_EXPORTS[module["name"]][0]
+        export_list = MODULE_EXPORTS.get(module["name"], None)
+        export = export_list[0] if export_list else ""
         imports = {}
         for dep in module["dependency"]:
             for import_name in MODULE_EXPORTS[dep]:
