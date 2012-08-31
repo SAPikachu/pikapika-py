@@ -118,8 +118,8 @@
 
                 li
                 {
+                    @include inline-block;
                     width: span-fluid(3);
-                    display: inline-block;
                     vertical-align: top;
                     margin-right: $blueprint-liquid-grid-margin;
                     margin-bottom: 1.5em;
