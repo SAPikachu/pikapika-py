@@ -53,6 +53,34 @@ $splitter-color:        lighten($main-color, 50%);
     }
 }
 
+@mixin push-sheet-bottom
+{
+    // Based on http://www.positioniseverything.net/articles/onetruelayout/equalheight
+    // NOTE: Due to a bug(feature?) in Gecko, we can't directly use elements in .page-sheet as anchor in URL, instead we must use an empty div, like this: <div id="anchor-name" class="anchor"></div>
+    // See http://www.positioniseverything.net/articles/onetruelayout/appendix/equalheightproblems#linking for more information
+
+    // Defined in a mixin to make it able to be easily disabled
+    // Included in the bottom of this file
+
+    #sticky-footer-wrap
+    {
+        overflow: hidden;
+    }
+
+    #page
+    {
+        padding-bottom: (30000px + $footer-height);
+        margin-bottom: -30000px;
+
+        .page-sheet
+        {
+            padding-bottom: 30000px;
+            margin-bottom: -30000px;
+
+        }
+    }
+}
+
 body
 {
     @include blueprint-typography(true);
@@ -262,6 +290,12 @@ body:before
             }
         }
     }
+
+    .anchor
+    {
+        // See comments in @mixin push-sheet-bottom
+        position: absolute;
+    }
 }
 
 
@@ -275,3 +309,4 @@ body:before
     background: url("#{$image-base}footer-background.gif") repeat-x scroll left top transparent;
 }
 
+@include push-sheet-bottom;

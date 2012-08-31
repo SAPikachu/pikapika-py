@@ -46,7 +46,10 @@
     <ul>
         {% for volume in novel.volume_set.all %}
         <li class="volume">
-            <h3 id="volume-{{ volume.pk }}">{{ volume.name }}</h3>
+            <div id="volume-{{ volume.pk }}" class="anchor">
+                {# This is required, see comments in the stylsheet #}
+            </div>
+            <h3>{{ volume.name }}</h3>
             <div class="volume-info">
                 <figure>
                     {% if volume.image %}
