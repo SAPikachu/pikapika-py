@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
+from django.views.generic import RedirectView
 from filebrowser.sites import site
 
 admin.autodiscover()
@@ -11,6 +12,13 @@ urlpatterns = patterns('',
     url(r'^thumb/(?P<max_width>\d+)x(?P<max_height>\d+)/+(?P<path>.+)$', 
         'pikapika.common.thumbnail.generate',
         name="thumbnail"),
+
+    # IE treat URL of htc files relative to the web page itself instead of css file, so we have to redirect it to correct place
+    url(r'(.*/)?PIE.htc$', 
+        RedirectView.as_view(
+            url=settings.STATIC_URL + "misc/PIE.htc", 
+            permanent=True,
+        )),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
