@@ -10,3 +10,6 @@
 [submodule "submodules/selectivizr"]
 	path = submodules/selectivizr
 	url = git://github.com/keithclark/selectivizr.git
+[submodule "submodules/PIE"]
+	path = submodules/PIE
+	url = git@github.com:SAPikachu/PIE.git
