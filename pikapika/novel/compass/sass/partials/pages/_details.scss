@@ -30,8 +30,9 @@
 
         dl
         {
-            $dt-width: 4em;
-            $gap: 1em;
+            $dt-width: 4.5em;
+            $gap: 0.5em;
+            @include clearfix;
 
             dt, dd
             {
