@@ -5,6 +5,11 @@
     <title>{% block title-full %}{% block title %}{% endblock %} - PikaPika Alpha 2{% endblock %}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    {% for i in "678" %}
+    <!--[if IE {{ i }}]>
+    <script type="text/javascript">document.documentElement.className += " ie{{ i }}";</script>
+    <![endif]-->
+    {% endfor %}
     {% block css-common %}
     {% css "screen.css" %}
     {% endblock %}
