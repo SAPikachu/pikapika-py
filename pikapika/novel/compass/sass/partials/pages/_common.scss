@@ -39,7 +39,7 @@ $splitter-color:        lighten($main-color, 50%);
 @mixin make-row
 {
     margin-left: $blueprint-grid-margin * -1;
-    @include clearfix;
+    @include pie-clearfix;
 }
 @mixin make-column($columns: 1, $offset: 0) {
     float: left;
