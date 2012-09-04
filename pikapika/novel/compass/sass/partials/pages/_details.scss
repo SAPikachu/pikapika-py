@@ -1,9 +1,9 @@
 .page-details
 {
-    @mixin image-effect()
+    %image-effect
     {
         border: 1px solid $main-color-light;
-        @include image-shadow;
+        @extend %image-shadow;
     }
 
     .novel-image
@@ -13,7 +13,7 @@
 
         img
         {
-            @include image-effect;
+            @extend %image-effect;
         }
     }
 
@@ -107,7 +107,7 @@
 
                     img
                     {
-                        @include image-effect;
+                        @extend %image-effect;
                     }
                 }
             }

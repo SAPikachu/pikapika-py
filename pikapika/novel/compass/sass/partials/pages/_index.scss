@@ -25,7 +25,7 @@
             text-align: center;
             overflow: hidden;
             @include border-radius($padding-vert);
-            @include generic-transition;
+            @extend %generic-transition;
 
             &:hover
             {

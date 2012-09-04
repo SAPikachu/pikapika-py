@@ -24,19 +24,19 @@ $splitter-color:        lighten($main-color, 50%);
     behavior: url(/PIE.htc);
 }
 
-@mixin generic-transition($duration: .15s) 
+%generic-transition
 {
-    @include single-transition(all, $duration, linear);
+    @include single-transition(all, .15s, linear);
 }
 
-@mixin side-block
+%side-block
 {
     $back: #F8F5F0;
     background-color: $back;
     @include border-radius(5px);
 }
 
-@mixin make-row
+%make-row
 {
     margin-left: $blueprint-grid-margin * -1;
     @include pie-clearfix;
@@ -47,10 +47,10 @@ $splitter-color:        lighten($main-color, 50%);
     width: ($blueprint-grid-width * $columns) + ($blueprint-grid-margin * ($columns - 1));
 }
 
-@mixin image-shadow()
+%image-shadow
 {
     @include box-shadow(1px 1px 6px lighten($main-color, 10%));
-    @include generic-transition;
+    @extend %generic-transition;
     @extend %pie;
 
     &:hover
@@ -259,7 +259,7 @@ body:before
 
         #sidebar
         {
-            @include side-block;
+            @extend %side-block;
             @include column(3, $last: true);
             overflow: visible;
             @include pie-clearfix;
