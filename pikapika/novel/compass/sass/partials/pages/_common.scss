@@ -41,11 +41,6 @@ $splitter-color:        lighten($main-color, 50%);
     margin-left: $blueprint-grid-margin * -1;
     @include pie-clearfix;
 }
-@mixin make-column($columns: 1, $offset: 0) {
-    float: left;
-    margin-left: ($blueprint-grid-width * $offset) + ($blueprint-grid-margin * ($offset - 1)) + ($blueprint-grid-margin * 2);
-    width: ($blueprint-grid-width * $columns) + ($blueprint-grid-margin * ($columns - 1));
-}
 
 %image-shadow
 {
@@ -57,6 +52,12 @@ $splitter-color:        lighten($main-color, 50%);
     {
         @include box-shadow(2px 2px 6px darken($main-color, 10%));
     }
+}
+
+@mixin make-column($columns: 1, $offset: 0) {
+    float: left;
+    margin-left: ($blueprint-grid-width * $offset) + ($blueprint-grid-margin * ($offset - 1)) + ($blueprint-grid-margin * 2);
+    width: ($blueprint-grid-width * $columns) + ($blueprint-grid-margin * ($columns - 1));
 }
 
 @mixin push-sheet-bottom
