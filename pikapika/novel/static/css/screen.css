@@ -1092,7 +1092,7 @@ body:before {
   color: #bdb0ab;
   white-space: nowrap;
   line-height: 1.75;
-  margin: 1em 0 0;
+  margin: 0.8em 0 0;
 }
 /* line 63, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .info .basic-info dt, .page-list .novel-list li .info .basic-info dd {
@@ -1110,7 +1110,7 @@ body:before {
 /* line 74, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .info .latest-chapter {
   font-size: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;

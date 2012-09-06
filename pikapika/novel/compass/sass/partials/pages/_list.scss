@@ -57,7 +57,7 @@
                     color: $main-color-light;
                     white-space: nowrap;
                     line-height: 1.75;
-                    margin: 1em 0 0;
+                    margin: 0.8em 0 0;
 
                     dt, dd
                     {
@@ -73,7 +73,7 @@
                 .latest-chapter
                 {
                     font-size: 100%;
-                    margin-bottom: 1em;
+                    margin-bottom: 1.2em;
                     line-height: 1.2;
                     @include ellipsis();
 
