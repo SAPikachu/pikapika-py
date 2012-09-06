@@ -12,7 +12,7 @@ from . import models, chapter_utils
 from .utils import first
 
 INDEX_LATEST_NOVELS_COUNT = 15
-NOVELS_PER_LIST_PAGE = 6
+NOVELS_PER_LIST_PAGE = 12
 
 def index(request):
     latest_novels = (
