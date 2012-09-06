@@ -58,12 +58,12 @@ a img {
 }
 
 /* line 23, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
-.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img, .page-list .novel-list li .image, .ie8 #page .page-sheet {
+.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img, .page-list .novel-list li .image img, .ie8 #page .page-sheet {
   behavior: url(/PIE.htc);
 }
 
 /* line 28, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
-.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img, .page-list .novel-list li .image, .page-index #page #latest-novels li {
+.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img, .page-list .novel-list li .image img, .page-index #page #latest-novels li {
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
   -o-transition: all 0.15s linear;
@@ -80,20 +80,31 @@ a img {
   border-radius: 5px;
 }
 
-/* line 51, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
-.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img, .page-list .novel-list li .image {
-  -webkit-box-shadow: 1px 1px 6px #9c7566;
-  -moz-box-shadow: 1px 1px 6px #9c7566;
-  box-shadow: 1px 1px 6px #9c7566;
+/* line 46, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img, .page-list .novel-list li .image img {
+  -webkit-box-shadow: 0px 0px 6px 0px #ba9f94;
+  -moz-box-shadow: 0px 0px 6px 0px #ba9f94;
+  box-shadow: 0px 0px 6px 0px #ba9f94;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid #b69d92;
 }
-/* line 57, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
-.page-details .novel-image img:hover, .page-details .volume-list .volume .volume-info figure img:hover, .page-list .novel-list li .image:hover {
-  -webkit-box-shadow: 2px 2px 6px #5f473d;
-  -moz-box-shadow: 2px 2px 6px #5f473d;
-  box-shadow: 2px 2px 6px #5f473d;
+/* line 54, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+.page-details .novel-image img:hover, .page-details .volume-list .volume .volume-info figure img:hover, .page-list .novel-list li .image img:hover {
+  -webkit-box-shadow: 0 0 7px 1px #ba9f94;
+  -moz-box-shadow: 0 0 7px 1px #ba9f94;
+  box-shadow: 0 0 7px 1px #ba9f94;
 }
 
-/* line 91, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 60, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+.page-read article header .chapter-info, .page-read article header #reader-style-settings, .page-read article header .autoscroll-hint, .page-list .novel-list li .info .basic-info {
+  font-family: "Calibri", "Microsoft YaHei", sans-serif;
+}
+
+/* line 102, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 body {
   line-height: 1.5;
   font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
@@ -291,39 +302,39 @@ body .quiet {
 body .loud {
   color: #111111;
 }
-/* line 96, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 107, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 body h1, body h2, body h3, body h4, body h5, body h6 {
   font-weight: bold;
 }
-/* line 101, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 112, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 body a {
   text-decoration: none;
 }
-/* line 104, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 115, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 body a, body a:link, body a:visited {
   color: #7e5e51;
 }
-/* line 109, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 120, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 body a:hover {
   color: red;
 }
 
-/* line 118, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 129, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 html, body {
   height: 100%;
 }
 
-/* line 123, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 134, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #sticky-footer-wrap {
   min-height: 100%;
 }
 
-/* line 128, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 139, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page {
   overflow: auto;
 }
 
-/* line 135, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 146, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-footer {
   position: relative;
   border-top: 1px solid #ccc;
@@ -332,7 +343,7 @@ html, body {
   clear: both;
 }
 
-/* line 145, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 156, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 body:before {
   content: "";
   height: 100%;
@@ -341,12 +352,12 @@ body:before {
   margin-top: -32767px;
 }
 
-/* line 156, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 167, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #sticky-footer-wrap, #page-header, #page-footer {
   min-width: 940.0px;
 }
 
-/* line 163, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 174, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header {
   position: relative;
   padding-top: 25px;
@@ -356,13 +367,13 @@ body:before {
   background-repeat: repeat-x;
   background-position: left top;
 }
-/* line 173, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 184, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header, #page-header .title, #page-header nav, #page-header ul {
   zoom: 1;
   /* workaround for ie7 bug */
   overflow: hidden;
 }
-/* line 179, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 190, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header .title {
   text-indent: -119988px;
   overflow: hidden;
@@ -376,7 +387,7 @@ body:before {
   outline: none;
   display: block;
 }
-/* line 189, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 200, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header nav {
   clear: both;
   margin: 0;
@@ -389,7 +400,7 @@ body:before {
   background-position: left top;
   height: 37px;
 }
-/* line 202, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 213, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header nav ul {
   padding: 0 40px;
   position: relative;
@@ -400,22 +411,22 @@ body:before {
   height: 37px;
   line-height: 37px;
 }
-/* line 213, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 224, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header nav ul li {
   display: inline;
   list-style: none;
 }
-/* line 218, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 229, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header nav ul li a {
   outline: none;
 }
 
-/* line 227, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 238, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page {
   padding: 0 6.38298% 91px;
   min-width: 820px;
 }
-/* line 234, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 245, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page section h2 {
   border-left: #B38D55 solid 8px;
   background-color: #EEC78D;
@@ -427,7 +438,7 @@ body:before {
   zoom: 1;
   /* workaround for ie7 bug */
 }
-/* line 247, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 258, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet {
   background-color: white;
   -webkit-box-shadow: 0px 0px 8px 8px #d8c9c3;
@@ -439,12 +450,12 @@ body:before {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 253, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 264, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 .ie8 #page .page-sheet {
   -pie-overflow-fix: true;
   -pie-force-update-on-window-resize: true;
 }
-/* line 261, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 272, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet #sidebar {
   display: inline;
   float: left;
@@ -460,17 +471,17 @@ body:before {
   display: table;
   clear: both;
 }
-/* line 268, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 279, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 .no-sidebar #page .page-sheet #sidebar {
   display: none;
 }
-/* line 273, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 284, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet #sidebar ul {
   margin: 1em 1em 2em;
   padding: 0;
   list-style: none;
 }
-/* line 279, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 290, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet #sidebar ul li {
   list-style: none;
   border-bottom: 2px dotted #CCCCCC;
@@ -480,12 +491,12 @@ body:before {
   padding: 0 10px 8px;
   margin-top: 8px;
 }
-/* line 289, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 300, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet #sidebar ul li a {
   font-size: 1.1em;
   line-height: 1.4em;
 }
-/* line 298, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 309, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet .page-content {
   display: inline;
   float: left;
@@ -493,16 +504,16 @@ body:before {
   width: 74.46809%;
   margin-right: 2.12766%;
 }
-/* line 302, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 313, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 .no-sidebar #page .page-sheet .page-content {
   width: 100%;
 }
-/* line 309, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 320, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .anchor {
   position: absolute;
 }
 
-/* line 317, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 328, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-footer {
   color: #999;
   text-align: center;
@@ -512,17 +523,17 @@ body:before {
   background: url("../images/footer-background.gif") repeat-x scroll left top transparent;
 }
 
-/* line 72, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 83, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #sticky-footer-wrap {
   overflow: hidden;
 }
 
-/* line 77, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 88, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page {
   padding-bottom: 30091px;
   margin-bottom: -30000px;
 }
-/* line 82, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page .page-sheet {
   padding-bottom: 30000px;
   margin-bottom: -30000px;
@@ -662,37 +673,33 @@ body:before {
   display: none;
 }
 
-/* line 4, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
-.page-details .novel-image img, .page-details .volume-list .volume .volume-info figure img {
-  border: 1px solid #bdb0ab;
-}
-/* line 10, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 9, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .novel-image {
   float: left;
   margin-left: 20px;
   width: 220px;
   margin-left: 40px;
 }
-/* line 21, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 20, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details h2, .page-details figure {
   line-height: 1;
   margin: 20px 0;
 }
-/* line 27, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 26, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .novel-info {
   margin-left: 280px;
   margin-top: 20px;
 }
-/* line 32, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 31, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .novel-info dl {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 38, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 37, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .novel-info dl dt, .page-details .novel-info dl dd {
   line-height: 1.6;
 }
-/* line 43, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 42, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .novel-info dl dt {
   width: 4.5em;
   float: left;
@@ -700,21 +707,21 @@ body:before {
   color: #999999;
   margin-right: 0.5em;
 }
-/* line 54, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 53, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list {
   padding-top: 1px;
 }
-/* line 58, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 57, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list, .page-details .volume-list .volume {
   clear: both;
 }
-/* line 63, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 62, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list ul, .page-details .volume-list li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 70, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 69, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume {
   *zoom: 1;
   display: block;
@@ -728,20 +735,20 @@ body:before {
   display: table;
   clear: both;
 }
-/* line 78, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 77, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume:last-child {
   border-bottom: 0 none;
 }
-/* line 83, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 82, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume h3 {
   margin: 20px 0;
   font-size: 1.3em;
 }
-/* line 88, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 87, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume h3 a, .page-details .volume-list .volume h3 a:link, .page-details .volume-list .volume h3 a:visited, .page-details .volume-list .volume h3 a:hover, .page-details .volume-list .volume h3 a:active {
   color: #403029;
 }
-/* line 94, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume .volume-info {
   width: 31.91489%;
   border-left: 1px dashed #ece5e2;
@@ -751,17 +758,17 @@ body:before {
   color: #999999;
   font-size: 90%;
 }
-/* line 104, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 103, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume .volume-info figure {
   float: right;
   padding: 0;
   margin: 0 0 20px 20px;
 }
-/* line 117, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 116, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume .chapter-list {
   width: 65.95745%;
 }
-/* line 121, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 120, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume .chapter-list li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -774,11 +781,11 @@ body:before {
   margin-right: 2.12766%;
   margin-bottom: 1.5em;
 }
-/* line 129, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 128, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume .chapter-list li:nth-child(4n) {
   margin-right: 0;
 }
-/* line 134, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
+/* line 133, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_details.scss */
 .page-details .volume-list .volume .chapter-list li a {
   display: block;
 }
@@ -806,7 +813,7 @@ body:before {
   text-align: center;
   margin: 0 3em;
 }
-/* line 31, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 32, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article header .chapter-info dt, .page-read article header .chapter-info dd {
   display: -moz-inline-stack;
   display: inline-block;
@@ -815,80 +822,80 @@ body:before {
   zoom: 1;
   *display: inline;
 }
-/* line 36, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 37, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article header .chapter-info dt {
   margin-left: 1em;
 }
-/* line 41, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 42, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article header .chapter-info dd {
   margin: 0 1em 0 0.75em;
 }
-/* line 47, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 48, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article header #reader-style-settings .style-group {
   margin: 0 1em;
 }
-/* line 51, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 52, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article header #reader-style-settings .style-group label {
   font-weight: bold;
   margin-right: 0.75em;
 }
-/* line 57, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 58, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article header #reader-style-settings .style-group > span {
   cursor: pointer;
 }
-/* line 66, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 67, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article .chapter-content {
   font-size: 150%;
   line-height: 1.75;
   margin: 30px 0;
   padding: 0 40px;
 }
-/* line 73, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 74, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article .chapter-content p {
   text-indent: 2em;
   margin: 1.5em 0;
 }
-/* line 92, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--small .page-read article #reader-style-settings .small {
   color: black;
 }
-/* line 97, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 98, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--small .page-read article .chapter-content {
   font-size: small;
 }
-/* line 92, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--medium .page-read article #reader-style-settings .medium {
   color: black;
 }
-/* line 97, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 98, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--medium .page-read article .chapter-content {
   font-size: medium;
 }
-/* line 92, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--large .page-read article #reader-style-settings .large {
   color: black;
 }
-/* line 97, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 98, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--large .page-read article .chapter-content {
   font-size: large;
 }
-/* line 92, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--x-large .page-read article #reader-style-settings .x-large {
   color: black;
 }
-/* line 97, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 98, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--x-large .page-read article .chapter-content {
   font-size: x-large;
 }
-/* line 92, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 93, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--xx-large .page-read article #reader-style-settings .xx-large {
   color: black;
 }
-/* line 97, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 98, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-font-size--xx-large .page-read article .chapter-content {
   font-size: xx-large;
 }
-/* line 112, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 113, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article #reader-style-settings .F5F5F5 {
   background-color: #F5F5F5;
   width: 1em;
@@ -903,15 +910,15 @@ body:before {
   overflow: hidden;
   border: 1px solid #bdb0ab;
 }
-/* line 125, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 126, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--F5F5F5 .page-read article #reader-style-settings .F5F5F5 {
   border-color: black;
 }
-/* line 130, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 131, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--F5F5F5 .page-read article {
   background-color: #F5F5F5;
 }
-/* line 112, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 113, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article #reader-style-settings .FFFFFF {
   background-color: #FFFFFF;
   width: 1em;
@@ -926,15 +933,15 @@ body:before {
   overflow: hidden;
   border: 1px solid #bdb0ab;
 }
-/* line 125, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 126, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--FFFFFF .page-read article #reader-style-settings .FFFFFF {
   border-color: black;
 }
-/* line 130, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 131, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--FFFFFF .page-read article {
   background-color: #FFFFFF;
 }
-/* line 112, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 113, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article #reader-style-settings .E9FAFF {
   background-color: #E9FAFF;
   width: 1em;
@@ -949,15 +956,15 @@ body:before {
   overflow: hidden;
   border: 1px solid #bdb0ab;
 }
-/* line 125, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 126, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--E9FAFF .page-read article #reader-style-settings .E9FAFF {
   border-color: black;
 }
-/* line 130, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 131, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--E9FAFF .page-read article {
   background-color: #E9FAFF;
 }
-/* line 112, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 113, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article #reader-style-settings .FFFFED {
   background-color: #FFFFED;
   width: 1em;
@@ -972,15 +979,15 @@ body:before {
   overflow: hidden;
   border: 1px solid #bdb0ab;
 }
-/* line 125, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 126, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--FFFFED .page-read article #reader-style-settings .FFFFED {
   border-color: black;
 }
-/* line 130, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 131, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--FFFFED .page-read article {
   background-color: #FFFFED;
 }
-/* line 112, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 113, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article #reader-style-settings .FCEFFF {
   background-color: #FCEFFF;
   width: 1em;
@@ -995,15 +1002,15 @@ body:before {
   overflow: hidden;
   border: 1px solid #bdb0ab;
 }
-/* line 125, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 126, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--FCEFFF .page-read article #reader-style-settings .FCEFFF {
   border-color: black;
 }
-/* line 130, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 131, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .rs-back-color--FCEFFF .page-read article {
   background-color: #FCEFFF;
 }
-/* line 145, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
+/* line 146, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_read.scss */
 .page-read article footer nav a {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1019,7 +1026,7 @@ body:before {
   *zoom: 1;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
 }
 /* line 38, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .page-list .novel-list:after {
@@ -1036,32 +1043,39 @@ body:before {
   width: 33.333333%;
   float: left;
   margin: 0;
-  padding: 40px;
+  padding: 20px;
 }
-/* line 22, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+/* line 23, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .image {
   float: left;
-  margin-right: 10px;
+  width: 80px;
+  text-align: right;
 }
-/* line 28, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+/* line 29, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .image img {
   height: 110px;
+  max-width: 80px;
 }
-/* line 34, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+/* line 37, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .info {
+  margin-left: 90px;
   height: 110px;
   overflow: hidden;
 }
-/* line 39, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+/* line 43, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .info .name {
   line-height: 1;
   font-size: 120%;
+  margin-bottom: 0;
 }
-/* line 45, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+/* line 50, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .info .basic-info {
   color: #bdb0ab;
+  white-space: nowrap;
+  line-height: 1.75;
+  margin: 1em 0 0;
 }
-/* line 49, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+/* line 58, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
 .page-list .novel-list li .info .basic-info dt, .page-list .novel-list li .info .basic-info dd {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1069,6 +1083,34 @@ body:before {
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
+}
+/* line 63, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+.page-list .novel-list li .info .basic-info dd {
+  margin: 0 1em 0 0.5em;
+}
+/* line 69, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+.page-list .novel-list li .info .latest-chapter {
+  font-size: 100%;
+  margin-bottom: 1em;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 76, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+.page-list .novel-list li .info .latest-chapter label {
+  color: #bdb0ab;
+  padding-right: 1em;
+}
+/* line 83, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
+.page-list .novel-list li .info .description {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 /* line 18, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */

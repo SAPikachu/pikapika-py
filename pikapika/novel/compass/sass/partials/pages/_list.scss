@@ -5,33 +5,37 @@
         @include pie-clearfix;
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 0 ($content-padding / 2);
 
         li
         {
             $image-height: 110px;
+            $image-max-width: 80px;
 
             @include box-sizing(border-box);
             display: block;
             width: 33.333333%;
             float: left;
             margin: 0;
-            padding: $content-padding;
+            padding: ($content-padding / 2);
 
             .image
             {
-                @extend %image-shadow;
                 float: left;
-                margin-right: 10px;
+                width: $image-max-width;
+                text-align: right; 
 
                 img
                 {
+                    @extend %image-shadow;
                     height: $image-height;
+                    max-width: $image-max-width;
                 }
             }
 
             .info
             {
+                margin-left: $image-max-width + 10px;
                 height: $image-height;
                 overflow: hidden;
 
@@ -39,16 +43,45 @@
                 {
                     line-height: 1;
                     font-size: 120%;
+                    margin-bottom: 0;
                 }
 
                 .basic-info
                 {
+                    @extend %yahei-number-fix;
                     color: $main-color-light;
+                    white-space: nowrap;
+                    line-height: 1.75;
+                    margin: 1em 0 0;
 
                     dt, dd
                     {
                         @include inline-block;
                     }
+
+                    dd
+                    {
+                        margin: 0 1em 0 0.5em;
+                    }
+                }
+
+                .latest-chapter
+                {
+                    font-size: 100%;
+                    margin-bottom: 1em;
+                    line-height: 1.2;
+                    @include ellipsis();
+
+                    label
+                    {
+                        color: $main-color-light;
+                        padding-right: 1em;
+                    }
+                }
+
+                .description
+                {
+                    @include ellipsis();
                 }
             }
         }

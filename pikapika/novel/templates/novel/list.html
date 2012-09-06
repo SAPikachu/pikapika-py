@@ -22,13 +22,11 @@
             <dl class="basic-info">
                 <dt>更新</dt>
                 <dd><time datetime="{{ novel.updated_date|date:"c" }}">{{ novel.updated_date|date:"Y-m-d H:i" }}</time></dd>
-                <dt>作者</dt>
-                <dd>{{ novel.author }}</dd>
                 <dt>点击</dt>
                 <dd>{{ novel.hit_count }}</dd>
                 {# TODO: Annotation count #}
             </dl>
-            <h3 class="latest-chapter"><a href="{% url "details" pk=novel.pk %}#volume-{{ novel.latest_chapter.volume.pk }}">{{ novel.latest_chapter.volume.name }} - {{ novel.latest_chapter.name }}</a></h3>
+            <h3 class="latest-chapter"><label>最新章节</label><a href="{% url "details" pk=novel.pk %}#volume-{{ novel.latest_chapter.volume.pk }}">{{ novel.latest_chapter.volume.name }} - {{ novel.latest_chapter.name }}</a></h3>
             <div class="description" title="{{ novel.description|normalize_whitespace }}">
                 {{ novel.description }}
             </div>

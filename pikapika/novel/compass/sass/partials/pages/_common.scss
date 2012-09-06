@@ -44,14 +44,24 @@ $splitter-color:        lighten($main-color, 50%);
 
 %image-shadow
 {
-    @include box-shadow(1px 1px 6px lighten($main-color, 10%));
+    @include box-shadow(0px 0px 6px 0px lighten($main-color, 25%));
+    @include border-radius(8px);
     @extend %generic-transition;
     @extend %pie;
+    border: 1px solid scale-color($main-color, $saturation: -10%, $lightness: 40%);
 
     &:hover
     {
-        @include box-shadow(2px 2px 6px darken($main-color, 10%));
+        @include box-shadow(0 0 7px 1px lighten($main-color, 25%));
     }
+}
+
+%yahei-number-fix
+{
+    // In YaHai, height of Chinese characters is different from height of
+    // numbers and symbols, this is sometimes undesirable. 
+    // Here we use numbers from Tahoma to make it look better
+    font-family: "Calibri", "Microsoft YaHei", sans-serif;
 }
 
 @mixin make-column($columns: 1, $offset: 0) {

@@ -19,6 +19,7 @@
             .chapter-info, #reader-style-settings, .autoscroll-hint
             {
                 @include inline-block;
+                @extend %yahei-number-fix;
                 line-height: 1.75;
                 color: $main-color-light;
                 text-align: center;
