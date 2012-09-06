@@ -35,4 +35,4 @@
 
 * JSON API
 * Paged reading mode
-
+* Offline reading
