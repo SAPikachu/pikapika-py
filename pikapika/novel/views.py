@@ -82,7 +82,7 @@ def read(request, pk):
         try:
             next_volume = chapter.volume.get_next_in_order()
             next_chapter = (
-                first(next_volume.chapter_set[:1], default=None)
+                first(next_volume.chapter_set.all()[:1], default=None)
             )
         except models.Volume.DoesNotExist:
             pass
