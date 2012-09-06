@@ -18,6 +18,7 @@ $content-padding:       $blueprint-grid-margin * 2;
 $footer-height:         91px;
 $image-border-color:    lighten($main-color, 40%);
 $splitter-color:        lighten($main-color, 50%);
+$image-shadow-border-radius: 8px;
 
 %pie
 {
@@ -45,7 +46,7 @@ $splitter-color:        lighten($main-color, 50%);
 %image-shadow
 {
     @include box-shadow(0px 0px 6px 0px lighten($main-color, 25%));
-    @include border-radius(8px);
+    @include border-radius($image-shadow-border-radius);
     @extend %generic-transition;
     @extend %pie;
     border: 1px solid scale-color($main-color, $saturation: -10%, $lightness: 40%);
@@ -94,6 +95,24 @@ $splitter-color:        lighten($main-color, 50%);
             padding-bottom: 30000px;
             margin-bottom: -30000px;
 
+        }
+    }
+}
+
+@mixin vertically-center-with-line-height($container-height, $inner-elem: "img")
+{
+    // This fixes extra whitespace at the top of container in Firefox
+    // Note: DON'T reorder these 2 lines, otherwise line-height will be 
+    // overwritten
+    font: 0/0 Arial;
+    line-height: $container-height;
+
+    height: $container-height;
+
+    @if $inner-elem {
+        #{$inner-elem}
+        {
+            @include inline-block(middle);
         }
     }
 }

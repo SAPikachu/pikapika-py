@@ -9,7 +9,7 @@
 
         li
         {
-            $image-height: 110px;
+            $image-max-height: 110px;
             $image-max-width: 80px;
 
             @include box-sizing(border-box);
@@ -21,22 +21,27 @@
 
             .image
             {
+                @extend %image-shadow;
+                @include vertically-center-with-line-height($image-max-height);
                 float: left;
                 width: $image-max-width;
-                text-align: right; 
+                padding: 2px;
+                overflow: hidden;
+                text-align: center; 
 
                 img
                 {
-                    @extend %image-shadow;
-                    height: $image-height;
+                    @extend %pie;
+                    @include border-radius($image-shadow-border-radius);
+                    max-height: $image-max-height;
                     max-width: $image-max-width;
                 }
             }
 
             .info
             {
-                margin-left: $image-max-width + 10px;
-                height: $image-height;
+                margin-left: $image-max-width + 20px;
+                height: $image-max-height;
                 overflow: hidden;
 
                 .name
