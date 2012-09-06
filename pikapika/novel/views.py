@@ -112,7 +112,7 @@ def list_cat(request, cat_start=None, cat_end=None, page=None):
 
     query = models.Novel.objects.all()
     if cat_start:
-        query = (query.filter(cat_code__between=(cat_start, cat_end))
+        query = (query.filter(cat_code__range=(cat_start, cat_end))
                  if cat_end
                  else query.filter(cat_code=cat_start))
 
