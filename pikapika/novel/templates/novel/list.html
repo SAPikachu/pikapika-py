@@ -34,4 +34,22 @@
     </li>
     {% endfor %}
 </ul>
+
+{% with cat_start=cat_start|default:""|lower cat_end=cat_end|default:""|lower %}
+<nav class="page-nav">
+    {% if page > 1 %}
+    <a title="第一页" href="{% url2 "list" page=1 cat_start=cat_start cat_end=cat_end %}"><i class="icon-fast-backward"></i></a>
+    <a title="上一页" href="{% url2 "list" page=page|add:-1 cat_start=cat_start cat_end=cat_end %}"><i class="icon-backward"></i></a>
+    {% endif %}
+    <ul>
+        {% for i in nav_pages %}
+        <li{% if i == page %} class="active"{% endif %}><a href="{% url2 "list" page=i cat_start=cat_start cat_end=cat_end %}">{{ i }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if page < total_pages %}
+    <a title="下一页" href="{% url2 "list" page=page|add:1 cat_start=cat_start cat_end=cat_end %}"><i class="icon-forward"></i></a>
+    <a title="最后一页" href="{% url2 "list" page=total_pages cat_start=cat_start cat_end=cat_end %}"><i class="icon-fast-forward"></i></a>
+    {% endif %}
+</nav>
+{% endwith %}
 {% endblock %}

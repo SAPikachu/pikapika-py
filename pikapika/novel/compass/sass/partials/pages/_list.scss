@@ -91,4 +91,47 @@
             }
         }
     }
+
+    .page-nav
+    {
+        text-align: center;
+        margin: 1em 1em 2em;
+
+        ul
+        {
+            @include inline-block-list;
+            @include inline-block(middle);
+        }
+
+        a
+        {
+            @include inline-block(middle);
+            @include border-radius(5px);
+            @extend %pie;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: bold;
+            padding: 0 0.75em;
+            line-height: 2em;
+            margin: 0 0.25em;
+            border: 2px solid $main-color-light;
+
+            &:hover
+            {
+                background: scale-color($main-color-light, $lightness: 90%, $saturation: -50%);
+                color: black;
+            }
+
+            i
+            {
+                line-height: 1;
+            }
+        }
+
+        .active a
+        {
+            background: $main-color-light;
+            color: white;
+            cursor: default;
+        }
+    }
 }

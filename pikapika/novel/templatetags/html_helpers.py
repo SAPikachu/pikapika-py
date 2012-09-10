@@ -4,6 +4,7 @@ import re
 
 from django import template
 from django.conf import settings
+from django.core.urlresolvers import reverse, NoReverseMatch
 
 register = template.Library()
 
@@ -41,6 +42,36 @@ def requirejs(name):
         base=settings.STATIC_URL + "js",
         name=name,
     )
+
+@register.simple_tag(takes_context=True)
+def url2(context, view_name, *args, **kwargs):
+    """ 
+    Like the original ``url`` tag, but items in ``kwargs`` that evaluate to 
+    ``False`` are removed before resolving URL
+    """
+    kwargs = {k: v for k, v in kwargs.items() if v}
+    try:
+        return reverse(
+            view_name, 
+            args=args, 
+            kwargs=kwargs, 
+            current_app=context.current_app,
+        )
+    except NoReverseMatch as e:
+        # Simulate behavior of original url tag
+        if settings.SETTINGS_MODULE:
+            project_name = settings.SETTINGS_MODULE.split(".")[0]
+            try:
+                return reverse(
+                    "{}.{}".format(project_name, view_name), 
+                    args=args, 
+                    kwargs=kwargs, 
+                    current_app=context.current_app,
+                )
+            except NoReverseMatch:
+                pass
+
+        raise e
 
 @register.filter
 def normalize_whitespace(value):

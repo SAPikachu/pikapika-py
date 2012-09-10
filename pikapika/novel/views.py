@@ -131,6 +131,9 @@ def list_cat(request, cat_start=None, cat_end=None, page=None):
             raise Http404()        
 
     else:
+        if page > 1:
+            raise Http404()
+
         novels = []
 
     return render(
@@ -138,6 +141,8 @@ def list_cat(request, cat_start=None, cat_end=None, page=None):
         "novel/list.html",
         {
             "page": page,
+            "nav_pages": 
+                range(max(page - 5, 1), min(page + 5, total_pages) + 1),
             "cat_start": cat_start,
             "cat_end": cat_end,
             "novels": novels,
