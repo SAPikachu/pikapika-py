@@ -13,3 +13,6 @@
 [submodule "submodules/PIE"]
 	path = submodules/PIE
 	url = git@github.com:SAPikachu/PIE.git
+[submodule "submodules/Font-Awesome"]
+	path = submodules/Font-Awesome
+	url = git://github.com/FortAwesome/Font-Awesome.git
