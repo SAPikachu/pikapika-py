@@ -53,8 +53,13 @@ $image-shadow-border-radius: 8px;
 
     &:hover
     {
-        @include box-shadow(0 0 7px 1px lighten($main-color, 25%));
+        @extend %image-shadow-hover;
     }
+}
+
+%image-shadow-hover
+{
+    @include box-shadow(0 0 7px 1px lighten($main-color, 25%));
 }
 
 %yahei-number-fix

@@ -16,6 +16,10 @@
         {
             $padding-vert: 8px;
 
+            @include border-radius($padding-vert);
+            @extend %generic-transition;
+            @extend %pie;
+
             // 5 items per row, can't use 20% due to rounding bug on IE7
             width: 18%;
             min-width: 100px;
@@ -24,12 +28,15 @@
             padding: 0 0.95%;
             text-align: center;
             overflow: hidden;
-            @include border-radius($padding-vert);
-            @extend %generic-transition;
 
             &:hover
             {
                 background-color: #F9F7F0;
+
+                .image
+                {
+                    @extend %image-shadow-hover;
+                }
             }
 
             &, a
@@ -44,24 +51,19 @@
 
                 .image
                 {
-                    $height: 110px;
-                    $padding: 2px;
-                    height: $height;
-                    width: 80px;
-                    padding: $padding;
-                    line-height: $height;
-                    text-align: center;
-                    margin: 0 auto 4px;
-                    border: 1px solid $image-border-color;
+                    @extend %image-shadow;
+                    @include vertically-center-with-line-height(110px);
 
-                    // Removes gap on the top of image
-                    // See http://stackoverflow.com/questions/1368253/why-when-i-center-an-image-in-a-div-with-line-height-does-a-3px-gap-appear-at
-                    // Seems setting font family to arial fixes that, but for 
-                    // safety also set font size to as small as possible
-                    font: 0/0 "Arial", sans-serif; 
+                    width: 80px;
+                    padding: 2px;
+                    text-align: center;
+                    margin: 0 auto 6px;
 
                     img
                     {
+                        @extend %pie;
+                        @include border-radius($image-shadow-border-radius);
+
                         height: auto;
                         width: auto;
                         max-width: 100%;
