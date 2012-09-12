@@ -217,6 +217,8 @@ body:before
 
     nav 
     {
+        $nav-height: 37px;
+
         clear: both;
         margin: 0;
         padding: 0 $content-margin;
@@ -226,23 +228,25 @@ body:before
         background-image: url("#{$image-base}menu-background.png");
         background-repeat: repeat-x;
         background-position: left top;
-        height: 37px;
+        height: $nav-height;
 
         ul
         {
+            @include inline-block-list;
+            @include vertically-center-with-line-height($nav-height, false);
             padding: 0 $content-padding;
             position: relative;
             margin: 0;
             text-align: left;
             clear: both;
             cursor: default;
-            height: 37px;
-            line-height: 37px;
 
             li
             {
-                display: inline;
-                list-style: none;
+                line-height: $nav-height;
+                font-family: $blueprint-font-family;
+                font-size: $blueprint-font-size;
+                margin-right: 1.5em;
 
                 a
                 {

@@ -46,6 +46,12 @@
             {% block nav %}
             <ul>
                 <li><a href="{% url "index" %}">首页</a></li>
+                <li><a href="{% url "list" %}">全部小说</a></li>
+                <li><a href="{% url "list" cat_start="a" cat_end="e" %}">A - E</a></li>
+                <li><a href="{% url "list" cat_start="f" cat_end="j" %}">F - J</a></li>
+                <li><a href="{% url "list" cat_start="k" cat_end="o" %}">K - O</a></li>
+                <li><a href="{% url "list" cat_start="p" cat_end="t" %}">P - T</a></li>
+                <li><a href="{% url "list" cat_start="u" cat_end="z" %}">U - Z</a></li>
                 {% for item in nav_menu_items %}
                     <li><a href="{{ item.url }}">{{ item.text }}</a></li>
                 {% empty %}
