@@ -4,19 +4,19 @@
 * Change category key from "publisher" to starting letter of novels, nobody cares about publishers
 * Detail page
 * Read page
+* Categories
+* Novel listing
 
 # In progress
 
-* Categories
-* Novel listing
+* Front page ranking
+* Chapter hit counter
     
 # Things that should be fixed before going live
 
-* Front page ranking
 * Searching
 * RSS output
 * Responsive styling
-* Chapter hit counter
 
 # Deadline
 
