@@ -149,6 +149,7 @@ INSTALLED_APPS = (
 
     'pikapika.static_override',
     'grappelli',
+    'hitcount',
     'django.contrib.admin',
     'django.contrib.admindocs',
 
