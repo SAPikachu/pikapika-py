@@ -16,3 +16,6 @@
 [submodule "submodules/Font-Awesome"]
 	path = submodules/Font-Awesome
 	url = git://github.com/FortAwesome/Font-Awesome.git
+[submodule "submodules/django-hitcount"]
+	path = submodules/django-hitcount
+	url = git@github.com:SAPikachu/django-hitcount.git
