@@ -243,8 +243,8 @@ body:before
 
             li
             {
+                @extend %yahei-number-fix;
                 line-height: $nav-height;
-                font-family: $blueprint-font-family;
                 font-size: $blueprint-font-size;
                 margin-right: 1.5em;
 

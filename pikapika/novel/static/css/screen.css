@@ -1250,7 +1250,7 @@ ul.icons li .icon-large:before {
 }
 
 /* line 61, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
-.page-read article header .chapter-info, .page-read article header #reader-style-settings, .page-read article header .autoscroll-hint, .page-list .novel-list li .info .basic-info {
+#page-header nav ul li, .page-read article header .chapter-info, .page-read article header #reader-style-settings, .page-read article header .autoscroll-hint, .page-list .novel-list li .info .basic-info {
   font-family: "Calibri", "Microsoft YaHei", sans-serif;
 }
 
@@ -1583,7 +1583,6 @@ body:before {
 /* line 245, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
 #page-header nav ul li {
   line-height: 37px;
-  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
   font-size: 14px;
   margin-right: 1.5em;
 }
