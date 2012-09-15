@@ -19,3 +19,6 @@
 [submodule "submodules/django-hitcount"]
 	path = submodules/django-hitcount
 	url = git@github.com:SAPikachu/django-hitcount.git
+[submodule "submodules/django-generic-aggregation"]
+	path = submodules/django-generic-aggregation
+	url = git@github.com:SAPikachu/django-generic-aggregation.git

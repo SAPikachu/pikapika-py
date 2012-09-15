@@ -3,6 +3,8 @@ from __future__ import print_function, unicode_literals
 from django.db import models
 from django.db.models import Max, Sum
 from django.db.models.query import QuerySet
+from generic_aggregation import generic_annotate
+from hitcount.models import HitCount
 
 class NovelManager(models.Manager):
     def get_query_set(self):
@@ -10,8 +12,14 @@ class NovelManager(models.Manager):
 
 class NovelQuerySet(QuerySet):
     def with_hit_count(self):
-        return self.annotate(
-            hit_count=Sum("volume__chapter__hit_records__hits")
+        # Import here to prevent circular importing
+        from .models import Chapter
+        return generic_annotate(
+            self,
+            HitCount,
+            Sum("volume__chapter__hitcount_object__hits"),
+            alias="hit_count",
+            force_rel_model=Chapter,
         )
 
     def execute_with_latest_chapter(self, exclude_novel_without_chapter=True):

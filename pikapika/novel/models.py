@@ -2,8 +2,10 @@ from __future__ import unicode_literals, print_function
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.generic import GenericRelation
 from django.conf import settings
 from cjklib.characterlookup import CharacterLookup
+from hitcount.models import HitCount
 
 from .managers import NovelManager
 
@@ -73,6 +75,7 @@ class Chapter(models.Model):
     rating_count = models.IntegerField(default=0)
     updated_date = models.DateTimeField(auto_now_add=True)
     posted_by = models.ForeignKey(User)
+    hitcount_object = GenericRelation(HitCount, object_id_field="object_pk")
 
     def get_content(self):
         try:
@@ -95,6 +98,22 @@ class Chapter(models.Model):
         self._content_dirty = True
 
     content = property(get_content, set_content)
+
+    @property
+    def hitcount_object_safe(self):
+        if not hasattr(self, "_hitcount_object_safe"):
+            self._hitcount_object_safe = HitCount.objects.get_for_object(self)
+
+        return self._hitcount_object_safe
+
+    def get_hit_count(self):
+        return self.hitcount_object_safe.hits
+
+    def set_hit_count(self, hits):
+        self.hitcount_object_safe.hits = hits
+        self.hitcount_object_safe.save()
+
+    hit_count = property(get_hit_count, set_hit_count)
 
     class Meta:
         order_with_respect_to = "volume"
@@ -119,20 +138,4 @@ class Chapter(models.Model):
 class ChapterContent(models.Model):
     chapter = models.OneToOneField(Chapter, related_name="content_record")
     content = models.TextField()
-
-class HitCountRecord(models.Model):
-    chapter = models.ForeignKey(
-        Chapter, 
-        unique_for_date="date", 
-        related_name="hit_records",
-    )
-    date = models.DateField(auto_now_add=True)
-    hits = models.IntegerField(default=1)
-
-class Tag(models.Model):
-    tag = models.CharField(max_length=50)
-    novel = models.ForeignKey(Novel)
-
-    def __unicode__(self):
-        return self.tag
 

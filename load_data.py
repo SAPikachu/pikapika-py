@@ -90,9 +90,6 @@ def add_novel(values):
             chapter.save()
             set_updated_date(chapter, chapter_values["UpdatedDate"])
 
-            r = HitCountRecord(chapter=chapter, hits=chapter_values["HitCount"])
-            r.save()
-
             with open(CHAPTER_PATH_FORMAT.format(
                 novel_id=novel.pk, volume_id=volume.pk, chapter_id=chapter.pk,
             ), "r") as f:
@@ -102,6 +99,8 @@ def add_novel(values):
             chapter_utils.insert_hidden_title(lines, chapter.name)
             chapter.content = json.dumps(lines, indent=1, ensure_ascii=False)
             chapter.save()
+
+            chapter.hit_count = chapter_values["HitCount"]
 
 @transaction.commit_on_success
 def load_testdata():
