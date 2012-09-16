@@ -7,6 +7,8 @@ from django.views.generic import RedirectView
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^s/ajax/hit$', 'hitcount.views.update_hit_count_ajax',
+        name='hit'),
     url(r'^s/ajax/', include('pikapika.ajax_services.urls')),
     url(r'^s/thumb/(?P<max_width>\d+)x(?P<max_height>\d+)/+(?P<path>.+)$', 
         'pikapika.common.thumbnail.generate',

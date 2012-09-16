@@ -7,6 +7,8 @@ from math import ceil
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Max, Sum
 from django.http import Http404
+from hitcount.models import HitCount
+from generic_aggregation import generic_annotate
 
 from . import models, chapter_utils
 from .utils import first
@@ -58,11 +60,7 @@ def details(request, pk):
 
 def read(request, pk):
     pk = int(pk)
-    chapter = get_object_or_404(
-        models.Chapter.objects.
-        annotate(hit_count=Sum("hit_records__hits")).
-        filter(pk=pk)
-    )
+    chapter = get_object_or_404(models.Chapter.objects.filter(pk=pk))
     prev_chapter = None
     try:
         prev_chapter = chapter.get_previous_in_order()
@@ -97,6 +95,7 @@ def read(request, pk):
             "rendered_chapter": rendered_chapter,
             "prev_chapter": prev_chapter,
             "next_chapter": next_chapter,
+            "hitcount_pk": HitCount.objects.get_for_object(chapter).pk,
         },
     )
 

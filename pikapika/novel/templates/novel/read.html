@@ -74,5 +74,9 @@
 {% endblock %}
 
 {% block head-extra %}
+<script type="text/javascript">
+var URLS = { hit: "{% url "hit" %}" };
+var HITCOUNT_PK = {{ hitcount_pk }};
+</script>
 {% requirejs "pages/read" %}
 {% endblock %}
