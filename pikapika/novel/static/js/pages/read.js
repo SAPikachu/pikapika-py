@@ -1,4 +1,4 @@
-require(["jquery", "underscore", "backbone", "jstorage"], 
+require(["jquery", "underscore", "backbone", "jstorage", "ajax-call"], 
 function( $,        _,            Backbone) {
 
 var LocalBackedModel = Backbone.Model.extend({
@@ -87,6 +87,20 @@ $(function() {
             location.href = link;
         }
     });
+
+    // ----- track hits
+    // Intentionally put in ready handler for convenience, since it doesn't
+    // really matter how long it takes to track the hit
+    $.post(
+        URLS.hit,
+        { hitcount_pk: HITCOUNT_PK },
+        function(data) {
+            if (data.hits) {
+                $("#hit-count").text(data.hits);
+            }
+        },
+        "json"
+    );
 });
 
 });
