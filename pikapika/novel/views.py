@@ -23,7 +23,6 @@ def index(request):
         .execute_with_latest_chapter()
     )
 
-    latest_novels.sort(key=lambda x: x.updated_date, reverse=True)
 
     return render(
         request,
