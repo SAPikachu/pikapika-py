@@ -19,6 +19,7 @@ $footer-height:         91px;
 $image-border-color:    lighten($main-color, 40%);
 $splitter-color:        lighten($main-color, 50%);
 $image-shadow-border-radius: 8px;
+$sidebar-background: #F8F5F0;
 
 %pie
 {
@@ -32,8 +33,7 @@ $image-shadow-border-radius: 8px;
 
 %side-block
 {
-    $back: #F8F5F0;
-    background-color: $back;
+    background-color: $sidebar-background;
     @include border-radius(5px);
 }
 
@@ -317,15 +317,17 @@ body:before
                 li
                 {
                     list-style: none;
-                    border-bottom: 2px dotted #CCCCCC;
+                    border-bottom: 2px dotted scale-color($sidebar-background, $lightness: -5%);
                     color: #676767;
                     line-height: 1.1em;
                     font-size: 0.91em;
-                    padding: 0 10px 8px;
-                    margin-top: 8px;
+                    padding: 0;
+                    margin: 0;
 
                     a
                     {
+                        display: block;
+                        padding: 6px 8px;
                         font-size: 1.1em;
                         line-height: 1.4em;
                     }

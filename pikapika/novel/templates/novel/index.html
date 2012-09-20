@@ -69,7 +69,18 @@
     </div>
 </section>
 <section>
-    <h2>一周点击排行</h2>
+    <h2>一周排行</h2>
+    <ul id="hottest-novels">
+        {% for novel in hottest_novels %}
+            <li>
+                <a href="{% url "details" pk=novel.pk %}">
+                    <span class="name">{{ novel.name }}</span>
+                    <span class="hit-count-last-week">{{ novel.hit_count_last_week }}<i class="icon-fire" title="热度"></i></span>
+                </a>
+            </li>
+        {% empty %}
+        {% endfor %}
+    </ul>
 </section>
 <section>
     <h2>更多吐槽</h2>

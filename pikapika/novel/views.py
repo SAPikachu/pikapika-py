@@ -14,6 +14,7 @@ from . import models, chapter_utils
 from .utils import first
 
 INDEX_LATEST_NOVELS_COUNT = 15
+INDEX_HOTTEST_NOVELS_COUNT = 10
 NOVELS_PER_LIST_PAGE = 12
 
 def index(request):
@@ -23,12 +24,20 @@ def index(request):
         .execute_with_latest_chapter()
     )
 
+    hottest_novels = list(
+        models.Novel.objects.all()
+        .with_hit_count_last_week()
+        .filter(hit_count_last_week__gt=0)
+        .order_by("-hit_count_last_week", "-updated_date")
+        [:INDEX_HOTTEST_NOVELS_COUNT]
+    )
 
     return render(
         request,
         "novel/index.html",
         {
             "latest_novels": latest_novels,
+            "hottest_novels": hottest_novels,
         },
     )
 
