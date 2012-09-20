@@ -198,3 +198,6 @@ DEFAULT_FILE_STORAGE = "pikapika.novel.files.storage.CustomFileSystemStorage"
 
 IMAGE_UPLOAD_DIR = "images/%Y/%m/%d"
 
+INDEX_LATEST_NOVELS_COUNT = 15
+INDEX_HOTTEST_NOVELS_COUNT = 10
+NOVELS_PER_LIST_PAGE = 12

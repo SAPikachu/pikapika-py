@@ -6,6 +6,7 @@ from math import ceil
 
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Max, Sum
+from django.conf import settings as s
 from django.http import Http404
 from hitcount.models import HitCount
 from generic_aggregation import generic_annotate
@@ -13,14 +14,10 @@ from generic_aggregation import generic_annotate
 from . import models, chapter_utils
 from .utils import first
 
-INDEX_LATEST_NOVELS_COUNT = 15
-INDEX_HOTTEST_NOVELS_COUNT = 10
-NOVELS_PER_LIST_PAGE = 12
-
 def index(request):
     latest_novels = (
         models.Novel.objects.all()
-        [:INDEX_LATEST_NOVELS_COUNT]
+        [:s.INDEX_LATEST_NOVELS_COUNT]
         .execute_with_latest_chapter()
     )
 
@@ -29,7 +26,7 @@ def index(request):
         .with_hit_count_last_week()
         .filter(hit_count_last_week__gt=0)
         .order_by("-hit_count_last_week", "-updated_date")
-        [:INDEX_HOTTEST_NOVELS_COUNT]
+        [:s.INDEX_HOTTEST_NOVELS_COUNT]
     )
 
     return render(
@@ -124,13 +121,14 @@ def list_cat(request, cat_start=None, cat_end=None, page=None):
                  else query.filter(cat_code=cat_start))
 
     total_novels = query.count()
-    total_pages = int(ceil(float(total_novels) / NOVELS_PER_LIST_PAGE))
+    total_pages = int(ceil(float(total_novels) / s.NOVELS_PER_LIST_PAGE))
 
     if total_novels:
         novels = (
             query
             .with_hit_count()
-            [index * NOVELS_PER_LIST_PAGE:(index + 1) * NOVELS_PER_LIST_PAGE]
+            [index * s.NOVELS_PER_LIST_PAGE:
+             (index + 1) * s.NOVELS_PER_LIST_PAGE]
             .execute_with_latest_chapter()
         )
 
