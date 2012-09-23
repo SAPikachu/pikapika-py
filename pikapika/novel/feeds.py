@@ -50,10 +50,14 @@ class LatestNovelsFeed(FeedBase):
         return self.reverse_absolute("index")
 
     def items(self):
-        return Novel.objects.all()[:settings.INDEX_LATEST_NOVELS_COUNT]
+        return (
+            Novel.objects.all()
+            [:settings.INDEX_LATEST_NOVELS_COUNT]
+            .execute_with_latest_chapter()
+        )
 
     def item_title(self, item):
-        return item.name
+        return "{} - {}".format(item.name, item.latest_chapter.volume.name)
 
     def item_description(self, item):
         # This must be HTML, can't be changed to text...
