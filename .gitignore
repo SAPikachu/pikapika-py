@@ -4,3 +4,4 @@ pikapika/secret_key.py
 testdata
 media
 .sass-cache
+Gemfile.lock

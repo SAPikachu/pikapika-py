@@ -17,3 +17,13 @@ $blueprint-fixed-font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 $blueprint-font-size: 14px;
 
 $fontAwesomePath: "fontawesome-webfont";
+
+// Needed by stolen bootstrap mixins
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #555;
+$grayLight:             #999;
+$grayLighter:           #eee;
+$white:                 #fff;
+

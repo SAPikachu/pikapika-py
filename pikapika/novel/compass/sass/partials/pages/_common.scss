@@ -4,14 +4,6 @@
 $main-color:            #7E5E51;
 $main-color-light:      lighten(desaturate($main-color, 10%), 30%);
 
-$black:                 #000;
-$grayDarker:            #222;
-$grayDark:              #333;
-$gray:                  #555;
-$grayLight:             #999;
-$grayLighter:           #eee;
-$white:                 #fff;
-
 $image-base:            "../images/";
 $content-margin:        ($blueprint-liquid-grid-width);
 $content-padding:       $blueprint-grid-margin * 2;
@@ -122,6 +114,43 @@ $sidebar-background: #F8F5F0;
     }
 }
 
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    @include border-radius(3px);
+    @extend %generic-transition;
+    @extend %pie;
+    border: $main-color solid 1px;
+
+    // Focus state
+    &:focus {
+        border-color: change-color($main-color, $alpha: .8);
+        outline: 0;
+        outline: thin dotted \9; /* IE6-9 */
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px change-color($main-color, $alpha: .6));
+    }
+}
+
+button, input[type="button"], input[type=submit]
+{
+    $button-background: scale-color($sidebar-background, $lightness: 10%, $saturation: 10%);
+    @include bootstrap-button($button-background, scale-color($button-background, $lightness: -20%), scale-color($main-color, $lightness: -10%));
+}
+
 body
 {
     @include blueprint-typography(true);
@@ -147,7 +176,6 @@ body
     }
 
 }
-
 // --- Sticky footer ---
 html, body
 {

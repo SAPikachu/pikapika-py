@@ -1,0 +1,74 @@
+// Mostly copied from compass-twitter-bootstrap (https://github.com/vwall/compass-twitter-bootstrap/)
+
+@import "compass_twitter_bootstrap/mixins";
+
+@mixin bootstrap-button($btnBackground, $btnBackgroundHighlight, $btnBorder, $size: default) {
+    display: inline-block;
+    @include bootstrap-ie7-inline-block();
+    @include bootstrap-border-radius(4px);
+    @if $size == large {
+        padding: 9px 14px;
+        font-size: $blueprint-font-size + 2px;
+        @include bootstrap-border-radius(5px);
+    } @else if $size == small {
+        padding: 5px 9px;
+        font-size: $blueprint-font-size - 2px;
+    } @else if $size == mini {
+        padding: 2px 6px;
+        font-size: $blueprint-font-size - 2px;
+    } @else {
+        padding: 4px 10px;
+    }
+    margin: 0;
+    color: $grayDark;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    vertical-align: middle;
+    cursor: pointer;
+    @include bootstrap-buttonBackground($btnBackground, $btnBackgroundHighlight);
+    border: 1px solid $btnBorder;
+    *border: 0; // Remove the border to prevent IE7's black border on input:focus
+    border-bottom-color: darken($btnBorder, 10%);
+    @include bootstrap-ie7-restore-left-whitespace(); // Give IE7 some love
+    @include bootstrap-box-shadow("inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)");
+
+    // Hover state
+    &:hover {
+        color: $grayDark;
+        text-decoration: none;
+        background-position: 0 -15px;
+
+        // transition is only when going to hover, otherwise the background
+        // behind the gradient (there for IE<=9 fallback) gets mismatched
+        @include bootstrap-transition(background-position .1s linear);
+    }
+
+    // Focus state for keyboard and accessibility
+    &:focus {
+        @include bootstrap-tab-focus();
+    }
+
+    // Active state
+    &.active,
+    &:active {
+        background-image: none;
+        outline: 0;
+        @include bootstrap-box-shadow("inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+    }
+
+    // Disabled state
+    &.disabled,
+    &[disabled] {
+        cursor: default;
+        background-image: none;
+        @include bootstrap-opacity(65);
+        @include bootstrap-box-shadow(none);
+    }
+
+    // Firefox 3.6 only I believe
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+        outline: none;
+    }
+}

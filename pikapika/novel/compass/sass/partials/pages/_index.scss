@@ -131,7 +131,7 @@
 
     #google-search 
     {
-        width: 100%;
+        padding: 0.4em 1em;
         margin-bottom: 10px;
         overflow: hidden;
 
@@ -140,10 +140,45 @@
             border: 0 none;
         }
 
-        form
+        #cse-search-form
         {
-            margin: 0;
-            padding: 0;
+            padding: 0.4em 6px;
+
+            form
+            {
+                margin: 0;
+                padding: 0;
+                display: block;
+
+                input.gsc-input
+                {
+                    margin: 0 2% 0 0;
+                    padding: 5px 9px;
+                    background: url("http://www.google.com/coop/intl/zh-CN/images/google_custom_search_watermark.gif") no-repeat scroll left center white;
+                    width: 65%;
+
+                    &.have-text, &:focus
+                    {
+                        background: white;
+                    }
+                }
+                .gsc-search-button
+                {
+                    @extend button;
+                    text-align: center;
+                    width: 30%;
+                    padding: 5px 0;
+                }
+                .gsc-search-button, input.gsc-input
+                {
+                    @include inline-block;
+                    @include box-sizing(border-box);
+                    vertical-align: middle;
+                    padding: 5px 9px;
+                    line-height: 18px;
+                    height: 30px;
+                }
+            }
         }
     }
 

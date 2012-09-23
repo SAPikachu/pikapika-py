@@ -5,7 +5,6 @@
 {% block title-full %}PikaPika 轻小说吐槽计划 Alpha 2{% endblock %}
 
 {% block head-extra %}
-<link rel="stylesheet" type="text/css" href="{% static "css/google-search.css" %}" />
 <link href="{% url "latest_novels_feed" %}" type="application/atom+xml" rel="alternate" title="最近更新" />
 {% endblock %}
 
@@ -59,12 +58,8 @@
             <form class="gsc-search-box" accept-charset="utf-8"  action="http://www.google.com/cse">
                 <input type="hidden" name="cx" value="004444445504374248743:pn98cdeq3ys" />
                 <input type="hidden" name="ie" value="UTF-8" />
-                <span class="gsc-input">
-                    <input type="text" autocomplete="off" size="10" class="gsc-input" name="q" title="搜索" style="background: url(&quot;http://www.google.com/coop/intl/zh-CN/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255); width: 197px; margin: 5px 2px 5px 5px">
-                </span>
-                <span class="gsc-search-button">
-                    <input type="submit" value="搜索" class="gsc-search-button" name="sa" title="搜索" style="margin: 5px 0">
-                </span>
+                <input type="text" autocomplete="off" class="gsc-input" name="q" title="搜索"/>
+                <input type="submit" class="gsc-search-button" value="搜索" name="sa"/>
             </form>
         </div>
     </div>
@@ -94,6 +89,4 @@
         </li>
     </ul>
 </section>
-<script src="http://www.google.com/jsapi?key=ABQIAAAAQaiUI5mOlEZX2E44tSKzIxQtp31_LefCXY4LLN3XxdKUdLgLqBTVLnD2PMmvPTUJsAZh2ghya2QlXQ" type="text/javascript"></script></script>
-<!-- TODO: Load search script here -->
 {% endblock %}
