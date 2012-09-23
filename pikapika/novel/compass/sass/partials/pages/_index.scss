@@ -149,34 +149,44 @@
                 margin: 0;
                 padding: 0;
                 display: block;
+                position: relative;
 
                 input.gsc-input
                 {
+                    @include box-sizing(border-box);
                     margin: 0 2% 0 0;
                     padding: 5px 9px;
                     background: url("http://www.google.com/coop/intl/zh-CN/images/google_custom_search_watermark.gif") no-repeat scroll left center white;
-                    width: 65%;
+                    width: 100%;
+                    @include inline-block;
+                    vertical-align: middle;
+                    line-height: 18px;
+                    height: 30px;
 
                     &.have-text, &:focus
                     {
                         background: white;
                     }
                 }
-                .gsc-search-button
+                .icon-search-button
                 {
-                    @extend button;
-                    text-align: center;
-                    width: 30%;
-                    padding: 5px 0;
-                }
-                .gsc-search-button, input.gsc-input
-                {
-                    @include inline-block;
-                    @include box-sizing(border-box);
-                    vertical-align: middle;
-                    padding: 5px 9px;
-                    line-height: 18px;
+                    @include border-radius(3px);
+                    @extend %generic-transition;
+                    color: $main-color;
+                    position: absolute;
+                    font-size: 110%;
+                    cursor: pointer;
+                    right: 0;
+                    top: 0;
                     height: 30px;
+                    width: 30px;
+                    text-align: center;
+                    line-height: 30px;
+
+                    &:hover
+                    {
+                        font-size: 140%;
+                    }
                 }
             }
         }

@@ -1243,7 +1243,7 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
-.uneditable-input, .page-index #page #latest-novels li, .page-index #page #latest-novels li a {
+.uneditable-input, .page-index #page #latest-novels li, .page-index #page #latest-novels li a, .page-index #page #google-search #cse-search-form form .icon-search-button {
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
   -o-transition: all 0.15s linear;
@@ -1339,7 +1339,7 @@ input[type="color"]:focus,
 }
 
 /* line 149, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
-button, .page-index #page #google-search #cse-search-form form .gsc-search-button, input[type="button"], input[type=submit] {
+button, input[type="button"], input[type=submit] {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -1377,20 +1377,20 @@ button, .page-index #page #google-search #cse-search-form form .gsc-search-butto
   box-shadow: "inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)";
 }
 /* line 439, /var/lib/gems/1.8/gems/compass_twitter_bootstrap-2.0.3/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-button:hover, .page-index #page #google-search #cse-search-form form .gsc-search-button:hover, button:active, .page-index #page #google-search #cse-search-form form .gsc-search-button:active, button.active, .page-index #page #google-search #cse-search-form form .active.gsc-search-button, button.disabled, .page-index #page #google-search #cse-search-form form .disabled.gsc-search-button, button[disabled], .page-index #page #google-search #cse-search-form form [disabled].gsc-search-button, input[type="button"]:hover, input[type="button"]:active, input[type="button"].active, input[type="button"].disabled, input[type="button"][disabled], input[type=submit]:hover, input[type=submit]:active, input[type=submit].active, input[type=submit].disabled, input[type=submit][disabled] {
+button:hover, button:active, button.active, button.disabled, button[disabled], input[type="button"]:hover, input[type="button"]:active, input[type="button"].active, input[type="button"].disabled, input[type="button"][disabled], input[type=submit]:hover, input[type=submit]:active, input[type=submit].active, input[type=submit].disabled, input[type=submit][disabled] {
   background-color: #ddcaab;
   *background-color: #d6bf99;
 }
 /* line 446, /var/lib/gems/1.8/gems/compass_twitter_bootstrap-2.0.3/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-button:active, .page-index #page #google-search #cse-search-form form .gsc-search-button:active, button.active, .page-index #page #google-search #cse-search-form form .active.gsc-search-button, input[type="button"]:active, input[type="button"].active, input[type=submit]:active, input[type=submit].active {
+button:active, button.active, input[type="button"]:active, input[type="button"].active, input[type=submit]:active, input[type=submit].active {
   background-color: #cfb487 \9;
 }
 /* line 58, /var/lib/gems/1.8/gems/compass_twitter_bootstrap-2.0.3/stylesheets/compass_twitter_bootstrap/_mixins.scss */
-button:first-child, .page-index #page #google-search #cse-search-form form .gsc-search-button:first-child, input[type="button"]:first-child, input[type=submit]:first-child {
+button:first-child, input[type="button"]:first-child, input[type=submit]:first-child {
   *margin-left: 0;
 }
 /* line 36, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_bootstrap-button.scss */
-button:hover, .page-index #page #google-search #cse-search-form form .gsc-search-button:hover, input[type="button"]:hover, input[type=submit]:hover {
+button:hover, input[type="button"]:hover, input[type=submit]:hover {
   color: #333333;
   text-decoration: none;
   background-position: 0 -15px;
@@ -1401,13 +1401,13 @@ button:hover, .page-index #page #google-search #cse-search-form form .gsc-search
   transition: background-position 0.1s linear;
 }
 /* line 47, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_bootstrap-button.scss */
-button:focus, .page-index #page #google-search #cse-search-form form .gsc-search-button:focus, input[type="button"]:focus, input[type=submit]:focus {
+button:focus, input[type="button"]:focus, input[type=submit]:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 53, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_bootstrap-button.scss */
-button.active, .page-index #page #google-search #cse-search-form form .active.gsc-search-button, button:active, .page-index #page #google-search #cse-search-form form .gsc-search-button:active, input[type="button"].active, input[type="button"]:active, input[type=submit].active, input[type=submit]:active {
+button.active, button:active, input[type="button"].active, input[type="button"]:active, input[type=submit].active, input[type=submit]:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: "inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)";
@@ -1415,7 +1415,7 @@ button.active, .page-index #page #google-search #cse-search-form form .active.gs
   box-shadow: "inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)";
 }
 /* line 61, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_bootstrap-button.scss */
-button.disabled, .page-index #page #google-search #cse-search-form form .disabled.gsc-search-button, button[disabled], .page-index #page #google-search #cse-search-form form [disabled].gsc-search-button, input[type="button"].disabled, input[type="button"][disabled], input[type=submit].disabled, input[type=submit][disabled] {
+button.disabled, button[disabled], input[type="button"].disabled, input[type="button"][disabled], input[type=submit].disabled, input[type=submit][disabled] {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -1425,7 +1425,7 @@ button.disabled, .page-index #page #google-search #cse-search-form form .disable
   box-shadow: none;
 }
 /* line 69, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_bootstrap-button.scss */
-button::-moz-focus-inner, .page-index #page #google-search #cse-search-form form .gsc-search-button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type=submit]::-moz-focus-inner {
+button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type=submit]::-moz-focus-inner {
   padding: 0;
   border: 0;
   outline: none;
@@ -2017,47 +2017,60 @@ body:before {
   margin: 0;
   padding: 0;
   display: block;
+  position: relative;
 }
-/* line 154, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 155, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search #cse-search-form form input.gsc-input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0 2% 0 0;
   padding: 5px 9px;
   background: url("http://www.google.com/coop/intl/zh-CN/images/google_custom_search_watermark.gif") no-repeat scroll left center white;
-  width: 65%;
-}
-/* line 161, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
-.page-index #page #google-search #cse-search-form form input.gsc-input.have-text, .page-index #page #google-search #cse-search-form form input.gsc-input:focus {
-  background: white;
-}
-/* line 166, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
-.page-index #page #google-search #cse-search-form form .gsc-search-button {
-  text-align: center;
-  width: 30%;
-  padding: 5px 0;
-}
-/* line 173, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
-.page-index #page #google-search #cse-search-form form .gsc-search-button, .page-index #page #google-search #cse-search-form form input.gsc-input {
+  width: 100%;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   vertical-align: middle;
-  padding: 5px 9px;
   line-height: 18px;
   height: 30px;
 }
+/* line 167, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+.page-index #page #google-search #cse-search-form form input.gsc-input.have-text, .page-index #page #google-search #cse-search-form form input.gsc-input:focus {
+  background: white;
+}
+/* line 172, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+.page-index #page #google-search #cse-search-form form .icon-search-button {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  color: #7e5e51;
+  position: absolute;
+  font-size: 110%;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+}
 /* line 187, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+.page-index #page #google-search #cse-search-form form .icon-search-button:hover {
+  font-size: 140%;
+}
+/* line 197, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search-result {
   display: none;
   margin-bottom: 20px;
   font-size: 1em;
 }
-/* line 193, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 203, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search-result .gsc-branding {
   display: block;
   margin: 0 auto;
@@ -2065,25 +2078,25 @@ body:before {
   font-size: 13px;
   margin-left: 25px;
 }
-/* line 201, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 211, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search-result .gsc-branding img {
   vertical-align: middle;
 }
-/* line 207, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 217, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search-result div {
   font-size: 1em;
   line-height: normal;
 }
-/* line 213, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 223, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search-result .gs-result {
   margin: 25px;
   font-size: 1em;
 }
-/* line 219, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 229, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #google-search-result .gs-title {
   font-size: 1.05em;
 }
-/* line 225, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
+/* line 235, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_index.scss */
 .page-index #page #cse, .page-index #page .gs-visibleUrl {
   display: none;
 }
