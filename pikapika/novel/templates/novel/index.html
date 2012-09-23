@@ -6,6 +6,7 @@
 
 {% block head-extra %}
 <link rel="stylesheet" type="text/css" href="{% static "css/google-search.css" %}" />
+<link href="{% url "latest_novels_feed" %}" type="application/atom+xml" rel="alternate" title="最近更新" />
 {% endblock %}
 
 {% block body-class %}page-index{% endblock %}
