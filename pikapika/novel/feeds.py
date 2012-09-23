@@ -8,6 +8,8 @@ from django.utils.feedgenerator import Atom1Feed
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import linebreaks_filter
+from django.shortcuts import get_object_or_404
+from django.db.models import Max
 
 from .models import Novel
 
@@ -68,6 +70,41 @@ class LatestNovelsFeed(FeedBase):
 
     def item_author_name(self, item):
         return item.author
+
+    def item_pubdate(self, item):
+        return item.updated_date
+
+class NovelVolumesFeed(FeedBase):
+    def get_object(self, request, pk):
+        return get_object_or_404(Novel, pk=int(pk))
+
+    def title(self, obj):
+        return obj.name + " - PikaPika"
+
+    def link(self, obj):
+        return self.reverse_absolute("details", kwargs={"pk": obj.pk})
+
+    def items(self, obj):
+        return (
+            obj.volume_set.select_related("novel")
+            .annotate(updated_date=Max("chapter__updated_date"))
+            .order_by("-updated_date")
+        )
+
+    def item_title(self, item):
+        return item.name
+
+    def item_description(self, item):
+        return linebreaks_filter(item.description)
+
+    def item_link(self, item):
+        return "{}#volume-{}".format(
+            self.reverse_absolute("details", kwargs={"pk": item.novel.pk}),
+            item.pk,
+        )
+
+    def item_author_name(self, item):
+        return item.novel.author
 
     def item_pubdate(self, item):
         return item.updated_date

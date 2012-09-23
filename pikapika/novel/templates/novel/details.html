@@ -83,4 +83,5 @@
 
 {% block head-extra %}
 {% requirejs "pages/details" %}
+<link href="{% url "novel_volumes_feed" pk=novel.pk %}" type="application/atom+xml" rel="alternate" title="最近更新" />
 {% endblock %}

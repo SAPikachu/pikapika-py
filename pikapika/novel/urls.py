@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.views.generic import TemplateView
 
-from .feeds import LatestNovelsFeed
+from .feeds import LatestNovelsFeed, NovelVolumesFeed
 
 urlpatterns = patterns('pikapika.novel.views',
     url(r'^$', 
@@ -14,6 +14,9 @@ urlpatterns = patterns('pikapika.novel.views',
     url(r'^list(?:/(?P<cat_start>[A-Za-z])(?:-(?P<cat_end>[A-Za-z]))?)?(?:/(?P<page>\d+))?/?$', 
         "list_cat",
         name="list"),
+    url(r'^novel/(?P<pk>\d+)/feed$',
+        NovelVolumesFeed(),
+        name='novel_volumes_feed'),
     url(r'^novel/(?P<pk>\d+)(?:/.*)?$', 
         "details",
         name="details"),
