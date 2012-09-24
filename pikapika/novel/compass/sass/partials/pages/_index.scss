@@ -103,6 +103,12 @@
         }
     }
 
+    #latest-annotations p
+    {
+        margin-top: 1em;
+        margin-left: $content-padding;
+    }
+
     // Explicitly specify ul to make priority of the rules high enough to 
     // override parent rules (padding)
     ul#hottest-novels
@@ -192,48 +198,5 @@
         }
     }
 
-
-    #google-search-result 
-    {
-        display: none;
-        margin-bottom: 20px;
-        font-size: 1em;
-
-        .gsc-branding 
-        {
-            display: block;
-            margin: 0 auto;
-            width: auto;
-            font-size: 13px;
-            margin-left: 25px;
-
-            img
-            {
-                vertical-align: middle;
-            }
-        }
-
-        div
-        {
-            font-size: 1em;
-            line-height: normal;
-        }
-
-        .gs-result 
-        {
-            margin: 25px;
-            font-size: 1em;
-        }
-
-        .gs-title 
-        {
-            font-size: 1.05em;
-        }
-    }
-
-    #cse, .gs-visibleUrl
-    {
-        display: none;
-    }
 }
 
