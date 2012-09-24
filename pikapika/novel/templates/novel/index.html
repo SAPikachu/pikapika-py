@@ -1,11 +1,13 @@
 {% extends "novel/includes/base.html" %}
 {% load url from future %}
 {% load static %}
+{% load html_helpers %}
 
 {% block title-full %}PikaPika 轻小说吐槽计划 Alpha 2{% endblock %}
 
 {% block head-extra %}
 <link href="{% url "latest_novels_feed" %}" type="application/atom+xml" rel="alternate" title="最近更新" />
+{% requirejs "pages/index" %}
 {% endblock %}
 
 {% block body-class %}page-index{% endblock %}
@@ -58,7 +60,7 @@
             <form class="gsc-search-box" accept-charset="utf-8"  action="http://www.google.com/cse">
                 <input type="hidden" name="cx" value="004444445504374248743:pn98cdeq3ys" />
                 <input type="hidden" name="ie" value="UTF-8" />
-                <input type="text" autocomplete="off" class="gsc-input" name="q" title="搜索"/>
+                <input type="text" class="gsc-input" name="q" title="搜索"/>
                 <input type="hidden" class="gsc-search-button" value="搜索" name="sa"/>
                 <span class="icon-search-button"><i class="icon-search"></i></span>
             </form>
