@@ -22,3 +22,6 @@
 [submodule "submodules/django-generic-aggregation"]
 	path = submodules/django-generic-aggregation
 	url = git@github.com:SAPikachu/django-generic-aggregation.git
+[submodule "submodules/django-grappelli"]
+	path = submodules/django-grappelli
+	url = git://github.com/sehmaschine/django-grappelli.git
