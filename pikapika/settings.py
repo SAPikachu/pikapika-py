@@ -1,7 +1,5 @@
 import os
 
-from .secret_key import SECRET_KEY
-
 # Django settings for pikapika project.
 
 DEBUG = True
@@ -94,8 +92,8 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-# Stored in secret.py
-# SECRET_KEY = ''
+# This MUST be overwritten in production server
+SECRET_KEY = '%35ymcpbef%pucx1#1j&amp;a7=)eu!do1nv*_no_9dr(80@6q=f9$'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
