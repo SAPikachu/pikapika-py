@@ -5,3 +5,4 @@ testdata
 media
 .sass-cache
 Gemfile.lock
+settings_production
