@@ -114,7 +114,7 @@ def push():
     push_repo()
 
     # Backup current environment
-    run("test -d {0} && rm -r {0} || true".format(STAGE_OLD))
+    run("test -d {0} && rm -rf {0} || true".format(STAGE_OLD))
     run("cp -a {} {}".format(STAGE_CURRENT, STAGE_OLD))
     with _activate_env(STAGE_OLD):
         run("test -f manage.py && python manage.py collectstatic --clear --noinput || true")
