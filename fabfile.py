@@ -41,6 +41,7 @@ HOSTS = {
             "MySQL-python",
             "PIL",
         ),
+        "system_site_packages": True,
     },
 }
 
@@ -55,6 +56,9 @@ def _validate_local():
 
 def _activate_env(working_dir=PROJECT_DIR):
     return prefix(". {}/bin/activate && cd {}".format(PROJECT_DIR, working_dir))
+
+def _get_host_setting(key, default=None):
+    return HOSTS.get(env.host_string, {}).get(key)
 
 def destroy_env():
     if confirm("Do your really want to destroy the project on server?", 
@@ -71,7 +75,12 @@ def init_env():
                 abort("Project already exists on the server")
 
         run("wget -O virtualenv.py --no-check-certificate https://raw.github.com/pypa/virtualenv/master/virtualenv.py")
-        run("{} virtualenv.py {}".format(REMOTE_PYTHON_EXEC, PROJECT_NAME))
+        system_site_packages = _get_host_setting("system_site_packages")
+        run("{} virtualenv.py {} {}".format(
+            REMOTE_PYTHON_EXEC, 
+            "--system-site-packages" if system_site_packages else "",
+            PROJECT_NAME,
+        ))
 
     with _activate_env():
         run('cat >> bin/activate <<EOF\n{}\nEOF'.format(EXTRA_INIT_SCRIPT))
@@ -155,7 +164,7 @@ def backup_db():
         run("python manage.py backupdb")
 
 def reload_app():
-    script = HOSTS.get(env.host_string, {}).get("reload_app_script")
+    script = _get_host_setting("reload_app_script")
     if script:
         with _activate_env(STAGE_CURRENT):
             for line in [x.strip() for x in script.splitlines()]:
@@ -169,7 +178,7 @@ def load_fixtures():
         run("python manage.py loaddata fixtures/*.json")
 
 def install_requirements():
-    skip_packages = HOSTS.get(env.host_string, {}).get("skip_packages")
+    skip_packages = _get_host_setting("skip_packages")
     with open("requirements.txt", "r") as f:
         for line in f:
             if not any([x for x in skip_packages if line.startswith(x)]):
