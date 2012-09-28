@@ -118,12 +118,12 @@ def push():
 
     install_requirements()
     setup_submodules()
+    push_settings()
 
     with _activate_env(STAGE_CURRENT):
         run("mkdir -p static")
         run("python manage.py collectstatic --link --clear --noinput")
 
-    push_settings()
     run("ln -sf {} {}".format(STAGE_CURRENT, STAGE_ROOT))
 
 def push_force():
