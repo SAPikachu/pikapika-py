@@ -4,7 +4,6 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-_DEVELOPMENT_MODE = True
 
 INTERNAL_IPS = ["192.168.1." + str(x) for x in range(256)]
 
@@ -141,6 +140,7 @@ INSTALLED_APPS = (
     'grappelli',
     'hitcount',
     'south',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.admindocs',
 
@@ -148,11 +148,6 @@ INSTALLED_APPS = (
     'pikapika.novel',
     'pikapika.novel_importer',
 )
-
-if _DEVELOPMENT_MODE:
-    INSTALLED_APPS += (
-        "django_extensions",
-    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
