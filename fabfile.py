@@ -37,6 +37,10 @@ HOSTS = {
             cp fcgi.sh ~/public/{}/index.fcgi
             killall -q -s SIGHUP python$INSTANCE_ID || true
         """.format(PROJECT_NAME),
+        "skip_packages": (
+            "MySQL-python",
+            "PIL",
+        ),
     },
 }
 
@@ -66,7 +70,7 @@ def init_env():
             if run("test -d " + PROJECT_NAME).succeeded:
                 abort("Project already exists on the server")
 
-        run("wget --no-check-certificate https://raw.github.com/pypa/virtualenv/master/virtualenv.py")
+        run("wget -O virtualenv.py --no-check-certificate https://raw.github.com/pypa/virtualenv/master/virtualenv.py")
         run("{} virtualenv.py {}".format(REMOTE_PYTHON_EXEC, PROJECT_NAME))
 
     with _activate_env():
@@ -99,10 +103,10 @@ def push():
     push_repo()
 
     # Backup current environment
-    run("test -d {0} && rm -r {0}".format(STAGE_OLD))
+    run("test -d {0} && rm -r {0} || true".format(STAGE_OLD))
     run("cp -a {} {}".format(STAGE_CURRENT, STAGE_OLD))
     with _activate_env(STAGE_OLD):
-        run("test -f manage.py && python manage.py collectstatic --link --clear --noinput")
+        run("test -f manage.py && python manage.py collectstatic --link --clear --noinput || true")
 
     # To prevent downtime
     run("ln -sf {} {}".format(STAGE_OLD, STAGE_ROOT))
@@ -111,6 +115,11 @@ def push():
         run("git fetch")
         run("git checkout production")
         run("git merge origin/production")
+
+    install_requirements()
+    setup_submodules()
+
+    with _activate_env(STAGE_CURRENT):
         run("mkdir -p static")
         run("python manage.py collectstatic --link --clear --noinput")
 
@@ -158,14 +167,21 @@ def load_fixtures():
         run("python manage.py loaddata fixtures/*.json")
 
 def install_requirements():
-    with _activate_env(STAGE_CURRENT):
-        run("pip install -r requirements.txt")
+    skip_packages = HOSTS.get(env.host_string, {}).get("skip_packages")
+    with open("requirements.txt", "r") as f:
+        for line in f:
+            if not any([x for x in skip_packages if line.startswith(x)]):
+                with _activate_env(STAGE_CURRENT):
+                    run("pip install " + line.strip())
 
 def setup_submodules():
     with _activate_env(STAGE_CURRENT):
-        run("git submodules update --init")
+        run("git submodule update --init")
 
-        run("rm {}/{}".format(SITE_PACKAGES_GLOB, PTH_NAME_FORMAT.format("*")))
+        run("rm {}/{} || true".format(
+            SITE_PACKAGES_GLOB, 
+            PTH_NAME_FORMAT.format("*"),
+        ))
 
         for name in os.listdir("submodules"):
             if os.path.isfile("submodules/{}/setup.py"):
@@ -181,8 +197,6 @@ def deploy_init():
     _validate_local()
     init_env()
     push()
-    install_requirements()
-    setup_submodules()
     init_db()
     reload_app()
 
@@ -190,8 +204,6 @@ def deploy():
     _validate_local()
     promote()
     push()
-    install_requirements()
-    setup_submodules()
     migrate_db()
     reload_app()
 
