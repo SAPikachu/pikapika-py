@@ -91,10 +91,12 @@ def init_repo():
         run("git clone {} .".format(GIT_REPO))
 
 def push_settings():
-    with _activate_env(STAGE_CURRENT):
-        assert put("settings_production/{}/settings_production.py"
-                       .format(PROJECT_NAME),
-                   "pikapika/",)
+    # Can't use this due to fabric bug #370
+    # with cd(STAGE_CURRENT):
+
+    assert put("./settings_production/{}/settings_production.py"
+                   .format(PROJECT_NAME),
+               STAGE_CURRENT + "/pikapika/",)
 
 def push_repo():
     local("git push ssh://{}/{}/ production".format(env.host_string, GIT_REPO))
