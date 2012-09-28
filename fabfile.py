@@ -117,10 +117,10 @@ def push():
     run("test -d {0} && rm -r {0} || true".format(STAGE_OLD))
     run("cp -a {} {}".format(STAGE_CURRENT, STAGE_OLD))
     with _activate_env(STAGE_OLD):
-        run("test -f manage.py && python manage.py collectstatic --link --clear --noinput || true")
+        run("test -f manage.py && python manage.py collectstatic --clear --noinput || true")
 
     # To prevent downtime
-    run("ln -sf {} {}".format(STAGE_OLD, STAGE_ROOT))
+    run("ln -sfn {} {}".format(STAGE_OLD, STAGE_ROOT))
 
     with _activate_env(STAGE_CURRENT):
         run("git fetch")
@@ -131,11 +131,10 @@ def push():
     setup_submodules()
     push_settings()
 
+    run("ln -sfn {} {}".format(STAGE_CURRENT, STAGE_ROOT))
     with _activate_env(STAGE_CURRENT):
         run("mkdir -p static")
-        run("python manage.py collectstatic --link --clear --noinput")
-
-    run("ln -sf {} {}".format(STAGE_CURRENT, STAGE_ROOT))
+        run("python manage.py collectstatic --clear --noinput")
 
 def push_force():
     with _activate_env(STAGE_CURRENT):
@@ -195,7 +194,7 @@ def setup_submodules():
         ))
 
         for name in os.listdir("submodules"):
-            if os.path.isfile("submodules/{}/setup.py"):
+            if os.path.isfile("submodules/{}/setup.py".format(name)):
                 run("echo {}/submodules/{}/ > `echo {}`/{}".format(
                     STAGE_ROOT,
                     name,
