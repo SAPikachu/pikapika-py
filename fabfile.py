@@ -98,6 +98,9 @@ def init_repo():
 
     with cd(STAGE_CURRENT):
         run("git clone {} .".format(GIT_REPO))
+        
+        # On hostgator this defaults to false!
+        run("git config core.symlinks true")
 
 def push_settings():
     # Can't use this due to fabric bug #370
@@ -115,7 +118,9 @@ def push():
 
     # Backup current environment
     run("test -d {0} && rm -rf {0} || true".format(STAGE_OLD))
-    run("cp -a {} {}".format(STAGE_CURRENT, STAGE_OLD))
+
+    # Hostgator complains about symbolic links if we use -a only
+    run("cp -a --copy-contents -L {} {}".format(STAGE_CURRENT, STAGE_OLD))
 
     # To prevent downtime
     run("ln -sfn {} {}".format(STAGE_OLD, STAGE_ROOT))
@@ -131,6 +136,9 @@ def push():
 
     run("ln -sfn {} {}".format(STAGE_CURRENT, STAGE_ROOT))
     with _activate_env(STAGE_CURRENT):
+        # Workaround for hostgator, fix missing symbolic links
+        run("git checkout .")
+
         run("mkdir -p static")
         run("python manage.py collectstatic --clear --noinput")
 
