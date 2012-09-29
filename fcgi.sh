@@ -2,6 +2,6 @@
 
 test -f env.sh && . env.sh
 . $VIRTUAL_ENV/bin/activate
-cd $VIRTUAL_ENV/production
+cd $APP_ROOT
 exec python$INSTANCE_ID manage.py runfcgi method=threaded daemonize=false
 
