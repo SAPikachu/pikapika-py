@@ -42,6 +42,11 @@ HOSTS = {
             "PIL",
         ),
         "system_site_packages": True,
+        "extra_setting_files": {
+            "~/public/{}/".format(PROJECT_NAME): (
+                ".htaccess", "env.sh",
+            ),
+        },
     },
 }
 
@@ -106,9 +111,19 @@ def push_settings():
     # Can't use this due to fabric bug #370
     # with cd(STAGE_CURRENT):
 
-    assert put("./settings_production/{}/settings_production.py"
-                   .format(PROJECT_NAME),
-               STAGE_CURRENT + "/pikapika/",)
+    settings_root = os.path.join(
+        os.path.dirname(__file__),
+        "settings_production",
+        PROJECT_NAME,
+    )
+
+    put(os.path.join(settings_root, "settings_production.py"),
+        STAGE_CURRENT + "/pikapika/",)
+
+    extra_files = _get_host_setting("extra_setting_files", {})
+    for target_dir, files in extra_files.items():
+        for file_name in files:
+            put(os.path.join(settings_root, file_name), target_dir)
 
 def push_repo():
     local("git push ssh://{}/{}/ production".format(env.host_string, GIT_REPO))
