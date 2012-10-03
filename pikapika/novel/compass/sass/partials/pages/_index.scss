@@ -24,14 +24,28 @@
             @include border-radius($padding-vert);
             @extend %pie;
 
-            // 5 items per row, can't use 20% due to rounding bug on IE7
-            width: 18%;
+            width: 25%;
             min-width: 100px;
             float: left;
             margin: 0 0 1em;
-            padding: 0 0.95%;
+            padding: 0;
             text-align: center;
             overflow: hidden;
+
+            @include r-wide
+            {
+                width: (100% / 6);
+            }
+
+            @include r-tablet
+            {
+                width: (100% / 3);
+            }
+
+            @include r-phone
+            {
+                width: 50%;
+            }
 
             &:hover
             {
@@ -98,6 +112,7 @@
 
             .latest-chapter-link, .novel-name
             {
+                margin: 0 0.5em;
                 height: 1.5em;
                 line-height: 1.5em;
                 overflow: hidden;
