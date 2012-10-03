@@ -40,5 +40,8 @@ def generate(request, path, max_width, max_height):
         # After generation, it should be directly served via mod_rewrite
         return static.serve(request, output_path, document_root=ROOT)
     except IOError:
+        if settings.DEBUG:
+            raise
+
         return HttpResponseNotFound()
         
