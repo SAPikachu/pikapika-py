@@ -1,0 +1,35 @@
+$resp-limit-phone: 640px;
+$resp-limit-tablet: 960px;
+$resp-limit-normal: 1600px;
+
+@mixin r-phone
+{
+    @media (max-width: $resp-limit-phone)
+    {
+        @content;
+    }
+}
+
+@mixin r-tablet
+{
+    @media (min-width: $resp-limit-phone + 1) and (max-width: $resp-limit-tablet)
+    {
+        @content;
+    }
+}
+
+@mixin r-tablet-or-smaller
+{
+    @media (max-width: $resp-limit-tablet)
+    {
+        @content;
+    }
+}
+
+@mixin r-wide
+{
+    @media (min-width: $resp-limit-normal + 1)
+    {
+        @content;
+    }
+}

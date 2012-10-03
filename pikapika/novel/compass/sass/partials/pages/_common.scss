@@ -6,7 +6,9 @@ $main-color-light:      lighten(desaturate($main-color, 10%), 30%);
 
 $image-base:            "../images/";
 $content-margin:        ($blueprint-liquid-grid-width);
+$section-border-left:   8px;
 $content-padding:       $blueprint-grid-margin * 2;
+$content-padding-n:     $blueprint-grid-margin / 2 + $section-border-left;
 $footer-height:         91px;
 $image-border-color:    lighten($main-color, 40%);
 $splitter-color:        lighten($main-color, 50%);
@@ -220,6 +222,11 @@ body:before
     $margin-number: ($content-margin / 100%);
     // We need to include margin in outer containers
     min-width: ($blueprint-liquid-container-min-width / (1 - $margin-number * 2));
+
+    @include r-tablet-or-smaller
+    {
+        min-width: 0;
+    }
 }
 
 #page-header
@@ -246,6 +253,12 @@ body:before
         width: 303px;
         outline: none;
         display: block;
+
+        @include r-tablet-or-smaller
+        {
+            margin-left: $content-padding-n;
+            margin-right: 0;
+        }
     }
 
     nav 
@@ -263,6 +276,12 @@ body:before
         background-position: left top;
         height: $nav-height;
 
+        @include r-tablet-or-smaller
+        {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
         ul
         {
             @include inline-block-list;
@@ -273,6 +292,11 @@ body:before
             text-align: left;
             clear: both;
             cursor: default;
+
+            @include r-phone
+            {
+                padding: 0 $content-padding-n;
+            }
 
             li
             {
@@ -295,17 +319,24 @@ body:before
     padding: 0 $content-margin ($footer-height);
     min-width: $blueprint-liquid-container-min-width;
 
+    @include r-tablet-or-smaller
+    {
+        padding-left: 0;
+        padding-right: 0;
+        min-width: 0;
+    }
+
     section
     {
         h2
         {
-            border-left: #B38D55 solid 8px;
+            border-left: #B38D55 solid $section-border-left;
             background-color: #EEC78D;
             color: #594528;
             font-size: 1.5em;
             line-height: 1.5;
             margin: 0 0 10px;
-            padding: 5px 10px;
+            padding: 5px $content-padding-n - $section-border-left;
             zoom: 1; /* workaround for ie7 bug */
         }
     }
@@ -316,6 +347,11 @@ body:before
         @include box-shadow(0px 0px 8px 8px lighten($main-color, 40%));
         @include container;
 
+        @include r-tablet-or-smaller
+        {
+            min-width: 0;
+        }
+
         .ie8 &
         {
             // This breaks push-sheet-bottom on IE7, so only enable it on IE8
@@ -324,12 +360,42 @@ body:before
             -pie-force-update-on-window-resize: true;
         }
 
+        .page-content
+        {
+            @include column(9);
+
+            @include r-tablet
+            {
+                @include column(8);
+            }
+
+            @include r-phone
+            {
+                @include column(12);
+            }
+
+            .no-sidebar &
+            {
+                width: 100%;
+            }
+        }
+
         #sidebar
         {
             @extend %side-block;
             @include column(3, $last: true);
             overflow: visible;
             @include pie-clearfix;
+
+            @include r-tablet
+            {
+                @include column(4, $last: true);
+            }
+
+            @include r-phone
+            {
+                @include column(12, $last: true);
+            }
 
             .no-sidebar &
             {
@@ -363,15 +429,6 @@ body:before
             }
         }
 
-        .page-content
-        {
-            @include column(9);
-
-            .no-sidebar &
-            {
-                width: 100%;
-            }
-        }
     }
 
     .anchor
