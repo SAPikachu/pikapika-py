@@ -143,7 +143,7 @@ def push():
     with _activate_env(STAGE_CURRENT):
         run("git fetch")
         run("git checkout production")
-        run("git merge origin/production")
+        run("git merge --ff-only origin/production")
 
     install_requirements()
     setup_submodules()
@@ -157,12 +157,19 @@ def push():
         run("mkdir -p static")
         run("python manage.py collectstatic --clear --noinput")
 
-def push_force():
+def reset_stage():
     with _activate_env(STAGE_CURRENT):
         run("git reset --hard")
         run("git checkout -- .")
 
-    push()
+def push_working_tree():
+    reset_stage()
+    diff = local("git diff", capture=True)
+    with _activate_env(STAGE_CURRENT):
+        # Without trailing newlines, git sometimes thinks the patch is corrupted
+        run("cat <<EOF | git apply --whitespace=fix -\n{}\n\n\n\nEOF".format(diff))
+        
+    reload_app()
 
 def promote():
     local("git checkout production")
