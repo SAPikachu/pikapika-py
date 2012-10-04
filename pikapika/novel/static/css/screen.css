@@ -2565,18 +2565,18 @@ body:before {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
-  width: 33.33333%;
+  width: 50%;
   float: left;
   margin: 0;
   padding: 20px;
 }
-@media (min-width: 641px) and (max-width: 960px) {
+@media (min-width: 1601px) {
   /* line 16, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
   .page-list .novel-list li {
-    width: 50%;
+    width: 33.33333%;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 960px) {
   /* line 16, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_list.scss */
   .page-list .novel-list li {
     width: 100%;

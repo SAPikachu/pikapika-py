@@ -19,17 +19,17 @@
 
             @include box-sizing(border-box);
             display: block;
-            width: (100% / 3);
+            width: 50%;
             float: left;
             margin: 0;
             padding: ($content-padding / 2);
 
-            @include r-tablet
+            @include r-wide
             {
-                width: 50%;
+                width: (100% / 3);
             }
 
-            @include r-phone
+            @include r-tablet-or-smaller
             {
                 width: 100%;
                 padding: ($content-padding-n / 2) $content-padding-n;
