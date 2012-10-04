@@ -254,7 +254,13 @@ body:before
         outline: none;
         display: block;
 
-        @include r-tablet-or-smaller
+        @include r-tablet
+        {
+            margin-left: $content-padding;
+            margin-right: 0;
+        }
+
+        @include r-phone
         {
             margin-left: $content-padding-n;
             margin-right: 0;

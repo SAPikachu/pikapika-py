@@ -7,6 +7,11 @@
         margin: 0;
         padding: 0 ($content-padding / 2);
 
+        @include r-phone
+        {
+            padding: ($content-padding-n / 2) 0;
+        }
+
         li
         {
             $image-max-height: 110px;
@@ -14,10 +19,21 @@
 
             @include box-sizing(border-box);
             display: block;
-            width: 33.333333%;
+            width: (100% / 3);
             float: left;
             margin: 0;
             padding: ($content-padding / 2);
+
+            @include r-tablet
+            {
+                width: 50%;
+            }
+
+            @include r-phone
+            {
+                width: 100%;
+                padding: ($content-padding-n / 2) $content-padding-n;
+            }
 
             .image
             {
