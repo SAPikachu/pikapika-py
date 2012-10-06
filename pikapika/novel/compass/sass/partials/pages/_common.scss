@@ -8,7 +8,7 @@ $image-base:            "../images/";
 $content-margin:        ($blueprint-liquid-grid-width);
 $section-border-left:   8px;
 $content-padding:       $blueprint-grid-margin * 2;
-$content-padding-n:     $blueprint-grid-margin / 2 + $section-border-left;
+$content-padding-n:     $section-border-left;
 $footer-height:         91px;
 $image-border-color:    lighten($main-color, 40%);
 $splitter-color:        lighten($main-color, 50%);
@@ -28,7 +28,7 @@ $sidebar-background: #F8F5F0;
 %side-block
 {
     background-color: $sidebar-background;
-    @include border-radius(5px);
+    @include border-bottom-radius(5px);
 }
 
 %make-row
@@ -342,7 +342,7 @@ body:before
             font-size: 1.5em;
             line-height: 1.5;
             margin: 0 0 10px;
-            padding: 5px $content-padding-n - $section-border-left;
+            padding: 5px max($content-padding-n - $section-border-left, $section-border-left);
             zoom: 1; /* workaround for ie7 bug */
         }
     }

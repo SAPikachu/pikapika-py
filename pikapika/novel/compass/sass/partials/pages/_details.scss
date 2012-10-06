@@ -1,9 +1,42 @@
 .page-details
 {
+    @mixin top-elem-margin($side: false)
+    {
+        $left: ($side == false or $side == left);
+        $right: ($side == false or $side == right);
+
+        margin: 
+        {
+            @if $left 
+            {
+                left: $content-padding;
+            }
+            @if $right
+            {
+                right: $content-padding;
+            }
+
+        }
+        @include r-phone
+        {
+            margin:
+            {
+                @if $left 
+                {
+                    left: $content-padding-n;
+                }
+                @if $right
+                {
+                    right: $content-padding-n;
+                }
+            }
+        }
+    }
+
     .novel-image
     {
         @include make-column(3);
-        margin-left: $content-padding;
+        @include top-elem-margin(left);
 
         img
         {
@@ -17,16 +50,63 @@
         margin: $blueprint-grid-margin 0;
     }
 
+    h2
+    {
+        overflow: hidden;
+
+
+        @include r-phone
+        {
+            position: absolute;
+            top: 0;
+            left: (-1 * $content-padding-n);
+            width: 100%;
+        }
+    }
+
+    figure
+    {
+        margin-right: $blueprint-grid-margin;
+
+        @include r-tablet-or-smaller
+        {
+            max-width: 30%;
+
+            img
+            {
+                max-width: 100%;
+            }
+        }
+
+        @include r-phone
+        {
+            margin-top: 3.5em;
+        }
+    }
+
     .novel-info
     {
         margin-left: $blueprint-grid-width * 3 + $blueprint-grid-margin * 3 + $content-padding;
         margin-top: $blueprint-grid-margin;
+        position: relative;
+
+        @include r-tablet
+        {
+            margin-left: $content-padding;
+        }
+
+        @include r-phone
+        {
+            margin-left: $content-padding-n;
+            margin-top: 0;
+            padding-top: 3.5em;
+        }
 
         dl
         {
-            $dt-width: 4.5em;
-            $gap: 0.5em;
+            $dt-width: 5em;
             @include clearfix;
+            @include top-elem-margin(right);
 
             dt, dd
             {
@@ -39,18 +119,28 @@
                 float: left;
                 font-weight: normal;
                 color: $grayLight;
-                margin-right: $gap;
+            }
+
+            dd
+            {
+                margin-left: $dt-width;
             }
         }
 
         .description
         {
             margin-right: $content-padding;
+
+            @include r-phone
+            {
+                margin-right: $content-padding-n;
+            }
         }
     }
 
     .volume-list
     {
+        @include top-elem-margin();
         padding-top: 1px;
 
         &, .volume
@@ -69,8 +159,6 @@
         {
             @include pie-clearfix;
             display: block;
-            margin: 0 $content-padding;
-            padding-bottom: $blueprint-grid-margin;
             border-bottom: 2px dotted $splitter-color;
 
             &:last-child
@@ -82,10 +170,11 @@
             {
                 margin: $blueprint-grid-margin 0;
                 font-size: 1.3em;
+                color: darken($main-color, 20%);
 
-                a, a:link, a:visited, a:hover, a:active
+                @include r-phone
                 {
-                    color: darken($main-color, 20%);
+                    text-align: center;
                 }
             }
 
@@ -99,34 +188,86 @@
                 color: $grayLight;
                 font-size: 90%;
 
+                @include r-tablet-or-smaller
+                {
+                    width: span-fluid(12);
+                    border-left: 0 none;
+                }
+
+                &.no-info
+                {
+                    display: none;
+                }
+
                 figure
                 {
                     float: right;
                     padding: 0;
                     margin: 0 0 $blueprint-grid-margin $blueprint-grid-margin;
 
+                    @include r-tablet-or-smaller
+                    {
+                        max-width: 20%;
+                    }
+
                     img
                     {
                         @extend %image-shadow;
+                        max-width: 100%;
                     }
                 }
             }
 
             .chapter-list // ul
             {
+                // http://kristinlbradley.wordpress.com/2011/09/15/cross-browser-css-justified-block-list/
                 width: span-fluid(8);
+                font: 0/0 Arial, sans-serif;
+                text-align: justify;
+                text-justify: distribute-all-lines;
+
+                @include r-tablet-or-smaller
+                {
+                    width: span-fluid(12);
+                }
+
+                &:after
+                {
+                    content: "";
+                    display: inline-block;
+                    width: 100%;
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
+                }
 
                 li
                 {
                     @include inline-block;
-                    width: span-fluid(3);
+                    font-size: $blueprint-font-size;
+                    line-height: 1.5;
                     vertical-align: top;
-                    margin-right: $blueprint-liquid-grid-margin;
+                    text-align: left;
                     margin-bottom: 1.5em;
+                    width: span-fluid(4);
 
-                    &:nth-child(4n)
+                    @include r-wide
                     {
-                        margin-right: 0;
+                        width: span-fluid(3);
+                    }
+
+                    @include r-phone
+                    {
+                        width: span-fluid(12);
+                        text-align: center;
+                    }
+
+                    &.placeholder
+                    {
+                        margin: 0;
+                        font-size: 0/0 Arial, sans-serif;
+                        height: 0;
+                        overflow: hidden;
                     }
 
                     a

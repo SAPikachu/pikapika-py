@@ -2,13 +2,13 @@
 {
     .page-content h2
     {
-        padding-left: $content-padding - $section-border-left;
+        padding-left: max($content-padding - $section-border-left, $section-border-left);
         padding-right: $content-padding;
         clear: both;
 
         @include r-phone
         {
-            padding-left: $content-padding-n - $section-border-left;
+            padding-left: max($content-padding-n - $section-border-left, $section-border-left);
         }
     }
     #latest-novels
