@@ -1,10 +1,5 @@
 .page-details
 {
-    %image-effect
-    {
-        @extend %image-shadow;
-    }
-
     .novel-image
     {
         @include make-column(3);
@@ -12,7 +7,7 @@
 
         img
         {
-            @extend %image-effect;
+            @extend %image-shadow;
         }
     }
 
@@ -112,7 +107,7 @@
 
                     img
                     {
-                        @extend %image-effect;
+                        @extend %image-shadow;
                     }
                 }
             }
