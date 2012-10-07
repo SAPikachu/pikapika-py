@@ -57,6 +57,7 @@
                 @include vertically-center-with-line-height($image-max-height);
                 float: left;
                 width: $image-max-width;
+                margin-right: 15px;
                 padding: 2px;
                 overflow: hidden;
                 text-align: center; 
@@ -72,7 +73,7 @@
 
             .info
             {
-                margin-left: $image-max-width + 20px;
+                // Due to chromium bug #41734, don't add margin-left here
                 height: $image-max-height;
                 overflow: hidden;
 
