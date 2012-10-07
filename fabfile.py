@@ -172,7 +172,6 @@ def push_working_tree():
     put(StringIO(diff), temp_file)
     try:
         with _activate_env(STAGE_CURRENT):
-            run("cat -n {}".format(temp_file))
             run("git apply {}".format(temp_file))
 
     finally:
