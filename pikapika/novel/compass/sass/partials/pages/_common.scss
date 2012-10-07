@@ -64,6 +64,39 @@ $sidebar-background: #F8F5F0;
     font-family: "Calibri", "Microsoft YaHei", sans-serif;
 }
 
+@mixin top-elem-margin($side: false, $attr: margin)
+{
+    $left: ($side == false or $side == left);
+    $right: ($side == false or $side == right);
+
+    #{$attr}: 
+    {
+        @if $left 
+        {
+            left: $content-padding;
+        }
+        @if $right
+        {
+            right: $content-padding;
+        }
+
+    }
+    @include r-phone
+    {
+        #{$attr}:
+        {
+            @if $left 
+            {
+                left: $content-padding-n;
+            }
+            @if $right
+            {
+                right: $content-padding-n;
+            }
+        }
+    }
+}
+
 @mixin make-column($columns: 1, $offset: 0) {
     float: left;
     margin-left: ($blueprint-grid-width * $offset) + ($blueprint-grid-margin * ($offset - 1)) + ($blueprint-grid-margin * 2);

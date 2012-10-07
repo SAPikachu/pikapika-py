@@ -4,7 +4,9 @@
     {
         header, footer
         {
-            padding: $blueprint-grid-margin $content-padding;
+            margin: $blueprint-grid-margin 0;
+            @include top-elem-margin();
+
             text-align: center;
         }
 
@@ -23,14 +25,16 @@
                 line-height: 1.75;
                 color: $main-color-light;
                 text-align: center;
-                margin: 0 3em;
             }
 
             .chapter-info
             {
+                margin: 0;
+
                 dt, dd
                 {
                     @include inline-block;
+                    white-space: nowrap;
                 }
 
                 dt
@@ -47,6 +51,7 @@
             #reader-style-settings .style-group
             {
                 margin: 0 1em;
+                white-space: nowrap;
 
                 label
                 {
@@ -68,12 +73,13 @@
             font-size: 150%;
             line-height: 1.75;
             margin: ($blueprint-grid-margin * 1.5) 0;
-            padding: 0 $content-padding;
+            @include top-elem-margin();
 
             p
             {
                 text-indent: 2em;
                 margin: 1.5em 0;
+                text-align: justify;
             }
         }
 

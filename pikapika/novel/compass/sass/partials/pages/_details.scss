@@ -1,38 +1,5 @@
 .page-details
 {
-    @mixin top-elem-margin($side: false)
-    {
-        $left: ($side == false or $side == left);
-        $right: ($side == false or $side == right);
-
-        margin: 
-        {
-            @if $left 
-            {
-                left: $content-padding;
-            }
-            @if $right
-            {
-                right: $content-padding;
-            }
-
-        }
-        @include r-phone
-        {
-            margin:
-            {
-                @if $left 
-                {
-                    left: $content-padding-n;
-                }
-                @if $right
-                {
-                    right: $content-padding-n;
-                }
-            }
-        }
-    }
-
     .novel-image
     {
         @include make-column(3);
