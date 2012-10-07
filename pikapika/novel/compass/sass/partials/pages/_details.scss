@@ -204,6 +204,7 @@
                     float: right;
                     padding: 0;
                     margin: 0 0 $blueprint-grid-margin $blueprint-grid-margin;
+                    max-width: 40%;
 
                     @include r-tablet-or-smaller
                     {
