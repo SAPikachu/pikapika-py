@@ -3,6 +3,7 @@ import re
 from glob import glob
 import random
 import string
+from StringIO import StringIO
 
 from fabric.api import *
 from fabric.contrib.console import confirm
@@ -164,10 +165,18 @@ def reset_stage():
 
 def push_working_tree():
     reset_stage()
-    diff = local("git diff", capture=True)
-    with _activate_env(STAGE_CURRENT):
-        # Without trailing newlines, git sometimes thinks the patch is corrupted
-        run("cat <<EOF | git apply --whitespace=fix -\n{}\n\n\n\nEOF".format(diff))
+    diff = local("git diff production", capture=True) + "\n--\n"
+    temp_file = "/tmp/{}".format(
+        ''.join(random.sample(string.ascii_letters, 32))
+    )
+    put(StringIO(diff), temp_file)
+    try:
+        with _activate_env(STAGE_CURRENT):
+            run("cat -n {}".format(temp_file))
+            run("git apply {}".format(temp_file))
+
+    finally:
+        run("rm {}".format(temp_file))
         
     reload_app()
 
