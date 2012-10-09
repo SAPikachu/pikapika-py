@@ -9,9 +9,7 @@ from fabric.api import *
 from fabric.contrib.console import confirm
 from fabric.contrib.project import rsync_project
 
-VIRTUALENV_ROOT = "~/virtualenv"
-PROJECT_NAME = "pikapika-saber"
-REMOTE_PYTHON_EXEC = "python2.7"
+from fabric_settings import *
 
 SITE_PACKAGES_GLOB = "$VIRTUAL_ENV/lib/python*/site-packages"
 PTH_NAME_FORMAT = "_fab_{}.pth"
@@ -27,9 +25,10 @@ NEW_INSTANCE_ID = "".join(
 )
 EXTRA_INIT_SCRIPT = """
 export INSTANCE_ID="-{}"
-export DJANGO_SETTINGS_MODULE="pikapika.settings_production"
+export DJANGO_SETTINGS_MODULE="{}.settings_production"
 """.format(
     NEW_INSTANCE_ID,
+    MAIN_PACKAGE,
 )
 
 HOSTS = {
@@ -119,7 +118,7 @@ def push_settings():
     )
 
     put(os.path.join(settings_root, "settings_production.py"),
-        STAGE_CURRENT + "/pikapika/",)
+        os.path.join(STAGE_CURRENT, MAIN_PACKAGE),)
 
     extra_files = _get_host_setting("extra_setting_files", {})
     for target_dir, files in extra_files.items():
