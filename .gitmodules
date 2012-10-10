@@ -25,3 +25,6 @@
 [submodule "submodules/django-grappelli"]
 	path = submodules/django-grappelli
 	url = https://github.com/sehmaschine/django-grappelli.git
+[submodule "fabfile"]
+	path = fabfile
+	url = https://github.com/SAPikachu/fabfile.git
