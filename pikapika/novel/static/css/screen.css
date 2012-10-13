@@ -2918,6 +2918,23 @@ body:before {
   cursor: default;
 }
 
+/* line 4, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_error.scss */
+.page-error .page-content p {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 90%;
+  font-size: 120%;
+}
+/* line 11, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_error.scss */
+.page-error .page-content p * {
+  vertical-align: middle;
+}
+/* line 16, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_error.scss */
+.page-error .page-content p img {
+  max-width: 30%;
+  margin-right: 10px;
+}
+
 /* line 18, /var/lib/gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form.bp label {
   font-weight: bold;

@@ -1,0 +1,16 @@
+{% extends "novel/includes/base.html" %}
+{% load url from future %}
+{% load static %}
+
+{% block title %}404 找不到文件{% endblock %}
+
+{% block body-class %}page-error page-error-404 no-sidebar{% endblock %}
+
+{% block content %}
+
+<p>
+    <img src="{% static "images/404.jpg" %}"/>
+    你在寻找的萝莉已经被怪叔叔拐走，快去拯救她们吧！
+</p>
+
+{% endblock %}

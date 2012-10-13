@@ -1,0 +1,16 @@
+{% extends "novel/includes/base.html" %}
+{% load url from future %}
+{% load static %}
+
+{% block title %}500 服务器出错{% endblock %}
+
+{% block body-class %}page-error page-error-500 no-sidebar{% endblock %}
+
+{% block content %}
+
+<p>
+    <img src="{% static "images/500.jpg" %}"/>
+    服务器RP了，快扔香蕉召唤猴子！
+</p>
+
+{% endblock %}

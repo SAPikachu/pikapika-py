@@ -1,0 +1,21 @@
+.page-error
+{
+    .page-content p
+    {
+        text-align: center;
+        margin: $content-padding auto;
+        max-width: 90%;
+        font-size: 120%;
+
+        *
+        {
+            vertical-align: middle;
+        }
+
+        img
+        {
+            max-width: 30%;
+            margin-right: 10px;
+        }
+    }
+}
