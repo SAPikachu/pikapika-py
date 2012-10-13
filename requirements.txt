@@ -8,3 +8,4 @@ html5lib==0.95
 pytz==2012d
 requests==0.12.1
 django-extensions==0.9
+django-livejs2==1.0

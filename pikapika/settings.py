@@ -94,7 +94,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'pikapika.common.middleware.LiveJsMiddleware',
+    'django_livejs2.middleware.LiveJsMiddleware',
 
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -113,8 +113,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-
-    "pikapika.common.context_processors.misc",
 )
 
 ROOT_URLCONF = 'pikapika.urls'
@@ -141,6 +139,7 @@ INSTALLED_APPS = (
     'hitcount',
     'south',
     'django_extensions',
+    'django_livejs2',
     'django.contrib.admin',
     'django.contrib.admindocs',
 
