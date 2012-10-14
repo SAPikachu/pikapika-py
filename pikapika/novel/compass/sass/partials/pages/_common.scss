@@ -269,10 +269,25 @@ body:before
 {
     color: #999;
     text-align: center;
-    line-height: normal;
+    line-height: 1.5;
     font-size: .9em;
     overflow: hidden;
     background: url("#{$image-base}footer-background.gif") repeat-x scroll left top transparent;
+
+    .info
+    {
+        margin-top: 0.25em;
+    }
+
+    a
+    {
+        color: #666;
+    }
+
+    p
+    {
+        margin: 0 1em;
+    }
 }
 
 @include push-sheet-bottom;
