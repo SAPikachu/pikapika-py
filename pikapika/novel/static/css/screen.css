@@ -1972,6 +1972,30 @@ body:before {
   margin: 0 1em;
 }
 
+/* line 294, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+#old-ie-notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: white;
+  font-size: 200%;
+  line-height: 8;
+  filter: alpha(opacity=80);
+}
+
+/* line 311, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+.ie6 body, .ie6 #sticky-footer-wrap, .ie7 body, .ie7 #sticky-footer-wrap {
+  overflow: hidden !important;
+}
+/* line 316, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/pages/_common.scss */
+.ie6 #page-footer, .ie7 #page-footer {
+  display: none;
+}
+
 /* line 99, /home/sapikachu/Dropbox/devel/pikapika/pikapika/novel/compass/sass/partials/_mixins.scss */
 #sticky-footer-wrap {
   overflow: hidden;

@@ -290,4 +290,32 @@ body:before
     }
 }
 
+#old-ie-notice
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: white;
+    font-size: 200%;
+    line-height: 8;
+    filter: alpha(opacity=80);
+}
+
+.ie6, .ie7
+{
+    body, #sticky-footer-wrap
+    {
+        overflow: hidden !important;
+    }
+
+    #page-footer
+    {
+        display: none;
+    }
+}
+
 @include push-sheet-bottom;
