@@ -1,5 +1,5 @@
-require(["jquery", "underscore", "backbone", "jstorage", "ajax-call"], 
-function( $,        _,            Backbone) {
+define(["require", "jquery", "underscore", "backbone", "jstorage", "ajax-call"],
+function(require,   $,        _,            Backbone) {
 
 var LocalBackedModel = Backbone.Model.extend({
     save_local: function() {

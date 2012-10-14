@@ -1,4 +1,4 @@
-require(["jquery"], function($) {
+define(["require", "jquery"], function(require, $) {
 $(function() {
 
 $(".gsc-search-box").submit(function(e) {

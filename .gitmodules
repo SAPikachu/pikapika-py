@@ -28,3 +28,6 @@
 [submodule "fabfile"]
 	path = fabfile
 	url = https://github.com/SAPikachu/fabfile.git
+[submodule "submodules/r.js"]
+	path = submodules/r.js
+	url = https://github.com/jrburke/r.js.git
