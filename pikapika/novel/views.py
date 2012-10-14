@@ -7,7 +7,8 @@ from math import ceil
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Max, Sum
 from django.conf import settings as s
-from django.http import Http404
+from django.http import Http404, HttpResponsePermanentRedirect
+from django.core.urlresolvers import reverse
 from hitcount.models import HitCount
 from generic_aggregation import generic_annotate
 
@@ -156,3 +157,5 @@ def list_cat(request, cat_start=None, cat_end=None, page=None):
         },
     )
 
+def redirect_old_link(request, view_name, **kwargs):
+    return HttpResponsePermanentRedirect(reverse(view_name, kwargs=kwargs))
