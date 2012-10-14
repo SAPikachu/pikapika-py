@@ -1,0 +1,14 @@
+$main-color:            #7E5E51;
+$main-color-light:      lighten(desaturate($main-color, 10%), 30%);
+
+$image-base:            "../images/";
+$content-margin:        ($blueprint-liquid-grid-width);
+$section-border-left:   8px;
+$content-padding:       $blueprint-grid-margin * 2;
+$content-padding-n:     $section-border-left;
+$footer-height:         91px;
+$image-border-color:    lighten($main-color, 40%);
+$splitter-color:        lighten($main-color, 50%);
+$image-shadow-border-radius: 8px;
+$sidebar-background: #F8F5F0;
+

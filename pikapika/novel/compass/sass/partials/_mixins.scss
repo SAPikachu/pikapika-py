@@ -1,0 +1,134 @@
+%pie
+{
+    behavior: url(/PIE.htc);
+}
+
+%generic-transition
+{
+    @include single-transition(all, .15s, linear);
+}
+
+%side-block
+{
+    background-color: $sidebar-background;
+    @include border-bottom-radius(5px);
+}
+
+%make-row
+{
+    margin-left: $blueprint-grid-margin * -1;
+    @include pie-clearfix;
+}
+
+%image-shadow
+{
+    @include box-shadow(0px 0px 6px 0px lighten($main-color, 25%));
+    @include border-radius($image-shadow-border-radius);
+    @extend %generic-transition;
+    @extend %pie;
+    border: 1px solid scale-color($main-color, $saturation: -10%, $lightness: 40%);
+
+    &:hover
+    {
+        @extend %image-shadow-hover;
+    }
+}
+
+%image-shadow-hover
+{
+    @include box-shadow(0 0 7px 1px lighten($main-color, 25%));
+}
+
+%yahei-number-fix
+{
+    // In YaHai, height of Chinese characters is different from height of
+    // numbers and symbols, this is sometimes undesirable. 
+    // Here we use numbers from Tahoma to make it look better
+    font-family: "Calibri", "Microsoft YaHei", sans-serif;
+}
+
+@mixin top-elem-margin($side: false, $attr: margin)
+{
+    $left: ($side == false or $side == left);
+    $right: ($side == false or $side == right);
+
+    #{$attr}: 
+    {
+        @if $left 
+        {
+            left: $content-padding;
+        }
+        @if $right
+        {
+            right: $content-padding;
+        }
+
+    }
+    @include r-phone
+    {
+        #{$attr}:
+        {
+            @if $left 
+            {
+                left: $content-padding-n;
+            }
+            @if $right
+            {
+                right: $content-padding-n;
+            }
+        }
+    }
+}
+
+@mixin make-column($columns: 1, $offset: 0) {
+    float: left;
+    margin-left: ($blueprint-grid-width * $offset) + ($blueprint-grid-margin * ($offset - 1)) + ($blueprint-grid-margin * 2);
+    width: ($blueprint-grid-width * $columns) + ($blueprint-grid-margin * ($columns - 1));
+}
+
+@mixin push-sheet-bottom
+{
+    // Based on http://www.positioniseverything.net/articles/onetruelayout/equalheight
+    // NOTE: Due to a bug(feature?) in Gecko, we can't directly use elements in .page-sheet as anchor in URL, instead we must use an empty div, like this: <div id="anchor-name" class="anchor"></div>
+    // See http://www.positioniseverything.net/articles/onetruelayout/appendix/equalheightproblems#linking for more information
+
+    // Defined in a mixin to make it able to be easily disabled
+    // Included in the bottom of this file
+
+    #sticky-footer-wrap
+    {
+        overflow: hidden;
+    }
+
+    #page
+    {
+        padding-bottom: (30000px + $footer-height);
+        margin-bottom: -30000px;
+
+        .page-sheet
+        {
+            padding-bottom: 30000px;
+            margin-bottom: -30000px;
+
+        }
+    }
+}
+
+@mixin vertically-center-with-line-height($container-height, $inner-elem: "img")
+{
+    // This fixes extra whitespace at the top of container in Firefox
+    // Note: DON'T reorder these 2 lines, otherwise line-height will be 
+    // overwritten
+    font: 0/0 Arial;
+    line-height: $container-height;
+
+    height: $container-height;
+
+    @if $inner-elem {
+        #{$inner-elem}
+        {
+            @include inline-block(middle);
+        }
+    }
+}
+
