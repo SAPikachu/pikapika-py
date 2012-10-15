@@ -80,6 +80,11 @@
                     margin: 0 auto 6px;
                     background: white; // IE 8 needs this
 
+                    .ie8 &
+                    {
+                        display: table;
+                    }
+
                     img
                     {
                         @extend %pie;
@@ -91,6 +96,11 @@
                         max-height: 100%;
                         vertical-align: middle;
                         border: none;
+
+                        .ie8 &
+                        {
+                            display: table-cell;
+                        }
                     }
 
                     .placeholder

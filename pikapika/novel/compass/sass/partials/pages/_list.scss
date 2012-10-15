@@ -63,12 +63,23 @@
                 text-align: center; 
                 background: white; // IE8 needs this
 
+                .ie8 &
+                {
+                    display: table;
+                }
+
                 img
                 {
                     @extend %pie;
                     @include border-radius($image-shadow-border-radius);
                     max-height: $image-max-height;
                     max-width: $image-max-width;
+
+                    .ie8 &
+                    {
+                        display: table-cell;
+                        vertical-align: center;
+                    }
                 }
             }
 
