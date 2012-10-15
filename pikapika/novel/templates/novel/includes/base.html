@@ -13,7 +13,9 @@
     {% block css-common %}
     {% css "screen.css" %}
     {% endblock %}
+    <!--[if lt IE 9]>
     {% js "modernizr.js" %}
+    <![endif]-->
     {% if not debug %}
     <script type="text/javascript">
 
