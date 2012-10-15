@@ -36,7 +36,9 @@ def js(name, outside=False):
 @register.simple_tag
 def requirejs(name):
     return """
-<script type="text/javascript">var require = {{ baseUrl: "{base}" }};</script>
+<script type="text/javascript">
+var require = {{ baseUrl: "{base}", paths: {{ "{name}": "optimized-scripts" }} }};
+</script>
 <script type="text/javascript" src="{base}/require.js" data-main="{name}"></script>
 """.format(
         base=settings.STATIC_URL + "js",
