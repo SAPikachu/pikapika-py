@@ -20,9 +20,14 @@
     @include pie-clearfix;
 }
 
-%image-shadow
+@mixin image-shadow-bare
 {
     @include box-shadow(0px 0px 6px 0px lighten($main-color, 25%));
+}
+
+%image-shadow
+{
+    @include image-shadow-bare;
     @include border-radius($image-shadow-border-radius);
     @extend %generic-transition;
     @extend %pie;

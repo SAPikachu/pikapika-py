@@ -31,6 +31,7 @@
             padding: 0;
             text-align: center;
             overflow: hidden;
+            background: white; // Avoid flashing on IE8
 
             @include r-wide
             {
@@ -77,6 +78,7 @@
                     padding: 2px;
                     text-align: center;
                     margin: 0 auto 6px;
+                    background: white; // IE 8 needs this
 
                     img
                     {
