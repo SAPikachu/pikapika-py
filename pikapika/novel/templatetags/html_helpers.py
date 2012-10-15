@@ -37,12 +37,13 @@ def js(name, outside=False):
 def requirejs(name):
     return """
 <script type="text/javascript">
-var require = {{ baseUrl: "{base}", paths: {{ "{name}": "optimized-scripts" }} }};
+var require = {{ baseUrl: "{base}", urlArgs: "{version}", paths: {{ "{name}": "optimized-scripts" }} }};
 </script>
 <script type="text/javascript" src="{base}/require.js" data-main="{name}"></script>
 """.format(
         base=settings.STATIC_URL + "js",
         name=name,
+        version=STATIC_VERSION,
     )
 
 @register.simple_tag(takes_context=True)
