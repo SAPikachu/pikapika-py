@@ -6,9 +6,9 @@ from django import template
 from django.conf import settings
 from django.core.urlresolvers import reverse, NoReverseMatch
 
-register = template.Library()
+from ..static_version import STATIC_VERSION
 
-STATIC_VERSION = "0"
+register = template.Library()
 
 def get_asset_url(name, prefix, outside):
     is_abs = "://" in name
