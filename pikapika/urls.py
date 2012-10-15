@@ -14,10 +14,15 @@ urlpatterns = patterns('',
         'pikapika.common.thumbnail.generate',
         name="thumbnail"),
 
-    # IE treat URL of htc files relative to the web page itself instead of css file, so we have to redirect it to correct place
+    # IE treat URL of htc and eot files relative to the web page itself instead of css file, so we have to redirect it to correct place
     url(r'(.*/)?PIE.htc$', 
         RedirectView.as_view(
             url=settings.STATIC_URL + "misc/PIE.htc", 
+            permanent=True,
+        )),
+    url(r'(?:.*/)?(?P<file>[^/]+.eot)$', 
+        RedirectView.as_view(
+            url=settings.STATIC_URL + "font/%(file)s", 
             permanent=True,
         )),
 
