@@ -196,6 +196,10 @@
                     line-height: 18px;
                     height: 30px;
 
+                    // PIE causes background disappears and I can't find out
+                    // why, so we have to disable it
+                    -pie-disable: true;
+
                     &.have-text, &:focus
                     {
                         background: white;
