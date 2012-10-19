@@ -31,6 +31,7 @@ def generate(request, path, max_width, max_height):
             with temp:
                 im.save(temp, "JPEG")
 
+            os.chmod(temp_name, 0644)
             try:
                 os.rename(temp_name, output_path_full)
             except (IOError, OSError):
