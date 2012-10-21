@@ -27,8 +27,10 @@
         <dd>{{ novel.publisher }}</dd>
         <dt>点击</dt>
         <dd>{{ novel.hit_count }}</dd>
+        {% comment %}
         <dt>吐槽</dt>
         <dd>{# TODO #}&nbsp;</dd>
+        {% endcomment %}
         {% if novel.latest_chapter %}
         <dt>最新章节</dt>
         <dd>
