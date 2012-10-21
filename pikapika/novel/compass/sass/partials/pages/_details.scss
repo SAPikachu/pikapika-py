@@ -138,6 +138,12 @@
                 margin: $blueprint-grid-margin 0;
                 font-size: 1.3em;
                 color: darken($main-color, 20%);
+                float: left;
+
+                @include r-tablet-or-smaller
+                {
+                    float: none;
+                }
 
                 @include r-phone
                 {
@@ -152,6 +158,7 @@
                 padding-left: $blueprint-liquid-grid-margin / 2;
                 float: right;
                 margin-bottom: $blueprint-grid-margin;
+                margin-top: $blueprint-grid-margin;
                 color: $grayLight;
                 font-size: 90%;
 
@@ -159,6 +166,7 @@
                 {
                     width: span-fluid(12);
                     border-left: 0 none;
+                    margin-top: 0;
                 }
 
                 &.no-info
@@ -193,6 +201,7 @@
                 font: 0/0 Arial, sans-serif;
                 text-align: justify;
                 text-justify: distribute-all-lines;
+                clear: left;
 
                 @include r-tablet-or-smaller
                 {
