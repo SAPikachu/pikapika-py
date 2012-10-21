@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 from .feeds import LatestNovelsFeed, NovelVolumesFeed
 
@@ -33,4 +33,7 @@ urlpatterns = patterns('pikapika.novel.views',
     url(r'^Novel/List(?:/.*)?$', 
         'redirect_old_link',
         {'view_name': 'list'},),
+    url(r'(?P<path>Upload/.+)$', 
+        RedirectView.as_view(url=settings.MEDIA_URL + "%(path)s", 
+                             permanent=True,)),
 )
