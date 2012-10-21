@@ -113,7 +113,7 @@ def render_line(line):
 
     data = line["data"]
     data = re.sub(
-        r"""<img\s[^>]*?src=["'](?P<src>.*?)["'][^>]*?>""",
+        r"""<img(?:\s[^>]*?)?\ssrc=["'](?P<src>.*?)["'][^>]*?>""",
         render_img,
         data,
         flags=re.I,
