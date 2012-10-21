@@ -69,7 +69,6 @@
                     "black", "#000000", "rgb(0,0,0)", 
                     normalize_css_value(elem.css("color"))
                 ],
-                "font-size": [normalize_css_value(elem.css("font-size"))]
             };
             var current_style = {};
             var opened_style = false;
@@ -107,16 +106,6 @@
                     var current_value = normalize_css_value(elem.css(key));
                     if (default_values.indexOf(current_value) === -1)
                     {
-                        if (key === "font-size") {
-                            // Convert to percentage size
-                            var re = /([\d.]+)px/i;
-                            var default_px = 
-                                parseFloat(re.exec(default_values[0])[1]);
-                            var current_px = 
-                                parseFloat(re.exec(current_value)[1]);
-                            current_value = 
-                                Math.round(current_px * 100 / default_px) + "%";
-                        }
                         result[key] = current_value;
                     }
                 });
