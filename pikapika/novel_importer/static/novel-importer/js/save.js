@@ -131,6 +131,7 @@
             line_obj.tags = [];
             var cleaned_line = line_obj.data || "";
             cleaned_line = cleaned_line.replace(/(&nbsp;|\s)+/gi, " ");
+            cleaned_line = $("<div/>").html(cleaned_line).text();
             cleaned_line = $.trim(cleaned_line);
             if (!got_name) {
                 var have_first_line = !!current_chapter.name;

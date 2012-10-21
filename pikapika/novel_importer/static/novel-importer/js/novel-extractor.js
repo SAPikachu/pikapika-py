@@ -237,10 +237,15 @@
                 // it in another one
                 return [build_content(elem)];
             });
+            var script_node = $("#novel-extractor");
+            var prefix = /^(https?:\/\/.+?\/).*/i.exec(
+                script_node.attr("src")
+            )[1];
+            var importer_url = prefix + "novel-importer/import-from-external";
             var form = $("<form/>");
             form.attr({
                 "accept-charset": "utf-8",
-                action: window.__importer_url__,
+                action: importer_url,
                 method: "post"
             });
             $("<input/>").attr({
