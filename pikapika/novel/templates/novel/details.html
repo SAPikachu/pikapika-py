@@ -34,7 +34,7 @@
         {% if novel.latest_chapter %}
         <dt>最新章节</dt>
         <dd>
-            <a href="{% url "read" pk=novel.latest_chapter.pk %}">
+            <a href="#volume-{{ novel.latest_chapter.volume.pk }}">
                 {{ novel.latest_chapter.volume.name }} - {{ novel.latest_chapter.name }}
             </a>
         </dd>
