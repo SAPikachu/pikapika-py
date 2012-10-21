@@ -49,12 +49,14 @@ def details(request, pk):
         prefetch_related("volume_set__chapter_set")
     )
     novel = get_object_or_404(query)
+    # execute_with_latest_chapter needs 2 queries, 
+    # we can reduce it to only 1 here
     novel.latest_chapter = max(
         chain.from_iterable((
             vol.chapter_set.all()
             for vol in novel.volume_set.all()
         )),
-        key=lambda chap: chap.updated_date,
+        key=lambda chap: (chap.updated_date, chap.pk),
     )
     return render(
         request,
