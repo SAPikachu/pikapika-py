@@ -81,6 +81,12 @@
                 margin: 1.5em 0;
                 text-align: justify;
             }
+
+            img
+            {
+                margin-left: -2em;
+                max-width: 100%;
+            }
         }
 
         @mixin define-reader-style($key, $value)
