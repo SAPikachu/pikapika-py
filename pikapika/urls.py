@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     # IE treat URL of htc and eot files relative to the web page itself instead of css file, so we have to redirect it to correct place
     url(r'(.*/)?PIE.htc$', 
         RedirectView.as_view(
-            url=settings.STATIC_URL + "misc/PIE.htc", 
+            url=settings.STATIC_URL_SAME_DOMAIN + "misc/PIE.htc", 
             permanent=True,
         )),
     url(r'(?:.*/)?(?P<file>[^/]+.eot)$', 

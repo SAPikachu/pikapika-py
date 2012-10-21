@@ -74,6 +74,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static/')
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+# Some static files need to be hosted in the same domain of main site
+STATIC_URL_SAME_DOMAIN = STATIC_URL
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
