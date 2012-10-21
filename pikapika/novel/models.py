@@ -130,6 +130,8 @@ class Chapter(models.Model):
 
             self.content_record.save()
             self._content_dirty = False
+
+        self.volume.novel.save()
               
     def __init__(self, *args, **kwargs):
         super(Chapter, self).__init__(*args, **kwargs)
