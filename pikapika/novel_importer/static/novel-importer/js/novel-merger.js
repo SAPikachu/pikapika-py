@@ -202,6 +202,9 @@
                 break;
             }
         }
+        if (new_paragraphs.length === 0 && !is_image_line(line_obj)) {
+            return [];
+        }
         if (is_same_line(line_obj.data, new_paragraphs[0])) {
             // No change needed
             new_paragraphs.shift();
