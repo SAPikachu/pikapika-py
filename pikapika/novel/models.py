@@ -57,7 +57,7 @@ class Novel(models.Model):
 class Volume(models.Model):
     name = models.CharField(max_length=512)
     novel = models.ForeignKey(Novel)
-    description = models.TextField()
+    description = models.TextField(blanl=True)
     image = models.ImageField(upload_to=IMAGE_UPLOAD_DIR, blank=True)
     rating_points = models.IntegerField(default=0)
     rating_count = models.IntegerField(default=0)
