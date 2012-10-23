@@ -9,6 +9,7 @@ jQuery(function ($) {
         parent_model_pk: "{{ original.pk }}",
         relation_name: "{{ inline_admin_formset.opts.opts.module_name }}",
         sortable: "{{ inline_admin_formset.opts.opts.order_with_respect_to|yesno:"true,false" }}",
+        set_model_order_url: "{% url "pikapika.ajax_services.admin.set_model_order" %}",
         url_prefix: "{% url inline_admin_formset.opts.opts|admin_urlname:"change" -1 %}"
     };
     $("#{{ inline_admin_formset.formset.prefix }}-group").

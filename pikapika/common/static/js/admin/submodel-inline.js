@@ -79,7 +79,7 @@
                         order: order
                     };
                     $.ajax({
-                        url: "/ajax/admin/set_model_order", 
+                        url: inline_params.set_model_order_url, 
                         type: "POST",
                         data: post_params,
                         dataType: "json",
