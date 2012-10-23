@@ -133,9 +133,10 @@
             cleaned_line = cleaned_line.replace(/(&nbsp;|\s)+/gi, " ");
             cleaned_line = $("<div/>").html(cleaned_line).text();
             cleaned_line = $.trim(cleaned_line);
+            var have_image = !!novel_importer._(line_obj).get_images().size();
             if (!got_name) {
                 var have_first_line = !!current_chapter.name;
-                if (novel_importer._(line_obj).get_images().size() === 0) {
+                if (!have_image) {
                     line_obj.tags.push("hidden");
                     if (cleaned_line) {
                         if (current_chapter.name) {
@@ -146,7 +147,7 @@
                 }
                 got_name = have_first_line;
             } else if (in_prologue) {
-                if (!cleaned_line) {
+                if (!cleaned_line && !have_image) {
                     line_obj.tags.push("hidden");
                 } else {
                     in_prologue = false;
