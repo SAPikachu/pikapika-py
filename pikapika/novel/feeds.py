@@ -74,6 +74,11 @@ class LatestNovelsFeed(FeedBase):
     def item_pubdate(self, item):
         return item.updated_date
 
+    def item_guid(self, item):
+        return "urn:pikapika:novel:{};{}-{}".format(
+            item.pk, item.latest_chapter.volume.pk, item.latest_chapter.pk
+        )
+
 class NovelVolumesFeed(FeedBase):
     def get_object(self, request, pk):
         return get_object_or_404(Novel, pk=int(pk))
@@ -109,3 +114,7 @@ class NovelVolumesFeed(FeedBase):
     def item_pubdate(self, item):
         return item.updated_date
 
+    def item_guid(self, item):
+        return "urn:pikapika:volume:{}:{}".format(
+            item.novel.pk, item.pk
+        )
