@@ -7,6 +7,19 @@
         var CONTENT_THRESHOLD = 10;
 
         function has_content(elem) {
+            // If an element have big images, or have many sentences,
+            // we consider it as a chapter
+            var images = elem.find("img");
+            var have_big_image = false;
+            images.each(function() {
+                var o = $(this);
+                if (o.width() > 400 || o.height() > 400) {
+                    have_big_image = true;
+                }
+            });
+            if (have_big_image) {
+                return true;
+            }
             var text = elem.text();
             var re = /[\uFF0C\u3002]/g // /[，。]/g;
             var sentence_count = 0;
