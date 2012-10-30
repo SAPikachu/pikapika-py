@@ -21,6 +21,37 @@
 
 {% block content %}
 
+<fieldset id="mode-select" class="grp-module" style="display: none">
+    <h2 class="grp-collapse-handler">Import mode</h2>
+    <div class="grp-row grp-cells-1">
+        <div class="l-1c-fluid">
+            <div class="c-1">
+                <input type="radio" name="import-mode" id="import-mode-merge" checked="checked" value="merge"/>
+                <label for="import-mode-merge">Merge</label>
+            </div>
+        </div>
+        <div class="l-1c-fluid">
+            <div class="c-1">
+                <input type="radio" name="import-mode" id="import-mode-append" value="append"/>
+                <label for="import-mode-append">Append</label>
+            </div>
+        </div>
+        <div class="l-1c-fluid">
+            <div class="c-1">
+                <input type="radio" name="import-mode" id="import-mode-replace" value="replace"/>
+                <label for="import-mode-replace">Replace</label>
+            </div>
+        </div>
+    </div>
+    <div class="grp-row grp-cells-1">
+        <div class="l-1c-fluid">
+            <div class="c-1">
+                <input type="submit" class="grp-button" id="do-import" value="Import" />
+            </div>
+        </div>
+    </div>
+</fieldset>
+
 <script type="text/javascript">
 novel_importer.handle_content({{ content_json|safe }}, {{ site_cookies_json|safe }});
 </script>
