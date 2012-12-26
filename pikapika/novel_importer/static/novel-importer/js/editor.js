@@ -211,6 +211,20 @@ jQuery(function($) {
         container.children().addClass("ui-selected");
         $("#remove-selected").click();
     });
+    $("#compress-empty-line").click(function() {
+        iterate_chapters(function(_1, _2, get_lines) {
+            var lines = get_lines();
+            for (var i = 0; i < lines.size() - 2; i++) {
+                var current_line = lines.eq(i);
+                var next_line = lines.eq(i + 1);
+                if (current_line.data("line_obj").data && 
+                    !next_line.data("line_obj").data) {
+                    next_line.addClass("dirty deleted");
+                }
+            }
+        });
+        update_chapter_list();
+    });
     $("#new-splitter").click(function() {
         insert_new_line(novel_importer.make_splitter());
     });
