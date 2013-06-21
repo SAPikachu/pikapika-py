@@ -132,6 +132,9 @@ class Chapter(models.Model):
             self._content_dirty = False
 
         self.volume.novel.save()
+
+        # Ensure HitCount object is created. Fix #22
+        self.get_hit_count()
               
     def __init__(self, *args, **kwargs):
         super(Chapter, self).__init__(*args, **kwargs)
